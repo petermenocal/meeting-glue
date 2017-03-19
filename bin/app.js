@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1280,10 +1280,45 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 var m = __webpack_require__(0)
+var Nav = __webpack_require__(8)
+var ArticleCarousel = __webpack_require__(7)
 
 module.exports = {
   view: () => {
-    return m("div", "hey")
+    return m("main", {class: "w-100 h-100 bg-near-white"}, [
+      //navigation
+      m(Nav),
+      //main hero
+      m("div#main-hero", {class: "relative mt4 pa3 near-white flex flex-column justify-center", style: "background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('img/main-hero.jpg'); background-size: cover; margin-top: 70px; height: 650px;"}, [
+        m("div#caption", {class: "fl w-100"}, [
+          m("div", {class: "fl w-50 pa5"}, [
+            m("h1", {class: "f2"}, "Defining the future of meeting planning"),
+            m("div#hero-cta", {class: "flex flex-column w-50"}, [
+              m("h1", {class: "f4 mb0"}, "Join now"),
+              m("p", {class: "f6 mt1 lh-copy"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lacus ut lacus dictum faucibus eu et tellus. Nunc sit amet sodales magna. Donec malesuada nisi quis lacus posuere bibendum."),
+              m("input", {class: "input ba b--yellow pa2 bg-white-20 h2 mb2 tc f6 tracked white", placeholder: "your email address"}),
+              m("a", {class: "flex items-center justify-center button ba b--yellow bg-black near-white h3"}, "Sign me up!")
+            ])
+          ]),
+          m("div", {class: "fl w-50 pa5"}, [
+            m("h1", {class: "f5 ttu mt4 tracked"}, "The latest news"),
+            m("h1", {class: "f2 measure"}, "The State of Meeting Planning in 2017"),
+            m("p", {class: "f4 measure mb4"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lacus ut lacus dictum faucibus eu et tellus. Nunc sit amet sodales magna. Donec malesuada nisi quis lacus posuere bibendum."),
+            m("a", {class: "bg-yellow black dib link button pa3 tracked pointer tracked dim"}, "READ MORE")
+          ])
+        ])
+      ]),
+      //article carousel
+      m(ArticleCarousel),
+      //call to action
+      m("div#cta", {class: "flex flex-row items-center justify-center ph3 yellow avenir fw4 h3 fl w-100 bg-dark-green"}, [
+        m("p", "Get your daily dose of Meeting Glue everyday!"),
+        m("div", {class: "fl w-30 border-box"}, [
+          m("input", {class: "fl w-50 input-reset bg-black yellow avenir pa2 ba ml2", placeholder: "name@email.com"}),
+          m("a", {class: "fl w-20 link dim h-100 flex items-center justify-center bg-yellow green b shadow-2", style: "padding: 11px"}, "Submit")
+        ])
+      ])
+    ])
   }
 }
 
@@ -1728,6 +1763,114 @@ exports.clearImmediate = clearImmediate;
 
 /***/ }),
 /* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var m = __webpack_require__(0)
+var Article = __webpack_require__(9)
+
+module.exports = {
+  view: () => {
+    return m("div", {class: "bg-white pa4"}, [
+      m("h1", {class: "avenir fw5 green ttu"}, "Latest Stories"),
+      m("div#carousel", {class: "flex flex-row", style: "max-height: 400px; width: 100%; overflow-x: scroll; overflow-y: hidden"}, Article.list.map((article)=>{
+        return m("div", {class: "mr4", style: "min-width: 200px"}, [
+          m("img", {class: "fl w-100", src: "//placehold.it/400x400"}),
+          m("h1", {class: "avenir green fl f4 fw4 w-100 mb0"}, article.title),
+          m("p", {class: "avenir fl w-100 gray f6  mt1"}, article.published)
+        ])
+      }))
+    ])
+  }
+}
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var m = __webpack_require__(0)
+
+var Nav = {
+    items: [
+      {name: "Item", location: ""},
+      {name: "Item", location: ""},
+      {name: "Item", location: ""},
+      {name: "Item", location: ""},
+      {name: "Item", location: ""},
+      {name: "Item", location: ""},
+    ]
+}
+
+module.exports = {
+  view: () => {
+    return m("nav", {class: "bg-yellow fixed top-0 left-0 right-0 flex items-center pa1 h3", style: "z-index: 9999"}, [
+      m("div#branding", {class: "w-20 ph3 pointer"}, [
+        m("img", {alt: "Meeting Glue logo: Black serif uppercase text with green pineapple leaves over the 'U'", src: "img/logo/logo-meeting-glue.png"})
+      ]),
+      m("div#nav-items", {class: "w-60"}, [
+        m("ul", {class: "avenir list dark-gray"}, Nav.items.map(function(navItem) {
+          return m("li", {class: "dib fl mr4 f4 link dim pointer"}, navItem.name)
+        }))
+      ]),
+      m("div#social-and-search", {class: "w-20 pb2"}, [
+        m("ul", {class: "list near-black"}, [
+          m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [
+            m("i", {class: "fa fa-twitter"}),
+          ]),
+          m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [
+            m("i", {class: "fa fa-facebook"}),
+          ]),
+          m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [
+            m("i", {class: "fa fa-linkedin"}),
+          ]),
+          m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [
+            m("i", {class: "fa fa-search"}),
+          ])
+        ])
+      ])
+    ])
+  }
+}
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var m = __webpack_require__(0)
+
+var Article = {
+  list: [
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+  ],
+  load: function() {}
+}
+
+module.exports = Article
+
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var m = __webpack_require__(0)
