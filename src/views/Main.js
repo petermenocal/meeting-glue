@@ -1,0 +1,42 @@
+var m = require("mithril")
+var Nav = require("../components/Nav")
+var ArticleCarousel = require("../components/ArticleCarousel")
+
+module.exports = {
+  view: () => {
+    return m("main", {class: "w-100 h-100 bg-near-white"}, [
+      //navigation
+      m(Nav),
+      //main hero
+      m("div#main-hero", {class: "relative mt4 pa3 near-white flex flex-column justify-center", style: "background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('img/main-hero.jpg'); background-size: cover; margin-top: 70px; height: 650px;"}, [
+        m("div#caption", {class: "fl w-100"}, [
+          m("div", {class: "fl w-50 pa5"}, [
+            m("h1", {class: "f2"}, "Defining the future of meeting planning"),
+            m("div#hero-cta", {class: "flex flex-column w-50"}, [
+              m("h1", {class: "f4 mb0"}, "Join now"),
+              m("p", {class: "f6 mt1 lh-copy"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lacus ut lacus dictum faucibus eu et tellus. Nunc sit amet sodales magna. Donec malesuada nisi quis lacus posuere bibendum."),
+              m("input", {class: "input ba b--yellow pa2 bg-white-20 h2 mb2 tc f6 tracked white", placeholder: "your email address"}),
+              m("a", {class: "flex items-center justify-center button ba b--yellow bg-black near-white h3"}, "Sign me up!")
+            ])
+          ]),
+          m("div", {class: "fl w-50 pa5"}, [
+            m("h1", {class: "f5 ttu mt4 tracked"}, "The latest news"),
+            m("h1", {class: "f2 measure"}, "The State of Meeting Planning in 2017"),
+            m("p", {class: "f4 measure mb4"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lacus ut lacus dictum faucibus eu et tellus. Nunc sit amet sodales magna. Donec malesuada nisi quis lacus posuere bibendum."),
+            m("a", {class: "bg-yellow black dib link button pa3 tracked pointer tracked dim"}, "READ MORE")
+          ])
+        ])
+      ]),
+      //article carousel
+      m(ArticleCarousel),
+      //call to action
+      m("div#cta", {class: "flex flex-row items-center justify-center ph3 yellow avenir fw4 h3 fl w-100 bg-dark-green"}, [
+        m("p", "Get your daily dose of Meeting Glue everyday!"),
+        m("div", {class: "fl w-30 border-box"}, [
+          m("input", {class: "fl w-50 input-reset bg-black yellow avenir pa2 ba ml2", placeholder: "name@email.com"}),
+          m("a", {class: "fl w-20 link dim h-100 flex items-center justify-center bg-yellow green b shadow-2", style: "padding: 11px"}, "Submit")
+        ])
+      ])
+    ])
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "meeting-glue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack src/index.js bin/app.js --watch",
+    "start": "webpack-dev-server --inline --hot"
+  },
+  "repository": {
+   "type": "git",
+   "url": ""
+ },
+ "dependencies": {
+   "mithril": "^1.0.1",
+   "webpack": "^2.2.1"
+ },
+ "devDependencies": {
+   "tachyons": "^4.6.1",
+   "webpack-dev-server": "^2.4.1"
+ },
+ "author": "Peter Menocal",
+ "license": "ISC"
+}
