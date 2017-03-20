@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1282,8 +1282,21 @@ module.exports = {
 var m = __webpack_require__(0)
 var Nav = __webpack_require__(8)
 var ArticleCarousel = __webpack_require__(7)
+var UserLocation = __webpack_require__(10)
+
+UserLocation.load();
 
 module.exports = {
+  oninit: () => {
+    document.addEventListener('DOMContentLoaded', function(){
+     Typed.new('.element', {
+       strings: ["^1000 meeting planning.^1000 ", "^1000 event coordination.^1000 ", "^1000 requests for proposals.^1000 ", "^1000 venue search.^1000"],
+       typeSpeed: 0,
+       loop: true,
+
+     });
+   });
+  },
   view: () => {
     return m("main", {class: "w-100 h-100 bg-near-white"}, [
       //navigation
@@ -1292,7 +1305,10 @@ module.exports = {
       m("div#main-hero", {class: "relative mt4 pa3 near-white flex flex-column justify-center", style: "background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('img/main-hero.jpg'); background-size: cover; margin-top: 70px; height: 650px;"}, [
         m("div#caption", {class: "fl w-100"}, [
           m("div", {class: "fl w-50 pa5"}, [
-            m("h1", {class: "f2"}, "Defining the future of meeting planning"),
+            m("span", {class: "fl w-100"}, [
+              m("h1", {class: "fl f2"}, "Defining the future of"),
+              m("h1.element", {class: "pl3 fl f2"})
+            ]),
             m("div#hero-cta", {class: "flex flex-column w-50"}, [
               m("h1", {class: "f4 mb0"}, "Join now"),
               m("p", {class: "f6 mt1 lh-copy"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lacus ut lacus dictum faucibus eu et tellus. Nunc sit amet sodales magna. Donec malesuada nisi quis lacus posuere bibendum."),
@@ -1316,6 +1332,26 @@ module.exports = {
         m("div", {class: "fl w-30 border-box"}, [
           m("input", {class: "fl w-50 input-reset bg-black yellow avenir pa2 ba ml2", placeholder: "name@email.com"}),
           m("a", {class: "fl w-20 link dim h-100 flex items-center justify-center bg-yellow green b shadow-2", style: "padding: 11px"}, "Submit")
+        ])
+      ]),
+      //what we offer
+      m("div#what-we-offer", {class: "f5 bg-near-white fl w-100 pa4 db"}, [
+        m("div", {class: "mw8 center"}, [
+          m("h1", {class: "avenir fw5 green ttu"}, "What We Offer"),
+          m("div", {class: "fl w-100"}, [
+            m("div", {class: "fl w-third"}, [
+              m("h1", {class: "f4 avenir fw4 underline"}, "Supplier Reviews"),
+              m("p", {class: "measure-narrow ph3"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis lacus vitae leo commodo pulvinar. Maecenas vel pharetra leo. Nullam condimentum eu ex ac bibendum. Suspendisse in tortor nisl. Aliquam iaculis lacinia imperdiet. Nunc porta ipsum sit amet consequat cursus. Nam vitae dolor viverra, mattis metus vel, sollicitudin massa.")
+            ]),
+            m("div", {class: "fl w-third"}, [
+              m("h1", {class: "f4 avenir fw4 underline"}, "Analytics"),
+              m("p", {class: "measure-narrow ph3"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis lacus vitae leo commodo pulvinar. Maecenas vel pharetra leo. Nullam condimentum eu ex ac bibendum. Suspendisse in tortor nisl. Aliquam iaculis lacinia imperdiet. Nunc porta ipsum sit amet consequat cursus. Nam vitae dolor viverra, mattis metus vel, sollicitudin massa.")
+            ]),
+            m("div", {class: "fl w-third"}, [
+              m("h1", {class: "f4 avenir fw4 underline"}, "RFP System"),
+              m("p", {class: "measure-narrow ph3"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis lacus vitae leo commodo pulvinar. Maecenas vel pharetra leo. Nullam condimentum eu ex ac bibendum. Suspendisse in tortor nisl. Aliquam iaculis lacinia imperdiet. Nunc porta ipsum sit amet consequat cursus. Nam vitae dolor viverra, mattis metus vel, sollicitudin massa.")
+            ])
+          ])
         ])
       ])
     ])
@@ -1770,7 +1806,7 @@ var Article = __webpack_require__(9)
 
 module.exports = {
   view: () => {
-    return m("div", {class: "bg-white pa4"}, [
+    return m("div", {class: "fl w-100 db bg-near-white pa4"}, [
       m("h1", {class: "avenir fw5 green ttu"}, "Latest Stories"),
       m("div#carousel", {class: "flex flex-row", style: "max-height: 400px; width: 100%; overflow-x: scroll; overflow-y: hidden; -webkit-overflow-scrolling: touch"}, Article.list.map((article)=>{
         return m("div", {class: "mr4", style: "min-width: 200px"}, [
@@ -1871,6 +1907,40 @@ module.exports = Article
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var m = __webpack_require__(0)
+
+var UserLocation = {
+  load: () => {
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+
+    function success(pos) {
+      var crd = pos.coords;
+
+      console.log('Your current position is:');
+      console.log(`Latitude : ${crd.latitude}`);
+      console.log(`Longitude: ${crd.longitude}`);
+      console.log(`More or less ${crd.accuracy} meters.`);
+    };
+
+    function error(err) {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    };
+
+    navigator.geolocation.getCurrentPosition(success, error, options);
+  }
+}
+
+module.exports = UserLocation
+
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var m = __webpack_require__(0)

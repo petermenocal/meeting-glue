@@ -3,7 +3,7 @@ var Article = require("../models/Article")
 
 module.exports = {
   view: () => {
-    return m("div", {class: "bg-white pa4"}, [
+    return m("div", {class: "fl w-100 db bg-near-white pa4"}, [
       m("h1", {class: "avenir fw5 green ttu"}, "Latest Stories"),
       m("div#carousel", {class: "flex flex-row", style: "max-height: 400px; width: 100%; overflow-x: scroll; overflow-y: hidden; -webkit-overflow-scrolling: touch"}, Article.list.map((article)=>{
         return m("div", {class: "mr4", style: "min-width: 200px"}, [

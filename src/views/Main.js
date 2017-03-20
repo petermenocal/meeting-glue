@@ -1,8 +1,21 @@
 var m = require("mithril")
 var Nav = require("../components/Nav")
 var ArticleCarousel = require("../components/ArticleCarousel")
+var UserLocation = require("../models/UserLocation")
+
+UserLocation.load();
 
 module.exports = {
+  oninit: () => {
+    document.addEventListener('DOMContentLoaded', function(){
+     Typed.new('.element', {
+       strings: ["^1000 meeting planning.^1000 ", "^1000 event coordination.^1000 ", "^1000 requests for proposals.^1000 ", "^1000 venue search.^1000"],
+       typeSpeed: 0,
+       loop: true,
+
+     });
+   });
+  },
   view: () => {
     return m("main", {class: "w-100 h-100 bg-near-white"}, [
       //navigation
@@ -11,7 +24,10 @@ module.exports = {
       m("div#main-hero", {class: "relative mt4 pa3 near-white flex flex-column justify-center", style: "background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('img/main-hero.jpg'); background-size: cover; margin-top: 70px; height: 650px;"}, [
         m("div#caption", {class: "fl w-100"}, [
           m("div", {class: "fl w-50 pa5"}, [
-            m("h1", {class: "f2"}, "Defining the future of meeting planning"),
+            m("span", {class: "fl w-100"}, [
+              m("h1", {class: "fl f2"}, "Defining the future of"),
+              m("h1.element", {class: "pl3 fl f2"})
+            ]),
             m("div#hero-cta", {class: "flex flex-column w-50"}, [
               m("h1", {class: "f4 mb0"}, "Join now"),
               m("p", {class: "f6 mt1 lh-copy"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lacus ut lacus dictum faucibus eu et tellus. Nunc sit amet sodales magna. Donec malesuada nisi quis lacus posuere bibendum."),
@@ -35,6 +51,26 @@ module.exports = {
         m("div", {class: "fl w-30 border-box"}, [
           m("input", {class: "fl w-50 input-reset bg-black yellow avenir pa2 ba ml2", placeholder: "name@email.com"}),
           m("a", {class: "fl w-20 link dim h-100 flex items-center justify-center bg-yellow green b shadow-2", style: "padding: 11px"}, "Submit")
+        ])
+      ]),
+      //what we offer
+      m("div#what-we-offer", {class: "f5 bg-near-white fl w-100 pa4 db"}, [
+        m("div", {class: "mw8 center"}, [
+          m("h1", {class: "avenir fw5 green ttu"}, "What We Offer"),
+          m("div", {class: "fl w-100"}, [
+            m("div", {class: "fl w-third"}, [
+              m("h1", {class: "f4 avenir fw4 underline"}, "Supplier Reviews"),
+              m("p", {class: "measure-narrow ph3"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis lacus vitae leo commodo pulvinar. Maecenas vel pharetra leo. Nullam condimentum eu ex ac bibendum. Suspendisse in tortor nisl. Aliquam iaculis lacinia imperdiet. Nunc porta ipsum sit amet consequat cursus. Nam vitae dolor viverra, mattis metus vel, sollicitudin massa.")
+            ]),
+            m("div", {class: "fl w-third"}, [
+              m("h1", {class: "f4 avenir fw4 underline"}, "Analytics"),
+              m("p", {class: "measure-narrow ph3"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis lacus vitae leo commodo pulvinar. Maecenas vel pharetra leo. Nullam condimentum eu ex ac bibendum. Suspendisse in tortor nisl. Aliquam iaculis lacinia imperdiet. Nunc porta ipsum sit amet consequat cursus. Nam vitae dolor viverra, mattis metus vel, sollicitudin massa.")
+            ]),
+            m("div", {class: "fl w-third"}, [
+              m("h1", {class: "f4 avenir fw4 underline"}, "RFP System"),
+              m("p", {class: "measure-narrow ph3"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis lacus vitae leo commodo pulvinar. Maecenas vel pharetra leo. Nullam condimentum eu ex ac bibendum. Suspendisse in tortor nisl. Aliquam iaculis lacinia imperdiet. Nunc porta ipsum sit amet consequat cursus. Nam vitae dolor viverra, mattis metus vel, sollicitudin massa.")
+            ])
+          ])
         ])
       ])
     ])
