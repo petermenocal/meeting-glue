@@ -1363,17 +1363,17 @@ module.exports = {
       //article carousel
       m(ArticleCarousel),
       //call to action
-      m("div#cta", {class: "flex flex-row items-center justify-center ph3 yellow avenir fw4 h3 fl w-100 bg-dark-green"}, [
+      m("div#cta", {class: "flex flex-row items-center justify-center ph3 yellow avenir fw4 h3 fl w-100 bg-dark-blue"}, [
         m("p", "Get your daily dose of Meeting Glue everyday!"),
         m("div", {class: "fl w-30 border-box"}, [
           m("input", {class: "fl w-50 input-reset bg-black yellow avenir pa2 ba ml2", placeholder: "name@email.com"}),
-          m("a", {class: "fl w-20 link dim h-100 flex items-center justify-center bg-yellow green b shadow-2", style: "padding: 11px"}, "Submit")
+          m("a", {class: "fl w-20 link dim h-100 flex items-center justify-center bg-yellow blue b shadow-2", style: "padding: 11px"}, "Submit")
         ])
       ]),
       //what we offer
       m("div#what-we-offer", {class: "f5 bg-near-white fl w-100 pa4 db"}, [
         m("div", {class: "mw8 center"}, [
-          m("h1", {class: "avenir fw5 green ttu"}, "What We Offer"),
+          m("h1", {class: "avenir fw5 blue ttu"}, "What We Offer"),
           m("div", {class: "fl w-100"}, [
             m("div", {class: "fl w-third"}, [
               m("h1", {class: "f4 avenir fw4 underline"}, "Supplier Reviews"),
@@ -1392,7 +1392,7 @@ module.exports = {
       ]),
       //Weather
       m("div#weather", {class: "f5 bg-white fl w-100 pa4 db"}, [
-        m("h1", {class: "avenir fw5 green ttu"}, "Weather"),
+        m("h1", {class: "avenir fw5 blue ttu"}, "Weather"),
         m("div", Weather.loaded ? [
           m("p", {class: "b"}, Weather.current.name),
           m("p", {class: "ttc b"}, Weather.current.weather[0].description),
@@ -1888,18 +1888,18 @@ var Nav = {
 
 module.exports = {
   view: () => {
-    return m("nav", {class: "bg-yellow fixed top-0 left-0 right-0 flex items-center pa1 h3", style: "z-index: 9999"}, [
+    return m("nav", {class: "bg-blue  fixed top-0 left-0 right-0 flex items-center pa1 h3", style: "z-index: 9999"}, [
       m("div#branding", {class: "w-20 ph3 pointer"}, [
         m("img", {alt: "Meeting Glue logo: Black serif uppercase text with green pineapple leaves over the 'U'", src: "img/logo/logo-meeting-glue.png"})
       ]),
       m("div#nav-items", {class: "w-60"}, [
-        m("ul", {class: "avenir list dark-gray"}, Nav.items.map(function(navItem) {
+        m("ul", {class: "avenir list black"}, Nav.items.map(function(navItem) {
           return m("li", {class: "dib fl mr4 f4 link dim pointer"}, navItem.name)
         }))
       ]),
       m("div#social-and-search", {class: "w-20 pb2"}, [
         m("ul", {class: "list near-black"}, [
-          m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [
+          m("li", {class: "dib fl mr4 f3 black link dim pointer"}, [
             m("i", {class: "fa fa-twitter"}),
           ]),
           m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [

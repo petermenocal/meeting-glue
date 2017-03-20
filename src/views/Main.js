@@ -48,17 +48,17 @@ module.exports = {
       //article carousel
       m(ArticleCarousel),
       //call to action
-      m("div#cta", {class: "flex flex-row items-center justify-center ph3 yellow avenir fw4 h3 fl w-100 bg-dark-green"}, [
+      m("div#cta", {class: "flex flex-row items-center justify-center ph3 yellow avenir fw4 h3 fl w-100 bg-dark-blue"}, [
         m("p", "Get your daily dose of Meeting Glue everyday!"),
         m("div", {class: "fl w-30 border-box"}, [
           m("input", {class: "fl w-50 input-reset bg-black yellow avenir pa2 ba ml2", placeholder: "name@email.com"}),
-          m("a", {class: "fl w-20 link dim h-100 flex items-center justify-center bg-yellow green b shadow-2", style: "padding: 11px"}, "Submit")
+          m("a", {class: "fl w-20 link dim h-100 flex items-center justify-center bg-yellow blue b shadow-2", style: "padding: 11px"}, "Submit")
         ])
       ]),
       //what we offer
       m("div#what-we-offer", {class: "f5 bg-near-white fl w-100 pa4 db"}, [
         m("div", {class: "mw8 center"}, [
-          m("h1", {class: "avenir fw5 green ttu"}, "What We Offer"),
+          m("h1", {class: "avenir fw5 blue ttu"}, "What We Offer"),
           m("div", {class: "fl w-100"}, [
             m("div", {class: "fl w-third"}, [
               m("h1", {class: "f4 avenir fw4 underline"}, "Supplier Reviews"),
@@ -77,7 +77,7 @@ module.exports = {
       ]),
       //Weather
       m("div#weather", {class: "f5 bg-white fl w-100 pa4 db"}, [
-        m("h1", {class: "avenir fw5 green ttu"}, "Weather"),
+        m("h1", {class: "avenir fw5 blue ttu"}, "Weather"),
         m("div", Weather.loaded ? [
           m("p", {class: "b"}, Weather.current.name),
           m("p", {class: "ttc b"}, Weather.current.weather[0].description),
