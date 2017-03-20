@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 14);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1233,7 +1233,7 @@ m.vnode = Vnode
 if (true) module["exports"] = m
 else window.m = m
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8).setImmediate, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7).setImmediate, __webpack_require__(1)))
 
 /***/ }),
 /* 1 */
@@ -1314,17 +1314,17 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 var m = __webpack_require__(0)
-var Nav = __webpack_require__(10)
-var ArticleCarousel = __webpack_require__(9)
+var Nav = __webpack_require__(9)
+var ArticleCarousel = __webpack_require__(8)
 var UserLocation = __webpack_require__(2)
-var Weather = __webpack_require__(13)
-var Calendar = __webpack_require__(12)
+var Weather = __webpack_require__(11)
+
 
 module.exports = {
   oninit: () => {
     UserLocation.load()
     Weather.load(UserLocation.current)
-    Calendar.load()
+
     document.addEventListener('DOMContentLoaded', function(){
      Typed.new('.element', {
        strings: ["^1000 meeting planning.^1000 ", "^1000 event coordination.^1000 ", "^1000 requests for proposals.^1000 ", "^1000 venue search.^1000"],
@@ -1410,129 +1410,6 @@ module.exports = {
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-(function () {
-  function Calendar (date) {
-    // a custom 'today' date can be injected
-    this.now = date || new Date();
-  }
-
-  Calendar.prototype.monthCalendar = function(date, options, action) {
-    if (options) {
-      options.view = 'month';
-    } else {
-      options = { view: 'month' };
-    }
-    return this.createCalendar(date, options, action);
-  };
-
-  Calendar.prototype.weeksCalendar = function(date, options, action) {
-    if (options) {
-      options.view = 'weeks';
-    } else {
-      options = { view: 'weeks' };
-    }
-    return this.createCalendar(date, options, action);
-  };
-
-  Calendar.prototype.createCalendar = function (dateObj, options, action) {
-    var date = dateObj || this.now;
-    options.view = options.view || 'month';
-    var cYear = date.getFullYear();
-    var cMonth = date.getMonth();
-    var cDate = date.getDate();
-    var cWeekStart = (options.weekStart === 0) ? 0 : options.weekStart || 1; // week starts on monday by default, sunday: 0
-    // TODO: switch
-    var cWeeks, firstDayOfView, firstDayOffset;
-    // --- monthCalendar ---
-    if (options.view === 'month') {
-      var firstDayOfMonth = new Date(cYear, cMonth, 1).getDay(); // weekday of first month
-      var lastDateOfMonth = new Date(cYear, cMonth+1, 0).getDate(); // number of days in current month
-      firstDayOffset = cWeekStart > firstDayOfMonth ? cWeekStart-7 : cWeekStart; // set offset for first day of view
-      firstDayOfView =  new Date(cYear, cMonth, firstDayOffset-firstDayOfMonth+1); //  first day in first row
-      // calculate rows of view
-      // TODO: simplify!
-      if(firstDayOfView.getDate() === 1) {
-        // Month starts at row 1 in column 1
-        cWeeks = Math.ceil(lastDateOfMonth / 7);
-      } else {
-        var lastDateOfLastMonth = new Date(cYear, cMonth, 0).getDate();
-        var additionalDays = lastDateOfLastMonth - firstDayOfView.getDate() + 1;
-        cWeeks = Math.ceil((lastDateOfMonth + additionalDays) / 7);
-      }
-    // --- weeksCalendar ---
-    } else if (options.view === 'weeks') {
-      cWeeks = options.weeks || 4; // show 4 weeks by default
-      firstDayOfView = new Date(cYear, cMonth, cDate);
-      firstDayOffset = cWeekStart > firstDayOfView.getDay() ? cWeekStart-7 : cWeekStart;
-      firstDayOfView.setDate(cDate - firstDayOfView.getDay() + parseInt(firstDayOffset, 10));
-    }
-
-    var currentDate = firstDayOfView;
-    var cal = [];
-
-    // create calendar model
-    for (var week = 0; week < cWeeks; week++) {
-      cal[week] = [];
-      for (var day = 0; day < 7; day++) {
-        // determine exposed parameters
-        var today = (this.now.getFullYear() === currentDate.getFullYear() &&
-                    this.now.getMonth() === currentDate.getMonth() &&
-                    this.now.getDate() === currentDate.getDate());
-
-        // implementation of already past days
-        var pastDay = (currentDate.valueOf() < this.now.valueOf() && !today);
-
-        var thisMonth = (cMonth === currentDate.getMonth());
-
-        // TODO: thisWeek?
-
-        var contents = {
-          date: currentDate,
-          isInCurrentMonth: thisMonth,
-          isToday: today,
-          isPastDate: pastDay
-        };
-
-        // if action is defined results of the action function are pushed into the calendar array
-        if ('function' === typeof action) {
-          contents.entries = action(currentDate, thisMonth, today, pastDay) || [];
-        }
-
-        cal[week].push(contents);
-
-        // increment day
-        currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate()+1);
-      }
-    }
-
-    function populate(fn) {
-      for (var i = cal.length - 1; i >= 0; i--) {
-        for (var j = cal[i].length - 1; j >= 0; j--) {
-          cal[i][j].entries = fn(cal[i][j].date, cal[i][j].isInCurrentMonth, cal[i][j].isToday, cal[i][j].isPastDate);
-        }
-      }
-    }
-
-    return {
-      calendar: cal,
-      populate: populate
-    };
-
-  };
-
-  // for node.js
-  if (true) {
-    module.exports = Calendar;
-  } else {
-    window.Calendar = Calendar;
-  }
-})();
-
-
-/***/ }),
-/* 6 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -1718,7 +1595,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -1908,10 +1785,10 @@ process.umask = function() { return 0; };
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(6)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(5)))
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var apply = Function.prototype.apply;
@@ -1964,17 +1841,17 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(7);
+__webpack_require__(6);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var m = __webpack_require__(0)
-var Article = __webpack_require__(11)
+var Article = __webpack_require__(10)
 
 module.exports = {
   view: () => {
@@ -1993,7 +1870,7 @@ module.exports = {
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var m = __webpack_require__(0)
@@ -2042,7 +1919,7 @@ module.exports = {
 
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var m = __webpack_require__(0)
@@ -2078,24 +1955,7 @@ module.exports = Article
 
 
 /***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var m = __webpack_require__(0)
-var cal = __webpack_require__(5)
-
-var Calendar = {
-  load: () => {
-  
-
-  }
-}
-
-module.exports = Calendar
-
-
-/***/ }),
-/* 13 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var m = __webpack_require__(0)
@@ -2125,7 +1985,7 @@ module.exports = Weather
 
 
 /***/ }),
-/* 14 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var m = __webpack_require__(0)

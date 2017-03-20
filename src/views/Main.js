@@ -3,13 +3,13 @@ var Nav = require("../components/Nav")
 var ArticleCarousel = require("../components/ArticleCarousel")
 var UserLocation = require("../models/UserLocation")
 var Weather = require("../models/Weather")
-var Calendar = require("../models/Calendar")
+
 
 module.exports = {
   oninit: () => {
     UserLocation.load()
     Weather.load(UserLocation.current)
-    Calendar.load()
+
     document.addEventListener('DOMContentLoaded', function(){
      Typed.new('.element', {
        strings: ["^1000 meeting planning.^1000 ", "^1000 event coordination.^1000 ", "^1000 requests for proposals.^1000 ", "^1000 venue search.^1000"],
