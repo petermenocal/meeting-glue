@@ -2,17 +2,19 @@ var m = require("mithril")
 var Nav = require("../components/Nav")
 var ArticleCarousel = require("../components/ArticleCarousel")
 var UserLocation = require("../models/UserLocation")
-
-UserLocation.load();
+var Weather = require("../models/Weather")
+var Calendar = require("../models/Calendar")
 
 module.exports = {
   oninit: () => {
+    UserLocation.load()
+    Weather.load(UserLocation.current)
+    Calendar.load()
     document.addEventListener('DOMContentLoaded', function(){
      Typed.new('.element', {
        strings: ["^1000 meeting planning.^1000 ", "^1000 event coordination.^1000 ", "^1000 requests for proposals.^1000 ", "^1000 venue search.^1000"],
        typeSpeed: 0,
        loop: true,
-
      });
    });
   },
@@ -72,6 +74,19 @@ module.exports = {
             ])
           ])
         ])
+      ]),
+      //Weather
+      m("div#weather", {class: "f5 bg-white fl w-100 pa4 db"}, [
+        m("h1", {class: "avenir fw5 green ttu"}, "Weather"),
+        m("div", Weather.loaded ? [
+          m("p", {class: "b"}, Weather.current.name),
+          m("p", {class: "ttc b"}, Weather.current.weather[0].description),
+          m("p", {class: "f6"}, "Humidity: " + Weather.current.main.humidity + "%"),
+          m("p", {class: "f6"}, "Pressure: " + Weather.current.main.pressure + "hpa"),
+          m("p", {class: "f6"}, "Current Temp: " + Weather.current.main.temp + "°F"),
+          m("p", {class: "f6"}, "Min Temp: " + Weather.current.main.temp_min + "°F"),
+          m("p", {class: "f6"}, "Max Temp: " + Weather.current.main.temp_max + "°F"),
+        ] : "Loading weather...")
       ])
     ])
   }
