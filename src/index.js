@@ -1,12 +1,13 @@
-var m = require("mithril")
+const m = require("mithril")
 
 // Shell
-var Layout = require("./views/Layout")
-var Main = require("./views/Main")
+let Layout = require("./views/Layout")
+let Main = require("./views/Main")
+let Compare = require("./views/Compare")
 
 // Routes
-
 m.route(document.body, "/main", {
   // Main
-  "/main": { render: () => { return m(Layout, m(Main))} }
+  "/main": { render: () => { return m(Layout, m(Main))} },
+  "/compare": { render: () => { return m(Layout, m(Compare))} },
 })

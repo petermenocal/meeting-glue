@@ -1,7 +1,13 @@
-var m = require("mithril")
+const m = require("mithril")
+let Nav = require("../components/Nav")
 
 module.exports = {
   view: (vnode) => {
-    return m("div", {class: "fl w-100 h-100 vh-100"}, vnode.children)
+    return m("div", {class: "fl w-100 h-100 vh-100 bg-near-white "}, [
+      m(Nav),
+      m("div", {class: "fl vh-100 h-100 w-100"}, [
+        m("div", {class: "fl w-100 h-100 bg-near-white"}, vnode.children)
+      ])
+    ])
   }
 }

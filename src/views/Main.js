@@ -9,7 +9,6 @@ module.exports = {
   oninit: () => {
     UserLocation.load()
     Weather.load(UserLocation.current)
-
     document.addEventListener('DOMContentLoaded', function(){
      Typed.new('.element', {
        strings: ["^1000 meeting planning.^1000 ", "^1000 event coordination.^1000 ", "^1000 requests for proposals.^1000 ", "^1000 venue search.^1000"],
@@ -20,10 +19,8 @@ module.exports = {
   },
   view: () => {
     return m("main", {class: "w-100 h-100 bg-near-white"}, [
-      //navigation
-      m(Nav),
       //main hero
-      m("div#main-hero", {class: "relative mt4 pa3 near-white flex flex-column justify-center", style: "background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('img/main-hero.jpg'); background-size: cover; margin-top: 70px; height: 650px;"}, [
+      m("div#main-hero", {class: "pa3 near-white flex flex-column justify-center", style: "background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('img/main-hero.jpg'); background-size: cover; height: 650px;"}, [
         m("div#caption", {class: "fl w-100"}, [
           m("div", {class: "fl w-50 pa5"}, [
             m("span", {class: "fl w-100"}, [
