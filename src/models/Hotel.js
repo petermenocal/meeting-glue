@@ -45,7 +45,7 @@ let Hotel = {
   list: [
     {
       name: "Hyatt Regency Washington on Capitol Hill",
-      address: "400 New Jersey Ave, NW Washington, DC 20001",
+      address: {street: "400 New Jersey Ave", city: "NW", state: "Washington DC", zip: "20001"},
       salesOffice: { phone: " 202-197-1234", email: "wasrw@hyatt.com"},
       website: "hyattregencywashington.com",
       twitter: "hyattwashington",
@@ -57,7 +57,7 @@ let Hotel = {
       wifiFee: "$9.99 per day",
       parking: {self: "$9.99 per day", valet: "$62 per day"},
       meetingSpace: { capacityChart: "Capacity Chart", floorPlan: "Floor Plan" },
-      largestRooms: [{ name: "", sqft: "38,000"}, { name: "", sqft: "3,588"}],
+      largestRooms: [{ name: "Room 1", sqft: "38,000"}, { name: "Room 2", sqft: "3,588"}],
       meetingRoomCount: 32,
       publicWifiSpace: "Complimentary",
       avCompany: {name: "PSAV", menu: ""},
@@ -78,7 +78,7 @@ let Hotel = {
     },
     {
       name: "Hard Rock Hotel & Casino Las Vegas",
-      address: "4455 Paradise Road, Las Vegas, NV 89169",
+      address: {street: "4455 Paradise Ave", city: "Las Vegas", state: "NV", zip: "89169"},
       salesOffice: { phone: "855-693-5500", email: "sales@hrhvegas.com"},
       website: "hardrockhotel.com",
       twitter: "hardrockhotellv",
@@ -111,7 +111,7 @@ let Hotel = {
     },
     {
       name: "Red Rock Casino Resort & Spa",
-      address: "11011 West Charleston Blvd, Las Vegas, NV 89135",
+      address: {street: "11011 West Charleston Blvd.", city: "Las Vegas", state: "NV", zip: "89135"},
       salesOffice: { phone: "866-767-7774", email: "sales@hrhvegas.com"},
       website: "redrock.sclv.com",
       twitter: "redrockcasino",
@@ -144,10 +144,10 @@ let Hotel = {
     },
     {
       name: "Green Valley Ranch Casino and Spa",
-      address: "11011 West Charleston Blvd, Las Vegas, NV 89135",
-      salesOffice: { phone: "866-767-7774", email: "sales@hrhvegas.com"},
-      website: "redrock.sclv.com",
-      twitter: "redrockcasino",
+      address: {street: "2300 Paseo Verde Pkwy.", city: "Henderson", state: "NV", zip: "89052"},
+      salesOffice: { phone: "866-617-1777", email: "sales@hrhvegas.com"},
+      website: "greenvalleyranch.sclv.com",
+      twitter: "gvrcasino",
       directorOfSales: "N/A",
       directorOfCatering: "N/A",
       sleepingRooms: 1504,
@@ -166,17 +166,20 @@ let Hotel = {
       serviceCharge: "22%",
       customMenuAvailable: true,
       hotelRating: "AAA 4 Diamond",
-      loyaltyProgram: {available: true, name: "Backstage Pass"},
+      loyaltyProgram: {available: true, name: "My Boarding Pass"},
       union: false,
       airport: { name: "McCarran International Airport", distance: "1.6 miles", abbreviation: "LAS" },
       restaurants: [{name: "restaurants", menu: ""}],
       fitnessCenter: true,
       pool: { available: true, indoor: false },
-      spa: { available: true, name: "Reliquary Spa", website: "" },
+      spa: { available: true, name: "Green Valley Ranch Spa", website: "" },
       pointsOfInterest: [{name: "", distance: "", description: ""}]
     },
   ],
-  load: ()=>{}
+  load: ()=>{},
+  fixHeader: (vnode)=>{
+    console.log(vnode)
+  }
 }
 
 module.exports = Hotel

@@ -9,5 +9,5 @@ let Compare = require("./views/Compare")
 m.route(document.body, "/main", {
   // Main
   "/main": { render: () => { return m(Layout, m(Main))} },
-  "/compare": { render: () => { return m(Layout, m(Compare))} },
+  "/compare": { render: (vnode) => { return m(Layout, m(Compare))} },
 })
