@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 16);
+/******/ 	return __webpack_require__(__webpack_require__.s = 18);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1233,919 +1233,10 @@ m.vnode = Vnode
 if (true) module["exports"] = m
 else window.m = m
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9).setImmediate, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13).setImmediate, __webpack_require__(2)))
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var m = __webpack_require__(0)
-
-var Nav = {
-    items: [
-      {name: "Home", location: "/main"},
-      {name: "Compare", location: "/compare"},
-    ]
-}
-
-module.exports = {
-  view: () => {
-    return  m("nav", {class:"bg-blue fl w-100", style: "z-index: 0 !important"}, [
-          m("div", {class: "flex items-center pa1", style: "height: 90px"}, [
-            m("div#branding", {class: "w-20 ph3 pointer"}, [
-              m("img", {alt: "Meeting Glue logo: Black serif uppercase text with green pineapple leaves over the 'U'", src: "img/logo/logo-meeting-glue.png"})
-            ]),
-            m("div#nav-items", {class: "w-60"}, [
-              m("ul", {class: "avenir list black"}, Nav.items.map(function(navItem) {
-                return m("li", {class: "dib fl mr4 f4 link dim pointer"}, [
-                  m("a", {class: "link white dim pointer", oncreate: m.route.link, href: navItem.location}, navItem.name)
-                ])
-              }))
-            ]),
-            m("div#social-and-search", {class: "w-20 pb2"}, [
-              m("ul", {class: "list near-black"}, [
-                m("li", {class: "dib fl mr4 f3 black link dim pointer"}, [
-                  m("i", {class: "fa fa-twitter"}),
-                ]),
-                m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [
-                  m("i", {class: "fa fa-facebook"}),
-                ]),
-                m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [
-                  m("i", {class: "fa fa-linkedin"}),
-                ]),
-                m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [
-                  m("i", {class: "fa fa-search"}),
-                ])
-              ])
-            ])
-          ])
-        ])
-  }
-}
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var m = __webpack_require__(0)
-
-var crd = {};
-
-var UserLocation = {
-  load: () => {
-    var options = {
-      enableHighAccuracy: true,
-      timeout: 5000,
-      maximumAge: 0
-    };
-    function success(pos) {
-      crd = pos.coords;
-      UserLocation.current = pos.coords
-      console.log('Your current position is:');
-      console.log(`Latitude : ${crd.latitude}`);
-      console.log(`Longitude: ${crd.longitude}`);
-      console.log(`More or less ${crd.accuracy} meters.`);
-    };
-    function error(err) {
-      console.warn(`ERROR(${err.code}): ${err.message}`);
-    };
-    navigator.geolocation.getCurrentPosition(success, error, options);
-  },
-  current: {}
-}
-
-module.exports = UserLocation
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const m = __webpack_require__(0)
-let Hotel = __webpack_require__(14)
-let TitleBar = __webpack_require__(12)
-
-module.exports = {
-  view: (vnode) => {
-    return m("div", {class: "fl w-100 center h-100 vh-100", style: "max-width: 100%; overflow-x: hidden;"}, [
-      m("div", {class: "fl w-100"}, [
-        m("div", {class: "fl w-25 v-100 bg-black-10 pa2"}, [
-          m("h1", "Available Hotels"),
-          Hotel.list.map(function(hotel){
-            return m("div", {class: "h3 bb b--black-30 flex items-center link dim pointer", onclick: Hotel.compareThis.bind(Hotel, hotel)}, hotel.name)
-          })
-        ]),
-        m("div", {class: "fl w-75 space-between flex flex-row"}, [
-          Hotel.compare.map(function(hotel){
-            return m("div", {class: "avenir h-100 shadow-1 mr2 h2 fl bg-dark-gray", style: "min-width: 300px; max-width: 300px; position: relative !important"}, [
-              m("div", {class: "fl bg-green near-white avenir bb b--black-20 pa2 h6 fixed", style: "min-width: 300px; height: 90px; position: fixed; top: 0px; "}, [
-                //hotel name
-                m("h5", {class: "tc"}, hotel.name),
-                m("h5", {class: "tc em"}, hotel.hotelRating),
-              ]),
-              m("div", {class: "fl w-100 bg-green near-white avenir bb b--black-20 pa2 h6 relative", style: "min-width: 300px;"}, [
-                //hotel name
-                m("h5", {class: "tc"}, hotel.name),
-                m("h5", {class: "tc em"}, hotel.hotelRating),
-              ]),
-              m("div", {class: "tl bg-dark-gray near-white pa2 fl w-100"}, [
-                //street address
-                m("div", {class: ""}, [
-                  m("a", {class: "fl w-100 bb b--white-30"}, [
-                    m("p", {class: "fl w-100 mb0"}, [
-                      m("i", {class: "fa fa-map-marker mr2"}),
-                      m("span", hotel.address.street)
-                    ]),
-                    m("p", {class: "fl mr1 mt0"}, hotel.address.city),
-                    m("p", {class: "fl mr1 mt0"}, hotel.address.state),
-                    m("p", {class: "fl mr1 mt0"}, hotel.address.zip),
-                  ])
-                ]),
-                m("p", {class: "fl w-100 mt3 mb1"}, hotel.website),
-                m("p", {class: "fl w-100 mb2 mt0"}, "@" + hotel.twitter),
-              ]),
-              m("div", {class: "pa2 f7 bg-dark-green near-white bb b--black-20 fl w-100"}, [
-                m("h4", "Sales office"),
-                m("p", {}, [
-                  m("i", {class: "fa fa-phone mr2"}),
-                  m("span", hotel.salesOffice.phone)
-                ]),
-                m("p", {}, [
-                  m("i", {class: "fa fa-paper-plane mr2"}),
-                  m("span", hotel.salesOffice.email)
-                ]),
-                m("p", {}, [
-                  m("i", {class: "fa fa-user-circle mr2"}),
-                  m("span", "Director of Catering: "),
-                  m("span", hotel.salesOffice.directorOfCatering)
-                ]),
-                m("p", {}, [
-                  m("i", {class: "fa fa-user-circle mr2"}),
-                  m("span", "Director of Sales: "),
-                  m("span", hotel.salesOffice.directorOfSales)
-                ]),
-              ]),
-              m("div", {class: "tl fl w-100 bg-dark-gray pa2 near-white f7 bb b--black-20"}, [
-                m("h4", "Hotel Fees"),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Rooms tax: "),
-                  m("span", hotel.roomsTax)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Resort fee: "),
-                  m("span", hotel.resortFee)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "WiFi fee: "),
-                  m("span", hotel.wifiFee)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Public WiFi fee: "),
-                  m("span", hotel.publicWifiSpace)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Rooms tax: "),
-                  m("span", hotel.roomsTax)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Sales tax: "),
-                  m("span", hotel.salesTax)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Service charge: "),
-                  m("span", hotel.serviceCharge)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Parking (self): "),
-                  m("span", hotel.parking.self)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Parking (valet): "),
-                  m("span", hotel.parking.valet)
-                ]),
-              ]),
-              m("div", {class: "pa2 f7 bg-dark-green near-white bb b--black-20 fl w-100"}, [
-                m("h4", "Space details"),
-                m("p", {}, [
-                  m("i", {class: "fa fa-bed mr2 gold"}),
-                  m("span", {class: "gold"}, "Sleeping rooms: "),
-                  m("span", hotel.sleepingRooms)
-                ]),
-                m("p", {}, [
-                  m("i", {class: "fa fa-users mr2 gold"}),
-                  m("span", {class: "gold"}, "Meeting rooms: "),
-                  m("span", hotel.meetingRoomCount)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "fl w-100"}, [
-                    m("i", {class: "fa fa-users mr2 gold"}),
-                    m("span", {class: "gold"}, "Largest rooms: "),
-                  ]),
-                  m("span", {class: "mt1 mb2 fl w-100 ph4"}, [
-                    m("span", {class: "fl f6 w-100"}, hotel.largestRooms[0].name + " (" + hotel.largestRooms[0].sqft + " Square Feet)"),
-                    m("span", {class: "fl f6 w-100 mt1"}, hotel.largestRooms[1].name + " (" + hotel.largestRooms[1].sqft + " Square Feet)"),
-                  ])
-                ]),
-                m("p", {}, [
-                  m("span", {class: "fl w-100"}, [
-                    m("i", {class: "fa fa-users mr2 gold"}),
-                    m("span", {class: "gold"}, "Downloads: "),
-                  ]),
-                  m("span", {class: "fl mt2 link dim pointer"}, [
-                    m("i", {class: "fa fa-link mr1"}),
-                    m("span", hotel.meetingSpace.capacityChart)
-                  ]),
-                  m("span", {class: "fr mt2 link dim pointer"}, [
-                    m("i", {class: "fa fa-link mr1"}),
-                    m("span", hotel.meetingSpace.floorPlan)
-                  ]),
-                ]),
-              ]),
-              m("div", {class: "tl fl w-100 bg-dark-gray pa2 near-white f7 bb b--black-20"}, [
-                m("h4", "Hotel Fees"),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Rooms tax: "),
-                  m("span", hotel.roomsTax)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Resort fee: "),
-                  m("span", hotel.resortFee)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "WiFi fee: "),
-                  m("span", hotel.wifiFee)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Rooms tax: "),
-                  m("span", hotel.roomsTax)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Sales tax: "),
-                  m("span", hotel.salesTax)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Service charge: "),
-                  m("span", hotel.serviceCharge)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Parking (self): "),
-                  m("span", hotel.parking.self)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Parking (valet): "),
-                  m("span", hotel.parking.valet)
-                ]),
-              ]),
-              m("div", {class: "tl fl w-100 bg-dark-green pa2 near-white f7 bb b--black-20"}, [
-                m("h4", "Food & Beverage"),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Banquet Menu: "),
-                  m("span", hotel.banquetMenu)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Custom menu available: "),
-                  m("span", hotel.customMenuAvailable)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Restaurants " + "(" + hotel.restaurants.length + "): "),
-                  m("span", hotel.restaurants[0].name)
-                ]),
-              ]),
-              m("div", {class: "tl fl w-100 bg-dark-gray pa2 near-white f7 bb b--black-20"}, [
-                m("h4", "Audio and Video"),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "AV Company: "),
-                  m("span", hotel.avCompany.name)
-                ]),
-              ]),
-              m("div", {class: "tl fl w-100 bg-dark-green pa2 near-white f7 bb b--black-20"}, [
-                m("h4", "Amenities"),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Loyalty Program: "),
-                  m("span", hotel.loyaltyProgram.name)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Fitness Center: "),
-                  m("span", hotel.fitnessCenter)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Pool: "),
-                  m("span", hotel.pool.available)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Pool indoors: "),
-                  m("span", hotel.pool.indoor)
-                ]),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Spa: "),
-                  m("span", hotel.spa.name)
-                ]),
-              ]),
-              m("div", {class: "tl fl w-100 bg-dark-gray pa2 near-white f7 bb b--black-20"}, [
-                m("h4", "Points of interest"),
-              ]),
-              m("div", {class: "tl fl w-100 bg-dark-green pa2 near-white f7 bb b--black-20"}, [
-                m("h4", "Airport"),
-                m("p", {}, [
-                  m("span", {class: "gold"}, "Name: "),
-                  m("span", {class: "fl w-100"}, hotel.airport.name + " (" + hotel.airport.abbreviation + ")")
-                ]),
-                m("p", {class: "fl w-100 mt2"}, [
-                  m("span", {class: "gold"}, "Distance to hotel: "),
-                  m("span", hotel.airport.distance)
-                ]),
-              ]),
-            ])
-          })
-        ])
-      ])
-    ])
-  }
-}
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const m = __webpack_require__(0)
-let Nav = __webpack_require__(2)
-
-module.exports = {
-  view: (vnode) => {
-    return m("div", {class: "fl w-100 h-100 vh-100 bg-near-white "}, [
-      m("div", {class: "fl vh-100 h-100 w-100"}, [
-        m("div", {class: "fl w-100 h-100 bg-near-white", style: "z-index: 11"}, vnode.children)
-      ])
-    ])
-  }
-}
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var m = __webpack_require__(0)
-var Nav = __webpack_require__(2)
-var ArticleCarousel = __webpack_require__(11)
-var UserLocation = __webpack_require__(3)
-var Weather = __webpack_require__(15)
-
-
-module.exports = {
-  oninit: () => {
-    UserLocation.load()
-    Weather.load(UserLocation.current)
-    document.addEventListener('DOMContentLoaded', function(){
-     Typed.new('.element', {
-       strings: ["^1000 meeting planning.^1000 ", "^1000 event coordination.^1000 ", "^1000 requests for proposals.^1000 ", "^1000 venue search.^1000"],
-       typeSpeed: 0,
-       loop: true,
-     });
-   });
-  },
-  view: () => {
-    return m("main", {class: "w-100 h-100 bg-near-white"}, [
-      //main hero
-      m("div#main-hero", {class: "pa3 near-white flex flex-column justify-center", style: "background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('img/main-hero.jpg'); background-size: cover; height: 650px;"}, [
-        m("div#caption", {class: "fl w-100"}, [
-          m("div", {class: "fl w-50 pa5"}, [
-            m("span", {class: "fl w-100"}, [
-              m("h1", {class: "fl f2"}, "Defining the future of"),
-              m("h1.element", {class: "pl3 fl f2"})
-            ]),
-            m("div#hero-cta", {class: "flex flex-column w-50"}, [
-              m("h1", {class: "f4 mb0"}, "Join now"),
-              m("p", {class: "f6 mt1 lh-copy"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lacus ut lacus dictum faucibus eu et tellus. Nunc sit amet sodales magna. Donec malesuada nisi quis lacus posuere bibendum."),
-              m("input", {class: "input ba b--yellow pa2 bg-white-20 h2 mb2 tc f6 tracked white", placeholder: "your email address"}),
-              m("a", {class: "flex items-center justify-center button ba b--yellow bg-black near-white h3"}, "Sign me up!")
-            ])
-          ]),
-          m("div", {class: "fl w-50 pa5"}, [
-            m("h1", {class: "f5 ttu mt4 tracked"}, "The latest news"),
-            m("h1", {class: "f2 measure"}, "The State of Meeting Planning in 2017"),
-            m("p", {class: "f4 measure mb4"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lacus ut lacus dictum faucibus eu et tellus. Nunc sit amet sodales magna. Donec malesuada nisi quis lacus posuere bibendum."),
-            m("a", {class: "bg-yellow black dib link button pa3 tracked pointer tracked dim"}, "READ MORE")
-          ])
-        ])
-      ]),
-      //article carousel
-      m(ArticleCarousel),
-      //call to action
-      m("div#cta", {class: "flex flex-row items-center justify-center ph3 yellow avenir fw4 h3 fl w-100 bg-dark-blue"}, [
-        m("p", "Get your daily dose of Meeting Glue everyday!"),
-        m("div", {class: "fl w-30 border-box"}, [
-          m("input", {class: "fl w-50 input-reset bg-black yellow avenir pa2 ba ml2", placeholder: "name@email.com"}),
-          m("a", {class: "fl w-20 link dim h-100 flex items-center justify-center bg-yellow blue b shadow-2", style: "padding: 11px"}, "Submit")
-        ])
-      ]),
-      //what we offer
-      m("div#what-we-offer", {class: "f5 bg-near-white fl w-100 pa4 db"}, [
-        m("div", {class: "mw8 center"}, [
-          m("h1", {class: "avenir fw5 blue ttu"}, "What We Offer"),
-          m("div", {class: "fl w-100"}, [
-            m("div", {class: "fl w-third"}, [
-              m("h1", {class: "f4 avenir fw4 underline"}, "Supplier Reviews"),
-              m("p", {class: "measure-narrow ph3"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis lacus vitae leo commodo pulvinar. Maecenas vel pharetra leo. Nullam condimentum eu ex ac bibendum. Suspendisse in tortor nisl. Aliquam iaculis lacinia imperdiet. Nunc porta ipsum sit amet consequat cursus. Nam vitae dolor viverra, mattis metus vel, sollicitudin massa.")
-            ]),
-            m("div", {class: "fl w-third"}, [
-              m("h1", {class: "f4 avenir fw4 underline"}, "Analytics"),
-              m("p", {class: "measure-narrow ph3"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis lacus vitae leo commodo pulvinar. Maecenas vel pharetra leo. Nullam condimentum eu ex ac bibendum. Suspendisse in tortor nisl. Aliquam iaculis lacinia imperdiet. Nunc porta ipsum sit amet consequat cursus. Nam vitae dolor viverra, mattis metus vel, sollicitudin massa.")
-            ]),
-            m("div", {class: "fl w-third"}, [
-              m("h1", {class: "f4 avenir fw4 underline"}, "RFP System"),
-              m("p", {class: "measure-narrow ph3"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis lacus vitae leo commodo pulvinar. Maecenas vel pharetra leo. Nullam condimentum eu ex ac bibendum. Suspendisse in tortor nisl. Aliquam iaculis lacinia imperdiet. Nunc porta ipsum sit amet consequat cursus. Nam vitae dolor viverra, mattis metus vel, sollicitudin massa.")
-            ])
-          ])
-        ])
-      ]),
-      //Weather
-      m("div#weather", {class: "f5 bg-white fl w-100 pa4 db"}, [
-        m("h1", {class: "avenir fw5 blue ttu"}, "Weather"),
-        m("div", Weather.loaded ? [
-          m("p", {class: "b"}, Weather.current.name),
-          m("p", {class: "ttc b"}, Weather.current.weather[0].description),
-          m("p", {class: "f6"}, "Humidity: " + Weather.current.main.humidity + "%"),
-          m("p", {class: "f6"}, "Pressure: " + Weather.current.main.pressure + "hpa"),
-          m("p", {class: "f6"}, "Current Temp: " + Weather.current.main.temp + "°F"),
-          m("p", {class: "f6"}, "Min Temp: " + Weather.current.main.temp_min + "°F"),
-          m("p", {class: "f6"}, "Max Temp: " + Weather.current.main.temp_max + "°F"),
-        ] : "Loading weather...")
-      ])
-    ])
-  }
-}
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-// shim for using process in browser
-var process = module.exports = {};
-
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-
-var cachedSetTimeout;
-var cachedClearTimeout;
-
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
-    "use strict";
-
-    if (global.setImmediate) {
-        return;
-    }
-
-    var nextHandle = 1; // Spec says greater than zero
-    var tasksByHandle = {};
-    var currentlyRunningATask = false;
-    var doc = global.document;
-    var registerImmediate;
-
-    function setImmediate(callback) {
-      // Callback can either be a function or a string
-      if (typeof callback !== "function") {
-        callback = new Function("" + callback);
-      }
-      // Copy function arguments
-      var args = new Array(arguments.length - 1);
-      for (var i = 0; i < args.length; i++) {
-          args[i] = arguments[i + 1];
-      }
-      // Store and register the task
-      var task = { callback: callback, args: args };
-      tasksByHandle[nextHandle] = task;
-      registerImmediate(nextHandle);
-      return nextHandle++;
-    }
-
-    function clearImmediate(handle) {
-        delete tasksByHandle[handle];
-    }
-
-    function run(task) {
-        var callback = task.callback;
-        var args = task.args;
-        switch (args.length) {
-        case 0:
-            callback();
-            break;
-        case 1:
-            callback(args[0]);
-            break;
-        case 2:
-            callback(args[0], args[1]);
-            break;
-        case 3:
-            callback(args[0], args[1], args[2]);
-            break;
-        default:
-            callback.apply(undefined, args);
-            break;
-        }
-    }
-
-    function runIfPresent(handle) {
-        // From the spec: "Wait until any invocations of this algorithm started before this one have completed."
-        // So if we're currently running a task, we'll need to delay this invocation.
-        if (currentlyRunningATask) {
-            // Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
-            // "too much recursion" error.
-            setTimeout(runIfPresent, 0, handle);
-        } else {
-            var task = tasksByHandle[handle];
-            if (task) {
-                currentlyRunningATask = true;
-                try {
-                    run(task);
-                } finally {
-                    clearImmediate(handle);
-                    currentlyRunningATask = false;
-                }
-            }
-        }
-    }
-
-    function installNextTickImplementation() {
-        registerImmediate = function(handle) {
-            process.nextTick(function () { runIfPresent(handle); });
-        };
-    }
-
-    function canUsePostMessage() {
-        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
-        // where `global.postMessage` means something completely different and can't be used for this purpose.
-        if (global.postMessage && !global.importScripts) {
-            var postMessageIsAsynchronous = true;
-            var oldOnMessage = global.onmessage;
-            global.onmessage = function() {
-                postMessageIsAsynchronous = false;
-            };
-            global.postMessage("", "*");
-            global.onmessage = oldOnMessage;
-            return postMessageIsAsynchronous;
-        }
-    }
-
-    function installPostMessageImplementation() {
-        // Installs an event handler on `global` for the `message` event: see
-        // * https://developer.mozilla.org/en/DOM/window.postMessage
-        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
-
-        var messagePrefix = "setImmediate$" + Math.random() + "$";
-        var onGlobalMessage = function(event) {
-            if (event.source === global &&
-                typeof event.data === "string" &&
-                event.data.indexOf(messagePrefix) === 0) {
-                runIfPresent(+event.data.slice(messagePrefix.length));
-            }
-        };
-
-        if (global.addEventListener) {
-            global.addEventListener("message", onGlobalMessage, false);
-        } else {
-            global.attachEvent("onmessage", onGlobalMessage);
-        }
-
-        registerImmediate = function(handle) {
-            global.postMessage(messagePrefix + handle, "*");
-        };
-    }
-
-    function installMessageChannelImplementation() {
-        var channel = new MessageChannel();
-        channel.port1.onmessage = function(event) {
-            var handle = event.data;
-            runIfPresent(handle);
-        };
-
-        registerImmediate = function(handle) {
-            channel.port2.postMessage(handle);
-        };
-    }
-
-    function installReadyStateChangeImplementation() {
-        var html = doc.documentElement;
-        registerImmediate = function(handle) {
-            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
-            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
-            var script = doc.createElement("script");
-            script.onreadystatechange = function () {
-                runIfPresent(handle);
-                script.onreadystatechange = null;
-                html.removeChild(script);
-                script = null;
-            };
-            html.appendChild(script);
-        };
-    }
-
-    function installSetTimeoutImplementation() {
-        registerImmediate = function(handle) {
-            setTimeout(runIfPresent, 0, handle);
-        };
-    }
-
-    // If supported, we should attach to the prototype of global, since that is where setTimeout et al. live.
-    var attachTo = Object.getPrototypeOf && Object.getPrototypeOf(global);
-    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
-
-    // Don't get fooled by e.g. browserify environments.
-    if ({}.toString.call(global.process) === "[object process]") {
-        // For Node.js before 0.9
-        installNextTickImplementation();
-
-    } else if (canUsePostMessage()) {
-        // For non-IE10 modern browsers
-        installPostMessageImplementation();
-
-    } else if (global.MessageChannel) {
-        // For web workers, where supported
-        installMessageChannelImplementation();
-
-    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
-        // For IE 6–8
-        installReadyStateChangeImplementation();
-
-    } else {
-        // For older browsers
-        installSetTimeoutImplementation();
-    }
-
-    attachTo.setImmediate = setImmediate;
-    attachTo.clearImmediate = clearImmediate;
-}(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(7)))
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var apply = Function.prototype.apply;
-
-// DOM APIs, for completeness
-
-exports.setTimeout = function() {
-  return new Timeout(apply.call(setTimeout, window, arguments), clearTimeout);
-};
-exports.setInterval = function() {
-  return new Timeout(apply.call(setInterval, window, arguments), clearInterval);
-};
-exports.clearTimeout =
-exports.clearInterval = function(timeout) {
-  if (timeout) {
-    timeout.close();
-  }
-};
-
-function Timeout(id, clearFn) {
-  this._id = id;
-  this._clearFn = clearFn;
-}
-Timeout.prototype.unref = Timeout.prototype.ref = function() {};
-Timeout.prototype.close = function() {
-  this._clearFn.call(window, this._id);
-};
-
-// Does not start the time, just sets up the members needed.
-exports.enroll = function(item, msecs) {
-  clearTimeout(item._idleTimeoutId);
-  item._idleTimeout = msecs;
-};
-
-exports.unenroll = function(item) {
-  clearTimeout(item._idleTimeoutId);
-  item._idleTimeout = -1;
-};
-
-exports._unrefActive = exports.active = function(item) {
-  clearTimeout(item._idleTimeoutId);
-
-  var msecs = item._idleTimeout;
-  if (msecs >= 0) {
-    item._idleTimeoutId = setTimeout(function onTimeout() {
-      if (item._onTimeout)
-        item._onTimeout();
-    }, msecs);
-  }
-};
-
-// setimmediate attaches itself to the global object
-__webpack_require__(8);
-exports.setImmediate = setImmediate;
-exports.clearImmediate = clearImmediate;
-
-
-/***/ }),
-/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscore.js 1.8.3
@@ -3700,30 +2791,83 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscor
 
 
 /***/ }),
-/* 11 */
+/* 2 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var m = __webpack_require__(0)
-var Article = __webpack_require__(13)
+
+var Nav = {
+    items: [
+      {name: "Home", location: "/main"},
+      {name: "Compare", location: "/compare"},
+    ]
+}
 
 module.exports = {
   view: () => {
-    return m("div", {class: "fl w-100 db bg-near-white pa4"}, [
-      m("h1", {class: "avenir fw5 green ttu"}, "Latest Stories"),
-      m("div#carousel", {class: "flex flex-row", style: "max-height: 400px; width: 100%; overflow-x: scroll; overflow-y: hidden; -webkit-overflow-scrolling: touch"}, Article.list.map((article)=>{
-        return m("div", {class: "mr4", style: "min-width: 200px"}, [
-          m("img", {class: "fl w-100", src: "//placehold.it/400x400"}),
-          m("h1", {class: "avenir green fl f4 fw4 w-100 mb0"}, article.title),
-          m("p", {class: "avenir fl w-100 gray f6  mt1"}, article.published)
+    return  m("nav", {class:"bg-blue fl w-100", style: "z-index: 0 !important"}, [
+          m("div", {class: "flex items-center pa1", style: "height: 90px"}, [
+            m("div#branding", {class: "w-20 ph3 pointer"}, [
+              m("img", {alt: "Meeting Glue logo: Black serif uppercase text with green pineapple leaves over the 'U'", src: "img/logo/logo-meeting-glue.png"})
+            ]),
+            m("div#nav-items", {class: "w-60"}, [
+              m("ul", {class: "avenir list black"}, Nav.items.map(function(navItem) {
+                return m("li", {class: "dib fl mr4 f4 link dim pointer"}, [
+                  m("a", {class: "link white dim pointer", oncreate: m.route.link, href: navItem.location}, navItem.name)
+                ])
+              }))
+            ]),
+            m("div#social-and-search", {class: "w-20 pb2"}, [
+              m("ul", {class: "list near-black"}, [
+                m("li", {class: "dib fl mr4 f3 black link dim pointer"}, [
+                  m("i", {class: "fa fa-twitter"}),
+                ]),
+                m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [
+                  m("i", {class: "fa fa-facebook"}),
+                ]),
+                m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [
+                  m("i", {class: "fa fa-linkedin"}),
+                ]),
+                m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [
+                  m("i", {class: "fa fa-search"}),
+                ])
+              ])
+            ])
+          ])
         ])
-      }))
-    ])
   }
 }
 
 
 /***/ }),
-/* 12 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(0)
@@ -3736,47 +2880,11 @@ module.exports = {
 
 
 /***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var m = __webpack_require__(0)
-
-var Article = {
-  list: [
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
-  ],
-  load: function() {}
-}
-
-module.exports = Article
-
-
-/***/ }),
-/* 14 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(0)
-const _ = __webpack_require__(10)
+const _ = __webpack_require__(1)
 
 let Hotel = {
   compareThis: (hotel)=>{
@@ -3963,11 +3071,1132 @@ module.exports = Hotel
 
 
 /***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var m = __webpack_require__(0)
+
+var crd = {};
+
+var UserLocation = {
+  load: () => {
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+    function success(pos) {
+      crd = pos.coords;
+      UserLocation.current = pos.coords
+      console.log('Your current position is:');
+      console.log(`Latitude : ${crd.latitude}`);
+      console.log(`Longitude: ${crd.longitude}`);
+      console.log(`More or less ${crd.accuracy} meters.`);
+    };
+    function error(err) {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    };
+    navigator.geolocation.getCurrentPosition(success, error, options);
+  },
+  current: {}
+}
+
+module.exports = UserLocation
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const m = __webpack_require__(0)
+let Hotel = __webpack_require__(5)
+let TitleBar = __webpack_require__(4)
+
+module.exports = {
+  view: (vnode) => {
+    return m("div", {class: "fl w-100 center h-100 vh-100", style: "max-width: 100%; overflow-x: hidden;"}, [
+      m("div", {class: "fl w-100"}, [
+        m("div", {class: "fl w-25 v-100 bg-black-10 pa2"}, [
+          m("h1", "Available Hotels"),
+          Hotel.list.map(function(hotel){
+            return m("div", {class: "h3 bb b--black-30 flex items-center link dim pointer", onclick: Hotel.compareThis.bind(Hotel, hotel)}, hotel.name)
+          })
+        ]),
+        m("div", {class: "fl w-75 space-between flex flex-row"}, [
+          Hotel.compare.map(function(hotel){
+            return m("div", {class: "avenir h-100 shadow-1 mr2 h2 fl bg-dark-gray", style: "min-width: 300px; max-width: 300px; position: relative !important"}, [
+              m("div", {class: "fl bg-green near-white avenir bb b--black-20 pa2 h6 fixed", style: "min-width: 300px; height: 90px; position: fixed; top: 0px; "}, [
+                //hotel name
+                m("h5", {class: "tc"}, hotel.name),
+                m("h5", {class: "tc em"}, hotel.hotelRating),
+              ]),
+              m("div", {class: "fl w-100 bg-green near-white avenir bb b--black-20 pa2 h6 relative", style: "min-width: 300px;"}, [
+                //hotel name
+                m("h5", {class: "tc"}, hotel.name),
+                m("h5", {class: "tc em"}, hotel.hotelRating),
+              ]),
+              m("div", {class: "tl bg-dark-gray near-white pa2 fl w-100"}, [
+                //street address
+                m("div", {class: ""}, [
+                  m("a", {class: "fl w-100 bb b--white-30"}, [
+                    m("p", {class: "fl w-100 mb0"}, [
+                      m("i", {class: "fa fa-map-marker mr2"}),
+                      m("span", hotel.address.street)
+                    ]),
+                    m("p", {class: "fl mr1 mt0"}, hotel.address.city),
+                    m("p", {class: "fl mr1 mt0"}, hotel.address.state),
+                    m("p", {class: "fl mr1 mt0"}, hotel.address.zip),
+                  ])
+                ]),
+                m("p", {class: "fl w-100 mt3 mb1"}, hotel.website),
+                m("p", {class: "fl w-100 mb2 mt0"}, "@" + hotel.twitter),
+              ]),
+              m("div", {class: "pa2 f7 bg-dark-green near-white bb b--black-20 fl w-100"}, [
+                m("h4", "Sales office"),
+                m("p", {}, [
+                  m("i", {class: "fa fa-phone mr2"}),
+                  m("span", hotel.salesOffice.phone)
+                ]),
+                m("p", {}, [
+                  m("i", {class: "fa fa-paper-plane mr2"}),
+                  m("span", hotel.salesOffice.email)
+                ]),
+                m("p", {}, [
+                  m("i", {class: "fa fa-user-circle mr2"}),
+                  m("span", "Director of Catering: "),
+                  m("span", hotel.salesOffice.directorOfCatering)
+                ]),
+                m("p", {}, [
+                  m("i", {class: "fa fa-user-circle mr2"}),
+                  m("span", "Director of Sales: "),
+                  m("span", hotel.salesOffice.directorOfSales)
+                ]),
+              ]),
+              m("div", {class: "tl fl w-100 bg-dark-gray pa2 near-white f7 bb b--black-20"}, [
+                m("h4", "Hotel Fees"),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Rooms tax: "),
+                  m("span", hotel.roomsTax)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Resort fee: "),
+                  m("span", hotel.resortFee)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "WiFi fee: "),
+                  m("span", hotel.wifiFee)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Public WiFi fee: "),
+                  m("span", hotel.publicWifiSpace)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Rooms tax: "),
+                  m("span", hotel.roomsTax)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Sales tax: "),
+                  m("span", hotel.salesTax)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Service charge: "),
+                  m("span", hotel.serviceCharge)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Parking (self): "),
+                  m("span", hotel.parking.self)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Parking (valet): "),
+                  m("span", hotel.parking.valet)
+                ]),
+              ]),
+              m("div", {class: "pa2 f7 bg-dark-green near-white bb b--black-20 fl w-100"}, [
+                m("h4", "Space details"),
+                m("p", {}, [
+                  m("i", {class: "fa fa-bed mr2 gold"}),
+                  m("span", {class: "gold"}, "Sleeping rooms: "),
+                  m("span", hotel.sleepingRooms)
+                ]),
+                m("p", {}, [
+                  m("i", {class: "fa fa-users mr2 gold"}),
+                  m("span", {class: "gold"}, "Meeting rooms: "),
+                  m("span", hotel.meetingRoomCount)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "fl w-100"}, [
+                    m("i", {class: "fa fa-users mr2 gold"}),
+                    m("span", {class: "gold"}, "Largest rooms: "),
+                  ]),
+                  m("span", {class: "mt1 mb2 fl w-100 ph4"}, [
+                    m("span", {class: "fl f6 w-100"}, hotel.largestRooms[0].name + " (" + hotel.largestRooms[0].sqft + " Square Feet)"),
+                    m("span", {class: "fl f6 w-100 mt1"}, hotel.largestRooms[1].name + " (" + hotel.largestRooms[1].sqft + " Square Feet)"),
+                  ])
+                ]),
+                m("p", {}, [
+                  m("span", {class: "fl w-100"}, [
+                    m("i", {class: "fa fa-users mr2 gold"}),
+                    m("span", {class: "gold"}, "Downloads: "),
+                  ]),
+                  m("span", {class: "fl mt2 link dim pointer"}, [
+                    m("i", {class: "fa fa-link mr1"}),
+                    m("span", hotel.meetingSpace.capacityChart)
+                  ]),
+                  m("span", {class: "fr mt2 link dim pointer"}, [
+                    m("i", {class: "fa fa-link mr1"}),
+                    m("span", hotel.meetingSpace.floorPlan)
+                  ]),
+                ]),
+              ]),
+              m("div", {class: "tl fl w-100 bg-dark-gray pa2 near-white f7 bb b--black-20"}, [
+                m("h4", "Hotel Fees"),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Rooms tax: "),
+                  m("span", hotel.roomsTax)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Resort fee: "),
+                  m("span", hotel.resortFee)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "WiFi fee: "),
+                  m("span", hotel.wifiFee)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Rooms tax: "),
+                  m("span", hotel.roomsTax)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Sales tax: "),
+                  m("span", hotel.salesTax)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Service charge: "),
+                  m("span", hotel.serviceCharge)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Parking (self): "),
+                  m("span", hotel.parking.self)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Parking (valet): "),
+                  m("span", hotel.parking.valet)
+                ]),
+              ]),
+              m("div", {class: "tl fl w-100 bg-dark-green pa2 near-white f7 bb b--black-20"}, [
+                m("h4", "Food & Beverage"),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Banquet Menu: "),
+                  m("span", hotel.banquetMenu)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Custom menu available: "),
+                  m("span", hotel.customMenuAvailable)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Restaurants " + "(" + hotel.restaurants.length + "): "),
+                  m("span", hotel.restaurants[0].name)
+                ]),
+              ]),
+              m("div", {class: "tl fl w-100 bg-dark-gray pa2 near-white f7 bb b--black-20"}, [
+                m("h4", "Audio and Video"),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "AV Company: "),
+                  m("span", hotel.avCompany.name)
+                ]),
+              ]),
+              m("div", {class: "tl fl w-100 bg-dark-green pa2 near-white f7 bb b--black-20"}, [
+                m("h4", "Amenities"),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Loyalty Program: "),
+                  m("span", hotel.loyaltyProgram.name)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Fitness Center: "),
+                  m("span", hotel.fitnessCenter)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Pool: "),
+                  m("span", hotel.pool.available)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Pool indoors: "),
+                  m("span", hotel.pool.indoor)
+                ]),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Spa: "),
+                  m("span", hotel.spa.name)
+                ]),
+              ]),
+              m("div", {class: "tl fl w-100 bg-dark-gray pa2 near-white f7 bb b--black-20"}, [
+                m("h4", "Points of interest"),
+              ]),
+              m("div", {class: "tl fl w-100 bg-dark-green pa2 near-white f7 bb b--black-20"}, [
+                m("h4", "Airport"),
+                m("p", {}, [
+                  m("span", {class: "gold"}, "Name: "),
+                  m("span", {class: "fl w-100"}, hotel.airport.name + " (" + hotel.airport.abbreviation + ")")
+                ]),
+                m("p", {class: "fl w-100 mt2"}, [
+                  m("span", {class: "gold"}, "Distance to hotel: "),
+                  m("span", hotel.airport.distance)
+                ]),
+              ]),
+            ])
+          })
+        ])
+      ])
+    ])
+  }
+}
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const m = __webpack_require__(0)
+let Nav = __webpack_require__(3)
+
+module.exports = {
+  view: (vnode) => {
+    return m("div", {class: "fl w-100 h-100 vh-100 bg-near-white "}, [
+      m("div", {class: "fl vh-100 h-100 w-100"}, [
+        m("div", {class: "fl w-100 h-100 bg-near-white", style: "z-index: 11"}, vnode.children)
+      ])
+    ])
+  }
+}
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var m = __webpack_require__(0)
+var Nav = __webpack_require__(3)
+var ArticleCarousel = __webpack_require__(14)
+var UserLocation = __webpack_require__(6)
+var Weather = __webpack_require__(17)
+
+
+module.exports = {
+  oninit: () => {
+    UserLocation.load()
+    Weather.load(UserLocation.current)
+    document.addEventListener('DOMContentLoaded', function(){
+     Typed.new('.element', {
+       strings: ["^1000 meeting planning.^1000 ", "^1000 event coordination.^1000 ", "^1000 requests for proposals.^1000 ", "^1000 venue search.^1000"],
+       typeSpeed: 0,
+       loop: true,
+     });
+   });
+  },
+  view: () => {
+    return m("main", {class: "w-100 h-100 bg-near-white"}, [
+      //main hero
+      m("div#main-hero", {class: "pa3 near-white flex flex-column justify-center", style: "background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('img/main-hero.jpg'); background-size: cover; height: 650px;"}, [
+        m("div#caption", {class: "fl w-100"}, [
+          m("div", {class: "fl w-50 pa5"}, [
+            m("span", {class: "fl w-100"}, [
+              m("h1", {class: "fl f2"}, "Defining the future of"),
+              m("h1.element", {class: "pl3 fl f2"})
+            ]),
+            m("div#hero-cta", {class: "flex flex-column w-50"}, [
+              m("h1", {class: "f4 mb0"}, "Join now"),
+              m("p", {class: "f6 mt1 lh-copy"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lacus ut lacus dictum faucibus eu et tellus. Nunc sit amet sodales magna. Donec malesuada nisi quis lacus posuere bibendum."),
+              m("input", {class: "input ba b--yellow pa2 bg-white-20 h2 mb2 tc f6 tracked white", placeholder: "your email address"}),
+              m("a", {class: "flex items-center justify-center button ba b--yellow bg-black near-white h3"}, "Sign me up!")
+            ])
+          ]),
+          m("div", {class: "fl w-50 pa5"}, [
+            m("h1", {class: "f5 ttu mt4 tracked"}, "The latest news"),
+            m("h1", {class: "f2 measure"}, "The State of Meeting Planning in 2017"),
+            m("p", {class: "f4 measure mb4"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet lacus ut lacus dictum faucibus eu et tellus. Nunc sit amet sodales magna. Donec malesuada nisi quis lacus posuere bibendum."),
+            m("a", {class: "bg-yellow black dib link button pa3 tracked pointer tracked dim"}, "READ MORE")
+          ])
+        ])
+      ]),
+      //article carousel
+      m(ArticleCarousel),
+      //call to action
+      m("div#cta", {class: "flex flex-row items-center justify-center ph3 yellow avenir fw4 h3 fl w-100 bg-dark-blue"}, [
+        m("p", "Get your daily dose of Meeting Glue everyday!"),
+        m("div", {class: "fl w-30 border-box"}, [
+          m("input", {class: "fl w-50 input-reset bg-black yellow avenir pa2 ba ml2", placeholder: "name@email.com"}),
+          m("a", {class: "fl w-20 link dim h-100 flex items-center justify-center bg-yellow blue b shadow-2", style: "padding: 11px"}, "Submit")
+        ])
+      ]),
+      //what we offer
+      m("div#what-we-offer", {class: "f5 bg-near-white fl w-100 pa4 db"}, [
+        m("div", {class: "mw8 center"}, [
+          m("h1", {class: "avenir fw5 blue ttu"}, "What We Offer"),
+          m("div", {class: "fl w-100"}, [
+            m("div", {class: "fl w-third"}, [
+              m("h1", {class: "f4 avenir fw4 underline"}, "Supplier Reviews"),
+              m("p", {class: "measure-narrow ph3"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis lacus vitae leo commodo pulvinar. Maecenas vel pharetra leo. Nullam condimentum eu ex ac bibendum. Suspendisse in tortor nisl. Aliquam iaculis lacinia imperdiet. Nunc porta ipsum sit amet consequat cursus. Nam vitae dolor viverra, mattis metus vel, sollicitudin massa.")
+            ]),
+            m("div", {class: "fl w-third"}, [
+              m("h1", {class: "f4 avenir fw4 underline"}, "Analytics"),
+              m("p", {class: "measure-narrow ph3"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis lacus vitae leo commodo pulvinar. Maecenas vel pharetra leo. Nullam condimentum eu ex ac bibendum. Suspendisse in tortor nisl. Aliquam iaculis lacinia imperdiet. Nunc porta ipsum sit amet consequat cursus. Nam vitae dolor viverra, mattis metus vel, sollicitudin massa.")
+            ]),
+            m("div", {class: "fl w-third"}, [
+              m("h1", {class: "f4 avenir fw4 underline"}, "RFP System"),
+              m("p", {class: "measure-narrow ph3"}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis lacus vitae leo commodo pulvinar. Maecenas vel pharetra leo. Nullam condimentum eu ex ac bibendum. Suspendisse in tortor nisl. Aliquam iaculis lacinia imperdiet. Nunc porta ipsum sit amet consequat cursus. Nam vitae dolor viverra, mattis metus vel, sollicitudin massa.")
+            ])
+          ])
+        ])
+      ]),
+      //Weather
+      m("div#weather", {class: "f5 bg-white fl w-100 pa4 db"}, [
+        m("h1", {class: "avenir fw5 blue ttu"}, "Weather"),
+        m("div", Weather.loaded ? [
+          m("p", {class: "b"}, Weather.current.name),
+          m("p", {class: "ttc b"}, Weather.current.weather[0].description),
+          m("p", {class: "f6"}, "Humidity: " + Weather.current.main.humidity + "%"),
+          m("p", {class: "f6"}, "Pressure: " + Weather.current.main.pressure + "hpa"),
+          m("p", {class: "f6"}, "Current Temp: " + Weather.current.main.temp + "°F"),
+          m("p", {class: "f6"}, "Min Temp: " + Weather.current.main.temp_min + "°F"),
+          m("p", {class: "f6"}, "Max Temp: " + Weather.current.main.temp_max + "°F"),
+        ] : "Loading weather...")
+      ])
+    ])
+  }
+}
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const m = __webpack_require__(0)
+let Hotel = __webpack_require__(5)
+let TitleBar = __webpack_require__(4)
+let RFP = __webpack_require__(16)
+let _ = __webpack_require__(1)
+
+module.exports = {
+  view: (vnode) => {
+    return m('div', {class: 'fl w-100'}, [
+      m('div', {class: RFP.blockEditor ? 'bg-white black pa3 absolute top-0 right-0 bottom-0 left-0' : 'dn', style: 'z-index: 9999'}, [
+        m('div', {class: 'relative'}, [
+          m('div', {class: 'absolute top-0 right-0 red', onclick: RFP.toggleBlockEditor}, 'Close'),
+          m('div', {class: 'fl w-100 mt3'}, [
+            m('h1', 'Content Block Editor'),
+            m('div', {class: 'fl w-100'}, [
+              m('div', {class: 'fl w-50'}, [
+                RFP.targetBlock.body.map(function(x) {
+                  return m('textarea[rows=10]', {oninput: m.withAttr('value', function(val) { let id = x.id; let thisBody = _.find(RFP.targetBlock.body, function(c) { if(c.id === id) { c.content = val} }) }), value: x.content, class: 'db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2', style: 'height: auto'},  x.content)
+                }),
+              ]),
+              m('div', {class: 'fl w-50'}, [
+                m('label', {class: 'fl w-100 fw2 ttu tracked mb3 bb b-black--10'}, 'PREVIEW'),
+                RFP.targetBlock.body.map(function(x){
+                  return m(x.type, x.content)
+                })
+              ])
+            ]),
+          ])
+        ])
+      ]),
+      m('div', {class: RFP.chipEditor ? 'bg-white black pa3 absolute top-0 right-0 bottom-0 left-0' : 'dn', style: 'z-index: 9999'}, [
+        m('div', {class: 'relative measure center'}, [
+          m('div', {class: 'absolute top-0 right-0 red', onclick: RFP.toggleChipEditor}, 'Close'),
+          m('div', {class: 'fl w-100 mt3'}, [
+            m('h1', 'Editor'),
+            m('div', {class: 'fl w-100'}, [
+              m('label', {class: 'fl w-100'}, 'Event name'),
+              m('input', {class: 'fl w-100'}),
+            ]),
+            m('div', {class: 'fl w-100 mt3'}, [
+              m('label', {class: 'fl w-100'}, 'Start date'),
+              m('input', {class: 'fl w-100'}),
+            ]),
+            m('div', {class: 'fl w-100 mt3'}, [
+              m('label', {class: 'fl w-100'}, 'End date'),
+              m('input', {class: 'fl w-100'}),
+            ]),
+            m('div', {class: 'fl w-100 mt3'}, [
+              m('label', {class: 'fl w-100'}, 'Attendance estimate'),
+              m('input', {class: 'fl w-100', type: 'number'}),
+            ]),
+          ])
+        ])
+      ]),
+      m('div', {class: 'fl w-50'}, [
+        m('div', {class: 'sans-serif bg-white black-80 fl w-100 pa2 h-100', style: 'min-height: 100vh'}, [
+          //header
+          m('h1', {class: 'tc'}, 'Request for Proposal'),
+          m('div', {class: 'pa3'}, [
+            //header rfp range
+            m('h3', {class: 'tc'}, '1. Choose RFP range'),
+            //options rfp range
+            m('div', {class: 'flex flex-row justify-between w-100 mt4'}, [
+              m('a', {class: 'shadow-1 fw5 blue link dim pointer pa2 bg-black-10 br2 f6'}, 'Hotel Name'),
+              m('a', {class: 'shadow-1 fw5 blue link dim pointer pa2 bg-black-10 br2 f6'}, 'Blanket CITYNAME'),
+              m('a', {class: 'shadow-1 fw5 blue link dim pointer pa2 bg-black-10 br2 f6'}, 'Off-site venue'),
+              m('a', {class: 'shadow-1 fw5 blue link dim pointer pa2 bg-black-10 br2 f6'}, 'Other supplier'),
+            ]),
+          ]),
+          //NSO CVB reps
+          m('h3', {class: 'mt5 tc'}, '2. Choose reps'),
+          m('div', {class: 'fl w-100'}, [
+            m('ul', {class: 'measure center list h5 w-50 br2 bg-black-10 pr4', style: 'overflow: scroll'}, [
+              m('li', {class: 'h2 bb b-black--10 pv4'}, [
+                m('a', {class: 'link dim pointer'}, 'Add all reps')
+              ]),
+              m('li', {class: 'h2 bb b-black--10 pv4'}, [
+                m('a', {class: 'link dim pointer'}, 'Add all NSO reps')
+              ]),
+              m('li', {class: 'h2 bb b-black--10 pv4'}, [
+                m('a', {class: 'link dim pointer'}, 'Add all CVB reps')
+              ]),
+              m('li', {class: 'h2 bb b-black--10 pv4'}, [
+                m('a', {class: 'link dim pointer'}, 'NSO rep: Tom Baker')
+              ]),
+              m('li', {class: 'h2 bb b-black--10 pv4'}, [
+                m('a', {class: 'link dim pointer'}, 'NSO rep: Peter Davison')
+              ]),
+              m('li', {class: 'h2 bb b-black--10 pv4'}, [
+                m('a', {class: 'link dim pointer'}, 'NSO rep: David Tennant')
+              ]),
+              m('li', {class: 'h2 bb b-black--10 pv4'}, [
+                m('a', {class: 'link dim pointer'}, 'NSO rep: Matt Smith')
+              ]),
+              m('li', {class: 'h2 bb b-black--10 pv4'}, [
+                m('a', {class: 'link dim pointer'}, 'CVB rep: Tom Baker')
+              ]),
+              m('li', {class: 'h2 bb b-black--10 pv4'}, [
+                m('a', {class: 'link dim pointer'}, 'CVB rep: Tom Baker')
+              ]),
+              m('li', {class: 'h2 bb b-black--10 pv4'}, [
+                m('a', {class: 'link dim pointer'}, 'CVB rep: Tom Baker')
+              ]),
+              m('li', {class: 'h2 bb b-black--10 pv4'}, [
+                m('a', {class: 'link dim pointer'}, 'CVB rep: Tom Baker')
+              ]),
+              m('li', {class: 'h2 bb b-black--10 pv4'}, [
+                m('a', {class: 'link dim pointer'}, 'CVB rep: Tom Baker')
+              ]),
+              m('li', {class: 'h2 bb b-black--10 pv4'}, [
+                m('a', {class: 'link dim pointer'}, 'CVB rep: Tom Baker')
+              ]),
+              m('li', {class: 'h2 bb b-black--10 pv4'}, [
+                m('a', {class: 'link dim pointer'}, 'CVB rep: Tom Baker')
+              ]),
+              m('li', {class: 'h2 bb b-black--10 pv4'}, [
+                m('a', {class: 'link dim pointer'}, 'CVB rep: Tom Baker')
+              ]),
+            ])
+          ]),
+          m('div', {class: 'fl w-100 mt5'}, [
+            m('h3', {class: 'tc'}, '3. Send & track'),
+            m('a', {class: 'fl w-100 pa2 br4 tc link dim bg-green white'}, 'Send')
+          ])
+        ])
+      ]),
+      //right side
+      m('div', {class: 'fl h-100 w-50 bg-light-gray pa2', style: 'min-height: 100vh; overflow-y: scroll; max-height: 100vh'}, [
+        //range chips
+        m('div', {class: 'mt3', id: 'range'}, [
+          m('h3', 'RFP Range'),
+          m('div', {class: 'bg-dark-gray br2 white pa2 h3 flex items-center w-100', style: 'overflow-x: scroll'}, [
+            m('div', {class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Hard Rock Hotel LV'),
+            m('div', {class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Other: User entered name'),
+            m('div', {class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Las Vegas, NV')
+          ])
+        ]),
+        //recipients chips
+        m('div', {class: 'mt3', id: 'recipients'}, [
+          m('h3', 'Recipients'),
+          m('div', {class: 'bg-dark-gray br2 white pa2 h3 flex items-center w-100', style: 'overflow-x: scroll'}, [
+            m('div', {class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'David Tennant')
+          ])
+        ]),
+        m('div', {class: 'mt3', id: 'rfp-content'}, [
+          m('h3', 'RFP Content'),
+          m('div', {class: 'bg-light-blue br2 black pa2 h3 flex items-center w-100 shadow-2', style: 'overflow-x: scroll; margin-bottom: -1px'}, [
+            m('div', {onclick: RFP.toggleChipEditor.bind(RFP, 'event'), class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Event name'),
+            m('div', {onclick: RFP.toggleChipEditor.bind(RFP, 'dates'), class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Event dates'),
+            m('div', {onclick: RFP.toggleChipEditor.bind(RFP, 'attendance'), class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Attendance estimate'),
+          ]),
+          RFP.current.blocks.map(function(b) {
+            return m('div', {class: 'fl w-100 bg-white black pa2 h-100'}, [
+              m('div', {class: 'fl w-100 bg-near-white pa2 mt3 relative'},[
+                m('div', {class: 'absolute top-0 right-0 f6 gray pa2'}, 'drag to reorder'),
+                m('div', {class: 'absolute bottom-0 right-0 f6 gray pa2', onclick: RFP.toggleBlockEditor.bind(RFP, b)}, 'edit'),
+                b.body.map(function(bb) {
+                  return m(bb.type, bb.content)
+                })
+              ])
+            ])
+          }),
+        ]),
+      ])
+    ])
+  }
+}
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
+    "use strict";
+
+    if (global.setImmediate) {
+        return;
+    }
+
+    var nextHandle = 1; // Spec says greater than zero
+    var tasksByHandle = {};
+    var currentlyRunningATask = false;
+    var doc = global.document;
+    var registerImmediate;
+
+    function setImmediate(callback) {
+      // Callback can either be a function or a string
+      if (typeof callback !== "function") {
+        callback = new Function("" + callback);
+      }
+      // Copy function arguments
+      var args = new Array(arguments.length - 1);
+      for (var i = 0; i < args.length; i++) {
+          args[i] = arguments[i + 1];
+      }
+      // Store and register the task
+      var task = { callback: callback, args: args };
+      tasksByHandle[nextHandle] = task;
+      registerImmediate(nextHandle);
+      return nextHandle++;
+    }
+
+    function clearImmediate(handle) {
+        delete tasksByHandle[handle];
+    }
+
+    function run(task) {
+        var callback = task.callback;
+        var args = task.args;
+        switch (args.length) {
+        case 0:
+            callback();
+            break;
+        case 1:
+            callback(args[0]);
+            break;
+        case 2:
+            callback(args[0], args[1]);
+            break;
+        case 3:
+            callback(args[0], args[1], args[2]);
+            break;
+        default:
+            callback.apply(undefined, args);
+            break;
+        }
+    }
+
+    function runIfPresent(handle) {
+        // From the spec: "Wait until any invocations of this algorithm started before this one have completed."
+        // So if we're currently running a task, we'll need to delay this invocation.
+        if (currentlyRunningATask) {
+            // Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
+            // "too much recursion" error.
+            setTimeout(runIfPresent, 0, handle);
+        } else {
+            var task = tasksByHandle[handle];
+            if (task) {
+                currentlyRunningATask = true;
+                try {
+                    run(task);
+                } finally {
+                    clearImmediate(handle);
+                    currentlyRunningATask = false;
+                }
+            }
+        }
+    }
+
+    function installNextTickImplementation() {
+        registerImmediate = function(handle) {
+            process.nextTick(function () { runIfPresent(handle); });
+        };
+    }
+
+    function canUsePostMessage() {
+        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
+        // where `global.postMessage` means something completely different and can't be used for this purpose.
+        if (global.postMessage && !global.importScripts) {
+            var postMessageIsAsynchronous = true;
+            var oldOnMessage = global.onmessage;
+            global.onmessage = function() {
+                postMessageIsAsynchronous = false;
+            };
+            global.postMessage("", "*");
+            global.onmessage = oldOnMessage;
+            return postMessageIsAsynchronous;
+        }
+    }
+
+    function installPostMessageImplementation() {
+        // Installs an event handler on `global` for the `message` event: see
+        // * https://developer.mozilla.org/en/DOM/window.postMessage
+        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
+
+        var messagePrefix = "setImmediate$" + Math.random() + "$";
+        var onGlobalMessage = function(event) {
+            if (event.source === global &&
+                typeof event.data === "string" &&
+                event.data.indexOf(messagePrefix) === 0) {
+                runIfPresent(+event.data.slice(messagePrefix.length));
+            }
+        };
+
+        if (global.addEventListener) {
+            global.addEventListener("message", onGlobalMessage, false);
+        } else {
+            global.attachEvent("onmessage", onGlobalMessage);
+        }
+
+        registerImmediate = function(handle) {
+            global.postMessage(messagePrefix + handle, "*");
+        };
+    }
+
+    function installMessageChannelImplementation() {
+        var channel = new MessageChannel();
+        channel.port1.onmessage = function(event) {
+            var handle = event.data;
+            runIfPresent(handle);
+        };
+
+        registerImmediate = function(handle) {
+            channel.port2.postMessage(handle);
+        };
+    }
+
+    function installReadyStateChangeImplementation() {
+        var html = doc.documentElement;
+        registerImmediate = function(handle) {
+            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
+            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
+            var script = doc.createElement("script");
+            script.onreadystatechange = function () {
+                runIfPresent(handle);
+                script.onreadystatechange = null;
+                html.removeChild(script);
+                script = null;
+            };
+            html.appendChild(script);
+        };
+    }
+
+    function installSetTimeoutImplementation() {
+        registerImmediate = function(handle) {
+            setTimeout(runIfPresent, 0, handle);
+        };
+    }
+
+    // If supported, we should attach to the prototype of global, since that is where setTimeout et al. live.
+    var attachTo = Object.getPrototypeOf && Object.getPrototypeOf(global);
+    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
+
+    // Don't get fooled by e.g. browserify environments.
+    if ({}.toString.call(global.process) === "[object process]") {
+        // For Node.js before 0.9
+        installNextTickImplementation();
+
+    } else if (canUsePostMessage()) {
+        // For non-IE10 modern browsers
+        installPostMessageImplementation();
+
+    } else if (global.MessageChannel) {
+        // For web workers, where supported
+        installMessageChannelImplementation();
+
+    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
+        // For IE 6–8
+        installReadyStateChangeImplementation();
+
+    } else {
+        // For older browsers
+        installSetTimeoutImplementation();
+    }
+
+    attachTo.setImmediate = setImmediate;
+    attachTo.clearImmediate = clearImmediate;
+}(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(11)))
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var apply = Function.prototype.apply;
+
+// DOM APIs, for completeness
+
+exports.setTimeout = function() {
+  return new Timeout(apply.call(setTimeout, window, arguments), clearTimeout);
+};
+exports.setInterval = function() {
+  return new Timeout(apply.call(setInterval, window, arguments), clearInterval);
+};
+exports.clearTimeout =
+exports.clearInterval = function(timeout) {
+  if (timeout) {
+    timeout.close();
+  }
+};
+
+function Timeout(id, clearFn) {
+  this._id = id;
+  this._clearFn = clearFn;
+}
+Timeout.prototype.unref = Timeout.prototype.ref = function() {};
+Timeout.prototype.close = function() {
+  this._clearFn.call(window, this._id);
+};
+
+// Does not start the time, just sets up the members needed.
+exports.enroll = function(item, msecs) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = msecs;
+};
+
+exports.unenroll = function(item) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = -1;
+};
+
+exports._unrefActive = exports.active = function(item) {
+  clearTimeout(item._idleTimeoutId);
+
+  var msecs = item._idleTimeout;
+  if (msecs >= 0) {
+    item._idleTimeoutId = setTimeout(function onTimeout() {
+      if (item._onTimeout)
+        item._onTimeout();
+    }, msecs);
+  }
+};
+
+// setimmediate attaches itself to the global object
+__webpack_require__(12);
+exports.setImmediate = setImmediate;
+exports.clearImmediate = clearImmediate;
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var m = __webpack_require__(0)
+var Article = __webpack_require__(15)
+
+module.exports = {
+  view: () => {
+    return m("div", {class: "fl w-100 db bg-near-white pa4"}, [
+      m("h1", {class: "avenir fw5 green ttu"}, "Latest Stories"),
+      m("div#carousel", {class: "flex flex-row", style: "max-height: 400px; width: 100%; overflow-x: scroll; overflow-y: hidden; -webkit-overflow-scrolling: touch"}, Article.list.map((article)=>{
+        return m("div", {class: "mr4", style: "min-width: 200px"}, [
+          m("img", {class: "fl w-100", src: "//placehold.it/400x400"}),
+          m("h1", {class: "avenir green fl f4 fw4 w-100 mb0"}, article.title),
+          m("p", {class: "avenir fl w-100 gray f6  mt1"}, article.published)
+        ])
+      }))
+    ])
+  }
+}
+
+
+/***/ }),
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var m = __webpack_require__(0)
-var UserLocation = __webpack_require__(3)
+
+var Article = {
+  list: [
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+    {title: "Test Article Headline", img: "", published: "22 weeks ago"},
+  ],
+  load: function() {}
+}
+
+module.exports = Article
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const m = __webpack_require__(0)
+const _ = __webpack_require__(1)
+
+let RFP = {
+ current: {
+   eventName: 'Event name',
+   eventDates: {start: '2017-07-01', end: '2017-07-02'},
+   attendanceEst: 1,
+   blocks: [
+     { id: '2563ec02-205c-5939-8604-35ebb658ead7', headline: 'This is a content block', body: [ {id: '1f83b919-8dbf-517c-8d79-e5b0038175f4', type: 'h3', content: 'The text that appears here will appear on the RFP'}, {id: '68b6a898-8efd-580e-8be9-9290e18f8bff', type: 'p', content: 'Planners will be able to adjust pre-composed blocks of text to customize them per event.'}, {id: 'e64c23ac-6957-5d7c-9c41-b00946562df5', type: 'p', content: 'Additionally, planners will have capabilities to save these content block templates for future use after they have been customized'}, {id: '10d25c3f-950b-524d-8886-d4bf8fd7a430', type: 'p', content: 'The more a planner uses the system, the more the system will learn what types of content the planner prefers in the content block templates for RFPs.'},], order: 1 },
+     { id: '2563ec02-205c-5939-8604-35ebb658ead7', headline: 'Nescius a singulis.', body: [ {id: '7db084ae-5652-515e-8724-27dd9384c3fa', type: 'h3', content: 'Minim arbitror deserunt.'}, {id: 'd0065419-08e7-5222-8491-cb42ad14c80e', type: 'p', content: 'Iis consequat id cupidatat.'}, {id: '0a751f68-ffe7-53bf-a63e-eefddfa7893d', type: 'p', content: 'Te tempor enim export ullamco do multos transferrem commodo tamen mandaremus te de velit incurreret litteris, admodum noster export doctrina anim, laboris ad ullamco, ita cillum dolore dolore commodo hic fabulas aliqua velit a tamen, vidisse se quem singulis. Te fugiat offendit, in deserunt hic mandaremus. Quo nisi ubi fore. Dolore sed ne malis nostrud, si ingeniis coniunctione, enim fidelissimae cernantur dolore laborum, ea qui voluptatibus.'}, {id: 'db7ac14c-574f-5314-b17a-b8ed0c53c022', type: 'p', content: 'Ullamco duis mandaremus deserunt id do anim officia despicationes. Possumus anim anim hic amet, velit probant voluptatibus.'},], order: 2 },
+     { id: '2563ec02-205c-5939-8604-35ebb658ead7', headline: 'Appellat fidelissimae se offendit.', body: [ {id: '4e7cf5b7-b526-5bf1-a175-8258645b3b46', type: 'h3', content: 'E magna singulis incididunt.'}, {type: 'p', content: 'Duis offendit si quem fore, o illum quem et constias. An est tamen sunt quid, irure sed iis quid incurreret.'}, {id: 'f885adf1-00ab-5205-ba4a-66d446161578', type: 'p', content: 'AIrure id excepteur ea duis quamquam litteris.'}, {type: 'p', content: 'A fore tempor do ullamco, sunt ea proident de irure.'},], order: 3 },
+     { id: '2563ec02-205c-5939-8604-35ebb658ead7', headline: 'Doctrina labore ingeniis.', body: [ {id: '2b52c1de-0a9f-5c8d-9ed6-20f8f2be7796', type: 'h3', content: 'Ullamco eram quibusdam nescius.'}, {id: 'rab5536ad-e3db-5ea5-b2e6-1871be294882', type: 'p', content: 'Planners will be able to adjust pre-composed blocks of text to customize them per event.'}, {id: '0c01c196-c9a1-58dd-a2f3-86d64ee6b672', type: 'p', content: 'Additionally, planners will have capabilities to save these content block templates for future use after they have been customized'}, {id: 'c8f226fa-ccb4-5edd-ba45-4c59115b57ec', type: 'p', content: 'The more a planner uses the system, the more the system will learn what types of content the planner prefers in the content block templates for RFPs.'},], order: 4 },
+   ]
+ },
+ targetBlock: {body: []},
+ addRange: () => {},
+ addRep: () => {},
+ editAttendance: () => {},
+ editDates: () => {},
+ editName: () => {},
+ editBlock: (b) => {
+   RFP.targetBlock = _.find(RFP.current.blocks, (a) => { return a.id === b.id })
+   console.log(RFP.targetBlock)
+ },
+ toggleBlockEditor: (b) => {
+   RFP.blockEditor = !RFP.blockEditor
+   RFP.editBlock(b)
+ },
+ blockEditor: false,
+ chipEditor: false,
+ toggleChipEditor: (type) => {
+   if(type === 'name') {
+
+   }
+   if(type === 'date') {
+
+   }
+   if(type === 'attendance') {
+
+   }
+   RFP.chipEditor =  !RFP.chipEditor
+ },
+ range: [],
+ reps: [],
+ send: () => {},
+ track: [],
+}
+
+module.exports = RFP
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var m = __webpack_require__(0)
+var UserLocation = __webpack_require__(6)
 
 var Weather = {
   load: () => {
@@ -3993,21 +4222,23 @@ module.exports = Weather
 
 
 /***/ }),
-/* 16 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(0)
 
 // Shell
-let Layout = __webpack_require__(5)
-let Main = __webpack_require__(6)
-let Compare = __webpack_require__(4)
+let Layout = __webpack_require__(8)
+let Main = __webpack_require__(9)
+let Compare = __webpack_require__(7)
+let ReqFP = __webpack_require__(10)
 
 // Routes
 m.route(document.body, "/main", {
   // Main
   "/main": { render: () => { return m(Layout, m(Main))} },
   "/compare": { render: (vnode) => { return m(Layout, m(Compare))} },
+  "/rfp": { render: () => { return m(Layout, m(ReqFP))} },
 })
 
 

@@ -2,13 +2,35 @@ const m = require('mithril')
 let Hotel = require('../models/Hotel')
 let TitleBar = require('../components/TitleBar')
 let RFP = require('../models/RFP')
+let _ = require('underscore')
 
 module.exports = {
   view: (vnode) => {
     return m('div', {class: 'fl w-100'}, [
-      m('div', {class: RFP.editor ? 'bg-white black pa3 absolute top-0 right-0 bottom-0 left-0' : 'dn', style: 'z-index: 9999'}, [
+      m('div', {class: RFP.blockEditor ? 'bg-white black pa3 absolute top-0 right-0 bottom-0 left-0' : 'dn', style: 'z-index: 9999'}, [
+        m('div', {class: 'relative'}, [
+          m('div', {class: 'absolute top-0 right-0 red', onclick: RFP.toggleBlockEditor}, 'Close'),
+          m('div', {class: 'fl w-100 mt3'}, [
+            m('h1', 'Content Block Editor'),
+            m('div', {class: 'fl w-100'}, [
+              m('div', {class: 'fl w-50'}, [
+                RFP.targetBlock.body.map(function(x) {
+                  return m('textarea[rows=10]', {oninput: m.withAttr('value', function(val) { let id = x.id; let thisBody = _.find(RFP.targetBlock.body, function(c) { if(c.id === id) { c.content = val} }) }), value: x.content, class: 'db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2', style: 'height: auto'},  x.content)
+                }),
+              ]),
+              m('div', {class: 'fl w-50'}, [
+                m('label', {class: 'fl w-100 fw2 ttu tracked mb3 bb b-black--10'}, 'PREVIEW'),
+                RFP.targetBlock.body.map(function(x){
+                  return m(x.type, x.content)
+                })
+              ])
+            ]),
+          ])
+        ])
+      ]),
+      m('div', {class: RFP.chipEditor ? 'bg-white black pa3 absolute top-0 right-0 bottom-0 left-0' : 'dn', style: 'z-index: 9999'}, [
         m('div', {class: 'relative measure center'}, [
-          m('div', {class: 'absolute top-0 right-0 red', onclick: RFP.toggleEditor}, 'Close'),
+          m('div', {class: 'absolute top-0 right-0 red', onclick: RFP.toggleChipEditor}, 'Close'),
           m('div', {class: 'fl w-100 mt3'}, [
             m('h1', 'Editor'),
             m('div', {class: 'fl w-100'}, [
@@ -122,49 +144,22 @@ module.exports = {
         ]),
         m('div', {class: 'mt3', id: 'rfp-content'}, [
           m('h3', 'RFP Content'),
-          m('div', {class: 'bg-light-blue br2 black pa2 h3 flex items-center w-100 shadow-2', style: 'overflow-x: scroll'}, [
-            m('div', {onclick: RFP.toggleEditor.bind(RFP, 'event'), class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Event name'),
-            m('div', {onclick: RFP.toggleEditor.bind(RFP, 'dates'), class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Event dates'),
-            m('div', {onclick: RFP.toggleEditor.bind(RFP, 'attendance'), class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Attendance estimate'),
+          m('div', {class: 'bg-light-blue br2 black pa2 h3 flex items-center w-100 shadow-2', style: 'overflow-x: scroll; margin-bottom: -1px'}, [
+            m('div', {onclick: RFP.toggleChipEditor.bind(RFP, 'event'), class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Event name'),
+            m('div', {onclick: RFP.toggleChipEditor.bind(RFP, 'dates'), class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Event dates'),
+            m('div', {onclick: RFP.toggleChipEditor.bind(RFP, 'attendance'), class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Attendance estimate'),
           ]),
-          m('div', {class: 'fl w-100 bg-white black pa2 h-100 shadow-2', style: 'margin-top: -3px'}, [
-            m('div', {class: 'fl w-100 bg-near-white pa2 mt3 relative'}, [
-              m('div', {class: 'absolute top-0 right-0 f6 gray pa2'}, 'drag to reorder'),
-              m('div', {class: 'absolute bottom-0 right-0 f6 gray pa2'}, 'edit'),
-              m('h3', 'This is a content block'),
-              m('p', 'The text that appears here will appear on the RFP'),
-              m('p', 'Planners will be able to adjust pre-composed blocks of text to customize them per event.'),
-              m('p', 'Additionally, planners will have capabilities to save these content block templates for future use after they have been customized'),
-              m('p', 'The more a planner uses the system, the more the system will learn what types of content the planner prefers in the content block templates for RFPs.')
-            ]),
-            m('div', {class: 'fl w-100 bg-near-white pa2 mt3 relative'}, [
-              m('div', {class: 'absolute top-0 right-0 f6 gray pa2'}, 'drag to reorder'),
-              m('div', {class: 'absolute bottom-0 right-0 f6 gray pa2'}, 'edit'),
-              m('h3', 'This is a content block'),
-              m('p', 'The text that appears here will appear on the RFP'),
-              m('p', 'Planners will be able to adjust pre-composed blocks of text to customize them per event.'),
-              m('p', 'Additionally, planners will have capabilities to save these content block templates for future use after they have been customized'),
-              m('p', 'The more a planner uses the system, the more the system will learn what types of content the planner prefers in the content block templates for RFPs.')
-            ]),
-            m('div', {class: 'fl w-100 bg-near-white pa2 mt3 relative'}, [
-              m('div', {class: 'absolute top-0 right-0 f6 gray pa2'}, 'drag to reorder'),
-              m('div', {class: 'absolute bottom-0 right-0 f6 gray pa2'}, 'edit'),
-              m('h3', 'This is a content block'),
-              m('p', 'The text that appears here will appear on the RFP'),
-              m('p', 'Planners will be able to adjust pre-composed blocks of text to customize them per event.'),
-              m('p', 'Additionally, planners will have capabilities to save these content block templates for future use after they have been customized'),
-              m('p', 'The more a planner uses the system, the more the system will learn what types of content the planner prefers in the content block templates for RFPs.')
-            ]),
-            m('div', {class: 'fl w-100 bg-near-white pa2 mt3 relative'}, [
-              m('div', {class: 'absolute top-0 right-0 f6 gray pa2'}, 'drag to reorder'),
-              m('div', {class: 'absolute bottom-0 right-0 f6 gray pa2'}, 'edit'),
-              m('h3', 'This is a content block'),
-              m('p', 'The text that appears here will appear on the RFP'),
-              m('p', 'Planners will be able to adjust pre-composed blocks of text to customize them per event.'),
-              m('p', 'Additionally, planners will have capabilities to save these content block templates for future use after they have been customized'),
-              m('p', 'The more a planner uses the system, the more the system will learn what types of content the planner prefers in the content block templates for RFPs.')
-            ]),
-          ])
+          RFP.current.blocks.map(function(b) {
+            return m('div', {class: 'fl w-100 bg-white black pa2 h-100'}, [
+              m('div', {class: 'fl w-100 bg-near-white pa2 mt3 relative'},[
+                m('div', {class: 'absolute top-0 right-0 f6 gray pa2'}, 'drag to reorder'),
+                m('div', {class: 'absolute bottom-0 right-0 f6 gray pa2', onclick: RFP.toggleBlockEditor.bind(RFP, b)}, 'edit'),
+                b.body.map(function(bb) {
+                  return m(bb.type, bb.content)
+                })
+              ])
+            ])
+          }),
         ]),
       ])
     ])
