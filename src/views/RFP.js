@@ -1,10 +1,35 @@
 const m = require('mithril')
 let Hotel = require('../models/Hotel')
 let TitleBar = require('../components/TitleBar')
+let RFP = require('../models/RFP')
 
 module.exports = {
   view: (vnode) => {
     return m('div', {class: 'fl w-100'}, [
+      m('div', {class: RFP.editor ? 'bg-white black pa3 absolute top-0 right-0 bottom-0 left-0' : 'dn', style: 'z-index: 9999'}, [
+        m('div', {class: 'relative measure center'}, [
+          m('div', {class: 'absolute top-0 right-0 red', onclick: RFP.toggleEditor}, 'Close'),
+          m('div', {class: 'fl w-100 mt3'}, [
+            m('h1', 'Editor'),
+            m('div', {class: 'fl w-100'}, [
+              m('label', {class: 'fl w-100'}, 'Event name'),
+              m('input', {class: 'fl w-100'}),
+            ]),
+            m('div', {class: 'fl w-100 mt3'}, [
+              m('label', {class: 'fl w-100'}, 'Start date'),
+              m('input', {class: 'fl w-100'}),
+            ]),
+            m('div', {class: 'fl w-100 mt3'}, [
+              m('label', {class: 'fl w-100'}, 'End date'),
+              m('input', {class: 'fl w-100'}),
+            ]),
+            m('div', {class: 'fl w-100 mt3'}, [
+              m('label', {class: 'fl w-100'}, 'Attendance estimate'),
+              m('input', {class: 'fl w-100', type: 'number'}),
+            ]),
+          ])
+        ])
+      ]),
       m('div', {class: 'fl w-50'}, [
         m('div', {class: 'sans-serif bg-white black-80 fl w-100 pa2 h-100', style: 'min-height: 100vh'}, [
           //header
@@ -98,10 +123,9 @@ module.exports = {
         m('div', {class: 'mt3', id: 'rfp-content'}, [
           m('h3', 'RFP Content'),
           m('div', {class: 'bg-light-blue br2 black pa2 h3 flex items-center w-100 shadow-2', style: 'overflow-x: scroll'}, [
-            m('div', {class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Event name'),
-            m('div', {class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Event dates'),
-            m('div', {class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Attendance estimate'),
-            m('div', {class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Event Date'),
+            m('div', {onclick: RFP.toggleEditor.bind(RFP, 'event'), class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Event name'),
+            m('div', {onclick: RFP.toggleEditor.bind(RFP, 'dates'), class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Event dates'),
+            m('div', {onclick: RFP.toggleEditor.bind(RFP, 'attendance'), class: 'pa2 br4 bg-near-white dark-gray mr2 f6'}, 'Attendance estimate'),
           ]),
           m('div', {class: 'fl w-100 bg-white black pa2 h-100 shadow-2', style: 'margin-top: -3px'}, [
             m('div', {class: 'fl w-100 bg-near-white pa2 mt3 relative'}, [
