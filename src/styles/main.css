@@ -1,0 +1,22 @@
+/* brand colors (b) */
+.bg-b-purple-1 {
+  background: #201e39;
+}
+.b-purple-1 {
+  color: #201e39;
+}
+.shadow-custom {
+  box-shadow: 1px 2px 13px 0px rgba(50, 50, 50, 1);
+}
+.bg-active {
+  background: rgb(100, 103, 156);
+}
+.hidden {
+  transform:translate(9999px);
+  opacity: 0;
+}
+.shown {
+  transition: opacity 0.3s ease-in;
+  transform: translate(0);
+  opacity: 1;
+}

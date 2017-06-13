@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 18);
+/******/ 	return __webpack_require__(__webpack_require__.s = 21);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1233,7 +1233,7 @@ m.vnode = Vnode
 if (true) module["exports"] = m
 else window.m = m
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13).setImmediate, __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14).setImmediate, __webpack_require__(3)))
 
 /***/ }),
 /* 1 */
@@ -2792,6 +2792,56 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscor
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var m = __webpack_require__(0)
+
+var Nav = {
+    items: [
+      {name: "Home", location: "/main"},
+      {name: "Compare", location: "/compare"},
+    ]
+}
+
+module.exports = {
+  view: () => {
+    return  m("nav", {class:"fl w-100", style: "background: url('../img/bg-nav_bar.png'); background-size: cover;"}, [
+          m("div", {class: "flex items-center", style: "height: 70px"}, [
+            m("div#branding", {class: "w-20 ph3 pointer"}, [
+              m("img", {alt: "Meeting Glue logo: Black serif uppercase text with green pineapple leaves over the 'U'", src: "img/logo/logo-meeting-glue.png"})
+            ]),
+            m("div#nav-items", {class: "w-50"}, [
+              m("ul", {class: "avenir list black"}, Nav.items.map(function(navItem) {
+                return m("li", {class: "dib fl mr4 f6 ttu tracked link dim pointer"}, [
+                  // m("a", {class: "link white dim pointer", oncreate: m.route.link, href: navItem.location}, navItem.name)
+                  m("a", {class: "link white dim pointer"}, navItem.name)
+                ])
+              }))
+            ]),
+            m("div#social-and-search", {class: "fr white w-30 pb2"}, [
+              m("ul", {class: "list"}, [
+                m("li", {class: "dib fl mr4 f3 link dim pointer"}, [
+                  m("i", {class: "fa fa-twitter"}),
+                ]),
+                m("li", {class: "dib fl mr4 f3 link dim pointer"}, [
+                  m("i", {class: "fa fa-facebook"}),
+                ]),
+                m("li", {class: "dib fl mr4 f3 link dim pointer"}, [
+                  m("i", {class: "fa fa-linkedin"}),
+                ]),
+                m("li", {class: "dib fl mr4 f3 link dim pointer"}, [
+                  m("i", {class: "fa fa-search"}),
+                ])
+              ])
+            ])
+          ])
+        ])
+  }
+}
+
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports) {
 
 var g;
@@ -2815,55 +2865,6 @@ try {
 // easier to handle this case. if(!global) { ...}
 
 module.exports = g;
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var m = __webpack_require__(0)
-
-var Nav = {
-    items: [
-      {name: "Home", location: "/main"},
-      {name: "Compare", location: "/compare"},
-    ]
-}
-
-module.exports = {
-  view: () => {
-    return  m("nav", {class:"bg-blue fl w-100", style: "z-index: 0 !important"}, [
-          m("div", {class: "flex items-center pa1", style: "height: 90px"}, [
-            m("div#branding", {class: "w-20 ph3 pointer"}, [
-              m("img", {alt: "Meeting Glue logo: Black serif uppercase text with green pineapple leaves over the 'U'", src: "img/logo/logo-meeting-glue.png"})
-            ]),
-            m("div#nav-items", {class: "w-60"}, [
-              m("ul", {class: "avenir list black"}, Nav.items.map(function(navItem) {
-                return m("li", {class: "dib fl mr4 f4 link dim pointer"}, [
-                  m("a", {class: "link white dim pointer", oncreate: m.route.link, href: navItem.location}, navItem.name)
-                ])
-              }))
-            ]),
-            m("div#social-and-search", {class: "w-20 pb2"}, [
-              m("ul", {class: "list near-black"}, [
-                m("li", {class: "dib fl mr4 f3 black link dim pointer"}, [
-                  m("i", {class: "fa fa-twitter"}),
-                ]),
-                m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [
-                  m("i", {class: "fa fa-facebook"}),
-                ]),
-                m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [
-                  m("i", {class: "fa fa-linkedin"}),
-                ]),
-                m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [
-                  m("i", {class: "fa fa-search"}),
-                ])
-              ])
-            ])
-          ])
-        ])
-  }
-}
 
 
 /***/ }),
@@ -3356,7 +3357,108 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(0)
-let Nav = __webpack_require__(3)
+let Nav = __webpack_require__(2)
+let Tabs = __webpack_require__(19)
+let Calendar = __webpack_require__(17)
+
+module.exports = {
+  view: () => {
+    return m('div', {class: 'avenir'},  [
+      // calendar modal
+      m('div', {class: Calendar.displayModal ? 'bg-b-purple-1 fixed top-0 right-0 left-0 bottom-0 pa4 shown' : 'bg-b-purple-1 absolute top-0 right-0 left-0 bottom-0 pa4 hidden', style: 'z-index: 9999'}, [
+        m('a', {class: 'absolute right-2 f3 white', onclick: Calendar.toggleModal}, 'Close'),
+        m('h1', {class: 'white'}, 'Calendar'),
+        m('p', {class: 'white'}, 'placeholder for calendar')
+      ]),
+      // nav bar
+      m(Nav),
+      // header
+      m('div', {class: 'fl w-100 bg-b-purple-1 near-white avenir fw4 ttu'}, [
+        m('div', {class: 'fl w-70'}, [
+          m('div', {class: 'fl w-30'}, [
+            m('img', {src: 'img/cvb/logo-las_vegas.png'})
+          ]),
+          m('div', {class: 'fl w-70 ttu flex flex-column justify-center measure-narrow pb4', style: 'height: 250px;'}, [
+            m('h1', {class: 'f4'}, 'Las Vegas Convention and Visitors Authority'),
+            m('p', {class: 'lh-copy mt0 mb0'}, '3150 Paradise Road'),
+            m('p', {class: 'lh-copy mt0 mb0'}, 'Las vegas, NV 89109'),
+            m('a', {class: 'lh-copy mt0 mb0 link  pointer b'}, 'send rfp')
+          ])
+        ]),
+        m('div', {class: 'fl flex flex-column justify-center w-30 pb4', style: 'height: 250px; background: url("img/cvb/bg-sidebar-gradient.png"); background-size: cover;'}, [
+          m('ul', {class: 'list'}, [
+            m('li', {class: 'lh-copy'}, 'CVB'),
+            m('li', {class: 'lh-copy'}, 'Non-member based'),
+            m('li', {class: 'lh-copy'}, 'Las Vegas, NV')
+          ])
+        ])
+      ]),
+      // slideshow
+      m('div', {class: 'fl w-100 relative', style: 'margin-top: -60px'}, [
+        m('div', {class: 'measure-narrow absolute right-0 w-50 near-white flex flex-column justify-center', style: 'background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0, 0, 0, 0.9), rgba(0,0,0,1)); top: .9rem; bottom: .8rem; background: '}, [
+          m('h1', {class: 'mb0 w-40 absolute right-2 f3 top-2 pt5'}, "Best convention city in the US."),
+          m('p', {class: 'mt0 w-40 absolute right-2 f5 pt5', style: 'margin-top: 10px'}, '- MPI'),
+        ]),
+        m('img', {src: 'img/cvb/slideshow-1.png'})
+      ]),
+      // fact panels
+      m('div', {class: 'fl w-100 pa3 mt4 mb4'}, [
+        m('div', {class: 'fl ml3 shadow-3 pa3 white relative shadow-custom br4', style: ' width: 47%; height: 300px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
+          m('h1', {class: 'f4'}, 'Quick Facts'),
+          m('p', {onclick: Calendar.toggleModal, class: 'absolute top-0 right-2 ba bw1 pa2 br2 link dim pointer'}, 'Convention Calendar'),
+          m('span', {class: 'fl w-100'}, [
+            m('p', {class: 'fl w-50 tr ph2 b ttu tracked'}, 'Hotel Inventory:'),
+            m('p', {class: 'fr w-50 ph2'}, '150,000 rooms'),
+            m('p', {class: 'fl w-50 tr ph2 b ttu tracked'}, 'Hotel Inventory:'),
+            m('p', {class: 'fr w-50 ph2'}, '150,000 rooms'),
+            m('p', {class: 'fl w-50 tr ph2 b ttu tracked'}, 'Hotel Inventory:'),
+            m('p', {class: 'fr w-50 ph2'}, '150,000 rooms'),
+            m('p', {class: 'fl w-50 tr ph2 b ttu tracked'}, 'Hotel Inventory:'),
+            m('p', {class: 'fr w-50 ph2'}, '150,000 rooms'),
+          ])
+        ]),
+        m('div', {class: 'fr mr3 shadow-6 pa3 white relative shadow-custom br4', style: 'width: 47%; height: 300px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
+          m('h1', {class: 'f4'}, 'Quick Facts'),
+          m('p', {onclick: Calendar.toggleModal, class: 'absolute top-0 right-2 ba bw1 pa2 br2 link dim pointer'}, 'Convention Calendar'),
+          m('span', {class: 'fl w-100'}, [
+            m('p', {class: 'fl w-50 tr ph2 b ttu tracked'}, 'Hotel Inventory:'),
+            m('p', {class: 'fr w-50 ph2'}, '150,000 rooms'),
+            m('p', {class: 'fl w-50 tr ph2 b ttu tracked'}, 'Hotel Inventory:'),
+            m('p', {class: 'fr w-50 ph2'}, '150,000 rooms'),
+            m('p', {class: 'fl w-50 tr ph2 b ttu tracked'}, 'Hotel Inventory:'),
+            m('p', {class: 'fr w-50 ph2'}, '150,000 rooms'),
+            m('p', {class: 'fl w-50 tr ph2 b ttu tracked'}, 'Hotel Inventory:'),
+            m('p', {class: 'fr w-50 ph2'}, '150,000 rooms'),
+          ])
+        ]),
+      ]),
+      // tabs
+      m('div', {class: 'fl w-100 bg-light-gray'}, [
+        m('div#tabs_container', {class: 'fl w-100'}, [
+          Tabs.list.map(function(t) {
+            return m('div', {onclick: Tabs.swap.bind(Tabs, t), class: Tabs.isActive(t.id) ? 'sans-serif f5 flex justify-center items-center ttu tracked link pointer h3 fl dib bg-active white w-20 tc' : 'sans-serif f5 flex justify-center items-center ttu tracked link pointer h3 fl dib bg-b-purple-1 white w-20 tc', style: 'border-right: 1px solid rgba(255, 255, 255, 0.3)'}, [
+              m('div', {class: 'h3 w-100', style: 'padding-top: 25px'}, 'Tab ' + t.id)
+            ])
+          })
+        ]),
+        m('div#tabs_content', {class: 'fl w-100 h6', style: 'background: rgb(98, 103, 160)'}, [
+          m('div', {class: 'pa3 near-white'}, [
+            m('h1', {class: 'tc'}, 'Content for tab ' + Tabs.current.id),
+            m('p', {class: 'measure center lh-copy'}, Tabs.current.content)
+          ])
+        ]),
+      ])
+    ])
+  }
+}
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const m = __webpack_require__(0)
+let Nav = __webpack_require__(2)
 
 module.exports = {
   view: (vnode) => {
@@ -3370,14 +3472,14 @@ module.exports = {
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var m = __webpack_require__(0)
-var Nav = __webpack_require__(3)
-var ArticleCarousel = __webpack_require__(14)
+var Nav = __webpack_require__(2)
+var ArticleCarousel = __webpack_require__(15)
 var UserLocation = __webpack_require__(6)
-var Weather = __webpack_require__(17)
+var Weather = __webpack_require__(20)
 
 
 module.exports = {
@@ -3466,13 +3568,13 @@ module.exports = {
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(0)
 let Hotel = __webpack_require__(5)
 let TitleBar = __webpack_require__(4)
-let RFP = __webpack_require__(16)
+let RFP = __webpack_require__(18)
 let _ = __webpack_require__(1)
 
 module.exports = {
@@ -3639,7 +3741,7 @@ module.exports = {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -3825,7 +3927,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -4015,10 +4117,10 @@ process.umask = function() { return 0; };
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(11)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(12)))
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var apply = Function.prototype.apply;
@@ -4071,17 +4173,17 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(12);
+__webpack_require__(13);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var m = __webpack_require__(0)
-var Article = __webpack_require__(15)
+var Article = __webpack_require__(16)
 
 module.exports = {
   view: () => {
@@ -4100,7 +4202,7 @@ module.exports = {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var m = __webpack_require__(0)
@@ -4136,7 +4238,24 @@ module.exports = Article
 
 
 /***/ }),
-/* 16 */
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const m = __webpack_require__(0)
+
+let Calendar = {
+  displayModal: false,
+  toggleModal: () => {
+    Calendar.displayModal = !Calendar.displayModal
+    m.redraw()
+  }
+}
+
+module.exports = Calendar
+
+
+/***/ }),
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(0)
@@ -4192,7 +4311,39 @@ module.exports = RFP
 
 
 /***/ }),
-/* 17 */
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const m = __webpack_require__(0)
+
+let Tabs = {
+  active: 1,
+  current: {id: 1, content: 'Fugiat comprehenderit fabulas quorum nescius non e mandaremus relinqueret. Cillum singulis illustriora ut nulla consequat ab velit dolor. Vidisse elit quae laborum quorum, se sunt ubi eram. Incididunt cillum appellat ad o quis summis legam proident.  Ubi legam distinguantur, ex dolore illustriora. Ingeniis voluptatibus si quamquam se ne voluptate si mentitum. Te dolore nostrud transferrem aut si ne firmissimum.'},
+  swap: (tab) => {
+    Tabs.active = tab.id
+    Tabs.current = tab
+  },
+  isActive: (id) => {
+    if(id === Tabs.active) {
+      return true
+    } else {
+      return false
+    }
+  },
+  list: [
+    {id: 1, content: 'Fugiat comprehenderit fabulas quorum nescius non e mandaremus relinqueret. Cillum singulis illustriora ut nulla consequat ab velit dolor. Vidisse elit quae laborum quorum, se sunt ubi eram. Incididunt cillum appellat ad o quis summis legam proident.  Ubi legam distinguantur, ex dolore illustriora. Ingeniis voluptatibus si quamquam se ne voluptate si mentitum. Te dolore nostrud transferrem aut si ne firmissimum.'},
+    {id: 2, content: 'Irure ab cupidatat ne quem, se amet officia sempiternum. Malis sempiternum incididunt tempor singulis, officia veniam offendit constias. Veniam incurreret sed doctrina ut ita veniam officia adipisicing. In nisi incurreret coniunctione ut in sint quem malis consequat. Et ut quae deserunt, ingeniis cillum singulis. Minim vidisse do consequat, velit iis mentitum.'},
+    {id: 3, content: 'Do tempor singulis quo ne cernantur praesentibus. Malis nescius aut philosophari ex e culpa e nisi. Offendit amet singulis iudicem, quae litteris de transferrem. Aliqua laborum aut reprehenderit, hic possumus cohaerescant. Id labore in labore, export pariatur mandaremus. Quis ullamco ea amet ipsum te eiusmod irure iudicem possumus.'},
+    {id: 4, content: 'Ut culpa se quis, e cernantur o senserit. Quae eu laborum, pariatur et probant. E quamquam arbitrantur id pariatur qui cupidatat. Cillum nostrud litteris nam proident ad magna. Pariatur fugiat ita occaecat exercitation e singulis praesentibus iis eiusmod. Consequat nisi sint qui sint, fabulas iis cillum laborum. Dolor firmissimum deserunt labore mandaremus te an labore cernantur. Irure mentitum reprehenderit quo nescius a sint iudicem.'},
+    {id: 5, content: 'Hic magna appellat voluptatibus sed tempor tractavissent excepteur irure voluptate. Commodo cillum cupidatat cupidatat ab malis quamquam ex familiaritatem. Ne nam aute doctrina, ita illum incididunt. Nam magna veniam fore pariatur, sunt et litteris. Ipsum aut admodum, nisi eiusmod ut tamen amet.'},
+  ]
+}
+
+module.exports = Tabs
+
+
+/***/ }),
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var m = __webpack_require__(0)
@@ -4222,23 +4373,25 @@ module.exports = Weather
 
 
 /***/ }),
-/* 18 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(0)
 
 // Shell
-let Layout = __webpack_require__(8)
-let Main = __webpack_require__(9)
+let Layout = __webpack_require__(9)
+let Main = __webpack_require__(10)
 let Compare = __webpack_require__(7)
-let ReqFP = __webpack_require__(10)
+let ReqFP = __webpack_require__(11)
+let LVCVA = __webpack_require__(8)
 
 // Routes
-m.route(document.body, "/main", {
+m.route(document.body, '/main', {
   // Main
-  "/main": { render: () => { return m(Layout, m(Main))} },
-  "/compare": { render: (vnode) => { return m(Layout, m(Compare))} },
-  "/rfp": { render: () => { return m(Layout, m(ReqFP))} },
+  '/main': { render: () => { return m(Layout, m(Main))} },
+  '/compare': { render: (vnode) => { return m(Layout, m(Compare))} },
+  '/rfp': { render: () => { return m(Layout, m(ReqFP))} },
+  '/cvb': { render: () => { return m(Layout, m(LVCVA))} },
 })
 
 

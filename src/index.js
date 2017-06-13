@@ -1,15 +1,17 @@
-const m = require("mithril")
+const m = require('mithril')
 
 // Shell
-let Layout = require("./views/Layout")
-let Main = require("./views/Main")
-let Compare = require("./views/Compare")
-let ReqFP = require("./views/RFP")
+let Layout = require('./views/Layout')
+let Main = require('./views/Main')
+let Compare = require('./views/Compare')
+let ReqFP = require('./views/RFP')
+let LVCVA = require('./views/LVCVA')
 
 // Routes
-m.route(document.body, "/main", {
+m.route(document.body, '/main', {
   // Main
-  "/main": { render: () => { return m(Layout, m(Main))} },
-  "/compare": { render: (vnode) => { return m(Layout, m(Compare))} },
-  "/rfp": { render: () => { return m(Layout, m(ReqFP))} },
+  '/main': { render: () => { return m(Layout, m(Main))} },
+  '/compare': { render: (vnode) => { return m(Layout, m(Compare))} },
+  '/rfp': { render: () => { return m(Layout, m(ReqFP))} },
+  '/cvb': { render: () => { return m(Layout, m(LVCVA))} },
 })

@@ -9,30 +9,31 @@ var Nav = {
 
 module.exports = {
   view: () => {
-    return  m("nav", {class:"bg-blue fl w-100", style: "z-index: 0 !important"}, [
-          m("div", {class: "flex items-center pa1", style: "height: 90px"}, [
+    return  m("nav", {class:"fl w-100", style: "background: url('../img/bg-nav_bar.png'); background-size: cover;"}, [
+          m("div", {class: "flex items-center", style: "height: 70px"}, [
             m("div#branding", {class: "w-20 ph3 pointer"}, [
               m("img", {alt: "Meeting Glue logo: Black serif uppercase text with green pineapple leaves over the 'U'", src: "img/logo/logo-meeting-glue.png"})
             ]),
-            m("div#nav-items", {class: "w-60"}, [
+            m("div#nav-items", {class: "w-50"}, [
               m("ul", {class: "avenir list black"}, Nav.items.map(function(navItem) {
-                return m("li", {class: "dib fl mr4 f4 link dim pointer"}, [
-                  m("a", {class: "link white dim pointer", oncreate: m.route.link, href: navItem.location}, navItem.name)
+                return m("li", {class: "dib fl mr4 f6 ttu tracked link dim pointer"}, [
+                  // m("a", {class: "link white dim pointer", oncreate: m.route.link, href: navItem.location}, navItem.name)
+                  m("a", {class: "link white dim pointer"}, navItem.name)
                 ])
               }))
             ]),
-            m("div#social-and-search", {class: "w-20 pb2"}, [
-              m("ul", {class: "list near-black"}, [
-                m("li", {class: "dib fl mr4 f3 black link dim pointer"}, [
+            m("div#social-and-search", {class: "fr white w-30 pb2"}, [
+              m("ul", {class: "list"}, [
+                m("li", {class: "dib fl mr4 f3 link dim pointer"}, [
                   m("i", {class: "fa fa-twitter"}),
                 ]),
-                m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [
+                m("li", {class: "dib fl mr4 f3 link dim pointer"}, [
                   m("i", {class: "fa fa-facebook"}),
                 ]),
-                m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [
+                m("li", {class: "dib fl mr4 f3 link dim pointer"}, [
                   m("i", {class: "fa fa-linkedin"}),
                 ]),
-                m("li", {class: "dib fl mr4 f3 dark-gray link dim pointer"}, [
+                m("li", {class: "dib fl mr4 f3 link dim pointer"}, [
                   m("i", {class: "fa fa-search"}),
                 ])
               ])
