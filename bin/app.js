@@ -3397,7 +3397,6 @@ module.exports = {
       m('div', {class: 'fl w-100 relative', style: 'margin-top: -60px'}, [
         m('div', {class: 'measure-narrow absolute right-0 w-50 near-white flex flex-column justify-center', style: 'background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0, 0, 0, 0.9), rgba(0,0,0,1)); top: .9rem; bottom: .8rem; background: '}, [
           m('h1', {class: 'mb0 w-40 absolute right-2 f3 top-2 pt5'}, "Best convention city in the US."),
-          m('p', {class: 'mt0 w-40 absolute right-2 f5 pt5', style: 'margin-top: 10px'}, '- MPI'),
         ]),
         m('img', {src: 'img/cvb/slideshow-1.png'})
       ]),
