@@ -2,9 +2,12 @@ const m = require('mithril')
 let Tabs = require('../models/Tabs')
 let Calendar = require('../models/Calendar')
 let Slideshow = require('../models/Slideshow')
+let Feed = require('../models/Feed')
+let Initializer = require('../models/Initializer')
 
 module.exports = {
-  oncreate: Slideshow.initialize,
+  oncreate: Initializer.start.bind(Initializer,'lvcva'),
+  oninit: Feed.getTimeline,
   view: () => {
     return m('div', {class: 'avenir'},  [
       // calendar modal
@@ -34,8 +37,15 @@ module.exports = {
           ])
         ])
       ]),
+      //tweets!
+      m('div', {class: 'fl w-30 relative bg-purple near-white h-100 pa3', style: 'height: 230px'}, [
+        m('div', {class: 'b ttu tracked'}, '@LVCVA'),
+        m('div', {class: 'pa3'}, [
+           m('h1', {class: 'f3 fw4 measure-narrow'}, Feed.active.text)
+        ])
+      ]),
       // slideshow
-      m('div', {class: 'fl w-100 relative', style: 'background: url('+ Slideshow.active.src+'); overflow: hidden !important; height: 230px; max-height: 230px; background-size: cover; background-position: center center'}, [
+      m('div', {class: 'fr w-70 relative', style: 'background: url('+ Slideshow.active.src+'); overflow: hidden !important; height: 230px; max-height: 230px; background-size: cover; background-position: center center'}, [
         m('div', {class: 'measure-narrow absolute right-0 w-50 near-white flex flex-column justify-center', style: 'background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0, 0, 0, 0.9), rgba(0,0,0,1)); top:  0; bottom: 0'}, [
           m('h1', {class: 'mb0 w-40 absolute right-2 f3 top-2'}, "Best convention city in the US."),
         ])
