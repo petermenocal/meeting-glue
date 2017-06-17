@@ -9,7 +9,7 @@ var client = new Twitter({
   access_token_secret: 'f0itACktYeSakP9K3yhwv5fFyrWhQZo1rhLrh9sNTbAwY'
 });
 
-var params = {screen_name: 'defypm'};
+var params = {screen_name: 'LVCVA'};
 
 let Feed = {
   getTimeline: () => {
