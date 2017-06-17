@@ -75,27 +75,39 @@ module.exports = {
       ]),
       // fact panels
       m('div', {class: 'fl w-100 pa3 mt4 mb4'}, [
-        m('div', {class: 'fl ml3 shadow-3 pa3 white relative shadow-custom br4', style: ' width: 47%; height: 300px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
+        m('div', {class: 'fl ml3 shadow-3 pa3 white relative shadow-custom br4', style: ' width: 47%; height: 500px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
           m('h1', {class: 'f4'}, 'Quick Facts'),
           m('p', {onclick: Calendar.toggleModal, class: 'absolute top-0 right-2 ba bw1 pa2 br2 link dim pointer'}, 'Convention Calendar'),
           m('span', {class: 'fl w-100'}, [
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Hotel Inventory:'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, '150,000 rooms'),
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Total square footage:'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, '10,000,000 sqft.'),
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'LV Convention Center:'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, '2,182,162'),
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Airport:'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, 'McCarran International'),
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Public trans.:'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, 'LV Monorail'),
+            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Exhibit Space:'),
+            m('p', {class: 'fr h1 mb1 w-50 ph2'}, '1,940,631 SF'),
+            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Exhibit Halls:'),
+            m('p', {class: 'fr h1 mb1 w-50 ph2'}, '13'),
+            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Meeting Space:'),
+            m('p', {class: 'fr h1 mb1 w-50 ph2'}, '250,000 SF'),
+            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Meeting Rooms:'),
+            m('p', {class: 'fr h1 mb1 w-50 ph2'}, '144'),
+            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Cost Per SF (Avg):'),
+            m('p', {class: 'fr h1 mb1 w-50 ph2'}, '$0.33'),
+            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Distance from airport:'),
+            m('p', {class: 'fr h1 mb1 w-50 ph2'}, '4 miles'),
+            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'WiFi (Public space):'),
+            m('p', {class: 'fr h1 mb1 w-50 ph2'}, 'Free'),
+            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Parking:'),
+            m('p', {class: 'fr h1 mb1 w-50 ph2'}, '5,000 spaces (daily fees may apply)'),
+            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'ADA Accessibility:'),
+            m('p', {class: 'fr h1 mb1 w-50 ph2'}, 'Yes'),
+            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Wheelchair Rental:'),
+            m('p', {class: 'fr h1 mb1 w-50 ph2'}, 'Call FedEx Office at 702-943-6780'),
+            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Electrical Power:'),
+            m('p', {class: 'fr h1 mb1 w-50 ph2'}, '(110/120v 20amps) single phase, (208/480v) three phase'),
           ])
         ]),
-        m('div', {class: 'fr mr3 shadow-6 pa3 white relative shadow-custom br4', style: 'width: 47%; height: 300px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
+        m('div', {class: 'fr mr3 shadow-6 pa3 white relative shadow-custom br4', style: 'width: 47%; height: 500px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
           m('h1', {class: 'f4'}, 'Updates from LVCVA'),
-          m('div', {class: 'fl w-100', style: 'height: 220px; overflow-x: scroll'}, [
-            m('h1', {class: 'mt0 white-70'}, "Venetian Las Vegas Launches Booking via Facebook Messenger"),
-            m('p', {class: 'lh-copy f4'}, "The Venetian Las Vegas launched one fo the hopitality industry's first Facebook Messenger direct booking channels and the first for an individual hotel, offering guests the opportunity to book directly and securly through social messaging.  By automatically analyzing and learning the guests conversational patterns, the application will continually improve its vocabulary and functionality to serve guests. For more information contact...")
+          m('div', {class: 'fl w-100', style: 'height: 500px; overflow-x: scroll'}, [
+            m('h1', {class: 'white-70 lh-title'}, "Venetian Las Vegas Launches Booking via Facebook Messenger"),
+            m('p', {class: 'lh-copy f4 measure center'}, "The Venetian Las Vegas launched one fo the hopitality industry's first Facebook Messenger direct booking channels and the first for an individual hotel, offering guests the opportunity to book directly and securly through social messaging.  By automatically analyzing and learning the guests conversational patterns, the application will continually improve its vocabulary and functionality to serve guests. ")
           ])
         ]),
       ]),
