@@ -1,5 +1,6 @@
 const m = require('mithril')
 const Twitter = require('twitter');
+const _ = require('underscore');
 
 var client = new Twitter({
   consumer_key: 'lE3xRhMnu2vu1hrnRwP0CZgRN',
@@ -14,10 +15,25 @@ let Feed = {
   getTimeline: () => {
     client.get('statuses/user_timeline', params, function(error, tweets, response) {
       if (!error) {
-        console.log(tweets);
-        return tweets
+        Feed.timeline = tweets
+        Feed.active = Feed.timeline[0]
       }
     });
+  },
+  timeline: [],
+  active: {},
+  swap: () => {
+    let activeIndex = _.indexOf(Feed.timeline, Feed.active)
+    if(activeIndex == Feed.timeline.length - 1) {
+      activeIndex = 0
+    } else {
+      activeIndex++
+    }
+    Feed.active = Feed.timeline[activeIndex]
+    m.redraw()
+  },
+  initialize: ()=>{
+    setInterval(Feed.swap, 5500)
   }
 }
 
