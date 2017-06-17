@@ -7,12 +7,12 @@ let Compare = require('./views/Compare')
 let ReqFP = require('./views/RFP')
 let LVCVA = require('./views/LVCVA')
 let SupplierResponse = require('./views/SupplierResponse')
+
 // Routes
 m.route(document.body, '/main', {
-  // Main
-  '/main': { render: () => { return m(Layout, m(Main))} },
-  '/compare': { render: (vnode) => { return m(Layout, m(Compare))} },
-  '/rfp': { render: () => { return m(Layout, m(ReqFP))} },
-  '/cvb': { render: () => { return m(Layout, m(LVCVA))} },
-  '/supplierResponse': { render: ()=> { return m(Layout, m(SupplierResponse))} }
+  '/main': { render: () => { return m(Layout, m(Main)) } },
+  '/compare': { render: (vnode) => { return m(Layout, m(Compare)) } },
+  '/rfp': { render: () => { return m(Layout, m(ReqFP)) } },
+  '/cvb': { render: () => { return m(Layout, m(LVCVA)) } },
+  '/supplierResponse': { render: ()=> { return m(Layout, m(SupplierResponse)) } }
 })
