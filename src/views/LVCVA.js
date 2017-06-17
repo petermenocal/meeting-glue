@@ -11,10 +11,30 @@ module.exports = {
   view: () => {
     return m('div', {class: 'avenir'},  [
       // calendar modal
-      m('div', {class: Calendar.displayModal ? 'bg-b-purple-1 fixed top-0 right-0 left-0 bottom-0 pa4 shown' : 'bg-b-purple-1 absolute top-0 right-0 left-0 bottom-0 pa4 hidden', style: 'z-index: 9999'}, [
+      m('div', {class: Calendar.displayModal ? 'bg-b-purple-1 fixed top-0 right-0 left-0 bottom-0 pa4 shown' : 'bg-b-purple-1 absolute top-0 right-0 left-0 bottom-0 pa4 hidden', style: 'z-index: 9999; overflow-x: scroll;'}, [
         m('a', {class: 'absolute right-2 f3 white', onclick: Calendar.toggleModal}, 'Close'),
         m('h1', {class: 'white'}, 'Calendar'),
-        m('p', {class: 'white'}, 'placeholder for calendar')
+        //calendar table
+        m('table', {class: 'fl w-100 bg-white collapse ba br2 b--black-10 pv2 ph3'}, [
+          //event headings
+          m('tr', {class: 'striped--light-gray'}, [
+            m('th', {class: 'pv2 ph3 tl f6 fw6'}, 'CONVENTION'),
+            m('th', {class: 'pv2 ph3 tl f6 fw6'}, 'VENUE'),
+            m('th', {class: 'pv2 ph3 tl f6 fw6'}, 'START DATE'),
+            m('th', {class: 'pv2 ph3 tl f6 fw6'}, 'END DATE'),
+            m('th', {class: 'pv2 ph3 tl f6 fw6'}, 'ATTENDEES'),
+          ]),
+          //events
+          Calendar.events.map((event) => {
+            return m('tr', {class: 'striped--light-gray'}, [
+              m('td', {class: 'pv2 ph3 b measure-narrow'}, event.convention),
+              m('td', {class: 'pv2 ph3'}, event.venue),
+              m('td', {class: 'pv2 ph3'}, event.startDate),
+              m('td', {class: 'pv2 ph3'}, event.endDate),
+              m('td', {class: 'pv2 ph3'}, event.attendees),
+            ])
+          })
+        ])
       ]),
       // header
       m('div', {class: 'fl w-100 bg-b-purple-1 near-white avenir fw4 ttu', style: 'margin-bottom: -60px;'}, [
