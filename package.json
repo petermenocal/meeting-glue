@@ -15,12 +15,14 @@
   "dependencies": {
     "calendar-js": "0.0.3",
     "mithril": "^1.0.1",
+    "twitter": "^1.7.1",
     "underscore": "^1.8.3",
     "webpack": "^2.2.1"
   },
   "devDependencies": {
     "browser-sync": "^2.18.12",
     "browser-sync-webpack-plugin": "^1.1.4",
+    "json-loader": "^0.5.4",
     "tachyons": "^4.6.1",
     "webpack-dev-server": "^2.4.1"
   },
