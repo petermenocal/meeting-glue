@@ -1,5 +1,4 @@
 const m = require('mithril')
-let Nav = require('../components/Nav')
 let Tabs = require('../models/Tabs')
 let Calendar = require('../models/Calendar')
 
@@ -12,8 +11,6 @@ module.exports = {
         m('h1', {class: 'white'}, 'Calendar'),
         m('p', {class: 'white'}, 'placeholder for calendar')
       ]),
-      // nav bar
-      m(Nav),
       // header
       m('div', {class: 'fl w-100 bg-b-purple-1 near-white avenir fw4 ttu'}, [
         m('div', {class: 'fl w-70'}, [
