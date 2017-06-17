@@ -14,9 +14,11 @@
 .hidden {
   transform:translate(9999px);
   opacity: 0;
+  display: none;
 }
 .shown {
   transition: opacity 0.3s ease-in;
   transform: translate(0);
   opacity: 1;
+  display: block;
 }
