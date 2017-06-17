@@ -1,6 +1,6 @@
 const m = require('mithril')
 
-// Shell
+// Views
 let Layout = require('./views/Layout')
 let Main = require('./views/Main')
 let Compare = require('./views/Compare')
