@@ -39,9 +39,12 @@ module.exports = {
       ]),
       //tweets!
       m('div', {class: 'fl w-30 relative bg-purple near-white h-100 pa3', style: 'height: 230px'}, [
-        m('div', {class: 'b ttu tracked'}, '@LVCVA'),
-        m('div', {class: 'pa3'}, [
-           m('h1', {class: 'f3 fw4 measure-narrow'}, Feed.active.text)
+        m('div', {class: 'b ttu tracked fl w-100'}, [
+          m('img', {class: 'br4 fl mr2', src: Feed.profileImage}),
+          m('h1', {class: 'fl f4'}, '@LVCVA')
+        ]),
+        m('div', {class: 'fl w-100 pa2'}, [
+           m('h1', {class: 'f4 fw4 measure-narrow'}, Feed.active.text)
         ])
       ]),
       // slideshow
