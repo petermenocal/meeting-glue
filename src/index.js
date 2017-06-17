@@ -7,6 +7,7 @@ let Compare = require('./views/Compare')
 let ReqFP = require('./views/RFP')
 let LVCVA = require('./views/LVCVA')
 let SupplierResponse = require('./views/SupplierResponse')
+let Hotel = require('./views/Hotel')
 
 // Routes
 m.route(document.body, '/main', {
@@ -14,5 +15,6 @@ m.route(document.body, '/main', {
   '/compare': { render: (vnode) => { return m(Layout, m(Compare)) } },
   '/rfp': { render: () => { return m(Layout, m(ReqFP)) } },
   '/cvb': { render: () => { return m(Layout, m(LVCVA)) } },
-  '/supplierResponse': { render: ()=> { return m(Layout, m(SupplierResponse)) } }
+  '/supplierResponse': { render: ()=> { return m(Layout, m(SupplierResponse)) } },
+  '/hotel': { render: ()=> { return m(Layout, m(Hotel)) } },
 })

@@ -4,7 +4,7 @@ let TitleBar = require("../components/TitleBar")
 
 module.exports = {
   view: (vnode) => {
-    return m("div", {class: "fl w-100 center h-100 vh-100", style: "max-width: 100%; overflow-x: hidden;"}, [
+    return m("div", {class: "fl w-100 center"}, [
       m("div", {class: "fl w-100"}, [
         m("div", {class: "fl w-25 v-100 bg-black-10 pa2"}, [
           m("h1", "Available Hotels"),
@@ -12,14 +12,9 @@ module.exports = {
             return m("div", {class: "h3 bb b--black-30 flex items-center link dim pointer", onclick: Hotel.compareThis.bind(Hotel, hotel)}, hotel.name)
           })
         ]),
-        m("div", {class: "fl w-75 space-between flex flex-row"}, [
+        m("div", {class: "fl w-75 space-between flex flex-row db", style: "max-width: 100%; overflow-x: scroll;"}, [
           Hotel.compare.map(function(hotel){
             return m("div", {class: "avenir h-100 shadow-1 mr2 h2 fl bg-dark-gray", style: "min-width: 300px; max-width: 300px; position: relative !important"}, [
-              m("div", {class: "fl bg-green near-white avenir bb b--black-20 pa2 h6 fixed", style: "min-width: 300px; height: 90px; position: fixed; top: 0px; "}, [
-                //hotel name
-                m("h5", {class: "tc"}, hotel.name),
-                m("h5", {class: "tc em"}, hotel.hotelRating),
-              ]),
               m("div", {class: "fl w-100 bg-green near-white avenir bb b--black-20 pa2 h6 relative", style: "min-width: 300px;"}, [
                 //hotel name
                 m("h5", {class: "tc"}, hotel.name),

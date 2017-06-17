@@ -46,7 +46,7 @@ module.exports = {
             m('h1', {class: 'f4'}, 'Las Vegas Convention and Visitors Authority'),
             m('p', {class: 'lh-copy mt0 mb0'}, '3150 Paradise Road'),
             m('p', {class: 'lh-copy mt0 mb0'}, 'Las vegas, NV 89109'),
-            m('a', {class: 'lh-copy mt0 mb0 link  pointer b'}, 'send rfp')
+            m('a', {class: 'lh-copy mt3 link dim mb0 link bg-white-30 br2 w-40 tc pa1 pointer b white', href: '/rfp', oncreate: m.route.link}, 'send rfp')
           ])
         ]),
         m('div', {class: 'fl flex flex-column justify-center w-30 pb4', style: 'height: 250px; background: url("img/cvb/bg-sidebar-gradient.png"); background-size: cover;'}, [
@@ -107,7 +107,7 @@ module.exports = {
           m('h1', {class: 'f4'}, 'Updates from LVCVA'),
           m('div', {class: 'fl w-100', style: 'height: 500px; overflow-x: scroll'}, [
             m('h1', {class: 'white-70 lh-title'}, "Venetian Las Vegas Launches Booking via Facebook Messenger"),
-            m('p', {class: 'lh-copy f4 measure center'}, "The Venetian Las Vegas launched one fo the hopitality industry's first Facebook Messenger direct booking channels and the first for an individual hotel, offering guests the opportunity to book directly and securly through social messaging.  By automatically analyzing and learning the guests conversational patterns, the application will continually improve its vocabulary and functionality to serve guests. ")
+            m('p', {class: 'lh-copy f4 measure pt3 center ph4'}, "The Venetian Las Vegas launched one of the hopitality industry's first Facebook Messenger direct booking channels and the first for an individual hotel, offering guests the opportunity to book directly and securly through social messaging.  By automatically analyzing and learning the guests conversational patterns, the application will continually improve its vocabulary and functionality to serve guests. ")
           ])
         ]),
       ]),

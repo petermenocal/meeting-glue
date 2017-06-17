@@ -4,6 +4,8 @@ var Nav = {
     items: [
       {name: "Home", location: "/main"},
       {name: "Compare", location: "/compare"},
+      {name: "LVCVA", location: "/cvb"},
+      {name: "Hotel", location: "/hotel"},
     ]
 }
 
@@ -18,7 +20,7 @@ module.exports = {
               m("ul", {class: "avenir list black"}, Nav.items.map(function(navItem) {
                 return m("li", {class: "dib fl mr4 f6 ttu tracked link dim pointer"}, [
                   // m("a", {class: "link white dim pointer", oncreate: m.route.link, href: navItem.location}, navItem.name)
-                  m("a", {class: "link white dim pointer"}, navItem.name)
+                  m("a", {class: "link white dim pointer", href: navItem.location, oncreate: m.route.link}, navItem.name)
                 ])
               }))
             ]),
