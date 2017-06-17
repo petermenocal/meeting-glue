@@ -12,11 +12,13 @@ var client = new Twitter({
 var params = {screen_name: 'LVCVA'};
 
 let Feed = {
+  profileImage: '',
   getTimeline: () => {
     client.get('statuses/user_timeline', params, function(error, tweets, response) {
       if (!error) {
         Feed.timeline = tweets
         Feed.active = Feed.timeline[0]
+        Feed.profileImage = Feed.active.user.profile_image_url
       }
     });
   },
