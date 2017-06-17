@@ -76,7 +76,7 @@ module.exports = {
         m('div#tabs_container', {class: 'fl w-100'}, [
           Tabs.list.map(function(t) {
             return m('div', {onclick: Tabs.swap.bind(Tabs, t), class: Tabs.isActive(t.id) ? 'sans-serif f5 flex justify-center items-center ttu tracked link pointer h3 fl dib bg-active white w-20 tc' : 'sans-serif f5 flex justify-center items-center ttu tracked link pointer h3 fl dib bg-b-purple-1 white w-20 tc', style: 'border-right: 1px solid rgba(255, 255, 255, 0.3)'}, [
-              m('div', {class: 'h3 w-100', style: 'padding-top: 25px'}, 'Tab ' + t.id)
+              m('div', {class: 'h3 w-100', style: 'padding-top: 25px'}, t.title)
             ])
           })
         ]),
