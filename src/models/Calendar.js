@@ -4,39 +4,46 @@ let Calendar = {
   displayModal: false,
   events: [
     {
-      convention: "The College Board - Western Regional Council 2017",
-      venue: "Vdara Hotel & Spa",
-      startDate: "6/15/2017",
-      endDate: "6/16/2017",
-      attendees: 35
+      convention: "CES 2018",
+      venue: "Las Vegas Convention Center",
+      startDate: "1/09/2018",
+      endDate: "1/12/2018",
+      attendees: 165000
     },
     {
-      convention: "Falmouth Institute, Inc. - Assessing and Revising Personnel Policies and Procedures 2017",
-      venue: "Hampton Inn Tropicana",
-      startDate: "6/19/2017",
-      endDate: "6/21/2017",
-      attendees: 40
+      convention: "Automotive Aftermarket Industry Week (AAIW) 2017",
+      venue: "Sands Expo & Convention Center,Las Vegas Convention Center",
+      startDate: "10/31/2017",
+      endDate: "11/03/2017",
+      attendees: 160000
     },
     {
-      convention: "Falmouth Institute, Inc. - Tribal Secretaries Conference - 2017",
-      venue: "Hampton Inn Tropicana",
-      startDate: "6/19/2017",
-      endDate: "6/21/2017",
-      attendees: 40
+      convention: "National Association of Broadcasters 2018",
+      venue: "Las Vegas Convention Center",
+      startDate: "4/09/2017",
+      endDate: "4/12/2017",
+      attendees: 103000
     },
     {
-      convention: "Falmouth Institute, Inc. - Strategies for Working with Youth in Indian Country 2017",
-      venue: "Hampton Inn Tropicana",
-      startDate: "6/20/2017",
-      endDate: "6/22/2017",
-      attendees: 40
+      convention: "MAGIC Marketplace Fall Show 2017",
+      venue: "Las Vegas Convention Center",
+      startDate: "8/14/2017",
+      endDate: "8/16/2017",
+      attendees: 85000
     },
     {
-      convention: "Falmouth Institute, Inc. - The Essential of Indian Law 2017",
-      venue: "Hampton Inn Tropicana",
-      startDate: "6/20/2017",
-      endDate: "6/22/2017",
-      attendees: 40
+      convention: "Shooting, Hunting & Outdoor Trade Show (SHOT Show) - 2018",
+      venue: "Sands Expo & Convention Center",
+      startDate: "1/23/2017",
+      endDate: "1/26/2017",
+      attendees: 64500
+    },
+    {
+      convention: "World of Concrete 2018",
+      venue: "Las Vegas Convention Center",
+      startDate: "1/23/2017",
+      endDate: "1/26/2017",
+      attendees: 60000
     },
     {
       convention: "Women's Business Enterprise National Council (WBENC) - WBENC National Conference & Business Fair 2017",
@@ -53,11 +60,11 @@ let Calendar = {
       attendees: 185
     },
     {
-      convention: "Inpact Americas - 2017",
-      venue: "Caesars Palace",
+      convention: "Las Vegas Market 0 Summer 2017",
+      venue: "World Market Center",
       startDate: "6/21/2017",
       endDate: "6/23/2017",
-      attendees: 40
+      attendees: 50000
     },
     {
       convention: "Casino Chips & Gaming Token Collector's Club, Inc. - 2017 Annual Convention",
@@ -67,25 +74,25 @@ let Calendar = {
       attendees: 2000
     },
     {
-      convention: "Falmouth Institute, Inc. - Indirect Cost Basics for Tribal Organizations 2017",
-      venue: "Hampton Inn Tropicana",
+      convention: "ASD Las Vegas - March 2018",
+      venue: "Las Vegas Convention Center",
       startDate: "6/22/2017",
       endDate: "6/23/2017",
-      attendees: 30
+      attendees: 46000
     },
     {
-      convention: "Falmouth Institute, Inc. - The Role of the Tribal Recording Secretary 2017",
-      venue: "Hampton Inn Tropicana",
+      convention: "2017 Pack Expo",
+      venue: "Las Vegas Convention Center",
       startDate: "6/22/2017",
       endDate: "6/23/2017",
-      attendees: 30
+      attendees: 45000
     },
     {
-      convention: "Falmouth Institute, Inc. - Leadership Skills for Native Women 2017",
-      venue: "Hampton Inn Tropicana",
+      convention: "2017 Mr. Olympia",
+      venue: "Las Vegas Convention Center",
       startDate: "6/22/2017",
       endDate: "6/23/2017",
-      attendees: 30
+      attendees: 45000
     },
     {
       convention: "International Esthetics Cosmetics & Spa Conference (IECSC) International Beauty Show Las Vegas (IBS) 2017",
@@ -123,25 +130,25 @@ let Calendar = {
       attendees: 1662
     },
     {
-      convention: "Falmouth Institute, Inc. - Tribal Secretaries Conference - 2017",
-      venue: "Hampton Inn Tropicana",
+      convention: "Nightclub and Bar Show 2018",
+      venue: "Las Vegas Convention Center",
       startDate: "6/19/2017",
       endDate: "6/21/2017",
-      attendees: 40
+      attendees: 39000
     },
     {
-      convention: "Falmouth Institute, Inc. - Strategies for Working with Youth in Indian Country 2017",
-      venue: "Hampton Inn Tropicana",
+      convention: "International Communications Industries Association/ Infocomm 2018",
+      venue: "Las Vegas Convention Center",
       startDate: "6/20/2017",
       endDate: "6/22/2017",
-      attendees: 40
+      attendees: 38000
     },
     {
-      convention: "Falmouth Institute, Inc. - The Essential of Indian Law 2017",
-      venue: "Hampton Inn Tropicana",
+      convention: "Cosmoprof North America 2017",
+      venue: "Mandalay Bay Resort and Casino",
       startDate: "6/20/2017",
       endDate: "6/22/2017",
-      attendees: 40
+      attendees: 30000
     },
   ],
   toggleModal: () => {
