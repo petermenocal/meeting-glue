@@ -1,8 +1,10 @@
 const m = require('mithril')
 let Tabs = require('../models/Tabs')
 let Calendar = require('../models/Calendar')
+let Slideshow = require('../models/Slideshow')
 
 module.exports = {
+  oncreate: Slideshow.initialize,
   view: () => {
     return m('div', {class: 'avenir'},  [
       // calendar modal
@@ -12,7 +14,7 @@ module.exports = {
         m('p', {class: 'white'}, 'placeholder for calendar')
       ]),
       // header
-      m('div', {class: 'fl w-100 bg-b-purple-1 near-white avenir fw4 ttu'}, [
+      m('div', {class: 'fl w-100 bg-b-purple-1 near-white avenir fw4 ttu', style: 'margin-bottom: -60px;'}, [
         m('div', {class: 'fl w-70'}, [
           m('div', {class: 'fl w-30'}, [
             m('img', {src: 'img/cvb/logo-las_vegas.png'})
@@ -33,11 +35,10 @@ module.exports = {
         ])
       ]),
       // slideshow
-      m('div', {class: 'fl w-100 relative', style: 'margin-top: -60px'}, [
-        m('div', {class: 'measure-narrow absolute right-0 w-50 near-white flex flex-column justify-center', style: 'background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0, 0, 0, 0.9), rgba(0,0,0,1)); top: .9rem; bottom: .8rem; background: '}, [
-          m('h1', {class: 'mb0 w-40 absolute right-2 f3 top-2 pt5'}, "Best convention city in the US."),
-        ]),
-        m('img', {src: 'img/cvb/slideshow-1.png'})
+      m('div', {class: 'fl w-100 relative', style: 'background: url('+ Slideshow.active.src+'); overflow: hidden !important; height: 230px; max-height: 230px; background-size: cover; background-position: center center'}, [
+        m('div', {class: 'measure-narrow absolute right-0 w-50 near-white flex flex-column justify-center', style: 'background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0, 0, 0, 0.9), rgba(0,0,0,1)); top:  0; bottom: 0'}, [
+          m('h1', {class: 'mb0 w-40 absolute right-2 f3 top-2'}, "Best convention city in the US."),
+        ])
       ]),
       // fact panels
       m('div', {class: 'fl w-100 pa3 mt4 mb4'}, [
