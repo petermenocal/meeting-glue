@@ -93,7 +93,9 @@ module.exports = {
         ]),
         m('div', {class: 'fr mr3 shadow-6 pa3 white relative shadow-custom br4', style: 'width: 47%; height: 300px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
           m('h1', {class: 'f4'}, 'Updates from LVCVA'),
-          m('span', {class: 'fl w-100'}, [
+          m('div', {class: 'fl w-100', style: 'height: 220px; overflow-x: scroll'}, [
+            m('h1', {class: 'mt0 white-70'}, "Venetian Las Vegas Launches Booking via Facebook Messenger"),
+            m('p', {class: 'lh-copy f4'}, "The Venetian Las Vegas launched one fo the hopitality industry's first Facebook Messenger direct booking channels and the first for an individual hotel, offering guests the opportunity to book directly and securly through social messaging.  By automatically analyzing and learning the guests conversational patterns, the application will continually improve its vocabulary and functionality to serve guests. For more information contact...")
           ])
         ]),
       ]),
