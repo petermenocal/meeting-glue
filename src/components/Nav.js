@@ -14,9 +14,9 @@ module.exports = {
     return  m("nav", {class:"fl w-100", style: "background: url('../img/bg-nav_bar.png'); background-size: cover;"}, [
           m("div", {class: "flex items-center", style: "height: 70px"}, [
             m("div#branding", {class: "w-20 ph3 pointer"}, [
-              m("img", {alt: "Meeting Glue logo: Black serif uppercase text with green pineapple leaves over the 'U'", src: "img/logo/logo-meeting-glue.png"})
+              m("img", {alt: "Meeting Glue logo: Black serif uppercase text with green pineapple leaves over the 'U'", src: "img/logo/logo-meeting-glue.png", height: '64px'})
             ]),
-            m("div#nav-items", {class: "w-50"}, [
+            m("div#nav-items", {class: "w-50 flex items-center"}, [
               m("ul", {class: "avenir list black"}, Nav.items.map(function(navItem) {
                 return m("li", {class: "dib fl mr4 f6 ttu tracked link dim pointer"}, [
                   // m("a", {class: "link white dim pointer", oncreate: m.route.link, href: navItem.location}, navItem.name)
