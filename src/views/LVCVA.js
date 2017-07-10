@@ -37,7 +37,7 @@ module.exports = {
         ])
       ]),
       // header
-      m('div', {class: 'fl w-100 bg-b-purple-1 near-white avenir fw4 ttu'}, [
+      m('div', {class: 'fl w-100 bg-b-purple-1 near-white avenir fw4 ttu', style: 'overflow: hidden'}, [
         m('div', {class: 'fl w-70'}, [
           m('div', {class: 'fl w-30 flex flex-column justify-center', style: 'height: 350px'}, [
             m('img', {src: 'img/cvb/logo-las_vegas.png'})
