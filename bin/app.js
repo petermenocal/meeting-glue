@@ -72933,7 +72933,7 @@ module.exports = {
   view: () => {
     return m(".pa4", [
       m('.overflow-auto', [
-        m('table.f6.w-100.mw8.center', [
+        m('table.f6.w-100', [
           m('thead', [
             m('tr.stripe-dark', [
               m('th.fw6.tl.pa3.bg-white', 'Date'),
