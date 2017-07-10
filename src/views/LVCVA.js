@@ -37,19 +37,19 @@ module.exports = {
         ])
       ]),
       // header
-      m('div', {class: 'fl w-100 bg-b-purple-1 near-white avenir fw4 ttu', style: 'margin-bottom: -60px;'}, [
+      m('div', {class: 'fl w-100 bg-b-purple-1 near-white avenir fw4 ttu'}, [
         m('div', {class: 'fl w-70'}, [
-          m('div', {class: 'fl w-30'}, [
+          m('div', {class: 'fl w-30 flex flex-column justify-center', style: 'height: 350px'}, [
             m('img', {src: 'img/cvb/logo-las_vegas.png'})
           ]),
-          m('div', {class: 'fl w-70 ttu flex flex-column justify-center measure-narrow pb4', style: 'height: 250px;'}, [
+          m('div', {class: 'fl w-70 ttu flex flex-column justify-center measure-narrow', style: 'height: 350px;'}, [
             m('h1', {class: 'f4'}, 'Las Vegas Convention and Visitors Authority'),
             m('p', {class: 'lh-copy mt0 mb0'}, '3150 Paradise Road'),
             m('p', {class: 'lh-copy mt0 mb0'}, 'Las vegas, NV 89109'),
             m('a', {class: 'lh-copy mt3 link dim mb0 link bg-white-30 br2 w-40 tc pa1 pointer b white', href: '/rfp', oncreate: m.route.link}, 'send rfp')
           ])
         ]),
-        m('div', {class: 'fl flex flex-column justify-center w-30 pb4', style: 'height: 250px; background: url("img/cvb/bg-sidebar-gradient.png"); background-size: cover;'}, [
+        m('div', {class: 'fl flex flex-column justify-center w-30 pb4', style: 'height: 100%; min-height: 350px; background: url("img/cvb/bg-sidebar-gradient.png"); background-size: cover;'}, [
           m('ul', {class: 'list'}, [
             m('li', {class: 'lh-copy'}, 'CVB'),
             m('li', {class: 'lh-copy'}, 'Non-member based'),
