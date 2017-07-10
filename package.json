@@ -13,8 +13,8 @@
     "url": ""
   },
   "dependencies": {
-    "calendar-js": "0.0.3",
     "mithril": "^1.0.1",
+    "rome": "^2.1.22",
     "twitter": "^1.7.1",
     "underscore": "^1.8.3",
     "webpack": "^2.2.1"

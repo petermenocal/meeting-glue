@@ -1,5 +1,4 @@
 var m = require("mithril")
-
 var DayPlanner = {
   addDate: () => {
     let newDay = DayPlanner.day
@@ -7,6 +6,9 @@ var DayPlanner = {
   },
   days: [],
   day: {date: '', type: '', start: '', end: '', attendees: '', setup: '', av: '', notes: ''},
+  drag: function() {
+     return console.log('webedragging')
+  }
 }
 
 module.exports = {
@@ -27,7 +29,7 @@ module.exports = {
             ])
           ]),
           m('tbody.lh-copy', [
-            m('tr.stripe-dark', [
+            m('tr.bg-navy.white', [
               m('td.pa3.tc.f4', {onclick: DayPlanner.addDate}, '+'),
               m('td.pa3', ' '),
               m('td.pa3', ' '),
@@ -37,19 +39,54 @@ module.exports = {
               m('td.pa3', ' '),
               m('td.pa3', ' '),
             ]),
-            DayPlanner.days.map(function() {
-                return m('tr.stripe-dark', [
+            DayPlanner.days.map(function(d) {
+                return m('tr.stripe-dark', {draggable: true, ondragstart: DayPlanner.drag}, [
                   m('td.pa3', '8/8/18'),
-                  m('td.pa3', 'Registration'),
-                  m('td.pa3', '8:00 AM'),
+                  m('td.pa3', [
+                    m('select', [
+                      m('option', 'Break'),
+                      m('option', 'Breakfast'),
+                      m('option', 'Lunch'),
+                      m('option', 'Reception'),
+                      m('option', 'Dinner'),
+                      m('option', 'General Session'),
+                      m('option', 'Breakout'),
+                      m('option', 'Exhibition'),
+                      m('option', 'Setup'),
+                      m('option', 'Teardown'),
+                      m('option', 'Other'),
+                    ])
+                  ]),
+                  m('td.pa3.parent', [
+                    m("input#dt")
+                  ]),
                   m('td.pa3', '5:00 PM'),
                   m('td.pa3', '300'),
-                  m('td.pa3', 'Rounds (8)'),
+                  m('td.pa3', [
+                    m('select', [
+                      m('option', "8' x 10' Exhibits"),
+                      m('option', "10' x 10' Exhibits"),
+                      m('option', "Boardroom"),
+                      m('option', "Chevron"),
+                      m('option', "Classroom"),
+                      m('option', "Conference Style"),
+                      m('option', "Crescent-Round"),
+                      m('option', "Herringbone"),
+                      m('option', "Hollow Square"),
+                      m('option', "Reception"),
+                      m('option', "Rounds for 8"),
+                      m('option', "Rounds for 10"),
+                      m('option', "Table Top Exhibits"),
+                      m('option', "Theatre"),
+                      m('option', "U-Shaped"),
+                      m('option', "Other"),
+                    ])
+                  ]),
                   m('td.pa3', 'YES'),
                   m('td.pa3', 'Breakfast setup in foyer to bring into G/S'),
                 ])
             }),
-            m('tr.stripe-dark', [
+            m('tr.bg-navy.white', [
               m('td.pa3.tc.f4', {onclick: DayPlanner.addDate}, '+'),
               m('td.pa3', ' '),
               m('td.pa3', ' '),
