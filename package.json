@@ -13,6 +13,7 @@
     "url": ""
   },
   "dependencies": {
+    "flatpickr": "^3.0.6",
     "mithril": "^1.0.1",
     "rome": "^2.1.22",
     "twitter": "^1.7.1",

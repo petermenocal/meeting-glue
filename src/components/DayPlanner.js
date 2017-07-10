@@ -1,4 +1,22 @@
 var m = require("mithril")
+const flatpickr = require('flatpickr')
+
+var config = {
+    timePicker: {
+      enableTime: true,
+      noCalendar: true,
+      enableSeconds: false, // disabled by default
+      time_24hr: false, // AM/PM time picker is used by default
+      // default format
+      dateFormat: "H:i",
+      // initial values for time. don't use these to preload a date
+      defaultHour: 12,
+      defaultMinute: 0
+      // Preload time with defaultDate instead:
+      // defaultDate: "3:30"
+    }
+}
+
 var DayPlanner = {
   addDate: () => {
     let newDay = DayPlanner.day
@@ -8,7 +26,24 @@ var DayPlanner = {
   day: {date: '', type: '', start: '', end: '', attendees: '', setup: '', av: '', notes: ''},
   drag: function() {
      return console.log('webedragging')
-  }
+  },
+  newPickers: function() {
+    DayPlanner.newDatePicker()
+    DayPlanner.newStartTimePicker()
+    DayPlanner.newEndTimePicker()
+  },
+  newDatePicker: function(el) {
+    let datePicker = document.querySelector(".datePicker");
+    let fp =   new flatpickr(datePicker, {});  // Flatpickr
+  },
+  newStartTimePicker: function(el) {
+    let startTimePicker = document.querySelector(".startTimePicker");
+    let fp =   new flatpickr(startTimePicker, config.timePicker)
+  },
+  newEndTimePicker: function(el) {
+    let endTimePicker = document.querySelector(".endTimePicker");
+    let fp =   new flatpickr(endTimePicker, config.timePicker)
+  },
 }
 
 module.exports = {
@@ -20,8 +55,8 @@ module.exports = {
             m('tr.stripe-dark', [
               m('th.fw6.tl.pa3.bg-white', 'Date'),
               m('th.fw6.tl.pa3.bg-white', 'Type'),
-              m('th.fw6.tl.pa3.bg-white', 'Start'),
-              m('th.fw6.tl.pa3.bg-white', 'End'),
+              m('th.fw6.tl.pa3.bg-white', 'Start Time'),
+              m('th.fw6.tl.pa3.bg-white', 'End Time'),
               m('th.fw6.tl.pa3.bg-white', 'Attendees'),
               m('th.fw6.tl.pa3.bg-white', 'Setup'),
               m('th.fw6.tl.pa3.bg-white', 'AV'),
@@ -40,8 +75,10 @@ module.exports = {
               m('td.pa3', ' '),
             ]),
             DayPlanner.days.map(function(d) {
-                return m('tr.stripe-dark', {draggable: true, ondragstart: DayPlanner.drag}, [
-                  m('td.pa3', '8/8/18'),
+                return m('tr.stripe-dark', {oncreate: DayPlanner.newPickers }, [
+                  m('td.pa3', [
+                    m('input.datePicker.usn', {size: "11"})
+                  ]),
                   m('td.pa3', [
                     m('select', [
                       m('option', 'Break'),
@@ -57,11 +94,17 @@ module.exports = {
                       m('option', 'Other'),
                     ])
                   ]),
+                  //start time
                   m('td.pa3.parent', [
-                    m("input#dt")
+                    m('input.startTimePicker.usn.tc')
                   ]),
-                  m('td.pa3', '5:00 PM'),
-                  m('td.pa3', '300'),
+                  //end time
+                  m('td.pa3.parent', [
+                    m('input.endTimePicker.usn.tc')
+                  ]),
+                  m('td.pa3', [
+                    m('input.tc', {type: 'number', placeholder: 0})
+                  ]),
                   m('td.pa3', [
                     m('select', [
                       m('option', "8' x 10' Exhibits"),
@@ -82,8 +125,12 @@ module.exports = {
                       m('option', "Other"),
                     ])
                   ]),
-                  m('td.pa3', 'YES'),
-                  m('td.pa3', 'Breakfast setup in foyer to bring into G/S'),
+                  m('td.pa3', [
+                    m('input.tc', {type: 'checkbox'})
+                  ]),
+                  m('td.pa3', [
+                    m('textarea')
+                  ]),
                 ])
             }),
             m('tr.bg-navy.white', [
