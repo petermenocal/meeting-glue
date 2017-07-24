@@ -9,6 +9,7 @@ let LVCVA = require('./views/LVCVA')
 let SupplierResponse = require('./views/SupplierResponse')
 let Hotel = require('./views/Hotel')
 let Test = require('./views/Test')
+let Test2 = require('./views/Test2')
 
 // Routes
 m.route(document.body, '/main', {
@@ -18,5 +19,6 @@ m.route(document.body, '/main', {
   '/cvb': { render: () => { return m(Layout, m(LVCVA)) } },
   '/supplierResponse': { render: ()=> { return m(Layout, m(SupplierResponse)) } },
   '/hotel': { render: ()=> { return m(Layout, m(Hotel)) } },
-  '/test': { render: () => { return m(Layout, m(Test)) } }
+  '/test': { render: () => { return m(Layout, m(Test)) } },
+  '/test2': { render: () => { return m(Layout, m(Test2)) } }
 })
