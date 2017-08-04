@@ -4,8 +4,9 @@ var Nav = {
     items: [
       {name: "Home", location: "/main"},
       {name: "Compare", location: "/compare"},
-      {name: "LVCVA", location: "/cvb"},
-      {name: "Hotel", location: "/hotel"},
+      {name: "LV CVA", location: "/cvb/lasvegas/lvcva"},
+      {name: "Boulder CVB", location: "/cvb/colorado/boulder"},
+      {name: "Hard Rock", location: "/hotel"},
     ]
 }
 
