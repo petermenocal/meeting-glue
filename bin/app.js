@@ -32398,6 +32398,7 @@ var Nav = {
       {name: "LV CVA", location: "/cvb/lasvegas/lvcva"},
       {name: "Boulder CVB", location: "/cvb/colorado/boulder"},
       {name: "Hard Rock", location: "/hotel"},
+      {name: "RFP", location: "/rfp2"},
     ]
 }
 
