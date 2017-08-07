@@ -80,7 +80,167 @@ module.exports = {
         ])
       ]),
       m(".fl.w-30-ns.w-100.tc", [
-        m('div', 'option')
+        m('div', [
+          m('.bg-black.h3.w-100.white.flex.items-center.ph4', "Snippets"),
+          m('div.fl.w-100.h5.bg-black.tl.white.ph4', {style: "overflow: scroll"}, [
+
+          ]),
+          m('.bg-black-50.h3.w-100.white.flex.items-center.ph4', "Contacts"),
+          //contact list
+          m('div.fl.w-100.h5.bg-black-50.tl.white.ph4', {style: "overflow: scroll"}, [
+            //person
+            m('div.h3.bb.b--black.flex.items-center', [
+              m('div.fl.w-10', [
+                m('i.fa.fa-2x.fa-user')
+              ]),
+              m('div.fl.w-80', "John Smith")
+            ]),
+            //person
+            m('div.h3.bb.b--black.flex.items-center', [
+              m('div.fl.w-10', [
+                m('i.fa.fa-2x.fa-user')
+              ]),
+              m('div.fl.w-80', "John Smith")
+            ]),
+            //person
+            m('div.h3.bb.b--black.flex.items-center', [
+              m('div.fl.w-10', [
+                m('i.fa.fa-2x.fa-user')
+              ]),
+              m('div.fl.w-80', "John Smith")
+            ]),
+            //person
+            m('div.h3.bb.b--black.flex.items-center', [
+              m('div.fl.w-10', [
+                m('i.fa.fa-2x.fa-user')
+              ]),
+              m('div.fl.w-80', "John Smith")
+            ]),
+            //person
+            m('div.h3.bb.b--black.flex.items-center', [
+              m('div.fl.w-10', [
+                m('i.fa.fa-2x.fa-user')
+              ]),
+              m('div.fl.w-80', "John Smith")
+            ]),
+            //person
+            m('div.h3.bb.b--black.flex.items-center', [
+              m('div.fl.w-10', [
+                m('i.fa.fa-2x.fa-user')
+              ]),
+              m('div.fl.w-80', "John Smith")
+            ]),
+            //person
+            m('div.h3.bb.b--black.flex.items-center', [
+              m('div.fl.w-10', [
+                m('i.fa.fa-2x.fa-user')
+              ]),
+              m('div.fl.w-80', "John Smith")
+            ]),
+            //person
+            m('div.h3.bb.b--black.flex.items-center', [
+              m('div.fl.w-10', [
+                m('i.fa.fa-2x.fa-user')
+              ]),
+              m('div.fl.w-80', "John Smith")
+            ]),
+            //person
+            m('div.h3.bb.b--black.flex.items-center', [
+              m('div.fl.w-10', [
+                m('i.fa.fa-2x.fa-user')
+              ]),
+              m('div.fl.w-80', "John Smith")
+            ]),
+            //person
+            m('div.h3.bb.b--black.flex.items-center', [
+              m('div.fl.w-10', [
+                m('i.fa.fa-2x.fa-user')
+              ]),
+              m('div.fl.w-80', "John Smith")
+            ]),
+            //person
+            m('div.h3.bb.b--black.flex.items-center', [
+              m('div.fl.w-10', [
+                m('i.fa.fa-2x.fa-user')
+              ]),
+              m('div.fl.w-80', "John Smith")
+            ]),
+          ]),
+          m('.bg-black.h3.w-100.white.flex.items-center.ph4', "Communication"),
+          // inbox
+          m('div.fl.w-100.h4.bg-black.tl.white.ph4', {style: "overflow: scroll"}, [
+            m('div.h2', [
+              m('div.fl.w-10.tr.pr2', [
+                m('i.fa.fa.fa-inbox')
+              ]),
+              m('div.fl.w-90', "Inbox"),
+            ]),
+            m('div.h2', [
+              m('div.fl.w-10.tr.pr2', [
+                m('i.fa.fa.fa-paper-plane')
+              ]),
+              m('div.fl.w-90', "Sent"),
+            ]),
+            m('div.h2', [
+              m('div.fl.w-10.tr.pr2', [
+                m('i.fa.fa.fa-pencil')
+              ]),
+              m('div.fl.w-90', "Drafts"),
+            ]),
+            m('div.h2', [
+              m('div.fl.w-10.tr.pr2', [
+                m('i.fa.fa.fa-star')
+              ]),
+              m('div.fl.w-90', "Starred"),
+            ]),
+          ]),
+          m('.bg-black-50.h3.w-100.white.flex.items-center.ph4', "Gallery"),
+          // inbox
+          m('div.w-100.h6.bg-black-50.tl.white.ph4', {style: "overflow: scroll"}, [
+            //person
+            m('div.flex.flex-row.pa2.flex-wrap', [
+
+              m('div.fl.w-third.pa3.tc', [
+                m('i.fa.fa-2x.fa-file-image-o'),
+                m('.fw4.mt1.f6', 'logo.png')
+              ]),
+
+              m('div.fl.w-third.pa3.tc', [
+                m('i.fa.fa-2x.fa-file-image-o'),
+                m('.fw4.mt1.f6', 'logo.png')
+              ]),
+
+
+              m('div.fl.w-third.pa3.tc', [
+                m('i.fa.fa-2x.fa-file-image-o'),
+                m('.fw4.mt1.f6', 'logo.png')
+              ]),
+
+
+              m('div.fl.w-third.pa3.tc', [
+                m('i.fa.fa-2x.fa-file-image-o'),
+                m('.fw4.mt1.f6', 'logo.png')
+              ]),
+
+              m('div.fl.w-third.pa3.tc', [
+                m('i.fa.fa-2x.fa-file-image-o'),
+                m('.fw4.mt1.f6', 'logo.png')
+              ]),
+
+
+              m('div.fl.w-third.pa3.tc', [
+                m('i.fa.fa-2x.fa-file-image-o'),
+                m('.fw4.mt1.f6', 'logo.png')
+              ]),
+
+
+              m('div.fl.w-third.pa3.tc', [
+                m('i.fa.fa-2x.fa-file-image-o'),
+                m('.fw4.mt1.f6', 'logo.png')
+              ]),
+            ]),
+          ])
+        ])
       ]),
     ])
   }
