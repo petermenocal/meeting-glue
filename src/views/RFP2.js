@@ -82,8 +82,56 @@ module.exports = {
       m(".fl.w-30-ns.w-100.tc", [
         m('div', [
           m('.bg-black.h3.w-100.white.flex.items-center.ph4', "Snippets"),
-          m('div.fl.w-100.h5.bg-black.tl.white.ph4', {style: "overflow: scroll"}, [
+          m('div.fl.w-100.h5.bg-black.tl.white.ph4.pb3', {style: "overflow: scroll"}, [
+            //snippet
+            m('div.bb.b--black.flex.items-center.mt4', [
+              m('div.fl.w-100', [
+                m('h5', "Send complete to"),
+                m('.fl.w-100.ba.br2.pa2', [
+                  m('p.small.f6', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum')
+                ])
+              ])
+            ]),
 
+            //snippet
+            m('div.bb.b--black.flex.items-center.mt4', [
+              m('div.fl.w-100', [
+                m('h5', "Proposal deadline"),
+                m('.fl.w-100.ba.br2.pa2', [
+                  m('p.small.f6', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum')
+                ])
+              ])
+            ]),
+
+            //snippet
+            m('div.bb.b--black.flex.items-center.mt4', [
+              m('div.fl.w-100', [
+                m('h5', "Send complete to"),
+                m('.fl.w-100.ba.br2.pa2', [
+                  m('p.small.f6', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum')
+                ])
+              ])
+            ]),
+
+            //snippet
+            m('div.bb.b--black.flex.items-center.mt4', [
+              m('div.fl.w-100', [
+                m('h5', "Send complete to"),
+                m('.fl.w-100.ba.br2.pa2', [
+                  m('p.small.f6', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum')
+                ])
+              ])
+            ]),
+
+            //snippet
+            m('div.bb.b--black.flex.items-center.mt4', [
+              m('div.fl.w-100', [
+                m('h5', "Send complete to"),
+                m('.fl.w-100.ba.br2.pa2', [
+                  m('p.small.f6', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum')
+                ])
+              ])
+            ]),
           ]),
           m('.bg-black-50.h3.w-100.white.flex.items-center.ph4', "Contacts"),
           //contact list
