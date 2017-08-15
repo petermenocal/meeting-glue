@@ -52,15 +52,15 @@ module.exports = {
       m('.overflow-auto', [
         m('table.f6.w-100', [
           m('thead', [
-            m('tr.stripe-dark', [
-              m('th.fw6.tl.pa3.bg-white', 'Date'),
-              m('th.fw6.tl.pa3.bg-white', 'Type'),
-              m('th.fw6.tl.pa3.bg-white', 'Start Time'),
-              m('th.fw6.tl.pa3.bg-white', 'End Time'),
-              m('th.fw6.tl.pa3.bg-white', 'Attendees'),
-              m('th.fw6.tl.pa3.bg-white', 'Setup'),
-              m('th.fw6.tl.pa3.bg-white', 'AV'),
-              m('th.fw6.tl.pa3.bg-white', 'Notes'),
+            m('tr', [
+              m('th.fw6.tl.pa3.bg-purple.white', 'Date'),
+              m('th.fw6.tl.pa3.bg-purple.white', 'Type'),
+              m('th.fw6.tl.pa3.bg-purple.white', 'Start Time'),
+              m('th.fw6.tl.pa3.bg-purple.white', 'End Time'),
+              m('th.fw6.tl.pa3.bg-purple.white', 'Attendees'),
+              m('th.fw6.tl.pa3.bg-purple.white', 'Setup'),
+              m('th.fw6.tl.pa3.bg-purple.white', 'AV'),
+              m('th.fw6.tl.pa3.bg-purple.white', 'Notes'),
             ])
           ]),
           m('tbody.lh-copy', [
@@ -75,7 +75,7 @@ module.exports = {
               m('td.pa3', ' '),
             ]),
             DayPlanner.days.map(function(d) {
-                return m('tr.stripe-dark', {oncreate: DayPlanner.newPickers }, [
+                return m('tr.stripe-light', {oncreate: DayPlanner.newPickers }, [
                   m('td.pa3', [
                     m('input.datePicker.usn', {size: "11"})
                   ]),

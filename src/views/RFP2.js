@@ -4,6 +4,8 @@ const Awesomplete = require('awesomplete')
 const flatpickr = require('flatpickr')
 var quill;
 
+const DayPlanner = require('../components/DayPlanner')
+
 let menuState = require('../models/menuState')
 let insertSnippet = require('../models/insertSnippet')
 let RFPState = require('../models/RFPState')
@@ -104,7 +106,7 @@ module.exports = {
         m('a.link.pa2.bg-green.br4.mt4.dim.pointer.shadow-1.near-white.fw5.ttu.mw4.tc.fr.dib', {onclick: RFPState.changeStep}, 'Next step')
       ]),
       m(".fl.w-70-ns.w-100", {class: RFPState.step == 2 ? "db" : "dn"}, [
-        m('a.link.pa2.bg-green.br4.mt4.dim.pointer.shadow-1.near-white.fw5.ttu.mw4.tc.dib.fixed.bottom-1.left-1', {onclick: RFPState.finalStep, style: 'z-index: 99999'}, [
+        m('a.link.pa2.bg-green.br4.mt4.dim.pointer.shadow-1.near-white.fw5.ttu.mw4.tc.dib.fixed.bottom-1.left-1', {onclick: RFPState.finalStep, style: 'z-index: 99'}, [
           m('i.fa.fa-paper-plane.mr2'),
           m('span', 'Send RFP')
         ]),
@@ -208,7 +210,6 @@ module.exports = {
               ])
             ]),
           ]),
-
           m('.bg-black-50.h3.w-100.white.flex.items-center.ph4', {onclick: menuState.toggleGallery}, [
             m('span', {class: menuState.gallery ? "dn" : "db"}, [
               m('i.fa.fa-caret-right'),
@@ -224,14 +225,91 @@ module.exports = {
             m('div.flex.items-center.mb3', [
               m('div.mr4.dim.pointer', [
                 m('i.fa.fa-edit'),
-                m('span.ml1', {onclick: RFPState.editGallery}, "Edit")
+                m('span.ml1', {onclick: RFPState.toggleGalleryEditor}, "Edit")
               ])
             ]),
 
             m('.fixed.top-0.right-0.bottom-0.left-0.bg-gray.pa2.w-100.h-100', {class: RFPState.showGalleryEditor ? "fixed" : "dn"}, [
               m('.f1.fw2', 'Gallery Editor'),
+              m('.fixed.top-1.right-1.red.i.fa.fa-times.fa-2x', {onclick: RFPState.toggleGallery}),
               m('i.fa.fa-plus.mr2'),
-              m('span', "Upload image")
+              m('span',  { onclick: RFPState.imageUpload }, "Upload image")
+            ]),
+
+            //person
+            m('div.flex.flex-row.pa2.flex-wrap', [
+
+              m('div.fl.w-third.pa3.tc', [
+                m('i.fa.fa-2x.fa-file-image-o'),
+                m('.fw4.mt1.f6', 'logo.png')
+              ]),
+
+              m('div.fl.w-third.pa3.tc', [
+                m('i.fa.fa-2x.fa-file-image-o'),
+                m('.fw4.mt1.f6', 'logo.png')
+              ]),
+
+
+              m('div.fl.w-third.pa3.tc', [
+                m('i.fa.fa-2x.fa-file-image-o'),
+                m('.fw4.mt1.f6', 'logo.png')
+              ]),
+
+
+              m('div.fl.w-third.pa3.tc', [
+                m('i.fa.fa-2x.fa-file-image-o'),
+                m('.fw4.mt1.f6', 'logo.png')
+              ]),
+
+              m('div.fl.w-third.pa3.tc', [
+                m('i.fa.fa-2x.fa-file-image-o'),
+                m('.fw4.mt1.f6', 'logo.png')
+              ]),
+
+
+              m('div.fl.w-third.pa3.tc', [
+                m('i.fa.fa-2x.fa-file-image-o'),
+                m('.fw4.mt1.f6', 'logo.png')
+              ]),
+
+
+              m('div.fl.w-third.pa3.tc', [
+                m('i.fa.fa-2x.fa-file-image-o'),
+                m('.fw4.mt1.f6', 'logo.png')
+              ]),
+            ]),
+          ]),
+
+          //Day Planner
+          m('.bg-black.h3.w-100.white.flex.items-center.ph4', {onclick: RFPState.toggleDayPlanner}, [
+            m('span', [
+              m('i.fa.fa-magic'),
+            ]),
+            m('span.ml2', "Day planner"),
+          ]),
+          //edit day planner modal
+          m('.fixed.top-0.right-0.bottom-0.left-0.bg-black.white.pa2.w-100.h-100', {class: RFPState.showDayPlanner ? "fixed" : "dn"}, [
+            m('.tl', [
+              m('.f1.fw2', 'Day Planner'),
+              m('.fixed.top-1.right-1.red.i.fa.fa-times.fa-2x', {onclick: RFPState.toggleDayPlanner}, )
+            ]),
+            m(DayPlanner)
+          ]),
+
+          // inbox
+          m('div.w-100.h6.bg-black-50.tl.white.ph4', {class:menuState.dayPlanner?"db":"dn",style: "overflow: scroll; -webkit-overflow-scrolling: touch;"}, [
+
+            m('div.flex.items-center.mb3', [
+              m('div.mr4.dim.pointer', [
+                m('i.fa.fa-edit'),
+                m('span.ml1', {onclick: RFPState.toggleGalleryEditor}, "Edit")
+              ])
+            ]),
+            //edit gallery modal
+            m('.fixed.top-0.right-0.bottom-0.left-0.bg-gray.pa2.w-100.h-100', {class: RFPState.showGalleryEditor ? "fixed" : "dn"}, [
+              m('.f1.fw2', 'Gallery Editor'),
+              m('i.fa.fa-plus.mr2'),
+              m('span',  { onclick: RFPState.imageUpload }, "Upload image")
             ]),
 
             //person
@@ -277,6 +355,10 @@ module.exports = {
               ]),
             ]),
           ])
+
+
+
+
         ])
       ]),
     ])

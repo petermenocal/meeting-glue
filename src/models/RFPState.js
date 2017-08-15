@@ -16,9 +16,22 @@ let RFPState = {
     RFPState.showTemplates  = !RFPState.showTemplates
   },
   showGalleryEditor: false,
-  editGallery: () => {
+  toggleGalleryEditor: () => {
     RFPState.showGalleryEditor = !RFPState.showGalleryEditor
-  }
+  },
+  toggleDayPlanner: () => {
+    RFPState.showDayPlanner = !RFPState.showDayPlanner
+  },
+  showDayPlanner: false,
+  current: { images:[] },
+  imageUpload: function() {
+  		cloudinary.openUploadWidget({ cloud_name: 'geekypixel', upload_preset: 'i4kcgih7'},
+  			function(error, result) {
+  				RFPState.current.images = result
+          console.log(RFPState.current)
+  				m.redraw()
+  			})
+  	},
 }
 
 module.exports = RFPState

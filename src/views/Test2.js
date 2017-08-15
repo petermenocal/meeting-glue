@@ -63,27 +63,6 @@ module.exports = {
             ]),
             m('.fl.w-20', 'menu')
           ]),
-          //Weather
-          m("div#weather", {class: "f5 bg-white fl w-50 pa4 db"}, [
-            m('div.fl.w-100', [
-              m('div.fl.w-50', [
-                m("h1", {class: "avenir fw5 blue ttu"}, "Weather"),
-                m("div", Weather.loaded ? [
-                  m("p", {class: "b"}, Weather.current.name),
-                  m("p", {class: "ttc b"}, Weather.current.weather[0].description),
-                  m("p", {class: "f6"}, "Humidity: " + Weather.current.main.humidity + "%"),
-                  m("p", {class: "f6"}, "Pressure: " + Weather.current.main.pressure + "hpa"),
-                  m("p", {class: "f6"}, "Current Temp: " + Weather.current.main.temp + "°F"),
-                  m("p", {class: "f6"}, "Min Temp: " + Weather.current.main.temp_min + "°F"),
-                  m("p", {class: "f6"}, "Max Temp: " + Weather.current.main.temp_max + "°F"),
-                ] : "Loading weather...")
-              ]),
-              m('div.fl.w-50', [
-                m('h1', {class: 'avenir fw5 blue ttu'}, 'Daily A/V Notes'),
-                m('textarea.textarea-av',)
-              ])
-            ])
-          ]),
             m('table.f6.w-100', [
               m('thead', [
                 m('tr.stripe-dark', [
@@ -186,28 +165,7 @@ module.exports = {
            ]),
            m('.fl.w-20', 'menu')
          ]),
-         //Weather
-         m("div#weather", {class: "f5 bg-white fl w-50 pa4 db"}, [
-           m('div.fl.w-100', [
-             m('div.fl.w-50', [
-               m("h1", {class: "avenir fw5 blue ttu"}, "Weather"),
-               m("div", Weather.loaded ? [
-                 m("p", {class: "b"}, Weather.current.name),
-                 m("p", {class: "ttc b"}, Weather.current.weather[0].description),
-                 m("p", {class: "f6"}, "Humidity: " + Weather.current.main.humidity + "%"),
-                 m("p", {class: "f6"}, "Pressure: " + Weather.current.main.pressure + "hpa"),
-                 m("p", {class: "f6"}, "Current Temp: " + Weather.current.main.temp + "°F"),
-                 m("p", {class: "f6"}, "Min Temp: " + Weather.current.main.temp_min + "°F"),
-                 m("p", {class: "f6"}, "Max Temp: " + Weather.current.main.temp_max + "°F"),
-               ] : "Loading weather...")
-             ]),
-             m('div.fl.w-50', [
-               m('h1', {class: 'avenir fw5 blue ttu'}, 'Daily A/V Notes'),
-               m('textarea.textarea-av',)
-             ])
-           ])
-         ]),
-           m('table.f6.w-100', [
+         m('table.f6.w-100', [
              m('thead', [
                m('tr.stripe-dark', [
                  m('th.fw6.tl.pa3.bg-white', 'Start Time'),
