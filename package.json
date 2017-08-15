@@ -13,6 +13,7 @@
     "url": ""
   },
   "dependencies": {
+    "awesomplete": "^1.1.2",
     "flatpickr": "^3.0.6",
     "mithril": "^1.0.1",
     "rome": "^2.1.22",
