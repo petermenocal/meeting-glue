@@ -81,7 +81,7 @@ module.exports = {
         m("span.fl.w-100.f5.fw4.measure.lh-subheadline.mt1.db.gray", "Let us know a few particulars about your event and we'll set automatically setup your RFP with some default data."),
         m('.fl.w-100.usn', [
           m(".flex.flex-column.fl.w-50.pr4", [
-            m('.fl.w-100.br4.shadow-2.bg-purple.mt4.pa3', {class: preflightState.specific ? "bg-light-purple" : "bg-purple" }, [
+            m('.fl.w-100.br4.shadow-2.bg-purple.mt4.pa3', {class: preflightState.specific ? "bg-purple" : "bg-light-purple" }, [
               m('.f4.fw4.white.dim.pointer', {onclick: preflightState.toggleSpecific }, "I have specific dates for my program."),
               m('.fl.w-50-ns.w-100.ph2-ns', {class: preflightState.specific ? "db" : "dn" }, [
                 m('label.fl.white.w-100.b.mt3', 'Start date'),
@@ -92,7 +92,7 @@ module.exports = {
                 m('input.fl.ba.b--black-20.br2.w-100.input#checkout'),
               ])
             ]),
-            m('.fl.w-100.br4.shadow-2.bg-purple.mt4.pa3', {class: preflightState.range ? "bg-light-purple" : "bg-purple" }, [
+            m('.fl.w-100.br4.shadow-2.bg-purple.mt4.pa3', {class: preflightState.range ? "bg-purple" : "bg-light-purple" }, [
               m('.dim.pointer', [
                 m('.f4.fw4.white.dim.pointer', {onclick: preflightState.toggleRange }, "I have a date range for my program."),
                 m('.f5.fw4.lh-subheadline.white-80.dim.pointer', {onclick: preflightState.toggleRange }, "(Works with sleeping rooms and/or meeting space)"),
@@ -107,7 +107,7 @@ module.exports = {
               ])
 
             ]),
-            m('.fl.w-100.br4.shadow-2.bg-purple.mt4.pa3', {class: preflightState.pattern ? "bg-light-purple" : "bg-purple" }, [
+            m('.fl.w-100.br4.shadow-2.bg-purple.mt4.pa3', {class: preflightState.pattern ? "bg-purple" : "bg-light-purple" }, [
               m('.dim.pointer',[
                 m('.f4.fw4.white.dim.pointer', {onclick: preflightState.togglePattern }, "I have a preferred pattern with a date range."),
                 m('.f5.fw4.lh-subheadline.white-80', {onclick: preflightState.togglePattern }, "(Works with sleeping rooms and/or meeting space)"),
@@ -139,12 +139,31 @@ module.exports = {
               ])
 
             ]),
-            m('.fl.w-100.br4.shadow-2.bg-purple.mt4.pa3', {class: preflightState.directInput ? "bg-light-purple" : "bg-purple" }, [
+            m('.fl.w-100.br4.shadow-2.bg-purple.mt4.pa3', {class: preflightState.directInput ? "bg-purple" : "bg-light-purple" }, [
               m('.f4.fw4.white.dim.pointer', {onclick: preflightState.toggleDirectInput }, "I would like to type out my date needs."),
               m('textarea.fl.w-100.br2.ba.b--purple.mt2', {class: preflightState.directInput ? "db" : "dn"})
             ]),
           ]),
-          m(".flex.flex-column.fl.w-50.pa4.mt4.shadow-2.bg-blue.near-white.br4", [
+          m('.fl.w-50.pv4', [
+            m('.fl.w-100.br4.white.mt0.mb3.pa3', {class: preflightState.roomsAndSpace ? "bg-dark-red s1" : "bg-light-red" }, [
+              m('div.fl.w-100', {onclick: preflightState.selectRoomsAndSpace},  [
+                m('.fl.fw4', "Sleeping rooms and meeting space")
+              ]),
+            ]),
+            m('.fl.w-100.br4.white.mt0.mb3.pa3', {class: preflightState.sleepingRoomsOnly ? "bg-dark-red s1" : "bg-light-red" }, [
+              m('div.fl.w-100', {onclick: preflightState.selectSleepingRoomsOnly},  [
+                m('.fl.fw4', "Sleeping rooms only")
+              ]),
+            ]),
+            m('.fl.w-100.br4.white.mt0.pa3', {class: preflightState.meetingSpaceOnly ? "bg-dark-red s1" : "bg-light-red" }, [
+              m('div.fl.w-100', {onclick: preflightState.selectMeetingSpaceOnly},  [
+                m('.fl.fw4', "Meeting space only")
+              ]),
+            ]),
+          ]),
+
+
+          m(".flex.flex-column.fl.w-50.pa4.shadow-2.bg-blue.near-white.br4", [
             m('span.f3.fw1.lh-headline', "Start from a template"),
             m('span.f6.lh-copy.fw6.mt1.measure', "You can choose a pre-configured template of your own or one of our sugggested templates."),
             m('.fl.w-100.mt4', [
