@@ -3,6 +3,9 @@ const Quill = require('quill')
 const Awesomplete = require('awesomplete')
 const flatpickr = require('flatpickr')
 var quill;
+var Bold = Quill.import('formats/bold');
+Bold.tagName = 'B';   // Quill uses <strong> by default
+Quill.register(Bold, true);
 
 const DayPlanner = require('../components/DayPlanner')
 
@@ -79,8 +82,26 @@ module.exports = {
       m(".fl.w-100.ba.b--black-10.pa4.bg-white.mr6-ns.shadow-4", {class: RFPState.step == 1 ? "db" : "dn"}, [
         m("span.fl.w-100.f1.fw3.lh-headline.db.purple", "Tell us what you need."),
         m("span.fl.w-100.f5.fw4.measure.lh-subheadline.mt1.db.gray", "Let us know a few particulars about your event and we'll set automatically setup your RFP with some default data."),
+        
         m('.fl.w-100.usn', [
-          m(".flex.flex-column.fl.w-50.pr4", [
+          m('.fl.w-40.pv4.pr4', [
+            m('.fl.w-100.br4.white.mt0.mb3.pa3', { class: preflightState.roomsAndSpace ? "bg-dark-red s1" : "bg-light-red" }, [
+              m('div.fl.w-100', { onclick: preflightState.selectRoomsAndSpace }, [
+                m('.fl.fw4', "Sleeping rooms and meeting space")
+              ]),
+            ]),
+            m('.fl.w-100.br4.white.mt0.mb3.pa3', { class: preflightState.sleepingRoomsOnly ? "bg-dark-red s1" : "bg-light-red" }, [
+              m('div.fl.w-100', { onclick: preflightState.selectSleepingRoomsOnly }, [
+                m('.fl.fw4', "Sleeping rooms only")
+              ]),
+            ]),
+            m('.fl.w-100.br4.white.mt0.pa3', { class: preflightState.meetingSpaceOnly ? "bg-dark-red s1" : "bg-light-red" }, [
+              m('div.fl.w-100', { onclick: preflightState.selectMeetingSpaceOnly }, [
+                m('.fl.fw4', "Meeting space only")
+              ]),
+            ]),
+          ]),
+          m(".flex.flex-column.fl.w-60", [
             m('.fl.w-100.br4.shadow-2.bg-purple.mt4.pa3', {class: preflightState.specific ? "bg-purple" : "bg-light-purple" }, [
               m('.f4.fw4.white.dim.pointer', {onclick: preflightState.toggleSpecific }, "I have specific dates for my program."),
               m('.fl.w-50-ns.w-100.ph2-ns', {class: preflightState.specific ? "db" : "dn" }, [
@@ -139,31 +160,15 @@ module.exports = {
               ])
 
             ]),
-            m('.fl.w-100.br4.shadow-2.bg-purple.mt4.pa3', {class: preflightState.directInput ? "bg-purple" : "bg-light-purple" }, [
+            m('.fl.w-100.br4.shadow-2.bg-purple.mt4.pa3.mb4', {class: preflightState.directInput ? "bg-purple" : "bg-light-purple" }, [
               m('.f4.fw4.white.dim.pointer', {onclick: preflightState.toggleDirectInput }, "I would like to type out my date needs."),
               m('textarea.fl.w-100.br2.ba.b--purple.mt2', {class: preflightState.directInput ? "db" : "dn"})
             ]),
           ]),
-          m('.fl.w-50.pv4', [
-            m('.fl.w-100.br4.white.mt0.mb3.pa3', {class: preflightState.roomsAndSpace ? "bg-dark-red s1" : "bg-light-red" }, [
-              m('div.fl.w-100', {onclick: preflightState.selectRoomsAndSpace},  [
-                m('.fl.fw4', "Sleeping rooms and meeting space")
-              ]),
-            ]),
-            m('.fl.w-100.br4.white.mt0.mb3.pa3', {class: preflightState.sleepingRoomsOnly ? "bg-dark-red s1" : "bg-light-red" }, [
-              m('div.fl.w-100', {onclick: preflightState.selectSleepingRoomsOnly},  [
-                m('.fl.fw4', "Sleeping rooms only")
-              ]),
-            ]),
-            m('.fl.w-100.br4.white.mt0.pa3', {class: preflightState.meetingSpaceOnly ? "bg-dark-red s1" : "bg-light-red" }, [
-              m('div.fl.w-100', {onclick: preflightState.selectMeetingSpaceOnly},  [
-                m('.fl.fw4', "Meeting space only")
-              ]),
-            ]),
-          ]),
+        
 
 
-          m(".flex.flex-column.fl.w-50.pa4.shadow-2.bg-blue.near-white.br4", [
+          m(".flex.flex-column.fl.w-100.pa4.shadow-2.bg-blue.near-white.br4", [
             m('span.f3.fw1.lh-headline', "Start from a template"),
             m('span.f6.lh-copy.fw6.mt1.measure', "You can choose a pre-configured template of your own or one of our sugggested templates."),
             m('.fl.w-100.mt4', [
@@ -191,26 +196,162 @@ module.exports = {
 
           m('div.fl.w-100', " "),
           m('h1', "Request for Proposal"),
+          m('p', 'Meeting Space Only'),
 
           m('div.fl.w-100', " "),
-          m('p', "Please send completed regret or completed response forms to:"),
+          
+          m('.fl.w-100', [
+            m('h3.fl.dib', "Proposal Deadline"),
+            m('p.fl.dib', "August 15, 2017"),
+          ]),
 
           m('div.fl.w-100', " "),
-
-
-          m('div.fl.w-100', " "),
-          m('p', "Proposal deadline: August 15, 2017"),
-          m('p', "Decision date: August 2017"),
-
-          m('div.fl.w-100', " "),
-          m('p', "Group profile: Geeky Pixel"),
+          m('.fl.w-100', [
+            m('h3.fl.dib', "Organization"),
+            m('p.fl.dib', "Geeky Pixel"),
+          ]),
 
           m('div.fl.w-100', " "),
           m('p', "Geeky Pixel is a boutique website design and development company based in Las Vegas."),
 
           m('div.fl.w-100', " "),
-          m('p', "Program: 2019 Annual Retreat"),
+          m('.fl.w-100', [
+            m('h3.fl.dib', "Program Name"),
+            m('p.fl.dib', "Grant Review Day"),
+          ]),
 
+          m('div.fl.w-100', " "),
+          m('.fl.w-100', [
+            m('h3.fl.dib', "Cities under consideration"),
+            m('p.fl.dib', "San Diego, CA"),
+          ]),
+
+          m('div.fl.w-100', " "),
+          m('.fl.w-100', [
+            m('h3.fl.dib', "Program Schedule"),
+            m('p.fl.dib', "(Placeholder)"),
+          ]),
+
+          m('div.fl.w-100', " "),
+          m('.fl.w-100', [
+            m('h3.fl.dib', "Hot Buttons"),
+            m('ul', [
+              m('li', "Food and Beverage Pricing"),
+              m('li', "Ability to use our own AV company"),
+              m('li', "Restaurants within walking distance"),
+            ]),
+          ]),
+
+          m('div.fl.w-100', " "),
+          m('.fl.w-100', [
+            m('h3.fl.dib', "Billing Arrangements"),
+            m('p.fl.dib', "Master Bill: Food and Beverage, Audio/Visual"),
+            m('p.fl.dib', "Individuals: N/A"),
+          ]),
+
+          m('div.fl.w-100', " "),
+          m('.fl.w-100', [
+            m('h3.fl.dib', "History"),
+            m('ul.list', [
+              m('li', "2017 - Omni Rancho Las Palmas Resort And Spa (Palm Springs, CA)"),
+              m('li', "2017 - Omni Rancho Las Palmas Resort And Spa (Palm Springs, CA)"),
+            ]),
+          ]),
+
+
+          m('div.fl.w-100', " "),
+          m('div.fl.w-100', " "),
+          m('div.fl.w-100', " "),
+          
+          m('h1', "Supplier Bid Form"),
+
+          m('div.fl.w-100', " "),
+          m('.fl.w-100', [
+            m('p.fl.dib', [
+              m('strong', "Hotel Name: "),
+              m('span', 'Hotel California')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "Address: "),
+              m('span', '123 Beach Drive, San Diego, CA 91203')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "Sales Contact: "),
+              m('span', 'John Smith | JSmith@hotels.com | 702-555-5555')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "Hotel Rating: "),
+              m('span', '4 Diamond')
+            ]),
+            m('a[href=google.com]', 'Hotel website'),
+           
+           
+            m('div.fl.w-100', " "), 
+            m('p.fl.dib', [
+              m('strong', "Can you accommodate the requested meeting space: "),
+              m('span', 'YES')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "Room Rental: "),
+              m('span', '$1000/day')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "Room Rental Tax: "),
+              m('span', '14.5%')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "Food and Beverage Minimum: "),
+              m('span', '$15,000')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "F&B Tax: "),
+              m('span', '11.5%')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "F&B Service Charge: "),
+              m('span', '23%')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "In-House Audio Visual: "),
+              m('span', 'Encore | '), 
+              m('a[href=google.com]', 'Link to equipment pricing')
+            ]),
+
+            m('div.fl.w-100', " "),
+            m('h2.fl.dib.purple', "Requested Concessions"),
+            m('p.fl.dib', [
+              m('p.fl.dib', [
+                m('span', '[Placeholder]')
+              ]),
+            ]),
+
+
+            m('div.fl.w-100', " "),
+            m('.fl.w-100', [
+              m('h2.fl.dib.purple', "General Questions"),
+              m('p.fl.dib', [
+                m('strong', "Self Parking: "),
+                m('span', 'YES, $22/day')
+              ]),
+              m('p.fl.dib', [
+                m('strong', "Valet Parking: "),
+                m('span', 'Yes, $25/day')
+              ]),
+              m('p.fl.dib', [
+                m('strong', "Public Transportation: "),
+                m('span', 'N/A')
+              ]),
+              m('p.fl.dib', [
+                m('strong', "Fitness Center: "),
+                m('span', 'Yes')
+              ]),
+              m('p.fl.dib', [
+                m('strong', "Pool: "),
+                m('span', 'Yes, Indoor and Outdoor')
+              ]),
+            ]),
+
+          ]),
 
         ])
       ]),
@@ -308,15 +449,15 @@ module.exports = {
 
 
 
-          m('.bg-black.h3.w-100.white.flex.items-center.ph4', {onclick: menuState.toggleGallery}, [
-            m('span', {class: menuState.gallery ? "dn" : "db"}, [
-              m('i.fa.fa-caret-right'),
-            ]),
-            m('span', {class: menuState.gallery ? "db" : "dn"}, [
-              m('i.fa.fa-caret-down'),
-            ]),
-            m('span.ml2', "Gallery"),
-          ]),
+          // m('.bg-black.h3.w-100.white.flex.items-center.ph4', {onclick: menuState.toggleGallery}, [
+          //   m('span', {class: menuState.gallery ? "dn" : "db"}, [
+          //     m('i.fa.fa-caret-right'),
+          //   ]),
+          //   m('span', {class: menuState.gallery ? "db" : "dn"}, [
+          //     m('i.fa.fa-caret-down'),
+          //   ]),
+          //   m('span.ml2', "Gallery"),
+          // ]),
           // inbox
           m('div.w-100.h6.bg-black.tl.white.ph4', {class:menuState.gallery?"db":"dn",style: "overflow: scroll; -webkit-overflow-scrolling: touch;"}, [
 
@@ -379,7 +520,7 @@ module.exports = {
           ]),
 
           //Day Planner
-          m('.bg-dark-gray.h3.w-100.white.flex.items-center.ph4', {onclick: RFPState.toggleDayPlanner}, [
+          m('.bg-black.h3.w-100.white.flex.items-center.ph4', {onclick: RFPState.toggleDayPlanner}, [
             m('span', [
               m('i.fa.fa-magic'),
             ]),

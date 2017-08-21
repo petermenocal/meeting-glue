@@ -65,6 +65,8 @@ module.exports = {
           m('h1', {class: 'fl f4'}, '@visitBoulder')
         ]),
         m('div', {class: 'fl w-100 pa2'}, [
+          m('a.twitter-timeline[data-theme=dark][data-height=400][data-link-color=#981CEB][href=https://twitter.com/VisitBoulder]'),
+          m('script[async]', {src:'//platform.twitter.com/widgets.js', charset: "utf-8"})
            //m('h1', {class: 'f4 fw4 measure-narrow'}, Feed.active.text)
         ])
       ]),
@@ -75,7 +77,7 @@ module.exports = {
       ]),
       // fact panels
       m('div', {class: 'fl w-100 pa3 mt4 mb4'}, [
-        m('div', {class: 'fl ml3 shadow-3 pa3 white relative shadow-custom br4', style: ' width: 47%; height: 500px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
+        m('div', {class: 'fl ml3 shadow-3 pa3 white relative shadow-custom br4', style: ' width: 47%; height: 640px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
           m('h1', {class: 'f4'}, 'Quick Facts'),
           m('p', {onclick: Calendar.toggleModal, class: 'absolute top-0 right-2 ba bw1 pa2 br2 link dim pointer'}, 'Convention Calendar'),
           m('span', {class: 'fl w-100'}, [
@@ -89,25 +91,25 @@ module.exports = {
             m('p', {class: 'fr h1 mb1 w-50 ph2'}, 'Green Ride Boulder ($34) or RTD Bus ($9)'),
             m('p', {class: 'tc f3 underline w-100 fl fw4'}, 'Awards'),
             //2016
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, '#10 "Highest Well Being Communities"'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, 'Gallup-Healthways Well-Being Index, March 2017'),
+            m('p', {class: 'fl f6 h1 mb4 w-50 tr ph2 b ttu tracked'}, '#10 "Highest Well Being Communities"'),
+            m('p', {class: 'fr h1 mb4 w-50 ph2'}, 'Gallup-Healthways Well-Being Index, March 2017'),
             //2017
-            m('p', {class: 'fl h2 mb1 w-50 tr ph2 b ttu tracked'}, '18 Best Cities in America for Solo Travelers'),
-            m('p', {class: 'fr h2 mb1 w-50 ph2 flex items-center'}, 'TravelandLeisure.com, December 2016'),
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'The Best US Cities to Spend a Weekend'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, 'Thrillist, March 2016'),
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Top 15 Cities for Seasonal Brews'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, 'Travelocity.com, November 2016'),
+            m('p', {class: 'fl f6 h2 mb4 w-50 tr ph2 b ttu tracked'}, '18 Best Cities in America for Solo Travelers'),
+            m('p', {class: 'fr h2 mb4 w-50 ph2 flex items-center'}, 'TravelandLeisure.com, December 2016'),
+            m('p', {class: 'fl f6 h1 mb4 w-50 tr ph2 b ttu tracked'}, 'The Best US Cities to Spend a Weekend'),
+            m('p', {class: 'fr h1 mb4 w-50 ph2'}, 'Thrillist, March 2016'),
+            m('p', {class: 'fl f6 h1 mb4 w-50 tr ph2 b ttu tracked'}, 'Top 15 Cities for Seasonal Brews'),
+            m('p', {class: 'fr h1 mb4 w-50 ph2'}, 'Travelocity.com, November 2016'),
 
 
           ])
         ]),
-        m('div', {class: 'fr mr3 shadow-6 pa3 white relative shadow-custom br4', style: 'width: 47%; height: 500px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
+        m('div', {class: 'fr mr3 shadow-6 pa3 white relative shadow-custom br4', style: 'width: 47%; height: 640px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
           m('h1', {class: 'f4'}, 'Updates from Boulder'),
           m('div', {class: 'fl w-100', style: 'height: 500px; overflow-x: scroll'}, [
             m('h1', {class: 'white-70 lh-title'}, "Number 10 'Highest Well Being Communities'"),
-            m('p', {class: 'lh-copy f4 measure pt3 center ph4'}, "The mission of the Boulder Convention & Visitors Bureau (CVB) is to advocate and provide leadership to develop and promote the natural environment, art/culture, historic and visitor potential for the express purpose of aiding the Boulder economy."),
-            m('p', {class: 'lh-copy f4 measure pt2\1 center ph4'}, "Whether you’re a visitor, meeting planner or Boulder tourism business, we’re here to serve you. You’ll find that our website is filled with information, but please don’t hesitate to reach out should you need personal assistance.")
+            m('p', {class: 'lh-copy f6 measure pt3 center ph4'}, "The mission of the Boulder Convention & Visitors Bureau (CVB) is to advocate and provide leadership to develop and promote the natural environment, art/culture, historic and visitor potential for the express purpose of aiding the Boulder economy."),
+            m('p', {class: 'lh-copy f6 measure pt1 center ph4'}, "Whether you’re a visitor, meeting planner or Boulder tourism business, we’re here to serve you. You’ll find that our website is filled with information, but please don’t hesitate to reach out should you need personal assistance.")
           ])
         ]),
       ]),

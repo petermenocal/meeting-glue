@@ -2,7 +2,7 @@ const m = require('mithril')
 const _ = require('underscore')
 
 let RFPState = {
-  step: 1,
+  step: 2,
   changeStep: () => {
     RFPState.step++
     m.redraw()
