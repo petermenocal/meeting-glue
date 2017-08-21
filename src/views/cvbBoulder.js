@@ -39,11 +39,11 @@ module.exports = {
       // header
       m('div', {class: 'fl w-100 bg-b-purple-1 near-white avenir fw4 ttu', style: 'overflow: hidden'}, [
         m('div', {class: 'fl w-70'}, [
-          m('div', {class: 'fl w-30 flex flex-column justify-center', style: 'height: 350px'}, [
-            m('img.pa4-ns', {src: 'img/cvb/logo-cvb-boulder.png'})
+          m('div', { class: 'fl w-50 flex flex-column justify-center', style: 'height: 350px' }, [
+            m('img.pa4-ns', { src: 'img/cvb/logo-cvb-boulder.png' })
           ]),
-          m('div', {class: 'fl w-70 ttu flex flex-column justify-center measure-narrow', style: 'height: 350px;'}, [
-            m('h1', {class: 'f4'}, 'Boulder Convention & Visitors Bureau'),
+          m('div', {class: 'fl w-50 ttu flex flex-column justify-center', style: 'height: 350px;'}, [
+            m('.f3.fw5.mb2.measure-narrow', 'Boulder Convention & Visitors Bureau'),
             m('p', {class: 'lh-copy mt0 mb0'}, '2440 Pearl Street'),
             m('p', {class: 'lh-copy mt0 mb0'}, 'Boulder, CO 80302'),
             m('p', {class: 'lh-copy mt0 mb0'}, '(303) 442-2911'),
@@ -77,7 +77,7 @@ module.exports = {
       ]),
       // fact panels
       m('div', {class: 'fl w-100 pa3 mt4 mb4'}, [
-        m('div', {class: 'fl ml3 shadow-3 pa3 white relative shadow-custom br4', style: ' width: 47%; height: 640px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
+        m('div', {class: 'fl ml3 shadow-3 pa3 white relative shadow-custom br4', style: ' width: 47%; height: 600px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
           m('h1', {class: 'f4'}, 'Quick Facts'),
           m('p', {onclick: Calendar.toggleModal, class: 'absolute top-0 right-2 ba bw1 pa2 br2 link dim pointer'}, 'Convention Calendar'),
           m('span', {class: 'fl w-100'}, [
@@ -104,7 +104,7 @@ module.exports = {
 
           ])
         ]),
-        m('div', {class: 'fr mr3 shadow-6 pa3 white relative shadow-custom br4', style: 'width: 47%; height: 640px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
+        m('div', {class: 'fr mr3 shadow-6 pa3 white relative shadow-custom br4', style: 'width: 47%; height: 600px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
           m('h1', {class: 'f4'}, 'Updates from Boulder'),
           m('div', {class: 'fl w-100', style: 'height: 500px; overflow-x: scroll'}, [
             m('h1', {class: 'white-70 lh-title'}, "Number 10 'Highest Well Being Communities'"),

@@ -58,19 +58,21 @@ module.exports = {
         ])
       ]),
       //tweets!
-      m('div', {class: 'fl w-30 relative bg-purple near-white h-100 pa3', style: 'height: 230px'}, [
+      m('div', {class: 'fl w-30 relative bg-purple near-white h-100 pa3', style: 'height: 300px'}, [
         m('div', {class: 'b ttu tracked fl w-100'}, [
           m('img', {class: 'br4 fl mr2', src: Feed.profileImage}),
           m('h1', {class: 'fl f4'}, '@LVCVA')
         ]),
-        m('div', {class: 'fl w-100 pa2'}, [
-           m('h1', {class: 'f4 fw4 measure-narrow'}, Feed.active.text)
+        m('div', { class: 'fl w-100 pa2', style: 'height: 200px; overflow: hidden;' }, [
+          m('a.twitter-timeline[data-theme=dark][data-height=200][data-link-color=#981CEB][href=https://twitter.com/lvcva]'),
+          m('script[async]', { src: '//platform.twitter.com/widgets.js', charset: "utf-8" })
+          //m('h1', {class: 'f4 fw4 measure-narrow'}, Feed.active.text)
         ])
       ]),
       // slideshow
-      m('div', {class: 'fr w-70 relative', style: 'background: url('+ Slideshow.active.src+'); overflow: hidden !important; height: 230px; max-height: 230px; background-size: cover; background-position: center center'}, [
-        m('div', {class: 'measure-narrow absolute right-0 w-50 near-white flex flex-column justify-center', style: 'background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0, 0, 0, 0.9), rgba(0,0,0,1)); top:  0; bottom: 0'}, [
-          m('h1', {class: 'mb0 w-40 absolute right-2 f3 top-2'}, "Best convention city in the US."),
+      m('div', {class: 'fr w-70 relative', style: 'background: url('+ Slideshow.active.src+'); overflow: hidden !important; height: 300px; max-height: 300px; background-size: cover; background-position: center center'}, [
+        m('div', {class: 'measure absolute right-0 w-50 near-white flex flex-column justify-center', style: 'background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0, 0, 0, 0.9), rgba(0,0,0,1)); top:  0; bottom: 0'}, [
+          m('h1', {class: 'mb0 w-40 absolute right-2 f3 top-2 pt5'}, "Best convention city in the US."),
         ])
       ]),
       // fact panels
@@ -107,7 +109,7 @@ module.exports = {
           m('h1', {class: 'f4'}, 'Updates from LVCVA'),
           m('div', {class: 'fl w-100', style: 'height: 500px; overflow-x: scroll'}, [
             m('h1', {class: 'white-70 lh-title'}, "Venetian Las Vegas Launches Booking via Facebook Messenger"),
-            m('p', {class: 'lh-copy f4 measure pt3 center ph4'}, "The Venetian Las Vegas launched one of the hopitality industry's first Facebook Messenger direct booking channels and the first for an individual hotel, offering guests the opportunity to book directly and securly through social messaging.  By automatically analyzing and learning the guests conversational patterns, the application will continually improve its vocabulary and functionality to serve guests. ")
+            m('p', {class: 'lh-copy f6 measure pt3 center ph4'}, "The Venetian Las Vegas launched one of the hopitality industry's first Facebook Messenger direct booking channels and the first for an individual hotel, offering guests the opportunity to book directly and securly through social messaging.  By automatically analyzing and learning the guests conversational patterns, the application will continually improve its vocabulary and functionality to serve guests. ")
           ])
         ]),
       ]),
