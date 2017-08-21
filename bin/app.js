@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 332);
+/******/ 	return __webpack_require__(__webpack_require__.s = 333);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -14668,7 +14668,7 @@ nacl.setPRNG = function(fn) {
     });
   } else if (true) {
     // Node.js.
-    crypto = __webpack_require__(331);
+    crypto = __webpack_require__(332);
     if (crypto && crypto.randomBytes) {
       nacl.setPRNG(function(x, n) {
         var i, v = crypto.randomBytes(n);
@@ -27383,7 +27383,7 @@ if (typeof self === 'object') {
 } else {
   // Node.js or Web worker with no crypto support
   try {
-    var crypto = __webpack_require__(329);
+    var crypto = __webpack_require__(330);
     if (typeof crypto.randomBytes !== 'function')
       throw new Error('Not supported');
 
@@ -40177,7 +40177,7 @@ util.inherits = __webpack_require__(1);
 /*</replacement>*/
 
 /*<replacement>*/
-var debugUtil = __webpack_require__(330);
+var debugUtil = __webpack_require__(331);
 var debug = void 0;
 if (debugUtil && debugUtil.debuglog) {
   debug = debugUtil.debuglog('stream');
@@ -44560,19 +44560,21 @@ module.exports = {
         ])
       ]),
       //tweets!
-      m('div', {class: 'fl w-30 relative bg-purple near-white h-100 pa3', style: 'height: 230px'}, [
+      m('div', {class: 'fl w-30 relative bg-purple near-white h-100 pa3', style: 'height: 300px'}, [
         m('div', {class: 'b ttu tracked fl w-100'}, [
           m('img', {class: 'br4 fl mr2', src: Feed.profileImage}),
           m('h1', {class: 'fl f4'}, '@LVCVA')
         ]),
-        m('div', {class: 'fl w-100 pa2'}, [
-           m('h1', {class: 'f4 fw4 measure-narrow'}, Feed.active.text)
+        m('div', { class: 'fl w-100 pa2', style: 'height: 200px; overflow: hidden;' }, [
+          m('a.twitter-timeline[data-theme=dark][data-height=200][data-link-color=#981CEB][href=https://twitter.com/lvcva]'),
+          m('script[async]', { src: '//platform.twitter.com/widgets.js', charset: "utf-8" })
+          //m('h1', {class: 'f4 fw4 measure-narrow'}, Feed.active.text)
         ])
       ]),
       // slideshow
-      m('div', {class: 'fr w-70 relative', style: 'background: url('+ Slideshow.active.src+'); overflow: hidden !important; height: 230px; max-height: 230px; background-size: cover; background-position: center center'}, [
-        m('div', {class: 'measure-narrow absolute right-0 w-50 near-white flex flex-column justify-center', style: 'background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0, 0, 0, 0.9), rgba(0,0,0,1)); top:  0; bottom: 0'}, [
-          m('h1', {class: 'mb0 w-40 absolute right-2 f3 top-2'}, "Best convention city in the US."),
+      m('div', {class: 'fr w-70 relative', style: 'background: url('+ Slideshow.active.src+'); overflow: hidden !important; height: 300px; max-height: 300px; background-size: cover; background-position: center center'}, [
+        m('div', {class: 'measure absolute right-0 w-50 near-white flex flex-column justify-center', style: 'background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0, 0, 0, 0.9), rgba(0,0,0,1)); top:  0; bottom: 0'}, [
+          m('h1', {class: 'mb0 w-40 absolute right-2 f3 top-2 pt5'}, "Best convention city in the US."),
         ])
       ]),
       // fact panels
@@ -44609,7 +44611,7 @@ module.exports = {
           m('h1', {class: 'f4'}, 'Updates from LVCVA'),
           m('div', {class: 'fl w-100', style: 'height: 500px; overflow-x: scroll'}, [
             m('h1', {class: 'white-70 lh-title'}, "Venetian Las Vegas Launches Booking via Facebook Messenger"),
-            m('p', {class: 'lh-copy f4 measure pt3 center ph4'}, "The Venetian Las Vegas launched one of the hopitality industry's first Facebook Messenger direct booking channels and the first for an individual hotel, offering guests the opportunity to book directly and securly through social messaging.  By automatically analyzing and learning the guests conversational patterns, the application will continually improve its vocabulary and functionality to serve guests. ")
+            m('p', {class: 'lh-copy f6 measure pt3 center ph4'}, "The Venetian Las Vegas launched one of the hopitality industry's first Facebook Messenger direct booking channels and the first for an individual hotel, offering guests the opportunity to book directly and securly through social messaging.  By automatically analyzing and learning the guests conversational patterns, the application will continually improve its vocabulary and functionality to serve guests. ")
           ])
         ]),
       ]),
@@ -44931,12 +44933,16 @@ const Quill = __webpack_require__(116)
 const Awesomplete = __webpack_require__(167)
 const flatpickr = __webpack_require__(69)
 var quill;
+var Bold = Quill.import('formats/bold');
+Bold.tagName = 'B';   // Quill uses <strong> by default
+Quill.register(Bold, true);
 
 const DayPlanner = __webpack_require__(138)
 
 let menuState = __webpack_require__(328)
 let insertSnippet = __webpack_require__(327)
 let RFPState = __webpack_require__(325)
+let preflightState = __webpack_require__(329)
 
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
@@ -45003,35 +45009,112 @@ module.exports = {
           m('p', "Please visit your RFP Status page for response from suppliers" )
         ]),
       ]),
-      m(".fl.w-100.ba.b--black-10.pa4.bg-white.mr6-ns.shadow-4", {class: RFPState.step == 1 ? "db" : "dn"}, [ m("h1", "Event details"),
-        m(".flex.flex-column.fl.w-50.pr4", [
-          m('label.fl.black-50.w-100.b', 'RFP Recipients'),
-          m('input.fl.ba.b--black-20.br2.w-100.input#recipients[data-multiple]'),
-          m('label.fl.black-50.w-100.b.mt3', 'Start date'),
-          m('input.fl.ba.b--black-20.br2.w-100.input#checkin'),
-          m('label.fl.black-50.w-100.b.mt3', 'End date'),
-          m('input.fl.ba.b--black-20.br2.w-100.input#checkout'),
-          m('label.fl.black-50.w-100.b.mt3', 'Total rooms required'),
-          m('input.fl.ba.b--black-20.br2.w-100.input[type="number"]'),
-        ]),
-        m(".flex.flex-column.fl.w-50.pa4.shadow-2.bg-light-purple.near-white.br4", [
-          m('span.f3.fw1.lh-headline', "Tell us what you need."),
-          m('span.f6.lh-copy.fw6.mt0.measure', "Let us know a few particulars about your event and we'll set automatically setup your RFP with some default data."),
-          m('.fl.w-100.mt4', [
-            m('label.fl.tr.mr2', "Use one of my templates"),
-            m('input[type="checkbox"]', {onclick: RFPState.toggleTemplates}),
+      m(".fl.w-100.ba.b--black-10.pa4.bg-white.mr6-ns.shadow-4", {class: RFPState.step == 1 ? "db" : "dn"}, [
+        m("span.fl.w-100.f1.fw3.lh-headline.db.purple", "Tell us what you need."),
+        m("span.fl.w-100.f5.fw4.measure.lh-subheadline.mt1.db.gray", "Let us know a few particulars about your event and we'll set automatically setup your RFP with some default data."),
+        
+        m('.fl.w-100.usn', [
+          m('.fl.w-40.pv4.pr4', [
+            m('.fl.w-100.br4.white.mt0.mb3.pa3', { class: preflightState.roomsAndSpace ? "bg-dark-red s1" : "bg-light-red" }, [
+              m('div.fl.w-100', { onclick: preflightState.selectRoomsAndSpace }, [
+                m('.fl.fw4', "Sleeping rooms and meeting space")
+              ]),
+            ]),
+            m('.fl.w-100.br4.white.mt0.mb3.pa3', { class: preflightState.sleepingRoomsOnly ? "bg-dark-red s1" : "bg-light-red" }, [
+              m('div.fl.w-100', { onclick: preflightState.selectSleepingRoomsOnly }, [
+                m('.fl.fw4', "Sleeping rooms only")
+              ]),
+            ]),
+            m('.fl.w-100.br4.white.mt0.pa3', { class: preflightState.meetingSpaceOnly ? "bg-dark-red s1" : "bg-light-red" }, [
+              m('div.fl.w-100', { onclick: preflightState.selectMeetingSpaceOnly }, [
+                m('.fl.fw4', "Meeting space only")
+              ]),
+            ]),
+          ]),
+          m(".flex.flex-column.fl.w-60", [
+            m('.fl.w-100.br4.shadow-2.bg-purple.mt4.pa3', {class: preflightState.specific ? "bg-purple" : "bg-light-purple" }, [
+              m('.f4.fw4.white.dim.pointer', {onclick: preflightState.toggleSpecific }, "I have specific dates for my program."),
+              m('.fl.w-50-ns.w-100.ph2-ns', {class: preflightState.specific ? "db" : "dn" }, [
+                m('label.fl.white.w-100.b.mt3', 'Start date'),
+                m('input.fl.ba.b--black-20.br2.w-100.input#checkin'),
+              ]),
+              m('.fl.w-50-ns.w-100.ph2-ns', {class: preflightState.specific ? "db" : "dn" }, [
+                m('label.fl.white.w-100.b.mt3', 'End date'),
+                m('input.fl.ba.b--black-20.br2.w-100.input#checkout'),
+              ])
+            ]),
+            m('.fl.w-100.br4.shadow-2.bg-purple.mt4.pa3', {class: preflightState.range ? "bg-purple" : "bg-light-purple" }, [
+              m('.dim.pointer', [
+                m('.f4.fw4.white.dim.pointer', {onclick: preflightState.toggleRange }, "I have a date range for my program."),
+                m('.f5.fw4.lh-subheadline.white-80.dim.pointer', {onclick: preflightState.toggleRange }, "(Works with sleeping rooms and/or meeting space)"),
+              ]),
+              m('.fl.w-50-ns.w-100.ph2-ns', {class: preflightState.range ? "db" : "dn" }, [
+                m('label.fl.white.w-100.b.mt3', 'Start date'),
+                m('input.fl.ba.b--black-20.br2.w-100.input#checkin'),
+              ]),
+              m('.fl.w-50-ns.w-100.ph2-ns', {class: preflightState.range ? "db" : "dn" }, [
+                m('label.fl.white.w-100.b.mt3', 'End date'),
+                m('input.fl.ba.b--black-20.br2.w-100.input#checkout'),
+              ])
 
-            m('select.select.ba.b--black-20.fl.w-100.mt3', {class: RFPState.showTemplates ? "db" : "dn" }, [
-              m('option', "Default RFP - March 2017"),
-              m('option', "Default RFP - April 2017"),
-              m('option', "Default RFP - May 2017"),
-              m('option', "Default RFP - June 2017"),
-              m('option', "Default RFP - July 2017"),
+            ]),
+            m('.fl.w-100.br4.shadow-2.bg-purple.mt4.pa3', {class: preflightState.pattern ? "bg-purple" : "bg-light-purple" }, [
+              m('.dim.pointer',[
+                m('.f4.fw4.white.dim.pointer', {onclick: preflightState.togglePattern }, "I have a preferred pattern with a date range."),
+                m('.f5.fw4.lh-subheadline.white-80', {onclick: preflightState.togglePattern }, "(Works with sleeping rooms and/or meeting space)"),
+              ]),
+              m('.fl.w-100.mt4.mb3', {class: preflightState.pattern ? "db" : "dn" }, [
+                m('.f4.white-50', "Enter preferred pattern:"),
+                m('label.white.mr2.ml2', 'SUN'),
+                m('input[type="checkbox"][name="day"][value="Sunday"]'),
+                m('label.white.mr2.ml4', 'MON'),
+                m('input[type="checkbox"][name="day"][value="Sunday"]'),
+                m('label.white.mr2.ml4', 'TUES'),
+                m('input[type="checkbox"][name="day"][value="Sunday"]'),
+                m('label.white.mr2.ml4', 'WED'),
+                m('input[type="checkbox"][name="day"][value="Sunday"]'),
+                m('label.white.mr2.ml4', 'THURS'),
+                m('input[type="checkbox"][name="day"][value="Sunday"]'),
+                m('label.white.mr2.ml4', 'FRI'),
+                m('input[type="checkbox"][name="day"][value="Sunday"]'),
+                m('label.white.mr2.ml4', 'SAT'),
+                m('input[type="checkbox"][name="day"][value="Sunday"]'),
+              ]),
+              m('.fl.w-50-ns.w-100.ph2-ns', {class: preflightState.pattern ? "db" : "dn" }, [
+                m('label.fl.white.w-100.b.mt3', 'Start date'),
+                m('input.fl.ba.b--black-20.br2.w-100.input#checkin'),
+              ]),
+              m('.fl.w-50-ns.w-100.ph2-ns', {class: preflightState.pattern ? "db" : "dn" }, [
+                m('label.fl.white.w-100.b.mt3', 'End date'),
+                m('input.fl.ba.b--black-20.br2.w-100.input#checkout'),
+              ])
+
+            ]),
+            m('.fl.w-100.br4.shadow-2.bg-purple.mt4.pa3.mb4', {class: preflightState.directInput ? "bg-purple" : "bg-light-purple" }, [
+              m('.f4.fw4.white.dim.pointer', {onclick: preflightState.toggleDirectInput }, "I would like to type out my date needs."),
+              m('textarea.fl.w-100.br2.ba.b--purple.mt2', {class: preflightState.directInput ? "db" : "dn"})
+            ]),
+          ]),
+        
+
+
+          m(".flex.flex-column.fl.w-100.pa4.shadow-2.bg-blue.near-white.br4", [
+            m('span.f3.fw1.lh-headline', "Start from a template"),
+            m('span.f6.lh-copy.fw6.mt1.measure', "You can choose a pre-configured template of your own or one of our sugggested templates."),
+            m('.fl.w-100.mt4', [
+              m('label.fl.tr.mr2', "Use one of my templates"),
+              m('input[type="checkbox"]', {onclick: RFPState.toggleTemplates}),
+              m('select.select.ba.b--black-20.fl.w-100.mt3', {class: RFPState.showTemplates ? "db" : "dn" }, [
+                m('option', "Default RFP - March 2017"),
+                m('option', "Default RFP - April 2017"),
+                m('option', "Default RFP - May 2017"),
+                m('option', "Default RFP - June 2017"),
+                m('option', "Default RFP - July 2017"),
+              ]),
+              m('a.link.pa2.bg-green.br4.mt4.dim.pointer.shadow-1.near-white.fw5.ttu.mw4.tc.fr.dib', {onclick: RFPState.changeStep}, 'Next step')
             ])
-
-          ])
+          ]),
         ]),
-        m('a.link.pa2.bg-green.br4.mt4.dim.pointer.shadow-1.near-white.fw5.ttu.mw4.tc.fr.dib', {onclick: RFPState.changeStep}, 'Next step')
       ]),
       m(".fl.w-70-ns.w-100", {class: RFPState.step == 2 ? "db" : "dn"}, [
         m('a.link.pa2.bg-green.br4.mt4.dim.pointer.shadow-1.near-white.fw5.ttu.mw4.tc.dib.fixed.bottom-1.left-1', {onclick: RFPState.finalStep, style: 'z-index: 99'}, [
@@ -45043,26 +45126,162 @@ module.exports = {
 
           m('div.fl.w-100', " "),
           m('h1', "Request for Proposal"),
+          m('p', 'Meeting Space Only'),
 
           m('div.fl.w-100', " "),
-          m('p', "Please send completed regret or completed response forms to:"),
+          
+          m('.fl.w-100', [
+            m('h3.fl.dib', "Proposal Deadline"),
+            m('p.fl.dib', "August 15, 2017"),
+          ]),
 
           m('div.fl.w-100', " "),
-
-
-          m('div.fl.w-100', " "),
-          m('p', "Proposal deadline: August 15, 2017"),
-          m('p', "Decision date: August 2017"),
-
-          m('div.fl.w-100', " "),
-          m('p', "Group profile: Geeky Pixel"),
+          m('.fl.w-100', [
+            m('h3.fl.dib', "Organization"),
+            m('p.fl.dib', "Geeky Pixel"),
+          ]),
 
           m('div.fl.w-100', " "),
           m('p', "Geeky Pixel is a boutique website design and development company based in Las Vegas."),
 
           m('div.fl.w-100', " "),
-          m('p', "Program: 2019 Annual Retreat"),
+          m('.fl.w-100', [
+            m('h3.fl.dib', "Program Name"),
+            m('p.fl.dib', "Grant Review Day"),
+          ]),
 
+          m('div.fl.w-100', " "),
+          m('.fl.w-100', [
+            m('h3.fl.dib', "Cities under consideration"),
+            m('p.fl.dib', "San Diego, CA"),
+          ]),
+
+          m('div.fl.w-100', " "),
+          m('.fl.w-100', [
+            m('h3.fl.dib', "Program Schedule"),
+            m('p.fl.dib', "(Placeholder)"),
+          ]),
+
+          m('div.fl.w-100', " "),
+          m('.fl.w-100', [
+            m('h3.fl.dib', "Hot Buttons"),
+            m('ul', [
+              m('li', "Food and Beverage Pricing"),
+              m('li', "Ability to use our own AV company"),
+              m('li', "Restaurants within walking distance"),
+            ]),
+          ]),
+
+          m('div.fl.w-100', " "),
+          m('.fl.w-100', [
+            m('h3.fl.dib', "Billing Arrangements"),
+            m('p.fl.dib', "Master Bill: Food and Beverage, Audio/Visual"),
+            m('p.fl.dib', "Individuals: N/A"),
+          ]),
+
+          m('div.fl.w-100', " "),
+          m('.fl.w-100', [
+            m('h3.fl.dib', "History"),
+            m('ul.list', [
+              m('li', "2017 - Omni Rancho Las Palmas Resort And Spa (Palm Springs, CA)"),
+              m('li', "2017 - Omni Rancho Las Palmas Resort And Spa (Palm Springs, CA)"),
+            ]),
+          ]),
+
+
+          m('div.fl.w-100', " "),
+          m('div.fl.w-100', " "),
+          m('div.fl.w-100', " "),
+          
+          m('h1', "Supplier Bid Form"),
+
+          m('div.fl.w-100', " "),
+          m('.fl.w-100', [
+            m('p.fl.dib', [
+              m('strong', "Hotel Name: "),
+              m('span', 'Hotel California')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "Address: "),
+              m('span', '123 Beach Drive, San Diego, CA 91203')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "Sales Contact: "),
+              m('span', 'John Smith | JSmith@hotels.com | 702-555-5555')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "Hotel Rating: "),
+              m('span', '4 Diamond')
+            ]),
+            m('a[href=google.com]', 'Hotel website'),
+           
+           
+            m('div.fl.w-100', " "), 
+            m('p.fl.dib', [
+              m('strong', "Can you accommodate the requested meeting space: "),
+              m('span', 'YES')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "Room Rental: "),
+              m('span', '$1000/day')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "Room Rental Tax: "),
+              m('span', '14.5%')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "Food and Beverage Minimum: "),
+              m('span', '$15,000')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "F&B Tax: "),
+              m('span', '11.5%')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "F&B Service Charge: "),
+              m('span', '23%')
+            ]),
+            m('p.fl.dib', [
+              m('strong', "In-House Audio Visual: "),
+              m('span', 'Encore | '), 
+              m('a[href=google.com]', 'Link to equipment pricing')
+            ]),
+
+            m('div.fl.w-100', " "),
+            m('h2.fl.dib.purple', "Requested Concessions"),
+            m('p.fl.dib', [
+              m('p.fl.dib', [
+                m('span', '[Placeholder]')
+              ]),
+            ]),
+
+
+            m('div.fl.w-100', " "),
+            m('.fl.w-100', [
+              m('h2.fl.dib.purple', "General Questions"),
+              m('p.fl.dib', [
+                m('strong', "Self Parking: "),
+                m('span', 'YES, $22/day')
+              ]),
+              m('p.fl.dib', [
+                m('strong', "Valet Parking: "),
+                m('span', 'Yes, $25/day')
+              ]),
+              m('p.fl.dib', [
+                m('strong', "Public Transportation: "),
+                m('span', 'N/A')
+              ]),
+              m('p.fl.dib', [
+                m('strong', "Fitness Center: "),
+                m('span', 'Yes')
+              ]),
+              m('p.fl.dib', [
+                m('strong', "Pool: "),
+                m('span', 'Yes, Indoor and Outdoor')
+              ]),
+            ]),
+
+          ]),
 
         ])
       ]),
@@ -45138,17 +45357,39 @@ module.exports = {
               ])
             ]),
           ]),
-          m('.bg-black-50.h3.w-100.white.flex.items-center.ph4', {onclick: menuState.toggleGallery}, [
-            m('span', {class: menuState.gallery ? "dn" : "db"}, [
+
+          //end snipe]s
+
+
+
+          m('.bg-dark-gray.h3.w-100.white.flex.items-center.ph4.pointer', {onclick: menuState.toggleRecipients}, [
+            m('span', {class: menuState.recipients ? "dn" : "db"}, [
               m('i.fa.fa-caret-right'),
             ]),
-            m('span', {class: menuState.gallery ? "db" : "dn"}, [
+            m('span', {class: menuState.recipients ? "db" : "dn"}, [
               m('i.fa.fa-caret-down'),
             ]),
-            m('span.ml2', "Gallery"),
+            m('span.ml2', "Recipients"),
           ]),
+          m('div.fl.w-100.bg-dark-gray.tl.white.ph4.pb3', {class: menuState.recipients ? "db" : "dn", style: "overflow: scroll; -webkit-overflow-scrolling: touch;"}, [
+            m('label.fl.near-white.w-100.b', 'RFP Recipients'),
+            m('input.fl.ba.b--black-20.br2.w-100.input#recipients[data-multiple]', {autocomplete: "off"}),
+          ]),
+
+
+
+
+          // m('.bg-black.h3.w-100.white.flex.items-center.ph4', {onclick: menuState.toggleGallery}, [
+          //   m('span', {class: menuState.gallery ? "dn" : "db"}, [
+          //     m('i.fa.fa-caret-right'),
+          //   ]),
+          //   m('span', {class: menuState.gallery ? "db" : "dn"}, [
+          //     m('i.fa.fa-caret-down'),
+          //   ]),
+          //   m('span.ml2', "Gallery"),
+          // ]),
           // inbox
-          m('div.w-100.h6.bg-black-50.tl.white.ph4', {class:menuState.gallery?"db":"dn",style: "overflow: scroll; -webkit-overflow-scrolling: touch;"}, [
+          m('div.w-100.h6.bg-black.tl.white.ph4', {class:menuState.gallery?"db":"dn",style: "overflow: scroll; -webkit-overflow-scrolling: touch;"}, [
 
             m('div.flex.items-center.mb3', [
               m('div.mr4.dim.pointer', [
@@ -45157,7 +45398,7 @@ module.exports = {
               ])
             ]),
 
-            m('.fixed.top-0.right-0.bottom-0.left-0.bg-gray.pa2.w-100.h-100', {class: RFPState.showGalleryEditor ? "fixed" : "dn"}, [
+            m('.fixed.top-0.right-0.bottom-0.left-0.bg-black.pa2.w-100.h-100', {class: RFPState.showGalleryEditor ? "fixed" : "dn"}, [
               m('.f1.fw2', 'Gallery Editor'),
               m('.fixed.top-1.right-1.red.i.fa.fa-times.fa-2x', {onclick: RFPState.toggleGallery}),
               m('i.fa.fa-plus.mr2'),
@@ -45637,11 +45878,11 @@ module.exports = {
       // header
       m('div', {class: 'fl w-100 bg-b-purple-1 near-white avenir fw4 ttu', style: 'overflow: hidden'}, [
         m('div', {class: 'fl w-70'}, [
-          m('div', {class: 'fl w-30 flex flex-column justify-center', style: 'height: 350px'}, [
-            m('img.pa4-ns', {src: 'img/cvb/logo-cvb-boulder.png'})
+          m('div', { class: 'fl w-50 flex flex-column justify-center', style: 'height: 350px' }, [
+            m('img.pa4-ns', { src: 'img/cvb/logo-cvb-boulder.png' })
           ]),
-          m('div', {class: 'fl w-70 ttu flex flex-column justify-center measure-narrow', style: 'height: 350px;'}, [
-            m('h1', {class: 'f4'}, 'Boulder Convention & Visitors Bureau'),
+          m('div', {class: 'fl w-50 ttu flex flex-column justify-center', style: 'height: 350px;'}, [
+            m('.f3.fw5.mb2.measure-narrow', 'Boulder Convention & Visitors Bureau'),
             m('p', {class: 'lh-copy mt0 mb0'}, '2440 Pearl Street'),
             m('p', {class: 'lh-copy mt0 mb0'}, 'Boulder, CO 80302'),
             m('p', {class: 'lh-copy mt0 mb0'}, '(303) 442-2911'),
@@ -45663,6 +45904,8 @@ module.exports = {
           m('h1', {class: 'fl f4'}, '@visitBoulder')
         ]),
         m('div', {class: 'fl w-100 pa2'}, [
+          m('a.twitter-timeline[data-theme=dark][data-height=400][data-link-color=#981CEB][href=https://twitter.com/VisitBoulder]'),
+          m('script[async]', {src:'//platform.twitter.com/widgets.js', charset: "utf-8"})
            //m('h1', {class: 'f4 fw4 measure-narrow'}, Feed.active.text)
         ])
       ]),
@@ -45673,7 +45916,7 @@ module.exports = {
       ]),
       // fact panels
       m('div', {class: 'fl w-100 pa3 mt4 mb4'}, [
-        m('div', {class: 'fl ml3 shadow-3 pa3 white relative shadow-custom br4', style: ' width: 47%; height: 500px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
+        m('div', {class: 'fl ml3 shadow-3 pa3 white relative shadow-custom br4', style: ' width: 47%; height: 600px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
           m('h1', {class: 'f4'}, 'Quick Facts'),
           m('p', {onclick: Calendar.toggleModal, class: 'absolute top-0 right-2 ba bw1 pa2 br2 link dim pointer'}, 'Convention Calendar'),
           m('span', {class: 'fl w-100'}, [
@@ -45687,25 +45930,25 @@ module.exports = {
             m('p', {class: 'fr h1 mb1 w-50 ph2'}, 'Green Ride Boulder ($34) or RTD Bus ($9)'),
             m('p', {class: 'tc f3 underline w-100 fl fw4'}, 'Awards'),
             //2016
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, '#10 "Highest Well Being Communities"'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, 'Gallup-Healthways Well-Being Index, March 2017'),
+            m('p', {class: 'fl f6 h1 mb4 w-50 tr ph2 b ttu tracked'}, '#10 "Highest Well Being Communities"'),
+            m('p', {class: 'fr h1 mb4 w-50 ph2'}, 'Gallup-Healthways Well-Being Index, March 2017'),
             //2017
-            m('p', {class: 'fl h2 mb1 w-50 tr ph2 b ttu tracked'}, '18 Best Cities in America for Solo Travelers'),
-            m('p', {class: 'fr h2 mb1 w-50 ph2 flex items-center'}, 'TravelandLeisure.com, December 2016'),
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'The Best US Cities to Spend a Weekend'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, 'Thrillist, March 2016'),
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Top 15 Cities for Seasonal Brews'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, 'Travelocity.com, November 2016'),
+            m('p', {class: 'fl f6 h2 mb4 w-50 tr ph2 b ttu tracked'}, '18 Best Cities in America for Solo Travelers'),
+            m('p', {class: 'fr h2 mb4 w-50 ph2 flex items-center'}, 'TravelandLeisure.com, December 2016'),
+            m('p', {class: 'fl f6 h1 mb4 w-50 tr ph2 b ttu tracked'}, 'The Best US Cities to Spend a Weekend'),
+            m('p', {class: 'fr h1 mb4 w-50 ph2'}, 'Thrillist, March 2016'),
+            m('p', {class: 'fl f6 h1 mb4 w-50 tr ph2 b ttu tracked'}, 'Top 15 Cities for Seasonal Brews'),
+            m('p', {class: 'fr h1 mb4 w-50 ph2'}, 'Travelocity.com, November 2016'),
 
 
           ])
         ]),
-        m('div', {class: 'fr mr3 shadow-6 pa3 white relative shadow-custom br4', style: 'width: 47%; height: 500px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
+        m('div', {class: 'fr mr3 shadow-6 pa3 white relative shadow-custom br4', style: 'width: 47%; height: 600px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
           m('h1', {class: 'f4'}, 'Updates from Boulder'),
           m('div', {class: 'fl w-100', style: 'height: 500px; overflow-x: scroll'}, [
             m('h1', {class: 'white-70 lh-title'}, "Number 10 'Highest Well Being Communities'"),
-            m('p', {class: 'lh-copy f4 measure pt3 center ph4'}, "The mission of the Boulder Convention & Visitors Bureau (CVB) is to advocate and provide leadership to develop and promote the natural environment, art/culture, historic and visitor potential for the express purpose of aiding the Boulder economy."),
-            m('p', {class: 'lh-copy f4 measure pt2\1 center ph4'}, "Whether you’re a visitor, meeting planner or Boulder tourism business, we’re here to serve you. You’ll find that our website is filled with information, but please don’t hesitate to reach out should you need personal assistance.")
+            m('p', {class: 'lh-copy f6 measure pt3 center ph4'}, "The mission of the Boulder Convention & Visitors Bureau (CVB) is to advocate and provide leadership to develop and promote the natural environment, art/culture, historic and visitor potential for the express purpose of aiding the Boulder economy."),
+            m('p', {class: 'lh-copy f6 measure pt1 center ph4'}, "Whether you’re a visitor, meeting planner or Boulder tourism business, we’re here to serve you. You’ll find that our website is filled with information, but please don’t hesitate to reach out should you need personal assistance.")
           ])
         ]),
       ]),
@@ -85760,7 +86003,7 @@ module.exports = RFP
 const _ = __webpack_require__(44)
 
 let RFPState = {
-  step: 1,
+  step: 2,
   changeStep: () => {
     RFPState.step++
     m.redraw()
@@ -85875,10 +86118,12 @@ let menuState = {
   communication: false,
   gallery: false,
   rfps: false,
+  recipients: false,
   toggleSnippets: () => { menuState.snippets = !menuState.snippets },
   toggleMyRFPs: () => { menuState.rfps = !menuState.rfps },
   toggleContacts: () => { menuState.contacts = !menuState.contacts },
   toggleCommunication: () => { menuState.communication = !menuState.communication },
+  toggleRecipients: () => { menuState.recipients = !menuState.recipients },
   toggleGallery: () => { menuState.gallery = !menuState.gallery }
 }
 
@@ -85887,9 +86132,62 @@ module.exports = menuState
 
 /***/ }),
 /* 329 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-/* (ignored) */
+const m = __webpack_require__(2)
+
+let preflightState = {
+  specific: false,
+  range: false,
+  pattern: false,
+  directInput: false,
+  touched: false,
+  toggleSpecific: () => {
+    preflightState.specific = !preflightState.specific
+    preflightState.range = false
+    preflightState.pattern = false
+    preflightState.directInput = false
+  },
+  toggleRange: () => {
+    preflightState.range = !preflightState.range
+    preflightState.specific = false
+    preflightState.pattern = false
+    preflightState.directInput = false
+  },
+  togglePattern: () => {
+    preflightState.pattern = !preflightState.pattern
+    preflightState.specific = false
+    preflightState.range = false
+    preflightState.directInput = false
+  },
+  toggleDirectInput: () => {
+    preflightState.directInput = !preflightState.directInput
+    preflightState.specific = false
+    preflightState.range = false
+    preflightState.pattern = false
+  },
+  roomsAndSpace: false,
+  sleepingRoomsOnly: false,
+  meetingSpaceOnly: false,
+  selectRoomsAndSpace: () => {
+    preflightState.roomsAndSpace = true
+    preflightState.sleepingRoomsOnly = false
+    preflightState.meetingSpaceOnly = false
+  },
+  selectSleepingRoomsOnly: () => {
+    preflightState.sleepingRoomsOnly = true
+    preflightState.roomsAndSpace = false
+    preflightState.meetingSpaceOnly = false
+  },
+  selectMeetingSpaceOnly: () => {
+    preflightState.meetingSpaceOnly = true
+    preflightState.roomsAndSpace = false
+    preflightState.sleepingRoomsOnly = false
+  },
+}
+
+module.exports = preflightState
+
 
 /***/ }),
 /* 330 */
@@ -85905,6 +86203,12 @@ module.exports = menuState
 
 /***/ }),
 /* 332 */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(2)
