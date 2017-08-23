@@ -86003,7 +86003,7 @@ module.exports = RFP
 const _ = __webpack_require__(44)
 
 let RFPState = {
-  step: 2,
+  step: 1,
   changeStep: () => {
     RFPState.step++
     m.redraw()
