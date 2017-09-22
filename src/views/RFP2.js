@@ -85,24 +85,7 @@ module.exports = {
         m("span.fl.w-100.f5.fw4.measure.lh-subheadline.mt1.db.gray", "Let us know a few particulars about your event and we'll set automatically setup your RFP with some default data."),
         
         m('.fl.w-100.usn', [
-          m('.fl.w-40.pv4.pr4', [
-            m('.fl.w-100.br4.white.mt0.mb3.pa3', { class: preflightState.roomsAndSpace ? "bg-dark-red s1" : "bg-light-red" }, [
-              m('div.fl.w-100', { onclick: preflightState.selectRoomsAndSpace }, [
-                m('.fl.fw4', "Sleeping rooms and meeting space")
-              ]),
-            ]),
-            m('.fl.w-100.br4.white.mt0.mb3.pa3', { class: preflightState.sleepingRoomsOnly ? "bg-dark-red s1" : "bg-light-red" }, [
-              m('div.fl.w-100', { onclick: preflightState.selectSleepingRoomsOnly }, [
-                m('.fl.fw4', "Sleeping rooms only")
-              ]),
-            ]),
-            m('.fl.w-100.br4.white.mt0.pa3', { class: preflightState.meetingSpaceOnly ? "bg-dark-red s1" : "bg-light-red" }, [
-              m('div.fl.w-100', { onclick: preflightState.selectMeetingSpaceOnly }, [
-                m('.fl.fw4', "Meeting space only")
-              ]),
-            ]),
-          ]),
-          m(".flex.flex-column.fl.w-60", [
+          m(".flex.flex-column.fl.w-50.pr2", [
             m('.fl.w-100.br4.shadow-2.bg-purple.mt4.pa3', {class: preflightState.specific ? "bg-purple" : "bg-light-purple" }, [
               m('.f4.fw4.white.dim.pointer', {onclick: preflightState.toggleSpecific }, "I have specific dates for my program."),
               m('.fl.w-50-ns.w-100.ph2-ns', {class: preflightState.specific ? "db" : "dn" }, [
@@ -167,6 +150,23 @@ module.exports = {
             ]),
           ]),
         
+	   m('.fl.w-50.pv4.', [
+            m('.fl.w-100.br4.white.mt0.mb3.pa3', { class: preflightState.roomsAndSpace ? "bg-dark-red s1" : "bg-light-red" }, [
+              m('div.fl.w-100', { onclick: preflightState.selectRoomsAndSpace }, [
+                m('.fl.fw4', "Sleeping rooms and meeting space")
+              ]),
+            ]),
+            m('.fl.w-100.br4.white.mt0.mb3.pa3', { class: preflightState.sleepingRoomsOnly ? "bg-dark-red s1" : "bg-light-red" }, [
+              m('div.fl.w-100', { onclick: preflightState.selectSleepingRoomsOnly }, [
+                m('.fl.fw4', "Sleeping rooms only")
+              ]),
+            ]),
+            m('.fl.w-100.br4.white.mt0.pa3', { class: preflightState.meetingSpaceOnly ? "bg-dark-red s1" : "bg-light-red" }, [
+              m('div.fl.w-100', { onclick: preflightState.selectMeetingSpaceOnly }, [
+                m('.fl.fw4', "Meeting space only")
+              ]),
+            ]),
+          ]),
 
 
           m(".flex.flex-column.fl.w-100.pa4.shadow-2.bg-blue.near-white.br4", [
@@ -523,12 +523,12 @@ module.exports = {
             m('span', [
               m('i.fa.fa-magic'),
             ]),
-            m('span.ml2', "Day planner"),
+            m('span.ml2', "Program planner"),
           ]),
           //edit day planner modal
           m('.fixed.top-0.right-0.bottom-0.left-0.bg-black.white.pa2.w-100.h-100', {class: RFPState.showDayPlanner ? "fixed" : "dn"}, [
             m('.tl', [
-              m('.f1.fw2', 'Day Planner'),
+              m('.f1.fw2', 'Program Planner'),
               m('.fixed.top-1.right-1.red.i.fa.fa-times.fa-2x', {onclick: RFPState.toggleDayPlanner}, )
             ]),
             m(DayPlanner)
