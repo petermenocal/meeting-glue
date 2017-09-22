@@ -7,7 +7,8 @@ var Bold = Quill.import('formats/bold');
 Bold.tagName = 'B';   // Quill uses <strong> by default
 Quill.register(Bold, true);
 
-const DayPlanner = require('../components/DayPlanner')
+const DayPlanner  = require('../components/DayPlanner')
+const Concessions = require('../components/Concessions')
 
 let menuState = require('../models/menuState')
 let insertSnippet = require('../models/insertSnippet')
@@ -447,8 +448,6 @@ module.exports = {
           ]),
 
 
-
-
           // m('.bg-black.h3.w-100.white.flex.items-center.ph4', {onclick: menuState.toggleGallery}, [
           //   m('span', {class: menuState.gallery ? "dn" : "db"}, [
           //     m('i.fa.fa-caret-right'),
@@ -533,6 +532,22 @@ module.exports = {
               m('.fixed.top-1.right-1.red.i.fa.fa-times.fa-2x', {onclick: RFPState.toggleDayPlanner}, )
             ]),
             m(DayPlanner)
+          ]),
+
+         //Concessions
+          m('.bg-black.h3.w-100.white.flex.items-center.ph4', {onclick: RFPState.toggleConcessions}, [
+            m('span', [
+              m('i.fa.fa-magic'),
+            ]),
+            m('span.ml2', "Concessions"),
+          ]),
+          //edit concessions
+          m('.fixed.top-0.right-0.bottom-0.left-0.bg-black.white.pa2.w-100.h-100', {class: RFPState.showConcessions ? "fixed" : "dn", style: "overflow:scroll"}, [
+            m('.tl', [
+              m('.f1.fw2', 'Concessions'),
+              m('.fixed.top-1.right-1.red.i.fa.fa-times.fa-2x', {onclick: RFPState.toggleConcessions}, )
+            ]),
+            m(Concessions)
           ]),
 
           // inbox

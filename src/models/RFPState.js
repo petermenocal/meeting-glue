@@ -19,6 +19,9 @@ let RFPState = {
   toggleGalleryEditor: () => {
     RFPState.showGalleryEditor = !RFPState.showGalleryEditor
   },
+  toggleConcessions: () => {
+    RFPState.showConcessions= !RFPState.showConcessions
+  },
   toggleDayPlanner: () => {
     RFPState.showDayPlanner = !RFPState.showDayPlanner
   },
