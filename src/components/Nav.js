@@ -8,6 +8,8 @@ var Nav = {
       {name: "Boulder CVB", location: "/cvb/colorado/boulder"},
       {name: "Hard Rock", location: "/hotel"},
       {name: "RFP", location: "/rfp2"},
+      {name: "Profile", location: "/profile"},
+      {name: "Inbox", location: "/inbox"},
     ]
 }
 
@@ -15,7 +17,7 @@ module.exports = {
   view: () => {
     return  m("nav", {class:"fl w-100", style: "background: url('../img/bg-nav_bar.png'); background-size: cover;"}, [
           m("div", {class: "flex items-center", style: "height: 70px"}, [
-            m("div#branding", {class: "w-20 ph3 pointer"}, [
+            m("div#branding", {class: "w-30-ns w-100 ph3 pointer"}, [
               m("img", {alt: "Meeting Glue logo: Black serif uppercase text with green pineapple leaves over the 'U'", src: "img/logo/logo-meeting-glue.png", height: '64px'})
             ]),
             m("div#nav-items", {class: "w-50 flex items-center"}, [
