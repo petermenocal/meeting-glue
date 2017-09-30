@@ -39,8 +39,8 @@ module.exports = {
       // header
       m('div', {class: 'fl w-100 bg-b-purple-1 near-white avenir fw4 ttu', style: 'overflow: hidden'}, [
         m('div', {class: 'fl w-70'}, [
-          m('div', { class: 'fl w-50 flex flex-column justify-center', style: 'height: 350px' }, [
-            m('img.pa4-ns', { src: 'img/cvb/logo-cvb-boulder.png' })
+          m('div', { class: 'fl w-50 flex flex-column items-center justify-center', style: 'height: 350px' }, [
+            m('img.pa4-ns', { src: 'img/cvb/logo-cvb-boulder.png', style: 'max-width: 200px'})
           ]),
           m('div', {class: 'fl w-50 ttu flex flex-column justify-center', style: 'height: 350px;'}, [
             m('.f3.fw5.mb2.measure-narrow', 'Boulder Convention & Visitors Bureau'),

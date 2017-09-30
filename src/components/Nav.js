@@ -10,6 +10,7 @@ var Nav = {
       {name: "RFP", location: "/rfp2"},
       {name: "Profile", location: "/profile"},
       {name: "Inbox", location: "/inbox"},
+      {name: "CVBs", location: "/cvb/"},
     ]
 }
 

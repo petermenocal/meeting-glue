@@ -1,34 +1,27 @@
-const m = require('mithril')
-const Quill = require('quill')
-const Awesomplete = require('awesomplete')
-const flatpickr = require('flatpickr')
+const m = require('mithril');
+const Quill = require('quill');
+const Awesomplete = require('awesomplete');
+const flatpickr = require('flatpickr');
 var quill;
 var Bold = Quill.import('formats/bold');
 Bold.tagName = 'B';   // Quill uses <strong> by default
 Quill.register(Bold, true);
-
-const DayPlanner  = require('../components/DayPlanner')
-const Concessions = require('../components/Concessions')
-
-let menuState = require('../models/menuState')
-let insertSnippet = require('../models/insertSnippet')
-let RFPState = require('../models/RFPState')
-let preflightState = require('../models/preflightState')
+const DayPlanner  = require('../components/DayPlanner');
+const Concessions = require('../components/Concessions');
+let menuState = require('../models/menuState');
+let insertSnippet = require('../models/insertSnippet');
+let RFPState = require('../models/RFPState');
+let preflightState = require('../models/preflightState');
 
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
 var toolbarOptions = [
   ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
   [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-
   [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-
   [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-
   [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-
   [{ 'align': [] }],
-
   ['clean']                                         // remove formatting button
 ];
 
@@ -48,29 +41,30 @@ module.exports = {
           // Preload time with defaultDate instead:
           // defaultDate: "3:30"
         }
-    }
+    };
 
     flatpickr("#checkin", config);
     flatpickr("#checkout", config);
-    var container = document.querySelector('#editor')
-    var quill = new Quill(container)
+
+    var container = document.querySelector('#editor');
+    var quill = new Quill(container);
 
     //awesomeplete
-    var input = document.getElementById('recipients')
+    var input = document.getElementById('recipients');
     new Awesomplete('input[data-multiple]', {
-    	list: ["MGM", "Caesar's", "Las Vegas", "Colorado", "Nevada", "Boulder", "GSO"],
+      list: ["MGM", "Caesar's", "Las Vegas", "Colorado", "Nevada", "Boulder", "GSO"],
       filter: function(text, input) {
-    		return Awesomplete.FILTER_CONTAINS(text, input.match(/[^,]*$/)[0]);
-    	},
+        return Awesomplete.FILTER_CONTAINS(text, input.match(/[^,]*$/)[0]);
+      },
 
-    	item: function(text, input) {
-    		return Awesomplete.ITEM(text, input.match(/[^,]*$/)[0]);
-    	},
+      item: function(text, input) {
+        return Awesomplete.ITEM(text, input.match(/[^,]*$/)[0]);
+      },
 
-    	replace: function(text) {
-    		var before = this.input.value.match(/^.+,\s*|/)[0];
-    		this.input.value = before + text + ", ";
-    	}
+      replace: function(text) {
+        var before = this.input.value.match(/^.+,\s*|/)[0];
+        this.input.value = before + text + ", ";
+      }
     });
   },
   view: () => {
@@ -83,7 +77,6 @@ module.exports = {
       m(".fl.w-100.ba.b--black-10.pa4.bg-white.mr6-ns.shadow-4", {class: RFPState.step == 1 ? "db" : "dn"}, [
         m("span.fl.w-100.f1.fw3.lh-headline.db.purple", "Tell us what you need."),
         m("span.fl.w-100.f5.fw4.measure.lh-subheadline.mt1.db.gray", "Let us know a few particulars about your event and we'll set automatically setup your RFP with some default data."),
-        
         m('.fl.w-100.usn', [
           m(".flex.flex-column.fl.w-50.pr2", [
             m('.fl.w-100.br4.shadow-2.bg-purple.mt4.pa3', {class: preflightState.specific ? "bg-purple" : "bg-light-purple" }, [
@@ -150,7 +143,7 @@ module.exports = {
             ]),
           ]),
         
-	   m('.fl.w-50.pv4.', [
+     m('.fl.w-50.pv4.', [
             m('.fl.w-100.br4.white.mt0.mb3.pa3', { class: preflightState.roomsAndSpace ? "bg-dark-red s1" : "bg-light-red" }, [
               m('div.fl.w-100', { onclick: preflightState.selectRoomsAndSpace }, [
                 m('.fl.fw4', "Sleeping rooms and meeting space")
@@ -351,7 +344,6 @@ module.exports = {
                 m('span', 'Yes, Indoor and Outdoor')
               ]),
             ]),
-
           ]),
 
         ])
@@ -579,13 +571,6 @@ module.exports = {
                 m('.fw4.mt1.f6', 'logo.png')
               ]),
 
-
-              m('div.fl.w-third.pa3.tc', [
-                m('i.fa.fa-2x.fa-file-image-o'),
-                m('.fw4.mt1.f6', 'logo.png')
-              ]),
-
-
               m('div.fl.w-third.pa3.tc', [
                 m('i.fa.fa-2x.fa-file-image-o'),
                 m('.fw4.mt1.f6', 'logo.png')
@@ -596,12 +581,15 @@ module.exports = {
                 m('.fw4.mt1.f6', 'logo.png')
               ]),
 
-
               m('div.fl.w-third.pa3.tc', [
                 m('i.fa.fa-2x.fa-file-image-o'),
                 m('.fw4.mt1.f6', 'logo.png')
               ]),
 
+              m('div.fl.w-third.pa3.tc', [
+                m('i.fa.fa-2x.fa-file-image-o'),
+                m('.fw4.mt1.f6', 'logo.png')
+              ]),
 
               m('div.fl.w-third.pa3.tc', [
                 m('i.fa.fa-2x.fa-file-image-o'),
@@ -609,10 +597,6 @@ module.exports = {
               ]),
             ]),
           ])
-
-
-
-
         ])
       ]),
     ])

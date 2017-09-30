@@ -4,6 +4,8 @@ const m = require('mithril')
     let Slideshow = require('../models/Slideshow')
     let Feed = require('../models/Feed')
     let Initializer = require('../models/Initializer')
+    let SalesStaff = require('../models/SalesStaff')
+
 
     module.exports = {
       oncreate: Initializer.start.bind(Initializer,'lvcva'),
@@ -73,6 +75,27 @@ const m = require('mithril')
                 m('h1', "Headline goes here"),
                 m('p', {class: 'measure-narrow lh-copy'}, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
                 m('p', {class: 'measure-narrow lh-copy'}, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.'),
+              ])
+            ]),
+
+            m('.fl.w-100.mt4.br2.black.pa3', [
+              m('.mw6.tc.center', [
+                m('.f2.mb2.bb.b--black-50', 'Sales Staff'),
+                //staff member
+                SalesStaff.all.map(function(s){
+                  return m('.fl.w-100.mb3.bb.b--black-20.pa5', [
+                    m('.fl.w-40', [
+                      m('img.shadow-2', {style: 'border-radius: 50%', src: 'img/' + s.image}) 
+                    ]),
+                    m('.fl.w-60.tl', [
+                      m('.f4.fw6', s.name),
+                      m('.f5.fw4', s.title),
+                      m('.f6.fw6.mt2', s.email),
+                      m('.f6.fw6.mt2', s.phone),
+                      m('.f6.fw6.mt2', s.rooms),
+                   ])
+                  ])
+                })
               ])
             ]),
           ])

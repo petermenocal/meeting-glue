@@ -14,6 +14,7 @@ let Test             = require('./views/Test')
 let Test2            = require('./views/Test2')
 let Inbox            = require('./views/Inbox')
 let Profile          = require('./views/Profile')
+let CVBList = require('./views/CVBList')
 
 // Routes
 m.route(document.body, '/main', {
@@ -29,4 +30,6 @@ m.route(document.body, '/main', {
   '/inbox':                { render: () => { return m(Layout, m(Inbox)) } },
   '/test2':                { render: () => { return m(Layout, m(Test2)) } },
   '/profile':              { render: () => { return m(Layout, m(Profile)) } },
+  '/cvb/': { render: () => { return m(Layout, m(CVBList)) } },
+
 })
