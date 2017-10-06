@@ -7,446 +7,172 @@ var Concessions = {
 module.exports = { 
   view: () => {
     return m(".pa4", [
-      m('.overflow-auto', [
-	m('table.f6.mw7.bg-purple.center', {style: 'min-width: 480px'}, [
-	  //heading
-//	  m('thead', [
-//	    m('tr', [
-//	      m('th.fw6.tl.pa3.bg-purple.white', ' '),
-//	      m('th.fw6.tl.pa3.bg-purple.white', ' '),
-//	    ])
-//	  ]),
-	  //table
-	  m('tbody.lh-copy', [
-	    
-	    m('thead', [
-	      m('tr', [
-		m('th', 'Sleeping Rooms')
-	      ]) 
-	    ]),
+      m('.overflow-auto.white', [
+        m('.mw7.center', [
 
-	    m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Rooms Tax')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=%]')
-	      ]),
-	    ]),
+          m('.fl.w-100.tl', [
+            m('.f2.fw4', 'Sleeping Rooms')
+          ]),
 
-	     m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Resort Fee')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=$/day]')
-	      ]),
-	    ]),
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'roomsTax'}, 'Rooms tax'),
+            m('input.fl.w-100', {type: 'text', name: 'roomsTax'}),
+          ]),
 
-	     m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Cut-Off Date')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=# of days]')
-	      ]),
-	    ]),
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'resortFee'}, 'Resort fee'),
+            m('input.fl.w-100', {type: 'text', name: 'resortFee'}),
+          ]),
 
-	     m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Wireless Internet')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input')
-	      ]),
-	    ]),
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'cutOffDate'}, 'Cut-off date'),
+            m('input.fl.w-100', {type: 'text', name: 'resortFee'}),
+          ]),
 
-	     m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Complimentary Room')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input')
-	      ]),
-	    ]),
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'wirelessInternet'}, 'Wireless internet'),
+            m('input.fl.w-100', {type: 'text', name: 'wirelessInternet'}),
+          ]),
 
-	     m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Complimentary Upgrade')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input')
-	      ]),
-	    ]),
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'complimentaryRoom'}, 'Complimentary room'),
+            m('input.fl.w-100', {type: 'text', name: 'complimentaryRoom'}),
+          ]),
 
-	     m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Comp Ratio')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input')
-	      ]),
-	    ]),
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'complimentaryUpgrade'}, 'Complimentary upgrade'),
+            m('input.fl.w-100', {type: 'text', name: 'complimentaryUpgrade'}),
+          ]),
 
-	     m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Group Rate Available (Pre)')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input')
-	      ]),
-	    ]),
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'compRatio'}, 'Comp ratio'),
+            m('input.fl.w-100', {type: 'text', name: 'compRatio'}),
+          ]),
 
-	     m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Group Rate Available (Post)')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input')
-	      ]),
-	    ]),
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'groupRateAvailablePre'}, 'Group rate available (pre)'),
+            m('input.fl.w-100', {type: 'text', name: 'groupRateAvailablePre'}),
+          ]),
 
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'groupRateAvailablePost'}, 'Group rate available (post)'),
+            m('input.fl.w-100', {type: 'text', name: 'groupRateAvailablePost'}),
+          ]),
 
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'groupRateAvailablePost'}, 'Group rate available (post)'),
+            m('input.fl.w-100', {type: 'text', name: 'groupRateAvailablePost'}),
+          ]),
 
-	  ])
-	]),
+          m('.fl.w-100.mt4.tl', [
+            m('.f2.fw4', 'Meeting Space')
+          ]),
 
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'adequateMeetingSpaceBasedOnRFP'}, 'Adequate meeting space based on RFP?'),
+            m('input.fl.w-100', {type: 'text', name: 'adequateMeetingSpaceBasedOnRFP'}),
+          ]),
 
-	// table2
-	m('table.mt3.f6.mw7.bg-green.center', {style: 'min-width: 480px'}, [
-	  //heading
-//	  m('thead', [
-//	    m('tr', [
-//	      m('th.fw6.tl.pa3.bg-purple.white', ' '),
-//	      m('th.fw6.tl.pa3.bg-purple.white', ' '),
-//	    ])
-//	  ]),
-	  //table
-	  m('tbody.lh-copy', [
-	    
-	    m('thead', [
-	      m('tr', [
-		m('th', 'Meeting Space')
-	      ]) 
-	    ]),
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'complimentaryMeetingRoomRental'}, 'Complimentary meeting room rental'),
+            m('input.fl.w-100', {type: 'text', name: 'complimentaryMeetingRoomRental'}),
+          ]),
 
-	    m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Adequate meeting space based on RFP?')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=%]')
-	      ]),
-	    ]),
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'complimentaryWifiInMeetingSpace'}, 'Complimentary Wi-Fi in meeting space'),
+            m('input.fl.w-100', {type: 'text', name: 'complimentaryWifiInMeetingSpace'}),
+          ]),
 
-	     m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Complimentary meeting room rental')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=$/day]')
-	      ]),
-	    ]),
+          m('.fl.w-100.tl.mt4', [
+            m('.f2.fw4', 'Food and Beverage')
+          ]),
 
-	     m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Complimentary wifi in meeting space')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=# of days]')
-	      ]),
-	    ]),
-	  ])
-	]),
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'foodAndBeverageMinimum'}, 'Food and beverage minimum'),
+            m('input.fl.w-100', {type: 'text', name: 'foodAndBeverageMinimum'}),
+          ]),
 
-	// table2
-	m('table.mt3.f6.mw7.bg-purple.center',  {style: 'min-width: 480px'}, [
-	  //heading
-//	  m('thead', [
-//	    m('tr', [
-//	      m('th.fw6.tl.pa3.bg-purple.white', ' '),
-//	      m('th.fw6.tl.pa3.bg-purple.white', ' '),
-//	    ])
-//	  ]),
-	  //table
-	  m('tbody.lh-copy', [
-	    
-	    m('thead', [
-	      m('tr', [
-		m('th', 'Audio Visual')
-	      ]) 
-	    ]),
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'foodAndBeverageTax'}, 'Food and beverage tax'),
+            m('input.fl.w-100', {type: 'text', name: 'foodAndBeverageTax'}),
+          ]),
 
-	    m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Adequate meeting space based on RFP?')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=%]')
-	      ]),
-	    ]),
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'banquetMenuDiscount'}, 'Banquet menu discount'),
+            m('input.fl.w-100', {type: 'text', name: 'banquetMenuDiscount'}),
+          ]),
 
-	    m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Adequate meeting space based on RFP?')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=%]')
-	      ]),
-	    ]),
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'abilityToCreateCustomMenu'}, 'Ability to create custom menu'),
+            m('input.fl.w-100', {type: 'text', name: 'abilityToCreateCustomMenu'}),
+          ]),
 
-	     m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Complimentary meeting room rental')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=$/day]')
-	      ]),
-	    ]),
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'complimentaryBreakfastIncludedInRate'}, 'Complimentary breakfast included in rate'),
+            m('input.fl.w-100', {type: 'text', name: 'complimentaryBreakfastIncludedInRate'}),
+          ]),
 
-	  ])
-	]),
+          m('.fl.w-100.tl.mt4', [
+            m('.f2.fw4', 'General')
+          ]),
+
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'parkingCosts'}, 'Parking costs'),
+            m('input.fl.w-100', {type: 'text', name: 'parkingCosts'}),
+          ]),
+
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'numberOfFBonProperty'}, 'Number of F&B outlets on property'),
+            m('input.fl.w-100', {type: 'text', name: 'numberOfFBonProperty'}),
+          ]),
+
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'numberOfElevatorsNearMeetingSpace'}, 'Number of elevators near meeting space'),
+            m('input.fl.w-100', {type: 'text', name: 'numberOfElevatorsNearMeetingSpace'}),
+          ]),
+
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'hotelRating'}, 'Hotel Rating'),
+            m('input.fl.w-100', {type: 'text', name: 'hotelRating'}),
+          ]),
+
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'renovations'}, 'Renovations'),
+            m('input.fl.w-100', {type: 'text', name: 'renovations'}),
+          ]),
+
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'nearestTrainSubway'}, 'Nearest train/Subway station'),
+            m('input.fl.w-100', {type: 'text', name: 'nearestTrainSubway'}),
+          ]),
+
+          m('.fl.w-100.tl.mt4', [
+            m('.f2.fw4', 'Concessions')
+          ]),
+
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'complimentaryParking'}, 'Complimentary parking'),
+            m('input.fl.w-100', {type: 'text', name: 'complimentaryParking'}),
+          ]),
+
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'discountedParking'}, 'Discounted parking'),
+            m('input.fl.w-100', {type: 'text', name: 'discountedParking'}),
+          ]),
+
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'complimentaryBoxHandling'}, 'Complimentary box handling'),
+            m('input.fl.w-100', {type: 'text', name: 'complimentaryBoxHandling'}),
+          ]),
+
+          m('.fl.w-100.tl.mt3', [
+            m('label.fl.w-100', {name: 'complimentaryAmenity'}, 'Complimentary Amenity'),
+            m('input.fl.w-100', {type: 'text', name: 'complimentaryAmenity'}),
+          ]),
 
 
-	// table2
-	m('table.mt3.f6.mw7.bg-green.center',  {style: 'min-width: 480px'}, [
-	  //heading
-//	  m('thead', [
-//	    m('tr', [
-//	      m('th.fw6.tl.pa3.bg-purple.white', ' '),
-//	      m('th.fw6.tl.pa3.bg-purple.white', ' '),
-//	    ])
-//	  ]),
-	  //table
-	  m('tbody.lh-copy', [
-	    
-	    m('thead', [
-	      m('tr', [
-		m('th', 'Food & Beverage')
-	      ]) 
-	    ]),
 
-	    m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Food & Beverage Minimum')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=%]')
-	      ]),
-	    ]),
-
-
-	    m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Food & Beverage Tax')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=$/day]')
-	      ]),
-	    ]),
-	    
-	    m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Banquet Menu Discount')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=$/day]')
-	      ]),
-	    ]),
-
-	     m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Ability to create custom menus')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=# of days]')
-	      ]),
-	    ]),
-	    
-	    m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Complimentary breakfast included in rate')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=# of days]')
-	      ]),
-	    ]),
-
-	  ])
-	]),
-	
-	
-	// table2
-	m('table.mt3.f6.mw7.bg-purple.center',  {style: 'min-width: 480px'}, [
-	  //heading
-//	  m('thead', [
-//	    m('tr', [
-//	      m('th.fw6.tl.pa3.bg-purple.white', ' '),
-//	      m('th.fw6.tl.pa3.bg-purple.white', ' '),
-//	    ])
-//	  ]),
-	  //table
-	  m('tbody.lh-copy', [
-	    
-	    m('thead', [
-	      m('tr', [
-		m('th', 'General')
-	      ]) 
-	    ]),
-
-	    m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Parking Costs')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=%]')
-	      ]),
-	    ]),
-
-
-	    m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', '# of F&B Outlets on Property')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=%]')
-	      ]),
-	    ]),
-
-
-	    m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', '# of Elevators Near Meeting Space')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=%]')
-	      ]),
-	    ]),
-
-
-	    m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Hotel Rating')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=%]')
-	      ]),
-	    ]),
-
-	     m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Renovations')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=$/day]')
-	      ]),
-	    ]),
-
-	     m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Nearest Train/Subway Station')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=# of days]')
-	      ]),
-	    ]),
-	  ])
-	]),	
-	
-	
-	// table2
-	m('table.mt3.f6.mw7.bg-green.center',  {style: 'min-width: 480px'}, [
-	  //heading
-//	  m('thead', [
-//	    m('tr', [
-//	      m('th.fw6.tl.pa3.bg-purple.white', ' '),
-//	      m('th.fw6.tl.pa3.bg-purple.white', ' '),
-//	    ])
-//	  ]),
-	  //table
-	  m('tbody.lh-copy', [
-	    
-	    m('thead', [
-	      m('tr', [
-		m('th', 'Concessions')
-	      ]) 
-	    ]),
-
-	    m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Complimentary Parking')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=%]')
-	      ]),
-	    ]),
-	    m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Discounted Parking')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=%]')
-	      ]),
-	    ]),
-	    m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Complimentary Box Handling')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=%]')
-	      ]),
-	    ]),
-
-	     m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Complimentary Amenity')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=$/day]')
-	      ]),
-	    ]),
-
-	     m('tr', [
-	      //rooms tax
-	      m('td.pa3.parent', [
-		m('p', 'Meeting Planner Points')
-	      ]), 
-	      m('td.pa3.parent', [
-		m('input[placeholder=# of days]')
-	      ]),
-	    ]),
-	  ])
-	]),
+        ])
       ])
     ])
   }

@@ -34,13 +34,9 @@ const m = require('mithril')
             m('div', {class: 'fl w-50 pr3'}, [
               m('div', {class: 'fl w-100 h5', style: 'overflow: hidden'}, [
                 m('div', {class: 'db pa2 fl w-60 h5 white', style: 'background: linear-gradient(rgba(0, 160, 238, 0.8), rgba(0, 160, 238, 0.9)),  url("../img/bg-polylines.png"); background-size: cover; height: 300px'}, [
-                  m('h4', {class: 'f3 fw5 lh-copy mb0 pl2'}, "What's included"),
-                  m('ul', {class: 'mt1 list lh-copy yellow f5 fw5'}, [
-                    m('li', 'In-room internet access'),
-                    m('li', 'Daily newspaper'),
-                    m('li', 'Access to fitness room'),
-                    m('li', 'Roundtrip shuttle to Fashion Show Mall'),
-                    m('li', 'Unlimited local and toll free calls'),
+                  m('h4', {class: 'f3 fw5 lh-copy mb0 pl2'}, "Twitter @HardRockHotelLV"),
+                  m('ul', {class: 'mt4 list lh-copy yellow f5 fw5'}, [
+                    m('li', "If you can't find a reason to celebrate at @MBSteak, you're doing it wrong. #Cheers 🍸"),
                   ])
                 ]),
                 m('div', {class: 'db fl w-40 h5 pl4', style: 'height: 300px; background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/bg-polyboxes.png"); background-size: cover'}, [
