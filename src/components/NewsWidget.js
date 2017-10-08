@@ -1,37 +1,18 @@
 const m = require('mithril');
 let WidgetTitleBar = require('./WidgetTitleBar');
+let News = require('../models/News');
 
 let NewsWidget = {
   view: () => {
     return m('.fl.w-100.bg-white.h-100.shadow-2', [
       m(WidgetTitleBar, {content: 'Industry news'}),
-      m('.fl.w-100.pa4.bb.b--black-30', [
-        m('fw2.f4.ttu.mb1','Headline goes here'),
-        m('.f6.fw4.gray.bb.b--black-10', 'October 1, 2017'),
-        m('.f6.fw4.gray.pt3', 'Content goes here.')
-      ]),
-      m('.fl.w-100.pa4.bb.b--black-30', [
-        m('fw2.f4.ttu.mb1','Headline goes here'),
-        m('.f6.fw4.gray.bb.b--black-10', 'October 1, 2017'),
-        m('.f6.fw4.gray.pt3', 'Content goes here.')
-      ]),
-      m('.fl.w-100.pa4.bb.b--black-30', [
-        m('fw2.f4.ttu.mb1','Headline goes here'),
-        m('.f6.fw4.gray.bb.b--black-10', 'October 1, 2017'),
-        m('.f6.fw4.gray.pt3', 'Content goes here.')
-      ]),
-      m('.fl.w-100.pa4.bb.b--black-30', [
-        m('fw2.f4.ttu.mb1','Headline goes here'),
-        m('.f6.fw4.gray.bb.b--black-10', 'October 1, 2017'),
-        m('.f6.fw4.gray.pt3', 'Content goes here.')
-      ]),
-      m('.fl.w-100.pa4.bb.b--black-30', [
-        m('fw2.f4.ttu.mb1','Headline goes here'),
-        m('.f6.fw4.gray.bb.b--black-10', 'October 1, 2017'),
-        m('.f6.fw4.gray.pt3', 'Content goes here.')
-      ]),
-    ])
+      News.list.map(function(article) {
+       return m('.fl.w-100.pa4.bb.b--black-30', [
+            m('.fl.f1.fw6.mr2', article.position),
+            m('fw1.f6', article.title),
+          ]);
+      })
+    ]);
   }
 };
-
 module.exports = NewsWidget;
