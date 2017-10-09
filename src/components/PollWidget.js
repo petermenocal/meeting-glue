@@ -30,6 +30,9 @@ let PollWidget = {
       m('input.fl.mr2', {type: 'radio', name: 'poll', value: '1'}),
       m('.f4.fl.fw4.pb1', 'Third party')
     ]),
+    m('.fl.w-100', [
+      m('button.w-100.bg-green.pa2.white.ba.b--green', 'Submit')
+    ])
   ]);
  }
 };

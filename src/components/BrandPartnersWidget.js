@@ -2,21 +2,24 @@ const m = require('mithril');
 
 let BrandPartnersWidget = {
   view: () => {
-    return m('.fl.w-100.h5.pt4', [
-      m('.fl.w-20.pa2', [
-        m('img', {src: '//placehold.it/300x300'})
+    return m('.flex.w-100.flex-row.h-100.bg-white', { style: 'max-height: 150px; overflow: hidden' }, [
+      m('.flex', [
+        m('img', {src: '../../img/logo-_0000_marriott.jpg'})
       ]),
-      m('.fl.w-20.pa2', [
-        m('img', {src: '//placehold.it/300x300'})
+      m('.flex', [
+        m('img', {src: '../../img/logo-_0001_hyatt.jpg'})
       ]),
-      m('.fl.w-20.pa2', [
-        m('img', {src: '//placehold.it/300x300'})
+      m('.flex', [
+        m('img', {src: '../../img/logo-_0002_hilton.jpg'})
       ]),
-      m('.fl.w-20.pa2', [
-        m('img', {src: '//placehold.it/300x300'})
+      m('.flex', [
+        m('img', {src: '../../img/logo-_0003_ihg.jpg'})
       ]),
-      m('.fl.w-20.pa2', [
-        m('img', {src: '//placehold.it/300x300'})
+      m('.flex', [
+        m('img', {src: '../../img/logo-_0004_mgm.jpg'})
+      ]),
+      m('.flex', [
+        m('img', {src: '../../img/logo-_0005_caesars.jpg'})
       ]),
     ]);
   }

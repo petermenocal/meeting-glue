@@ -8,15 +8,15 @@ let MostPopularCitiesWidget = {
       m('.fl.w-100.pa3', [
         m('.fl.w-third-ns.w-100.pa2', [
           m('.h3.tc.pt4.f6.fw5', 'New York'),
-          m('img', {src: '//placehold.it/300x300'})
+          m('img', {src: '../../img/city-nyc.png'})
         ]),
        m('.fl.w-third-ns.w-100.pa2', [
           m('.h3.tc.pt4.f6.fw5', 'Las Vegas'),
-          m('img', {src: '//placehold.it/300x300'})
+          m('img', {src: '../../img/city-vegas.png'})
         ]),
        m('.fl.w-third-ns.w-100.pa2', [
           m('.h3.tc.pt4.f6.fw5', 'Washington DC'),
-          m('img', {src: '//placehold.it/300x300'})
+          m('img', {src: '../../img/city-dc.png'})
         ]),
       ])
     ]);

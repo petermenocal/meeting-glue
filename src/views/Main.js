@@ -10,6 +10,8 @@ let NewOpeningsWidget = require('../components/NewOpeningsWidget');
 let NeedsDatesWidget = require('../components/NeedsDatesWidget');
 let InviteAPlanner = require('../components/InviteAPlanner');
 let Hero = require('../components/Hero');
+let Reviews = require('../components/Reviews');
+let EventCalendar = require('../components/EventCalendar');
 
 module.exports = {
   view: () => {
@@ -25,11 +27,10 @@ module.exports = {
         m('.center.pa3', {style: 'max-width: 1200px'}, [
          m('.fl.w-100.w-third-ns.pa4', [
           m(AboutWidget),
-          m('.fl.w-100', 'Event Calendar')        
         ]),
         m('.fl.w-100.w-third-ns.pa4', [
           m(NewsWidget),
-          m('.fl.w-100', 'Reviews')
+          m(Reviews)
         ]),
         m('.fl.w-100.w-third-ns.pa4', [
           m(NewOpeningsWidget),
@@ -38,7 +39,7 @@ module.exports = {
 
         ])
       ]),
-      m('.fl.w-100.mb4', {style: 'height: 350px'}, [
+      m('.fl.w-100.shadow-2.mb4',[
         m(BrandPartnersWidget)
       ]),
       m('.fl.w-100', [
@@ -52,6 +53,6 @@ module.exports = {
 
         ])
       ]),
-    ])
+    ]);
   }
-}
+};
