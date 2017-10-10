@@ -27,6 +27,7 @@ module.exports = {
         m('.center.pa3', {style: 'max-width: 1200px'}, [
          m('.fl.w-100.w-third-ns.pa4', [
           m(AboutWidget),
+          m(EventCalendar)
         ]),
         m('.fl.w-100.w-third-ns.pa4', [
           m(NewsWidget),

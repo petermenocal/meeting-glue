@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 353);
+/******/ 	return __webpack_require__(__webpack_require__.s = 354);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -14685,7 +14685,7 @@ nacl.setPRNG = function(fn) {
     });
   } else if (true) {
     // Node.js.
-    crypto = __webpack_require__(352);
+    crypto = __webpack_require__(353);
     if (crypto && crypto.randomBytes) {
       nacl.setPRNG(function(x, n) {
         var i, v = crypto.randomBytes(n);
@@ -27365,7 +27365,7 @@ if (typeof self === 'object') {
 } else {
   // Node.js or Web worker with no crypto support
   try {
-    var crypto = __webpack_require__(350);
+    var crypto = __webpack_require__(351);
     if (typeof crypto.randomBytes !== 'function')
       throw new Error('Not supported');
 
@@ -40159,7 +40159,7 @@ util.inherits = __webpack_require__(2);
 /*</replacement>*/
 
 /*<replacement>*/
-var debugUtil = __webpack_require__(351);
+var debugUtil = __webpack_require__(352);
 var debug = void 0;
 if (debugUtil && debugUtil.debuglog) {
   debug = debugUtil.debuglog('stream');
@@ -44414,7 +44414,7 @@ const m = __webpack_require__(1)
     let Slideshow = __webpack_require__(83)
     let Feed = __webpack_require__(60)
     let Initializer = __webpack_require__(82)
-    let SalesStaff = __webpack_require__(344)
+    let SalesStaff = __webpack_require__(345)
 
 
     module.exports = {
@@ -44729,6 +44729,7 @@ module.exports = {
         m('.center.pa3', {style: 'max-width: 1200px'}, [
          m('.fl.w-100.w-third-ns.pa4', [
           m(AboutWidget),
+          m(EventCalendar)
         ]),
         m('.fl.w-100.w-third-ns.pa4', [
           m(NewsWidget),
@@ -44843,7 +44844,7 @@ module.exports = {
 const m = __webpack_require__(1)
 let Hotel = __webpack_require__(140)
 let TitleBar = __webpack_require__(139)
-let RFP = __webpack_require__(341)
+let RFP = __webpack_require__(342)
 let _ = __webpack_require__(45)
 
 module.exports = {
@@ -45023,10 +45024,10 @@ Bold.tagName = 'B';   // Quill uses <strong> by default
 Quill.register(Bold, true);
 const DayPlanner  = __webpack_require__(138);
 const Concessions = __webpack_require__(326);
-let menuState = __webpack_require__(348);
-let insertSnippet = __webpack_require__(347);
-let RFPState = __webpack_require__(342);
-let preflightState = __webpack_require__(349);
+let menuState = __webpack_require__(349);
+let insertSnippet = __webpack_require__(348);
+let RFPState = __webpack_require__(343);
+let preflightState = __webpack_require__(350);
 
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
@@ -45656,7 +45657,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */(function(console) {var m = __webpack_require__(1)
 const flatpickr = __webpack_require__(70)
 var UserLocation = __webpack_require__(143)
-var Weather = __webpack_require__(346)
+var Weather = __webpack_require__(347)
 var config = {
     timePicker: {
       enableTime: true,
@@ -45922,7 +45923,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
-let TabsBoulder = __webpack_require__(345)
+let TabsBoulder = __webpack_require__(346)
 let Calendar = __webpack_require__(81)
 let SlideshowBoulder = __webpack_require__(141)
 let Feed = __webpack_require__(60)
@@ -86217,11 +86218,27 @@ module.exports = {
 
 const m = __webpack_require__(1);
 var TitleBar = __webpack_require__(20);
+var IndustryEvents = __webpack_require__(339);
 
 var EventCalendar = {
   view: ()=> { 
-    return m('.fl.w-100.mt4', [
-      m(TitleBar, {content: "Event Calendar"})
+    return m('.fl.w-100.mt4.bg-white.shadow-2', [
+      m(TitleBar, {content: "Event Calendar"}),
+      m('.fl.w-100', {style: 'height: 720px; overflow: scroll'}, IndustryEvents.list.map(function(e) {
+        return m('div.bb.b--black-10.pa4.w-100', {style: 'height: 220px'}, [
+          m('.fw3.f4.tl', e.name),
+          m('.fw6.f6.pv2.tl', 'Parent: ' + e.parent),
+          m('.fl.w-100.pt1.tl', [
+            m('.fw4.f6', e.date.location),
+          ]),
+          m('.fl.w-100.mt2.mb2', [
+            m('.fl.w-50.tc.fw3.f6.bg-green.white.pa1.br2', e.type),
+            m('.fl.w-50.tc.fw3.f6.bg-light-gray.black.pa1.br2', e.market),
+          ]),
+          m('.fw4.f6.tl.purple', 'Starts on ' + e.date.start),
+          m('.fw4.f6.tl.purple', 'Ends on ' + e.date.end),
+        ]);
+      }))
     ]);
   }
 };
@@ -86417,7 +86434,7 @@ module.exports = NeedsDatesWidget;
 
 const m = __webpack_require__(1);
 let WidgetTitleBar = __webpack_require__(20);
-let Openings = __webpack_require__(340);
+let Openings = __webpack_require__(341);
 
 let NewOpeningsWidget = {
   view: () => {
@@ -86444,7 +86461,7 @@ module.exports = NewOpeningsWidget;
 
 const m = __webpack_require__(1);
 let WidgetTitleBar = __webpack_require__(20);
-let News = __webpack_require__(339);
+let News = __webpack_require__(340);
 
 let NewsWidget = {
   view: () => {
@@ -86514,7 +86531,7 @@ module.exports = PollWidget;
 
 const m = __webpack_require__(1);
 var TitleBar = __webpack_require__(20);
-var ReviewsContent = __webpack_require__(343);
+var ReviewsContent = __webpack_require__(344);
 
 var Reviews = {
   view: ()=> {
@@ -86580,6 +86597,52 @@ module.exports = Dates;
 
 const m = __webpack_require__(1);
 
+var IndustryEvents = {
+  list: [
+    {name: 'Convening Leaders', parent: 'PCMA', type: 'Fee Based', market: 'All markets', date: {start: '1/7/2017', end: '1/10/2017', location: 'Nashville, TN'}},
+    {name: 'Incentive Live', parent: 'Northstar Meetings Group', type: 'Hosted buyer', market: 'Incentive', date: {start: '1/18/2017', end: '1/21/2017', location: 'Aria Resort - Las Vegas, NV'}},
+    {name: 'SMU International', parent: 'Northstar Meetings Group', type: 'Hosted buyer', market: 'All markets', date: {start: '3/10/2017', end: '3/12/2017', location: 'Westin Grand Center - New York, NY'}},
+    {name: 'Meetings Today Live! California', parent: 'Meetings Today', type: 'Hosted buyer', market: 'All markets', date: {start: '3/10/2017', end: '3/12/2017', location: 'Hilton San Diego Bayfront - San Diego, CA'}},
+    {name: 'Convening Leaders', parent: 'PCMA', type: 'Fee Based', market: 'All markets', date: {start: '1/7/2017', end: '1/10/2017', location: 'Nashville, TN'}},
+    {name: 'Incentive Live', parent: 'Northstar Meetings Group', type: 'Hosted buyer', market: 'Incentive', date: {start: '1/18/2017', end: '1/21/2017', location: 'Aria Resort - Las Vegas, NV'}},
+    {name: 'SMU International', parent: 'Northstar Meetings Group', type: 'Hosted buyer', market: 'All markets', date: {start: '3/10/2017', end: '3/12/2017', location: 'Westin Grand Center - New York, NY'}},
+    {name: 'Meetings Today Live! California', parent: 'Meetings Today', type: 'Hosted buyer', market: 'All markets', date: {start: '3/10/2017', end: '3/12/2017', location: 'Hilton San Diego Bayfront - San Diego, CA'}},
+    {name: 'Convening Leaders', parent: 'PCMA', type: 'Fee Based', market: 'All markets', date: {start: '1/7/2017', end: '1/10/2017', location: 'Nashville, TN'}},
+    {name: 'Incentive Live', parent: 'Northstar Meetings Group', type: 'Hosted buyer', market: 'Incentive', date: {start: '1/18/2017', end: '1/21/2017', location: 'Aria Resort - Las Vegas, NV'}},
+    {name: 'SMU International', parent: 'Northstar Meetings Group', type: 'Hosted buyer', market: 'All markets', date: {start: '3/10/2017', end: '3/12/2017', location: 'Westin Grand Center - New York, NY'}},
+    {name: 'Meetings Today Live! California', parent: 'Meetings Today', type: 'Hosted buyer', market: 'All markets', date: {start: '3/10/2017', end: '3/12/2017', location: 'Hilton San Diego Bayfront - San Diego, CA'}},
+    {name: 'Convening Leaders', parent: 'PCMA', type: 'Fee Based', market: 'All markets', date: {start: '1/7/2017', end: '1/10/2017', location: 'Nashville, TN'}},
+    {name: 'Incentive Live', parent: 'Northstar Meetings Group', type: 'Hosted buyer', market: 'Incentive', date: {start: '1/18/2017', end: '1/21/2017', location: 'Aria Resort - Las Vegas, NV'}},
+    {name: 'SMU International', parent: 'Northstar Meetings Group', type: 'Hosted buyer', market: 'All markets', date: {start: '3/10/2017', end: '3/12/2017', location: 'Westin Grand Center - New York, NY'}},
+    {name: 'Convening Leaders', parent: 'PCMA', type: 'Fee Based', market: 'All markets', date: {start: '1/7/2017', end: '1/10/2017', location: 'Nashville, TN'}},
+    {name: 'Incentive Live', parent: 'Northstar Meetings Group', type: 'Hosted buyer', market: 'Incentive', date: {start: '1/18/2017', end: '1/21/2017', location: 'Aria Resort - Las Vegas, NV'}},
+    {name: 'SMU International', parent: 'Northstar Meetings Group', type: 'Hosted buyer', market: 'All markets', date: {start: '3/10/2017', end: '3/12/2017', location: 'Westin Grand Center - New York, NY'}},
+    {name: 'Meetings Today Live! California', parent: 'Meetings Today', type: 'Hosted buyer', market: 'All markets', date: {start: '3/10/2017', end: '3/12/2017', location: 'Hilton San Diego Bayfront - San Diego, CA'}},
+    {name: 'Convening Leaders', parent: 'PCMA', type: 'Fee Based', market: 'All markets', date: {start: '1/7/2017', end: '1/10/2017', location: 'Nashville, TN'}},
+    {name: 'Incentive Live', parent: 'Northstar Meetings Group', type: 'Hosted buyer', market: 'Incentive', date: {start: '1/18/2017', end: '1/21/2017', location: 'Aria Resort - Las Vegas, NV'}},
+    {name: 'SMU International', parent: 'Northstar Meetings Group', type: 'Hosted buyer', market: 'All markets', date: {start: '3/10/2017', end: '3/12/2017', location: 'Westin Grand Center - New York, NY'}},
+    {name: 'Meetings Today Live! California', parent: 'Meetings Today', type: 'Hosted buyer', market: 'All markets', date: {start: '3/10/2017', end: '3/12/2017', location: 'Hilton San Diego Bayfront - San Diego, CA'}},
+    {name: 'Convening Leaders', parent: 'PCMA', type: 'Fee Based', market: 'All markets', date: {start: '1/7/2017', end: '1/10/2017', location: 'Nashville, TN'}},
+    {name: 'Incentive Live', parent: 'Northstar Meetings Group', type: 'Hosted buyer', market: 'Incentive', date: {start: '1/18/2017', end: '1/21/2017', location: 'Aria Resort - Las Vegas, NV'}},
+    {name: 'SMU International', parent: 'Northstar Meetings Group', type: 'Hosted buyer', market: 'All markets', date: {start: '3/10/2017', end: '3/12/2017', location: 'Westin Grand Center - New York, NY'}},
+    {name: 'Meetings Today Live! California', parent: 'Meetings Today', type: 'Hosted buyer', market: 'All markets', date: {start: '3/10/2017', end: '3/12/2017', location: 'Hilton San Diego Bayfront - San Diego, CA'}},
+    {name: 'Convening Leaders', parent: 'PCMA', type: 'Fee Based', market: 'All markets', date: {start: '1/7/2017', end: '1/10/2017', location: 'Nashville, TN'}},
+    {name: 'Incentive Live', parent: 'Northstar Meetings Group', type: 'Hosted buyer', market: 'Incentive', date: {start: '1/18/2017', end: '1/21/2017', location: 'Aria Resort - Las Vegas, NV'}},
+    {name: 'SMU International', parent: 'Northstar Meetings Group', type: 'Hosted buyer', market: 'All markets', date: {start: '3/10/2017', end: '3/12/2017', location: 'Westin Grand Center - New York, NY'}},
+    {name: 'Meetings Today Live! California', parent: 'Meetings Today', type: 'Hosted buyer', market: 'All markets', date: {start: '3/10/2017', end: '3/12/2017', location: 'Hilton San Diego Bayfront - San Diego, CA'}},
+    {name: 'Independent Planner Education Conference (IPEC)', parent: 'Northstar Meetings Group', type: 'Hosted buyer', market: 'Independent 3rd Party', date: {start: '3/10/2017', end: '3/12/2017', location: 'The Broadmoor | Colorado Springs, Co'}},
+  ]
+};
+
+module.exports = IndustryEvents;
+
+
+/***/ }),
+/* 340 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const m = __webpack_require__(1);
+
 let News = {
   list: [
     {title: 'Turkey and Venezuela Agree to Increased Flights and Tourism', position: 1},
@@ -86595,7 +86658,7 @@ module.exports = News;
 
 
 /***/ }),
-/* 340 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
@@ -86615,7 +86678,7 @@ module.exports = Openings;
 
 
 /***/ }),
-/* 341 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(console) {const m = __webpack_require__(1)
@@ -86672,7 +86735,7 @@ module.exports = RFP
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 342 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(console) {const m = __webpack_require__(1)
@@ -86719,7 +86782,7 @@ module.exports = RFPState
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 343 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
@@ -86736,7 +86799,7 @@ module.exports = ReviewsContent;
 
 
 /***/ }),
-/* 344 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
@@ -86795,7 +86858,7 @@ module.exports = SalesStaff
 
 
 /***/ }),
-/* 345 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
@@ -86842,7 +86905,7 @@ module.exports = TabsBoulder
 
 
 /***/ }),
-/* 346 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(console) {var m = __webpack_require__(1)
@@ -86873,7 +86936,7 @@ module.exports = Weather
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 347 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
@@ -86893,7 +86956,7 @@ module.exports = insertSnippet
 
 
 /***/ }),
-/* 348 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
@@ -86917,7 +86980,7 @@ module.exports = menuState
 
 
 /***/ }),
-/* 349 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
@@ -86976,12 +87039,6 @@ module.exports = preflightState
 
 
 /***/ }),
-/* 350 */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
 /* 351 */
 /***/ (function(module, exports) {
 
@@ -86995,6 +87052,12 @@ module.exports = preflightState
 
 /***/ }),
 /* 353 */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
