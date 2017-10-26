@@ -10438,17 +10438,17 @@ Url.prototype.parseHost = function() {
 /* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const m = __webpack_require__(1);
+const m = __webpack_require__(1)
 
 let WidgetTitleBar = {
   view: (vnode) => {
-    return m('.fl.w-100.bg-purple.h3.white', [
-     m('.f3.fw6.lh-headline.pa3', vnode.attrs.content),
-    ]);
-   }
-};
+    return m('.pa2.w-100.bg-gradient-primary.flex-auto.flex.h3.white', [
+      m('.f3.fw6', vnode.attrs.content),
+    ])
+  }
+}
 
-module.exports = WidgetTitleBar;
+module.exports = WidgetTitleBar
 
 
 /***/ }),
@@ -44686,10 +44686,15 @@ let Nav = __webpack_require__(331)
 
 module.exports = {
   view: (vnode) => {
-    return m("div", {class: "fl w-100 h-100 vh-100 bg-near-white "}, [
-      m("div", {class: "fl vh-100 h-100 w-100"}, [
+    return m('div', {class: 'fl w-100 h-100 vh-100'}, [
+      m('div', {class: 'fl vh-100 h-100 w-100'}, [
+        m('.fl.w-100', [
+          m('.center.tc', {style: 'max-width: 1200px'}, [
+            m('img', {src: 'img/testad.jpeg'})
+          ])
+        ]),
         m(Nav),
-        m("div", {class: "fl w-100 h-100 bg-near-white", style: "z-index: 11"}, vnode.children)
+        m('div', {class: 'fl w-100 h-100', style: 'z-index: 11'}, vnode.children)
       ])
     ])
   }
@@ -44700,45 +44705,45 @@ module.exports = {
 /* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var m = __webpack_require__(1);
+var m = __webpack_require__(1)
 
 //components
-let PollWidget = __webpack_require__(335);
-let MostPopularCitiesWidget = __webpack_require__(330);
-let BrandPartnersWidget = __webpack_require__(325);
-let AboutWidget = __webpack_require__(324);
-let NewsWidget = __webpack_require__(334);
-let NewOpeningsWidget = __webpack_require__(333);
-let NeedsDatesWidget = __webpack_require__(332);
-let InviteAPlanner = __webpack_require__(329);
-let Hero = __webpack_require__(328);
-let Reviews = __webpack_require__(336);
-let EventCalendar = __webpack_require__(327);
+let PollWidget = __webpack_require__(335)
+let MostPopularCitiesWidget = __webpack_require__(330)
+let BrandPartnersWidget = __webpack_require__(325)
+let AboutWidget = __webpack_require__(324)
+let NewsWidget = __webpack_require__(334)
+let NewOpeningsWidget = __webpack_require__(333)
+let NeedsDatesWidget = __webpack_require__(332)
+let InviteAPlanner = __webpack_require__(329)
+let Hero = __webpack_require__(328)
+let Reviews = __webpack_require__(336)
+let EventCalendar = __webpack_require__(327)
 
 module.exports = {
   view: () => {
     return m('.fl.w-100', [
-//      m(Advertisement),
-     m('.fl.w-100', [
-      m(Hero)
-     ]),
+      //      m(Advertisement),
+      m('.fl.w-100', [
+        m(Hero)
+      ]),
       m('.fl.w-100', [
         m(InviteAPlanner)
       ]),
       m('.fl.w-100', [
         m('.center.pa3', {style: 'max-width: 1200px'}, [
-         m('.fl.w-100.w-third-ns.pa4', [
-          m(AboutWidget),
-          m(EventCalendar)
-        ]),
-        m('.fl.w-100.w-third-ns.pa4', [
-          m(NewsWidget),
-          m(Reviews)
-        ]),
-        m('.fl.w-100.w-third-ns.pa4', [
-          m(NewOpeningsWidget),
-          m(NeedsDatesWidget)
-        ]),
+          m('.fl.w-100.w-third-ns.pa4', [
+            m(AboutWidget),
+            m(EventCalendar)
+          ]),
+          m('.fl.w-100.w-third-ns.pa4', [
+            m(NewsWidget),
+            m(Reviews)
+          ]),
+          m('.fl.w-100.w-third-ns.pa4', [
+            m(NewOpeningsWidget),
+            m(NeedsDatesWidget)
+          ]),
 
         ])
       ]),
@@ -44756,9 +44761,9 @@ module.exports = {
 
         ])
       ]),
-    ]);
+    ])
   }
-};
+}
 
 
 /***/ }),
@@ -85968,29 +85973,29 @@ exports.createContext = Script.createContext = function (context) {
 /* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const m = __webpack_require__(1);
-let WidgetTitleBar = __webpack_require__(20);
+const m = __webpack_require__(1)
+let WidgetTitleBar = __webpack_require__(20)
 
 let AboutWidget = {
   view: () => {
     return m('.fl.w-100.bg-white.h-100.shadow-2', {style: 'min-height: 754px'}, [
       m(WidgetTitleBar, {content: 'About us'}),
       m('.fl.w-100.pa4', [
-        m('fw2.f3.mb4','Welcome to RFP bliss'),
-        m('.f4.fw4.mt4.green', 'Let your people know'),
-        m('.f6.fw4.mb4', 'Our database of venue, convention & visitors bureau, and national sales representatives make it easy to add your favorite contacts and keep them in the loop as selection process progresses.'),
-        m('.f4.fw4.green', 'Edit a REAL RFP'),
-        m('.f6.fw4.mb4', 'Unlike other sites, we let you edit your RFP directly after pre-populating it with some data. You can edit your RFP just like a regular word processor with all the power of Meeting Glue at your fingertips.'),
-        m('.f4.fw4.green', 'Quick and Simple'),
-        m('.f6.fw4.mb4', 'Our RFP wizard is easy and intuitive. No need to answer all those miscellaneous questions if they don\'t pertain to your event. Widgets on the side bar make entering important sections of the RFP a breeze.'),
-        m('.f4.fw4.green', 'Get responses in real-time'),
-        m('.f6.fw4.mb4', 'Receive alerts as soon as a supplier answers your RFP. Reply right back in the planner dashboard to reduce those cumbersome emails and phone calls.'),
+        m('.f4.fw4.mb4','Welcome to RFP bliss'),
+        m('.f2.fw4.mt4.green', 'Let your people know'),
+        m('.f4.fw2.mb4.lh-copy', 'Our database of venue, convention & visitors bureau, and national sales representatives make it easy to add your favorite contacts and keep them in the loop as selection process progresses.'),
+        m('.f2.fw4.green', 'Edit a REAL RFP'),
+        m('.f4.fw2.mb4.lh-copy', 'Unlike other sites, we let you edit your RFP directly after pre-populating it with some data. You can edit your RFP just like a regular word processor with all the power of Meeting Glue at your fingertips.'),
+        m('.f2.fw4.green', 'Quick and Simple'),
+        m('.f4.fw2.mb4.lh-copy', 'Our RFP wizard is easy and intuitive. No need to answer all those miscellaneous questions if they don\'t pertain to your event. Widgets on the side bar make entering important sections of the RFP a breeze.'),
+        m('.f2.fw4.green', 'Get responses in real-time'),
+        m('.f4.fw2.mb4.lh-copy', 'Receive alerts as soon as a supplier answers your RFP. Reply right back in the planner dashboard to reduce those cumbersome emails and phone calls.'),
       ])
-    ]);
+    ])
   }
-};
+}
 
-module.exports = AboutWidget;
+module.exports = AboutWidget
 
 
 /***/ }),
@@ -86216,34 +86221,60 @@ module.exports = {
 /* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const m = __webpack_require__(1);
-var TitleBar = __webpack_require__(20);
-var IndustryEvents = __webpack_require__(339);
+const m = __webpack_require__(1)
+var TitleBar = __webpack_require__(20)
+var IndustryEvents = __webpack_require__(339)
 
 var EventCalendar = {
   view: ()=> { 
     return m('.fl.w-100.mt4.bg-white.shadow-2', [
-      m(TitleBar, {content: "Event Calendar"}),
+      m(TitleBar, {content: 'Event Calendar'}),
+      m('div.hk-tabs.w-100', [
+        m('a.hk-tabs__tab--active', {
+          'attributes': {
+            'href': '#',
+            'draggable': 'false',
+            'className': 'hk-tabs__tab'
+          }
+        }, 'Hosted Buyer'),
+        m('a.hk-tabs__tab', {
+          'attributes': {
+            'href': '#',
+            'draggable': 'false',
+            'className': 'hk-tabs__tab'
+          }
+        }, 'All markets'),
+        m('a.hk-tabs__tab', {
+          'attributes': {
+            'href': '#',
+            'draggable': 'false',
+            'className': 'hk-tabs__tab'
+          }
+        }, 'Incentive'),
+        m('div.spacer.flex-auto.bb.b--light-silver')
+      ]),
       m('.fl.w-100', {style: 'height: 720px; overflow: scroll'}, IndustryEvents.list.map(function(e) {
-        return m('div.bb.b--black-10.pa4.w-100', {style: 'height: 220px'}, [
-          m('.fw3.f4.tl', e.name),
-          m('.fw6.f6.pv2.tl', 'Parent: ' + e.parent),
-          m('.fl.w-100.pt1.tl', [
-            m('.fw4.f6', e.date.location),
+        return m('div.bb.b--black-10.pa4.w-100.flex-column', [
+          m('.f2.purple.fw3.tl', e.name),
+          m('.fw6.f6.mt2.tl.near-black', 'Parent: ' + e.parent),
+          m('.fw6.f6.tl.near-black', e.date.location),
+          m('.w-100.mt2.mb2', [
+            m('div.hk-button-group', [
+              m('button.hk-button-sm--secondary', e.type),
+              m('button.hk-button-sm--secondary', e.market),
+            ]),
           ]),
-          m('.fl.w-100.mt2.mb2', [
-            m('.fl.w-50.tc.fw3.f6.bg-green.white.pa1.br2', e.type),
-            m('.fl.w-50.tc.fw3.f6.bg-light-gray.black.pa1.br2', e.market),
-          ]),
-          m('.fw4.f6.tl.purple', 'Starts on ' + e.date.start),
-          m('.fw4.f6.tl.purple', 'Ends on ' + e.date.end),
-        ]);
+          m('.flex.flex-auto.h2', [
+            m('.fw4.f6.tl.purple.mr2', 'Starts on ' + e.date.start),
+            m('.fw4.f6.tl.purple', 'Ends on ' + e.date.end),
+          ])
+        ])
       }))
-    ]);
+    ])
   }
-};
+}
 
-module.exports = EventCalendar;
+module.exports = EventCalendar
 
 
 /***/ }),
@@ -86287,30 +86318,30 @@ module.exports = Hero;
 /* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const m = __webpack_require__(1);
+const m = __webpack_require__(1)
 
 let InviteAPlanner = {
   view: () => {
-    return m('.fl.w-100.h4.pa4.pt3.bg-purple.white.shadow-2', [
-      m('.center', {style: 'max-width: 1200px'}, [
+    return m('.flex.flex-auto.h-100.pa2.white.w-100.bg-gradient-secondary', [
+      m('.center.pb3', {style: 'max-width: 1200px'}, [
         m('.fl.w-50-ns.w-100.pt3.mt1', [
-          m('.f2.fw5', "Let's grow our community")
+          m('.f1.fw3', 'Let\'s grow our community')
         ]),
-        m('.fl.w-50-ns.w-100.pt3', [
-          m('.fr.fw4.f4', "Invite a fellow planner"),
-          m('.fr', [
+        m('.fl.flex.flex-column.w-50-ns.w-100.pt3', [
+          m('div.pb1', 'Invite a fellow planner'),
+          m('div.flex.flex-row', [
             m('input[type=text][placeholder=Name].mr2'),
             m('input[type=text][placeholder=Email].mr2'),
-            m('button.bg-purple.white.br2', 'Send'),
+            m('button.hk-button--primary.white.br2', 'Send'),
           ])
         ]),
 
       ])
-    ]);
+    ])
   }
-};
+}
 
-module.exports = InviteAPlanner;
+module.exports = InviteAPlanner
 
 
 /***/ }),
@@ -86406,53 +86437,56 @@ module.exports = {
 /* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const m = __webpack_require__(1);
-let WidgetTitleBar = __webpack_require__(20);
-let Dates = __webpack_require__(338);
+const m = __webpack_require__(1)
+let WidgetTitleBar = __webpack_require__(20)
+let Dates = __webpack_require__(338)
 
 let NeedsDatesWidget = {
   view: () => {
     return m('.fl.mt3.w-100.bg-white.h-100.shadow-2', [
       m(WidgetTitleBar, {content: 'Needs Dates'}),
       m('.fl.w-100.pa2.tr.bg-green.white', 'Las Vegas'),
+     
       Dates.list.map(function(d){
-       return m('.fl.w-100.pa3.bb.b--black-30', {style: 'text-overflow: ellipsis; white-space: nowrap; overflow-x: hidden;'}, [
-          m('fw2.f6.mb1.gray', d.stateAbbr + ' | ' + d.city + '  '),
-          m('fw6.f6.mb1.b', d.venue),
-        ]);
+        return m('.flex.flex-auto.w-100.pa3.bb.b--silver', {style: 'text-overflow: ellipsis; white-space: nowrap; overflow-x: hidden;'}, [
+          m('.fw2.f6.mb1.gray', d.stateAbbr + ' | ' + d.city + '  '),
+          m('.flex-auto', ''),
+          m('.fw6.f6.mb1.b.tl.flex.fl', d.venue),
+        ])
       })
-    ]);
+    ])
   }
-};
+}
 
-module.exports = NeedsDatesWidget;
+module.exports = NeedsDatesWidget
 
 
 /***/ }),
 /* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const m = __webpack_require__(1);
-let WidgetTitleBar = __webpack_require__(20);
-let Openings = __webpack_require__(341);
+const m = __webpack_require__(1)
+let WidgetTitleBar = __webpack_require__(20)
+let Openings = __webpack_require__(341)
 
 let NewOpeningsWidget = {
   view: () => {
     return m('.fl.w-100.bg-white.h-100.shadow-2', [
       m(WidgetTitleBar, {content: 'Hot New Openings'}),
-    Openings.list.map(function(o) {
-      return m('.fl.w-100.pa4.bb.b--black-30',[
-        m('.fl.w-100.fw6.f6', o.venue),
-        m('.fl.w-100.fw4.f6', o.city + ', ' + o.state),
-        m('.fl.tr.w-100.fw4.f5.mt2.dark-gray', o.rooms + ' rooms'),
-        m('.fl.tr.w-100.fw4.f5.dark-gray', o.sqft+ ' sq. feet'),
-      ]);
-    })
-   ]);
+      m('img', {src: 'img/acehotel.png'}),
+      Openings.list.map(function(o) {
+        return m('.fl.w-100.pa4.bb.b--black-30',[
+          m('.fl.w-100.fw6.f6', o.venue),
+          m('.fl.w-100.fw4.f6', o.city + ', ' + o.state),
+          m('.fl.tr.w-100.fw4.f5.mt2.dark-gray', o.rooms + ' rooms'),
+          m('.fl.tr.w-100.fw4.f5.dark-gray', o.sqft+ ' sq. feet'),
+        ])
+      })
+    ])
   }
-};
+}
 
-module.exports = NewOpeningsWidget;
+module.exports = NewOpeningsWidget
 
 
 /***/ }),

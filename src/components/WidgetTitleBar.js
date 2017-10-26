@@ -1,11 +1,11 @@
-const m = require('mithril');
+const m = require('mithril')
 
 let WidgetTitleBar = {
   view: (vnode) => {
-    return m('.fl.w-100.bg-purple.h3.white', [
-     m('.f3.fw6.lh-headline.pa3', vnode.attrs.content),
-    ]);
-   }
-};
+    return m('.pa2.w-100.bg-gradient-primary.flex-auto.flex.h3.white', [
+      m('.f3.fw6', vnode.attrs.content),
+    ])
+  }
+}
 
-module.exports = WidgetTitleBar;
+module.exports = WidgetTitleBar

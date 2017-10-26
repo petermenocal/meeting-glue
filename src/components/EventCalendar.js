@@ -1,28 +1,54 @@
-const m = require('mithril');
-var TitleBar = require('./WidgetTitleBar');
-var IndustryEvents = require('../models/IndustryEvents');
+const m = require('mithril')
+var TitleBar = require('./WidgetTitleBar')
+var IndustryEvents = require('../models/IndustryEvents')
 
 var EventCalendar = {
   view: ()=> { 
     return m('.fl.w-100.mt4.bg-white.shadow-2', [
-      m(TitleBar, {content: "Event Calendar"}),
+      m(TitleBar, {content: 'Event Calendar'}),
+      m('div.hk-tabs.w-100', [
+        m('a.hk-tabs__tab--active', {
+          'attributes': {
+            'href': '#',
+            'draggable': 'false',
+            'className': 'hk-tabs__tab'
+          }
+        }, 'Hosted Buyer'),
+        m('a.hk-tabs__tab', {
+          'attributes': {
+            'href': '#',
+            'draggable': 'false',
+            'className': 'hk-tabs__tab'
+          }
+        }, 'All markets'),
+        m('a.hk-tabs__tab', {
+          'attributes': {
+            'href': '#',
+            'draggable': 'false',
+            'className': 'hk-tabs__tab'
+          }
+        }, 'Incentive'),
+        m('div.spacer.flex-auto.bb.b--light-silver')
+      ]),
       m('.fl.w-100', {style: 'height: 720px; overflow: scroll'}, IndustryEvents.list.map(function(e) {
-        return m('div.bb.b--black-10.pa4.w-100', {style: 'height: 220px'}, [
-          m('.fw3.f4.tl', e.name),
-          m('.fw6.f6.pv2.tl', 'Parent: ' + e.parent),
-          m('.fl.w-100.pt1.tl', [
-            m('.fw4.f6', e.date.location),
+        return m('div.bb.b--black-10.pa4.w-100.flex-column', [
+          m('.f2.purple.fw3.tl', e.name),
+          m('.fw6.f6.mt2.tl.near-black', 'Parent: ' + e.parent),
+          m('.fw6.f6.tl.near-black', e.date.location),
+          m('.w-100.mt2.mb2', [
+            m('div.hk-button-group', [
+              m('button.hk-button-sm--secondary', e.type),
+              m('button.hk-button-sm--secondary', e.market),
+            ]),
           ]),
-          m('.fl.w-100.mt2.mb2', [
-            m('.fl.w-50.tc.fw3.f6.bg-green.white.pa1.br2', e.type),
-            m('.fl.w-50.tc.fw3.f6.bg-light-gray.black.pa1.br2', e.market),
-          ]),
-          m('.fw4.f6.tl.purple', 'Starts on ' + e.date.start),
-          m('.fw4.f6.tl.purple', 'Ends on ' + e.date.end),
-        ]);
+          m('.flex.flex-auto.h2', [
+            m('.fw4.f6.tl.purple.mr2', 'Starts on ' + e.date.start),
+            m('.fw4.f6.tl.purple', 'Ends on ' + e.date.end),
+          ])
+        ])
       }))
-    ]);
+    ])
   }
-};
+}
 
-module.exports = EventCalendar;
+module.exports = EventCalendar
