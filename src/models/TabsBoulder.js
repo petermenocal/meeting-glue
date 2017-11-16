@@ -2,18 +2,8 @@ const m = require('mithril')
 
 let TabsBoulder = {
   active: 1,
-  current:
-    {
-      id: 1,
-      title: 'Promotions',
-      content:
-      'Event Grant program' + '\n' + ' [link]' + '\n\n' +
-      'Hot Deals and Cash Incentives' + '\n' + ' [link]' + '\n\n' +
-      'Hot Events' + '\n' + ' [link]' + '\n\n'
-    },
   swap: (tab) => {
-    TabsBoulder.active = tab.id
-    TabsBoulder.current = tab
+    TabsBoulder.active = tab 
   },
   isActive: (id) => {
     if(id === TabsBoulder.active) {
@@ -22,7 +12,6 @@ let TabsBoulder = {
       return false
     }
   },
-
   list: [
     {id: 1, title: 'Promotions', content:
       'Event Grant program' + '\n' + ' [link]' + '\n\n' +

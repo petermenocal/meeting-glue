@@ -43,18 +43,18 @@ module.exports = {
             m('img.pa4-ns', { src: 'img/cvb/logo-cvb-boulder.png', style: 'max-width: 200px'})
           ]),
           m('div', {class: 'fl w-50 ttu flex flex-column justify-center', style: 'height: 350px;'}, [
-            m('.f3.fw5.mb2.measure-narrow', 'Boulder Convention & Visitors Bureau'),
-            m('p', {class: 'lh-copy mt0 mb0'}, '2440 Pearl Street'),
-            m('p', {class: 'lh-copy mt0 mb0'}, 'Boulder, CO 80302'),
-            m('p', {class: 'lh-copy mt0 mb0'}, '(303) 442-2911'),
-            m('a', {class: 'lh-copy mt3 link dim mb0 link bg-white-30 br2 w-40 tc pa1 pointer b white', href: '/rfp', oncreate: m.route.link}, 'send rfp')
+            m('.f1.fw5.mb2.measure', 'Boulder Convention & Visitors Bureau'),
+            m('p', {class: 'f3 lh-copy mt0 mb0'}, '2440 Pearl Street'),
+            m('p', {class: 'f3 lh-copy mt0 mb0'}, 'Boulder, CO 80302'),
+            m('p', {class: 'f3 lh-copy mt0 mb0'}, '(303) 442-2911'),
+            m('a', {class: 'f3 lh-copy mt3 link dim mb0 link bg-white-30 br2 w-40 tc pa1 pointer b white', href: '/rfp', oncreate: m.route.link}, 'send rfp')
           ])
         ]),
         m('div', {class: 'fl flex flex-column justify-center w-30 pb4', style: 'height: 100%; min-height: 350px; background: url("img/cvb/bg-sidebar-gradient.png"); background-size: cover;'}, [
           m('ul', {class: 'list'}, [
-            m('li', {class: 'lh-copy'}, 'CVB'),
-            m('li', {class: 'lh-copy'}, 'Non-member based'),
-            m('li', {class: 'lh-copy'}, 'Boulder, CO')
+            m('li', {class: 'f1 lh-copy'}, 'CVB'),
+            m('li', {class: 'f1 lh-copy'}, 'Non-member based'),
+            m('li', {class: 'f1 lh-copy'}, 'Boulder, CO')
           ])
         ])
       ]),
@@ -66,8 +66,8 @@ module.exports = {
         ]),
         m('div', {class: 'fl w-100 pa2'}, [
           m('a.twitter-timeline[data-theme=dark][data-height=400][data-link-color=#981CEB][href=https://twitter.com/VisitBoulder]'),
-          m('script[async]', {src:'//platform.twitter.com/widgets.js', charset: "utf-8"})
-           //m('h1', {class: 'f4 fw4 measure-narrow'}, Feed.active.text)
+          m('script[async]', {src:'//platform.twitter.com/widgets.js', charset: 'utf-8'})
+          //m('h1', {class: 'f4 fw4 measure-narrow'}, Feed.active.text)
         ])
       ]),
       // slideshow
@@ -75,59 +75,126 @@ module.exports = {
         m('div', {class: 'measure-narrow absolute right-0 w-50 near-white flex flex-column justify-center', style: 'top:  0; bottom: 0'}, [
         ])
       ]),
-      // fact panels
-      m('div', {class: 'fl w-100 pa3 mt4 mb4'}, [
-        m('div', {class: 'fl ml3 shadow-3 pa3 white relative shadow-custom br4', style: ' width: 47%; height: 600px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
-          m('h1', {class: 'f4'}, 'Quick Facts'),
-          m('p', {onclick: Calendar.toggleModal, class: 'absolute top-0 right-2 ba bw1 pa2 br2 link dim pointer'}, 'Convention Calendar'),
-          m('span', {class: 'fl w-100'}, [
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Hotel Inventory:'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, '2,000 rooms'),
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Total meeting Space SF:'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, '36,000 SF'),
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Airport:'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, 'Denver International Airport (DEN)'),
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Public Transportation:'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, 'Green Ride Boulder ($34) or RTD Bus ($9)'),
-            m('p', {class: 'tc f3 underline w-100 fl fw4'}, 'Awards'),
-            //2016
-            m('p', {class: 'fl f6 h1 mb4 w-50 tr ph2 b ttu tracked'}, '#10 "Highest Well Being Communities"'),
-            m('p', {class: 'fr h1 mb4 w-50 ph2'}, 'Gallup-Healthways Well-Being Index, March 2017'),
-            //2017
-            m('p', {class: 'fl f6 h2 mb4 w-50 tr ph2 b ttu tracked'}, '18 Best Cities in America for Solo Travelers'),
-            m('p', {class: 'fr h2 mb4 w-50 ph2 flex items-center'}, 'TravelandLeisure.com, December 2016'),
-            m('p', {class: 'fl f6 h1 mb4 w-50 tr ph2 b ttu tracked'}, 'The Best US Cities to Spend a Weekend'),
-            m('p', {class: 'fr h1 mb4 w-50 ph2'}, 'Thrillist, March 2016'),
-            m('p', {class: 'fl f6 h1 mb4 w-50 tr ph2 b ttu tracked'}, 'Top 15 Cities for Seasonal Brews'),
-            m('p', {class: 'fr h1 mb4 w-50 ph2'}, 'Travelocity.com, November 2016'),
-
-
-          ])
+      m('.fl.w-100.bg-light-gray.pa4', [
+        m('.center.w-100', {style: 'max-width: 600px'}, [ 
+          m('.f2.fw5.purple.mb2', 'Updates from Boulder'),
+          m('.f5.fw3.mb2', 'Number 10 Highest Well Being Communities'),
+          m('.f5.fw4.lh-copy', 'The mission of the Boulder Convention & Visitors Bureau (CVB) is to advocate and provide leadership to develop and promote the natural environment, art/culture, historic and visitor potential for the express purpose of aiding the Boulder economy.  Whether you’re a visitor, meeting planner or Boulder tourism business, we’re here to serve you. You’ll find that our website is filled with information, but please don’t hesitate to reach out should you need personal assistance.'),
         ]),
-        m('div', {class: 'fr mr3 shadow-6 pa3 white relative shadow-custom br4', style: 'width: 47%; height: 600px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
-          m('h1', {class: 'f4'}, 'Updates from Boulder'),
-          m('div', {class: 'fl w-100', style: 'height: 500px; overflow-x: scroll'}, [
-            m('h1', {class: 'white-70 lh-title'}, "Number 10 'Highest Well Being Communities'"),
-            m('p', {class: 'lh-copy f6 measure pt3 center ph4'}, "The mission of the Boulder Convention & Visitors Bureau (CVB) is to advocate and provide leadership to develop and promote the natural environment, art/culture, historic and visitor potential for the express purpose of aiding the Boulder economy."),
-            m('p', {class: 'lh-copy f6 measure pt1 center ph4'}, "Whether you’re a visitor, meeting planner or Boulder tourism business, we’re here to serve you. You’ll find that our website is filled with information, but please don’t hesitate to reach out should you need personal assistance.")
-          ])
-        ]),
+
       ]),
-      // TabsBoulder
-      m('div', {class: 'fl w-100 bg-light-gray'}, [
-        m('div#tabs_container', {class: 'fl w-100'}, [
-          TabsBoulder.list.map(function(t) {
-            return m('div', {onclick: TabsBoulder.swap.bind(TabsBoulder, t), class: TabsBoulder.isActive(t.id) ? 'sans-serif f5 flex justify-center items-center ttu tracked link pointer h3 fl dib bg-active white w-20 tc' : 'sans-serif f5 flex justify-center items-center ttu tracked link pointer h3 fl dib bg-b-purple-1 white w-20 tc', style: 'border-right: 1px solid rgba(255, 255, 255, 0.3)'}, [
-              m('div', {class: 'h3 w-100', style: 'padding-top: 25px'}, t.title)
-            ])
-          })
+      m('.center.w-100', {style: 'max-width: 600px'}, [
+        m('div.hk-tabs.w-100', [
+          m('a.hk-tabs__tab--active', {
+            'attributes': {
+              'href': '#',
+              'draggable': 'false',
+              'className': 'hk-tabs__tab'
+            }
+          }, 'Quick Facts'),
+          m('a.hk-tabs__tab', {
+            'attributes': {
+              'href': '#',
+              'draggable': 'false',
+              'className': 'hk-tabs__tab'
+            }
+          }, 'Awards'),
+          m('a.hk-tabs__tab', {
+            'attributes': {
+              'href': '#',
+              'draggable': 'false',
+              'className': 'hk-tabs__tab'
+            }
+          }, 'Updates from Boulder'),
+          m('a.hk-tabs__tab', {
+            'attributes': {
+              'href': '#',
+              'draggable': 'false',
+              'className': 'hk-tabs__tab'
+            }
+          }, 'Promotions'),
+          m('a.hk-tabs__tab', {
+            'attributes': {
+              'href': '#',
+              'draggable': 'false',
+              'className': 'hk-tabs__tab',
+            }
+          }, 'Sales staff'),
         ]),
-        m('div#tabs_content', {class: 'fl w-100 h6', style: 'background: rgb(98, 103, 160)'}, [
-          m('div', {class: 'pa3 near-white'}, [
-            m('h1', {class: 'measure center lh-copy tc'}, TabsBoulder.current.title),
-            m('p', {class: 'measure center lh-copy pre tc'}, TabsBoulder.current.content)
+        //quickfacts
+        m('.fl.w-100.pa4.dn', [
+          m('.f3.b.dark-gray', 'Quick Facts'),
+          m('.f4.near-black.lh-copy', 'Hotel Inventory: 2,000 rooms'),
+          m('.f4.near-black.lh-copy', 'Total meeting space: 3600sqft'),
+          m('.f4.near-black.lh-copy', 'Airport: Denvery International Airport (DEN)'),
+          m('.f4.near-black.lh-copy', 'Public Transportation: Green Ride Boulder [$34] or RTD Bus [$9]'),
+        ]),
+        
+        m('.fl.w-100.pa4', [
+          m('.f3.b.dark-gray', 'Awards'),
+          m('.fl.w-100.mt2', [
+            m('.flex.w-100.items-center.mb2', [
+              m('.flex.w-100.ph4.flex-column', [
+                m('.f4.near-black.lh-copy.b', 'No. 10 Highest Well Being Communities'),
+                m('.f4.near-black.lh-copy', 'Gallup-Healthways Well Being Index, March 2017'),
+              ]),
+            ]),
+          ]),
+          m('.fl.w-100.mt2', [
+            m('.flex.w-100.items-center.mb2', [
+              m('.flex.w-100.ph4.flex-column', [
+                m('.f4.near-black.lh-copy.b', '18 Best Cities in America for Solo Travelers'),
+                m('.f4.near-black.lh-copy', 'TravelAndLeisure.com, December2016'),
+              ]),
+            ]),
+          ]),
+          m('.fl.w-100.mt2', [
+            m('.flex.w-100.items-center.mb2', [
+              m('.flex.w-100.ph4.flex-column', [
+                m('.f4.near-black.lh-copy.b', '18 Best Cities in America for Solo Travelers'),
+                m('.f4.near-black.lh-copy', 'TravelAndLeisure.com, December2016'),
+              ]),
+            ]),
+          ]),
+        ]),
+
+        m('.fl.w-100.pa4.dn', [
+          m('.f3.b.dark-gray', 'Sales staff'),
+          m('.fl.w-100.mt2', [
+            m('.flex.w-100.items-center.mb2', [
+              m('img.ba.b--light-gray.bw4', {style: 'border-radius: 50%', src: 'https://randomuser.me/api/portraits/women/71.jpg'}),
+              m('.flex.w-100.ph4.flex-column', [
+                m('.f4.near-black.lh-copy.b', 'Andrew Heidt'),
+                m('.f4.near-black.lh-copy', 'Director of Group Sales and Marketing'),
+                m('.f4.near-black.lh-copy', '303-938-2071'),
+              ]),
+            ]),
+            m('.flex.w-100.items-center.mb2', [
+              m('img.ba.b--light-gray.bw4', {style: 'border-radius: 50%', src: 'https://randomuser.me/api/portraits/women/71.jpg'}),
+              m('.flex.w-100.ph4.flex-column', [
+                m('.f4.near-black.lh-copy.b', 'Andrew Heidt'),
+                m('.f4.near-black.lh-copy', 'Director of Group Sales and Marketing'),
+                m('.f4.near-black.lh-copy', '303-938-2071'),
+              ]),
+            ]),
+            m('.flex.w-100.items-center.mb2', [
+              m('img.ba.b--light-gray.bw4', {style: 'border-radius: 50%', src: 'https://randomuser.me/api/portraits/women/71.jpg'}),
+              m('.flex.w-100.ph4.flex-column', [
+                m('.f4.near-black.lh-copy.b', 'Andrew Heidt'),
+                m('.f4.near-black.lh-copy', 'Director of Group Sales and Marketing'),
+                m('.f4.near-black.lh-copy', '303-938-2071'),
+              ]),
+            ]),
+            m('.flex.w-100.items-center.mb2', [
+              m('img.ba.b--light-gray.bw4', {style: 'border-radius: 50%', src: 'https://randomuser.me/api/portraits/women/71.jpg'}),
+              m('.flex.w-100.ph4.flex-column', [
+                m('.f4.near-black.lh-copy.b', 'Andrew Heidt'),
+                m('.f4.near-black.lh-copy', 'Director of Group Sales and Marketing'),
+                m('.f4.near-black.lh-copy', '303-938-2071'),
+              ]),
+            ]),
           ])
-        ]),
+        ])
       ])
     ])
   }
