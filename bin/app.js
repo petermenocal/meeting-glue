@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 354);
+/******/ 	return __webpack_require__(__webpack_require__.s = 356);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -81,9 +81,9 @@
 
 
 
-var base64 = __webpack_require__(173)
-var ieee754 = __webpack_require__(229)
-var isArray = __webpack_require__(105)
+var base64 = __webpack_require__(176)
+var ieee754 = __webpack_require__(232)
+var isArray = __webpack_require__(106)
 
 exports.Buffer = Buffer
 exports.SlowBuffer = SlowBuffer
@@ -3030,7 +3030,7 @@ m.vnode = Vnode
 if (true) module["exports"] = m
 else window.m = m
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(59).setImmediate, __webpack_require__(8), __webpack_require__(14)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(60).setImmediate, __webpack_require__(8), __webpack_require__(14)))
 
 /***/ }),
 /* 2 */
@@ -3590,7 +3590,7 @@ function isPrimitive(arg) {
 }
 exports.isPrimitive = isPrimitive;
 
-exports.isBuffer = __webpack_require__(321);
+exports.isBuffer = __webpack_require__(324);
 
 function objectToString(o) {
   return Object.prototype.toString.call(o);
@@ -3634,7 +3634,7 @@ exports.log = function() {
  *     prototype.
  * @param {function} superCtor Constructor function to inherit prototype from.
  */
-exports.inherits = __webpack_require__(320);
+exports.inherits = __webpack_require__(323);
 
 exports._extend = function(origin, add) {
   // Don't do anything if add isn't an object
@@ -7490,7 +7490,7 @@ module.exports = _setExports(process.env.NODE_NDEBUG);
   };
 })(typeof module === 'undefined' || module, this);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(136)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(137)(module)))
 
 /***/ }),
 /* 7 */
@@ -7501,18 +7501,18 @@ module.exports = _setExports(process.env.NODE_NDEBUG);
 
 exports.randomBytes = exports.rng = exports.pseudoRandomBytes = exports.prng = __webpack_require__(39)
 exports.createHash = exports.Hash = __webpack_require__(30)
-exports.createHmac = exports.Hmac = __webpack_require__(67)
+exports.createHmac = exports.Hmac = __webpack_require__(70)
 
-var hashes = ['sha1', 'sha224', 'sha256', 'sha384', 'sha512', 'md5', 'rmd160'].concat(Object.keys(__webpack_require__(98)))
+var hashes = ['sha1', 'sha224', 'sha256', 'sha384', 'sha512', 'md5', 'rmd160'].concat(Object.keys(__webpack_require__(99)))
 exports.getHashes = function () {
   return hashes
 }
 
-var p = __webpack_require__(112)
+var p = __webpack_require__(113)
 exports.pbkdf2 = p.pbkdf2
 exports.pbkdf2Sync = p.pbkdf2Sync
 
-var aes = __webpack_require__(177)
+var aes = __webpack_require__(180)
 ;[
   'Cipher',
   'createCipher',
@@ -7528,7 +7528,7 @@ var aes = __webpack_require__(177)
   exports[key] = aes[key]
 })
 
-var dh = __webpack_require__(195)
+var dh = __webpack_require__(198)
 ;[
   'DiffieHellmanGroup',
   'createDiffieHellmanGroup',
@@ -7539,7 +7539,7 @@ var dh = __webpack_require__(195)
   exports[key] = dh[key]
 })
 
-var sign = __webpack_require__(180)
+var sign = __webpack_require__(183)
 ;[
   'createSign',
   'Sign',
@@ -7549,9 +7549,9 @@ var sign = __webpack_require__(180)
   exports[key] = sign[key]
 })
 
-exports.createECDH = __webpack_require__(187)
+exports.createECDH = __webpack_require__(190)
 
-var publicEncrypt = __webpack_require__(278)
+var publicEncrypt = __webpack_require__(281)
 
 ;[
   'publicEncrypt',
@@ -8078,14 +8078,14 @@ var algs = __webpack_require__(10);
 var crypto = __webpack_require__(7);
 var Fingerprint = __webpack_require__(41);
 var Signature = __webpack_require__(18);
-var DiffieHellman = __webpack_require__(126).DiffieHellman;
+var DiffieHellman = __webpack_require__(127).DiffieHellman;
 var errs = __webpack_require__(17);
 var utils = __webpack_require__(9);
 var PrivateKey = __webpack_require__(12);
 var edCompat;
 
 try {
-	edCompat = __webpack_require__(127);
+	edCompat = __webpack_require__(128);
 } catch (e) {
 	/* Just continue through, and bail out if we try to use it. */
 }
@@ -8094,13 +8094,13 @@ var InvalidAlgorithmError = errs.InvalidAlgorithmError;
 var KeyParseError = errs.KeyParseError;
 
 var formats = {};
-formats['auto'] = __webpack_require__(128);
+formats['auto'] = __webpack_require__(129);
 formats['pem'] = __webpack_require__(22);
-formats['pkcs1'] = __webpack_require__(79);
+formats['pkcs1'] = __webpack_require__(82);
 formats['pkcs8'] = __webpack_require__(42);
 formats['rfc4253'] = __webpack_require__(27);
-formats['ssh'] = __webpack_require__(129);
-formats['ssh-private'] = __webpack_require__(56);
+formats['ssh'] = __webpack_require__(130);
+formats['ssh-private'] = __webpack_require__(57);
 formats['openssh'] = formats['ssh-private'];
 
 function Key(opts) {
@@ -8362,14 +8362,14 @@ var Signature = __webpack_require__(18);
 var errs = __webpack_require__(17);
 var util = __webpack_require__(3);
 var utils = __webpack_require__(9);
-var dhe = __webpack_require__(126);
+var dhe = __webpack_require__(127);
 var generateECDSA = dhe.generateECDSA;
 var generateED25519 = dhe.generateED25519;
 var edCompat;
 var nacl;
 
 try {
-	edCompat = __webpack_require__(127);
+	edCompat = __webpack_require__(128);
 } catch (e) {
 	/* Just continue through, and bail out if we try to use it. */
 }
@@ -8381,12 +8381,12 @@ var KeyParseError = errs.KeyParseError;
 var KeyEncryptedError = errs.KeyEncryptedError;
 
 var formats = {};
-formats['auto'] = __webpack_require__(128);
+formats['auto'] = __webpack_require__(129);
 formats['pem'] = __webpack_require__(22);
-formats['pkcs1'] = __webpack_require__(79);
+formats['pkcs1'] = __webpack_require__(82);
 formats['pkcs8'] = __webpack_require__(42);
 formats['rfc4253'] = __webpack_require__(27);
-formats['ssh-private'] = __webpack_require__(56);
+formats['ssh-private'] = __webpack_require__(57);
 formats['openssh'] = formats['ssh-private'];
 formats['ssh'] = formats['ssh-private'];
 
@@ -8638,11 +8638,11 @@ var EE = __webpack_require__(31).EventEmitter;
 var inherits = __webpack_require__(2);
 
 inherits(Stream, EE);
-Stream.Readable = __webpack_require__(77);
-Stream.Writable = __webpack_require__(286);
-Stream.Duplex = __webpack_require__(283);
-Stream.Transform = __webpack_require__(119);
-Stream.PassThrough = __webpack_require__(285);
+Stream.Readable = __webpack_require__(80);
+Stream.Writable = __webpack_require__(289);
+Stream.Duplex = __webpack_require__(286);
+Stream.Transform = __webpack_require__(120);
+Stream.PassThrough = __webpack_require__(288);
 
 // Backwards-compat with node 0.4.x
 Stream.Stream = Stream;
@@ -8776,15 +8776,15 @@ module.exports = g;
 
 var elliptic = exports;
 
-elliptic.version = __webpack_require__(236).version;
-elliptic.utils = __webpack_require__(210);
-elliptic.rand = __webpack_require__(89);
-elliptic.curve = __webpack_require__(51);
-elliptic.curves = __webpack_require__(202);
+elliptic.version = __webpack_require__(239).version;
+elliptic.utils = __webpack_require__(213);
+elliptic.rand = __webpack_require__(90);
+elliptic.curve = __webpack_require__(52);
+elliptic.curves = __webpack_require__(205);
 
 // Protocols
-elliptic.ec = __webpack_require__(203);
-elliptic.eddsa = __webpack_require__(206);
+elliptic.ec = __webpack_require__(206);
+elliptic.eddsa = __webpack_require__(209);
 
 
 /***/ }),
@@ -9389,7 +9389,7 @@ var crypto = __webpack_require__(7);
 var errs = __webpack_require__(17);
 var utils = __webpack_require__(9);
 var asn1 = __webpack_require__(21);
-var SSHBuffer = __webpack_require__(57);
+var SSHBuffer = __webpack_require__(58);
 
 var InvalidAlgorithmError = errs.InvalidAlgorithmError;
 var SignatureParseError = errs.SignatureParseError;
@@ -9723,8 +9723,8 @@ Signature._oldVersionDetect = function (obj) {
 
 
 
-var punycode = __webpack_require__(74);
-var util = __webpack_require__(318);
+var punycode = __webpack_require__(77);
+var util = __webpack_require__(321);
 
 exports.parse = urlParse;
 exports.resolve = urlResolve;
@@ -10460,7 +10460,7 @@ module.exports = WidgetTitleBar
 // If you have no idea what ASN.1 or BER is, see this:
 // ftp://ftp.rsa.com/pub/pkcs/ascii/layman.asc
 
-var Ber = __webpack_require__(166);
+var Ber = __webpack_require__(169);
 
 
 
@@ -10496,9 +10496,9 @@ var utils = __webpack_require__(9);
 var Key = __webpack_require__(11);
 var PrivateKey = __webpack_require__(12);
 
-var pkcs1 = __webpack_require__(79);
+var pkcs1 = __webpack_require__(82);
 var pkcs8 = __webpack_require__(42);
-var sshpriv = __webpack_require__(56);
+var sshpriv = __webpack_require__(57);
 var rfc4253 = __webpack_require__(27);
 
 var errors = __webpack_require__(17);
@@ -10676,11 +10676,11 @@ function write(key, options, type) {
 
 var hash = exports;
 
-hash.utils = __webpack_require__(222);
-hash.common = __webpack_require__(218);
-hash.sha = __webpack_require__(221);
-hash.ripemd = __webpack_require__(220);
-hash.hmac = __webpack_require__(219);
+hash.utils = __webpack_require__(225);
+hash.common = __webpack_require__(221);
+hash.sha = __webpack_require__(224);
+hash.ripemd = __webpack_require__(223);
+hash.hmac = __webpack_require__(222);
 
 // Proxy hash functions to the main object
 hash.sha1 = hash.sha.sha1;
@@ -12096,7 +12096,7 @@ var objectKeys = Object.keys || function (obj) {
 module.exports = Duplex;
 
 /*<replacement>*/
-var processNextTick = __webpack_require__(73);
+var processNextTick = __webpack_require__(76);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -12104,8 +12104,8 @@ var util = __webpack_require__(37);
 util.inherits = __webpack_require__(2);
 /*</replacement>*/
 
-var Readable = __webpack_require__(118);
-var Writable = __webpack_require__(76);
+var Readable = __webpack_require__(119);
+var Writable = __webpack_require__(79);
 
 util.inherits(Duplex, Readable);
 
@@ -12176,7 +12176,7 @@ var algs = __webpack_require__(10);
 var utils = __webpack_require__(9);
 var Key = __webpack_require__(11);
 var PrivateKey = __webpack_require__(12);
-var SSHBuffer = __webpack_require__(57);
+var SSHBuffer = __webpack_require__(58);
 
 function algToKeyType(alg) {
 	assert.string(alg);
@@ -14685,7 +14685,7 @@ nacl.setPRNG = function(fn) {
     });
   } else if (true) {
     // Node.js.
-    crypto = __webpack_require__(353);
+    crypto = __webpack_require__(355);
     if (crypto && crypto.randomBytes) {
       nacl.setPRNG(function(x, n) {
         var i, v = crypto.randomBytes(n);
@@ -14705,7 +14705,7 @@ nacl.setPRNG = function(fn) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var Transform = __webpack_require__(13).Transform
 var inherits = __webpack_require__(2)
-var StringDecoder = __webpack_require__(58).StringDecoder
+var StringDecoder = __webpack_require__(59).StringDecoder
 module.exports = CipherBase
 inherits(CipherBase, Transform)
 function CipherBase (hashMode) {
@@ -14803,9 +14803,9 @@ CipherBase.prototype._toString = function (value, enc, fin) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 var inherits = __webpack_require__(2)
-var md5 = __webpack_require__(100)
-var rmd160 = __webpack_require__(299)
-var sha = __webpack_require__(301)
+var md5 = __webpack_require__(101)
+var rmd160 = __webpack_require__(302)
+var sha = __webpack_require__(304)
 
 var Base = __webpack_require__(29)
 
@@ -15255,11 +15255,11 @@ var asn1 = exports;
 
 asn1.bignum = __webpack_require__(6);
 
-asn1.define = __webpack_require__(158).define;
+asn1.define = __webpack_require__(161).define;
 asn1.base = __webpack_require__(35);
-asn1.constants = __webpack_require__(85);
-asn1.decoders = __webpack_require__(162);
-asn1.encoders = __webpack_require__(164);
+asn1.constants = __webpack_require__(86);
+asn1.decoders = __webpack_require__(165);
+asn1.encoders = __webpack_require__(167);
 
 
 /***/ }),
@@ -15268,10 +15268,10 @@ asn1.encoders = __webpack_require__(164);
 
 var base = exports;
 
-base.Reporter = __webpack_require__(160).Reporter;
-base.DecoderBuffer = __webpack_require__(84).DecoderBuffer;
-base.EncoderBuffer = __webpack_require__(84).EncoderBuffer;
-base.Node = __webpack_require__(159);
+base.Reporter = __webpack_require__(163).Reporter;
+base.DecoderBuffer = __webpack_require__(85).DecoderBuffer;
+base.EncoderBuffer = __webpack_require__(85).EncoderBuffer;
+base.Node = __webpack_require__(162);
 
 
 /***/ }),
@@ -15412,8 +15412,8 @@ function objectToString(o) {
 "use strict";
 
 
-exports.decode = exports.parse = __webpack_require__(281);
-exports.encode = exports.stringify = __webpack_require__(282);
+exports.decode = exports.parse = __webpack_require__(284);
+exports.encode = exports.stringify = __webpack_require__(285);
 
 
 /***/ }),
@@ -15481,9 +15481,9 @@ var PrivateKey = __webpack_require__(12);
 var Identity = __webpack_require__(43);
 
 var formats = {};
-formats['openssh'] = __webpack_require__(306);
-formats['x509'] = __webpack_require__(130);
-formats['pem'] = __webpack_require__(307);
+formats['openssh'] = __webpack_require__(309);
+formats['x509'] = __webpack_require__(131);
+formats['pem'] = __webpack_require__(310);
 
 var CertificateParseError = errs.CertificateParseError;
 var InvalidAlgorithmError = errs.InvalidAlgorithmError;
@@ -16812,9 +16812,9 @@ Identity._oldVersionDetect = function (obj) {
 /* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {var ClientRequest = __webpack_require__(308)
-var extend = __webpack_require__(137)
-var statusCodes = __webpack_require__(185)
+/* WEBPACK VAR INJECTION */(function(global) {var ClientRequest = __webpack_require__(311)
+var extend = __webpack_require__(138)
+var statusCodes = __webpack_require__(188)
 var url = __webpack_require__(19)
 
 var http = exports
@@ -18452,6 +18452,54 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscor
 /* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
+const m = __webpack_require__(1)
+const Twitter = __webpack_require__(319);
+const _ = __webpack_require__(45);
+
+var client = new Twitter({
+  consumer_key: 'lE3xRhMnu2vu1hrnRwP0CZgRN',
+  consumer_secret: 'LQt4QH66okjWahikdDn2PPA0hREjdN2RcsuuvAk5WizBfNj2ph',
+  access_token_key: '265805403-6cPMdiOttt4hfFQlFEeliFbyQMObCWkY67QGv7lk',
+  access_token_secret: 'f0itACktYeSakP9K3yhwv5fFyrWhQZo1rhLrh9sNTbAwY'
+});
+
+var params = {screen_name: 'LVCVA'};
+
+let Feed = {
+  profileImage: '',
+  getTimeline: () => {
+    client.get('statuses/user_timeline', params, function(error, tweets, response) {
+      if (!error) {
+        Feed.timeline = tweets
+        Feed.active = Feed.timeline[0]
+        Feed.profileImage = Feed.active.user.profile_image_url
+      }
+    });
+  },
+  timeline: [],
+  active: {},
+  swap: () => {
+    let activeIndex = _.indexOf(Feed.timeline, Feed.active)
+    if(activeIndex == Feed.timeline.length - 1) {
+      activeIndex = 0
+    } else {
+      activeIndex++
+    }
+    Feed.active = Feed.timeline[activeIndex]
+    m.redraw()
+  },
+  initialize: ()=>{
+    setInterval(Feed.swap, 5500)
+  }
+}
+
+module.exports = Feed
+
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
 /* WEBPACK VAR INJECTION */(function(Buffer, process) {// Copyright (c) 2012, Mark Cavage. All rights reserved.
 // Copyright 2015 Joyent, Inc.
 
@@ -18662,7 +18710,7 @@ module.exports = _setExports(process.env.NODE_NDEBUG);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer, __webpack_require__(4)))
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// based on the aes implimentation in triple sec
@@ -18846,7 +18894,7 @@ exports.AES = AES
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports) {
 
 exports['aes-128-ecb'] = {
@@ -19023,7 +19071,7 @@ exports['aes-256-gcm'] = {
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var xor = __webpack_require__(36)
@@ -19061,7 +19109,7 @@ exports.encrypt = function (self, chunk) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Basic Javascript Elliptic Curve implementation
@@ -19628,7 +19676,7 @@ module.exports = exports
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19636,17 +19684,17 @@ module.exports = exports
 
 var curve = exports;
 
-curve.base = __webpack_require__(198);
-curve.short = __webpack_require__(201);
-curve.mont = __webpack_require__(200);
-curve.edwards = __webpack_require__(199);
+curve.base = __webpack_require__(201);
+curve.short = __webpack_require__(204);
+curve.mont = __webpack_require__(203);
+curve.edwards = __webpack_require__(202);
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var md5 = __webpack_require__(100)
+/* WEBPACK VAR INJECTION */(function(Buffer) {var md5 = __webpack_require__(101)
 module.exports = EVP_BytesToKey
 function EVP_BytesToKey (password, salt, keyLen, ivLen) {
   if (!Buffer.isBuffer(password)) {
@@ -19718,13 +19766,13 @@ function EVP_BytesToKey (password, salt, keyLen, ivLen) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Copyright 2012 Joyent, Inc.  All rights reserved.
 
-var assert = __webpack_require__(46);
-var sshpk = __webpack_require__(80);
+var assert = __webpack_require__(47);
+var sshpk = __webpack_require__(83);
 var util = __webpack_require__(3);
 
 var HASH_ALGOS = {
@@ -19836,7 +19884,7 @@ module.exports = {
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19945,14 +19993,14 @@ exports.setTyped(TYPED_OK);
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var asn1 = __webpack_require__(271)
-var aesid = __webpack_require__(253)
-var fixProc = __webpack_require__(273)
-var ciphers = __webpack_require__(63)
-var compat = __webpack_require__(112)
+/* WEBPACK VAR INJECTION */(function(Buffer) {var asn1 = __webpack_require__(274)
+var aesid = __webpack_require__(256)
+var fixProc = __webpack_require__(276)
+var ciphers = __webpack_require__(66)
+var compat = __webpack_require__(113)
 module.exports = parseKeys
 
 function parseKeys (buffer) {
@@ -20058,7 +20106,7 @@ function decrypt (data, password) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2015 Joyent, Inc.
@@ -20079,7 +20127,7 @@ var Key = __webpack_require__(11);
 var PrivateKey = __webpack_require__(12);
 var pem = __webpack_require__(22);
 var rfc4253 = __webpack_require__(27);
-var SSHBuffer = __webpack_require__(57);
+var SSHBuffer = __webpack_require__(58);
 var errors = __webpack_require__(17);
 
 var bcrypt;
@@ -20129,7 +20177,7 @@ function readSSHPrivate(type, buf, options) {
 		var rounds = kdfOptsBuf.readInt();
 		var cinf = utils.opensshCipherInfo(cipher);
 		if (bcrypt === undefined) {
-			bcrypt = __webpack_require__(88);
+			bcrypt = __webpack_require__(89);
 		}
 
 		if (typeof (options.passphrase) === 'string') {
@@ -20250,7 +20298,7 @@ function write(key, options) {
 		kdfopts = kdfssh.toBuffer();
 
 		if (bcrypt === undefined) {
-			bcrypt = __webpack_require__(88);
+			bcrypt = __webpack_require__(89);
 		}
 		var pass = new Uint8Array(passphrase);
 		var salti = new Uint8Array(salt);
@@ -20326,7 +20374,7 @@ function write(key, options) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2015 Joyent, Inc.
@@ -20481,7 +20529,7 @@ SSHBuffer.prototype.write = function (buf) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -20708,7 +20756,7 @@ function base64DetectIncompleteChar(buffer) {
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var apply = Function.prototype.apply;
@@ -20761,61 +20809,233 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(300);
+__webpack_require__(303);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
-const Twitter = __webpack_require__(316);
-const _ = __webpack_require__(45);
 
-var client = new Twitter({
-  consumer_key: 'lE3xRhMnu2vu1hrnRwP0CZgRN',
-  consumer_secret: 'LQt4QH66okjWahikdDn2PPA0hREjdN2RcsuuvAk5WizBfNj2ph',
-  access_token_key: '265805403-6cPMdiOttt4hfFQlFEeliFbyQMObCWkY67QGv7lk',
-  access_token_secret: 'f0itACktYeSakP9K3yhwv5fFyrWhQZo1rhLrh9sNTbAwY'
-});
+let Calendar = {
+  displayModal: false,
+  events: [
+    {
+      convention: "CES 2018",
+      venue: "Las Vegas Convention Center",
+      startDate: "1/09/2018",
+      endDate: "1/12/2018",
+      attendees: 165000
+    },
+    {
+      convention: "Automotive Aftermarket Industry Week (AAIW) 2017",
+      venue: "Sands Expo & Convention Center,Las Vegas Convention Center",
+      startDate: "10/31/2017",
+      endDate: "11/03/2017",
+      attendees: 160000
+    },
+    {
+      convention: "National Association of Broadcasters 2018",
+      venue: "Las Vegas Convention Center",
+      startDate: "4/09/2017",
+      endDate: "4/12/2017",
+      attendees: 103000
+    },
+    {
+      convention: "MAGIC Marketplace Fall Show 2017",
+      venue: "Las Vegas Convention Center",
+      startDate: "8/14/2017",
+      endDate: "8/16/2017",
+      attendees: 85000
+    },
+    {
+      convention: "Shooting, Hunting & Outdoor Trade Show (SHOT Show) - 2018",
+      venue: "Sands Expo & Convention Center",
+      startDate: "1/23/2017",
+      endDate: "1/26/2017",
+      attendees: 64500
+    },
+    {
+      convention: "World of Concrete 2018",
+      venue: "Las Vegas Convention Center",
+      startDate: "1/23/2017",
+      endDate: "1/26/2017",
+      attendees: 60000
+    },
+    {
+      convention: "Women's Business Enterprise National Council (WBENC) - WBENC National Conference & Business Fair 2017",
+      venue: "Mandalay Bay Resort & Casino",
+      startDate: "6/20/2017",
+      endDate: "6/22/2017",
+      attendees: 1662
+    },
+    {
+      convention: "Cal Western Circulation Managers Association Annual Conference",
+      venue: "Planet Hollywood Resort & Casino",
+      startDate: "6/21/2017",
+      endDate: "6/23/2017",
+      attendees: 185
+    },
+    {
+      convention: "Las Vegas Market 0 Summer 2017",
+      venue: "World Market Center",
+      startDate: "6/21/2017",
+      endDate: "6/23/2017",
+      attendees: 50000
+    },
+    {
+      convention: "Casino Chips & Gaming Token Collector's Club, Inc. - 2017 Annual Convention",
+      venue: "South Point Hotel Casino & Spa",
+      startDate: "6/22/2017",
+      endDate: "6/24/2017",
+      attendees: 2000
+    },
+    {
+      convention: "ASD Las Vegas - March 2018",
+      venue: "Las Vegas Convention Center",
+      startDate: "6/22/2017",
+      endDate: "6/23/2017",
+      attendees: 46000
+    },
+    {
+      convention: "2017 Pack Expo",
+      venue: "Las Vegas Convention Center",
+      startDate: "6/22/2017",
+      endDate: "6/23/2017",
+      attendees: 45000
+    },
+    {
+      convention: "2017 Mr. Olympia",
+      venue: "Las Vegas Convention Center",
+      startDate: "6/22/2017",
+      endDate: "6/23/2017",
+      attendees: 45000
+    },
+    {
+      convention: "International Esthetics Cosmetics & Spa Conference (IECSC) International Beauty Show Las Vegas (IBS) 2017",
+      venue: "Las Vegas Convention Center",
+      startDate: "6/24/2017",
+      endDate: "6/26/2017",
+      attendees: 25000
+    },
+    {
+      convention: "Institute of Food Technologists (IFT) 2017 Annual Meeting & Food Expo",
+      venue: "Sands Expo & Convention Center",
+      startDate: "6/20/2017",
+      endDate: "6/22/2017",
+      attendees: 22000
+    },
+    {
+      convention: "Women's Business Enterprise National Council (WBENC) - WBENC National Conference & Business Fair 2017",
+      venue: "Mandalay Bay Resort & Casino",
+      startDate: "6/20/2017",
+      endDate: "6/22/2017",
+      attendees: 1662
+    },
+    {
+      convention: "Women's Business Enterprise National Council (WBENC) - WBENC National Conference & Business Fair 2017",
+      venue: "Mandalay Bay Resort & Casino",
+      startDate: "6/20/2017",
+      endDate: "6/22/2017",
+      attendees: 1662
+    },
+    {
+      convention: "Women's Business Enterprise National Council (WBENC) - WBENC National Conference & Business Fair 2017",
+      venue: "Mandalay Bay Resort & Casino",
+      startDate: "6/20/2017",
+      endDate: "6/22/2017",
+      attendees: 1662
+    },
+    {
+      convention: "Nightclub and Bar Show 2018",
+      venue: "Las Vegas Convention Center",
+      startDate: "6/19/2017",
+      endDate: "6/21/2017",
+      attendees: 39000
+    },
+    {
+      convention: "International Communications Industries Association/ Infocomm 2018",
+      venue: "Las Vegas Convention Center",
+      startDate: "6/20/2017",
+      endDate: "6/22/2017",
+      attendees: 38000
+    },
+    {
+      convention: "Cosmoprof North America 2017",
+      venue: "Mandalay Bay Resort and Casino",
+      startDate: "6/20/2017",
+      endDate: "6/22/2017",
+      attendees: 30000
+    },
+  ],
+  toggleModal: () => {
+    Calendar.displayModal = !Calendar.displayModal
+    m.redraw()
+  }
+}
 
-var params = {screen_name: 'LVCVA'};
+module.exports = Calendar
 
-let Feed = {
-  profileImage: '',
-  getTimeline: () => {
-    client.get('statuses/user_timeline', params, function(error, tweets, response) {
-      if (!error) {
-        Feed.timeline = tweets
-        Feed.active = Feed.timeline[0]
-        Feed.profileImage = Feed.active.user.profile_image_url
-      }
-    });
-  },
-  timeline: [],
-  active: {},
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const m = __webpack_require__(1);
+
+let Feed = __webpack_require__(46)
+let Slideshow = __webpack_require__(63)
+
+let SlideshowBoulder = __webpack_require__(143)
+
+let Initializer = {
+  start: (view) => {
+    if(view == 'lvcva') {
+      Feed.initialize()
+      Slideshow.initialize()
+    }
+    if(view == 'boulder') {
+      Feed.initialize()
+      SlideshowBoulder.initialize()
+    }
+  }
+}
+
+module.exports = Initializer
+
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const m = __webpack_require__(1)
+
+let Slideshow = {
+  list: [{ id: 0, src: 'img/cvb/slideshow-1.png' },{ id: 1, src: 'img/cvb/slideshow-2.png' },{ id: 2, src: 'img/cvb/slideshow-3.png' }],
+  active: { id: 0, src: 'img/cvb/slideshow-1.png' },
   swap: () => {
-    let activeIndex = _.indexOf(Feed.timeline, Feed.active)
-    if(activeIndex == Feed.timeline.length - 1) {
+    var activeIndex = Slideshow.active.id
+    if(activeIndex == 2) {
       activeIndex = 0
     } else {
       activeIndex++
     }
-    Feed.active = Feed.timeline[activeIndex]
+    Slideshow.active = Slideshow.list[activeIndex]
     m.redraw()
   },
-  initialize: ()=>{
-    setInterval(Feed.swap, 5500)
+  initialize: () => {
+    setInterval(Slideshow.swap, 4000)
   }
 }
 
-module.exports = Feed
+module.exports = Slideshow
 
 
 /***/ }),
-/* 61 */
+/* 64 */
 /***/ (function(module, exports) {
 
 // Copyright 2011 Mark Cavage <mcavage@gmail.com> All rights reserved.
@@ -20834,7 +21054,7 @@ module.exports = {
 
 
 /***/ }),
-/* 62 */
+/* 65 */
 /***/ (function(module, exports) {
 
 // Copyright 2011 Mark Cavage <mcavage@gmail.com> All rights reserved.
@@ -20876,16 +21096,16 @@ module.exports = {
 
 
 /***/ }),
-/* 63 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ciphers = __webpack_require__(175)
+var ciphers = __webpack_require__(178)
 exports.createCipher = exports.Cipher = ciphers.createCipher
 exports.createCipheriv = exports.Cipheriv = ciphers.createCipheriv
-var deciphers = __webpack_require__(174)
+var deciphers = __webpack_require__(177)
 exports.createDecipher = exports.Decipher = deciphers.createDecipher
 exports.createDecipheriv = exports.Decipheriv = deciphers.createDecipheriv
-var modes = __webpack_require__(48)
+var modes = __webpack_require__(49)
 function getCiphers () {
   return Object.keys(modes)
 }
@@ -20893,7 +21113,7 @@ exports.listCiphers = exports.getCiphers = getCiphers
 
 
 /***/ }),
-/* 64 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var bn = __webpack_require__(6);
@@ -20940,7 +21160,7 @@ function getr(priv) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 65 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21056,7 +21276,7 @@ exports.allocUnsafeSlow = function allocUnsafeSlow(size) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)))
 
 /***/ }),
-/* 66 */
+/* 69 */
 /***/ (function(module, exports) {
 
 function Caseless (dict) {
@@ -21128,7 +21348,7 @@ module.exports.httpify = function (resp, headers) {
 
 
 /***/ }),
-/* 67 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21204,21 +21424,21 @@ module.exports = function createHmac(alg, key) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 68 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.utils = __webpack_require__(194);
-exports.Cipher = __webpack_require__(191);
-exports.DES = __webpack_require__(192);
-exports.CBC = __webpack_require__(190);
-exports.EDE = __webpack_require__(193);
+exports.utils = __webpack_require__(197);
+exports.Cipher = __webpack_require__(194);
+exports.DES = __webpack_require__(195);
+exports.CBC = __webpack_require__(193);
+exports.EDE = __webpack_require__(196);
 
 
 /***/ }),
-/* 69 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21311,7 +21531,7 @@ module.exports = function extend() {
 
 
 /***/ }),
-/* 70 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(console) {var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -23642,7 +23862,7 @@ if (true) module.exports = flatpickr;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 71 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var http = __webpack_require__(44);
@@ -23662,7 +23882,7 @@ https.request = function (params, cb) {
 
 
 /***/ }),
-/* 72 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(console, Buffer) {var __WEBPACK_AMD_DEFINE_RESULT__;//     uuid.js
@@ -23942,7 +24162,7 @@ https.request = function (params, cb) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 73 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23993,7 +24213,7 @@ function nextTick(fn, arg1, arg2, arg3) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 74 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module, global) {var __WEBPACK_AMD_DEFINE_RESULT__;/*! https://mths.be/punycode v1.4.1 by @mathias */
@@ -24529,10 +24749,10 @@ function nextTick(fn, arg1, arg2, arg3) {
 
 }(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(136)(module), __webpack_require__(14)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(137)(module), __webpack_require__(14)))
 
 /***/ }),
-/* 75 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24720,7 +24940,7 @@ function done(stream, er, data) {
 }
 
 /***/ }),
-/* 76 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24733,7 +24953,7 @@ function done(stream, er, data) {
 module.exports = Writable;
 
 /*<replacement>*/
-var processNextTick = __webpack_require__(73);
+var processNextTick = __webpack_require__(76);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -24753,7 +24973,7 @@ util.inherits = __webpack_require__(2);
 
 /*<replacement>*/
 var internalUtil = {
-  deprecate: __webpack_require__(319)
+  deprecate: __webpack_require__(322)
 };
 /*</replacement>*/
 
@@ -24770,7 +24990,7 @@ var Stream;
 
 var Buffer = __webpack_require__(0).Buffer;
 /*<replacement>*/
-var bufferShim = __webpack_require__(65);
+var bufferShim = __webpack_require__(68);
 /*</replacement>*/
 
 util.inherits(Writable, Stream);
@@ -25275,10 +25495,10 @@ function CorkedRequest(state) {
     }
   };
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(59).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(60).setImmediate))
 
 /***/ }),
-/* 77 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {var Stream = (function (){
@@ -25286,13 +25506,13 @@ function CorkedRequest(state) {
     return __webpack_require__(13); // hack to fix a circular dependency issue when used with browserify
   } catch(_){}
 }());
-exports = module.exports = __webpack_require__(118);
+exports = module.exports = __webpack_require__(119);
 exports.Stream = Stream || exports;
 exports.Readable = exports;
-exports.Writable = __webpack_require__(76);
+exports.Writable = __webpack_require__(79);
 exports.Duplex = __webpack_require__(26);
-exports.Transform = __webpack_require__(75);
-exports.PassThrough = __webpack_require__(117);
+exports.Transform = __webpack_require__(78);
+exports.PassThrough = __webpack_require__(118);
 
 if (!process.browser && process.env.READABLE_STREAM === 'disable' && Stream) {
   module.exports = Stream;
@@ -25301,13 +25521,13 @@ if (!process.browser && process.env.READABLE_STREAM === 'disable' && Stream) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 78 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(setImmediate, process, Buffer) {
 
-var jsonSafeStringify = __webpack_require__(257)
+var jsonSafeStringify = __webpack_require__(260)
   , crypto = __webpack_require__(7)
 
 var defer = typeof setImmediate === 'undefined'
@@ -25371,10 +25591,10 @@ exports.copy                  = copy
 exports.version               = version
 exports.defer                 = defer
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(59).setImmediate, __webpack_require__(4), __webpack_require__(0).Buffer))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(60).setImmediate, __webpack_require__(4), __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 79 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2015 Joyent, Inc.
@@ -25701,7 +25921,7 @@ function writePkcs1ECDSAPrivate(der, key) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 80 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Copyright 2015 Joyent, Inc.
@@ -25746,227 +25966,37 @@ module.exports = {
 
 
 /***/ }),
-/* 81 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const m = __webpack_require__(1)
-
-let Calendar = {
-  displayModal: false,
-  events: [
-    {
-      convention: "CES 2018",
-      venue: "Las Vegas Convention Center",
-      startDate: "1/09/2018",
-      endDate: "1/12/2018",
-      attendees: 165000
-    },
-    {
-      convention: "Automotive Aftermarket Industry Week (AAIW) 2017",
-      venue: "Sands Expo & Convention Center,Las Vegas Convention Center",
-      startDate: "10/31/2017",
-      endDate: "11/03/2017",
-      attendees: 160000
-    },
-    {
-      convention: "National Association of Broadcasters 2018",
-      venue: "Las Vegas Convention Center",
-      startDate: "4/09/2017",
-      endDate: "4/12/2017",
-      attendees: 103000
-    },
-    {
-      convention: "MAGIC Marketplace Fall Show 2017",
-      venue: "Las Vegas Convention Center",
-      startDate: "8/14/2017",
-      endDate: "8/16/2017",
-      attendees: 85000
-    },
-    {
-      convention: "Shooting, Hunting & Outdoor Trade Show (SHOT Show) - 2018",
-      venue: "Sands Expo & Convention Center",
-      startDate: "1/23/2017",
-      endDate: "1/26/2017",
-      attendees: 64500
-    },
-    {
-      convention: "World of Concrete 2018",
-      venue: "Las Vegas Convention Center",
-      startDate: "1/23/2017",
-      endDate: "1/26/2017",
-      attendees: 60000
-    },
-    {
-      convention: "Women's Business Enterprise National Council (WBENC) - WBENC National Conference & Business Fair 2017",
-      venue: "Mandalay Bay Resort & Casino",
-      startDate: "6/20/2017",
-      endDate: "6/22/2017",
-      attendees: 1662
-    },
-    {
-      convention: "Cal Western Circulation Managers Association Annual Conference",
-      venue: "Planet Hollywood Resort & Casino",
-      startDate: "6/21/2017",
-      endDate: "6/23/2017",
-      attendees: 185
-    },
-    {
-      convention: "Las Vegas Market 0 Summer 2017",
-      venue: "World Market Center",
-      startDate: "6/21/2017",
-      endDate: "6/23/2017",
-      attendees: 50000
-    },
-    {
-      convention: "Casino Chips & Gaming Token Collector's Club, Inc. - 2017 Annual Convention",
-      venue: "South Point Hotel Casino & Spa",
-      startDate: "6/22/2017",
-      endDate: "6/24/2017",
-      attendees: 2000
-    },
-    {
-      convention: "ASD Las Vegas - March 2018",
-      venue: "Las Vegas Convention Center",
-      startDate: "6/22/2017",
-      endDate: "6/23/2017",
-      attendees: 46000
-    },
-    {
-      convention: "2017 Pack Expo",
-      venue: "Las Vegas Convention Center",
-      startDate: "6/22/2017",
-      endDate: "6/23/2017",
-      attendees: 45000
-    },
-    {
-      convention: "2017 Mr. Olympia",
-      venue: "Las Vegas Convention Center",
-      startDate: "6/22/2017",
-      endDate: "6/23/2017",
-      attendees: 45000
-    },
-    {
-      convention: "International Esthetics Cosmetics & Spa Conference (IECSC) International Beauty Show Las Vegas (IBS) 2017",
-      venue: "Las Vegas Convention Center",
-      startDate: "6/24/2017",
-      endDate: "6/26/2017",
-      attendees: 25000
-    },
-    {
-      convention: "Institute of Food Technologists (IFT) 2017 Annual Meeting & Food Expo",
-      venue: "Sands Expo & Convention Center",
-      startDate: "6/20/2017",
-      endDate: "6/22/2017",
-      attendees: 22000
-    },
-    {
-      convention: "Women's Business Enterprise National Council (WBENC) - WBENC National Conference & Business Fair 2017",
-      venue: "Mandalay Bay Resort & Casino",
-      startDate: "6/20/2017",
-      endDate: "6/22/2017",
-      attendees: 1662
-    },
-    {
-      convention: "Women's Business Enterprise National Council (WBENC) - WBENC National Conference & Business Fair 2017",
-      venue: "Mandalay Bay Resort & Casino",
-      startDate: "6/20/2017",
-      endDate: "6/22/2017",
-      attendees: 1662
-    },
-    {
-      convention: "Women's Business Enterprise National Council (WBENC) - WBENC National Conference & Business Fair 2017",
-      venue: "Mandalay Bay Resort & Casino",
-      startDate: "6/20/2017",
-      endDate: "6/22/2017",
-      attendees: 1662
-    },
-    {
-      convention: "Nightclub and Bar Show 2018",
-      venue: "Las Vegas Convention Center",
-      startDate: "6/19/2017",
-      endDate: "6/21/2017",
-      attendees: 39000
-    },
-    {
-      convention: "International Communications Industries Association/ Infocomm 2018",
-      venue: "Las Vegas Convention Center",
-      startDate: "6/20/2017",
-      endDate: "6/22/2017",
-      attendees: 38000
-    },
-    {
-      convention: "Cosmoprof North America 2017",
-      venue: "Mandalay Bay Resort and Casino",
-      startDate: "6/20/2017",
-      endDate: "6/22/2017",
-      attendees: 30000
-    },
-  ],
-  toggleModal: () => {
-    Calendar.displayModal = !Calendar.displayModal
-    m.redraw()
-  }
-}
-
-module.exports = Calendar
-
-
-/***/ }),
-/* 82 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const m = __webpack_require__(1);
-
-let Feed = __webpack_require__(60)
-let Slideshow = __webpack_require__(83)
-
-let SlideshowBoulder = __webpack_require__(141)
-
-let Initializer = {
-  start: (view) => {
-    if(view == 'lvcva') {
-      Feed.initialize()
-      Slideshow.initialize()
-    }
-    if(view == 'boulder') {
-      Feed.initialize()
-      SlideshowBoulder.initialize()
-    }
-  }
-}
-
-module.exports = Initializer
-
-
-/***/ }),
-/* 83 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const m = __webpack_require__(1)
-
-let Slideshow = {
-  list: [{ id: 0, src: 'img/cvb/slideshow-1.png' },{ id: 1, src: 'img/cvb/slideshow-2.png' },{ id: 2, src: 'img/cvb/slideshow-3.png' }],
-  active: { id: 0, src: 'img/cvb/slideshow-1.png' },
-  swap: () => {
-    var activeIndex = Slideshow.active.id
-    if(activeIndex == 2) {
-      activeIndex = 0
-    } else {
-      activeIndex++
-    }
-    Slideshow.active = Slideshow.list[activeIndex]
-    m.redraw()
-  },
-  initialize: () => {
-    setInterval(Slideshow.swap, 4000)
-  }
-}
-
-module.exports = Slideshow
-
-
-/***/ }),
 /* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const m = __webpack_require__(1)
+
+let Tabs = {
+  active: 1,
+  current: {id: 1, title: 'Details', content: 'Fugiat comprehenderit fabulas quorum nescius non e mandaremus relinqueret. Cillum singulis illustriora ut nulla consequat ab velit dolor. Vidisse elit quae laborum quorum, se sunt ubi eram. Incididunt cillum appellat ad o quis summis legam proident.  Ubi legam distinguantur, ex dolore illustriora. Ingeniis voluptatibus si quamquam se ne voluptate si mentitum. Te dolore nostrud transferrem aut si ne firmissimum.'},
+  swap: (tab) => {
+    Tabs.active = tab.id
+    Tabs.current = tab
+  },
+  isActive: (id) => {
+    if(id === Tabs.active) {
+      return true
+    } else {
+      return false
+    }
+  },
+  list: [
+    {id: 1, title: 'Info', content: 'Fugiat comprehenderit fabulas quorum nescius non e mandaremus relinqueret. Cillum singulis illustriora ut nulla consequat ab velit dolor. Vidisse elit quae laborum quorum, se sunt ubi eram. Incididunt cillum appellat ad o quis summis legam proident.  Ubi legam distinguantur, ex dolore illustriora. Ingeniis voluptatibus si quamquam se ne voluptate si mentitum. Te dolore nostrud transferrem aut si ne firmissimum.'},
+    {id: 2, title: 'Promotions', content: 'Fugiat comprehenderit fabulas quorum nescius non e mandaremus relinqueret. Cillum singulis illustriora ut nulla consequat ab velit dolor. Vidisse elit quae laborum quorum, se sunt ubi eram. Incididunt cillum appellat ad o quis summis legam proident.  Ubi legam distinguantur, ex dolore illustriora. Ingeniis voluptatibus si quamquam se ne voluptate si mentitum. Te dolore nostrud transferrem aut si ne firmissimum.'},
+    {id: 3, title: 'Sales staff', content: 'Fugiat comprehenderit fabulas quorum nescius non e mandaremus relinqueret. Cillum singulis illustriora ut nulla consequat ab velit dolor. Vidisse elit quae laborum quorum, se sunt ubi eram. Incididunt cillum appellat ad o quis summis legam proident.  Ubi legam distinguantur, ex dolore illustriora. Ingeniis voluptatibus si quamquam se ne voluptate si mentitum. Te dolore nostrud transferrem aut si ne firmissimum.'},
+  ]
+}
+
+module.exports = Tabs
+
+
+/***/ }),
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(2);
@@ -26088,7 +26118,7 @@ EncoderBuffer.prototype.join = function join(out, offset) {
 
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var constants = exports;
@@ -26109,11 +26139,11 @@ constants._reverse = function reverse(map) {
   return res;
 };
 
-constants.der = __webpack_require__(161);
+constants.der = __webpack_require__(164);
 
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(2);
@@ -26443,7 +26473,7 @@ function derDecodeLen(buf, primitive, fail) {
 
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(2);
@@ -26744,7 +26774,7 @@ function encodeTag(tag, primitive, cls, reporter) {
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27307,7 +27337,7 @@ module.exports = {
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var r;
@@ -27365,7 +27395,7 @@ if (typeof self === 'object') {
 } else {
   // Node.js or Web worker with no crypto support
   try {
-    var crypto = __webpack_require__(351);
+    var crypto = __webpack_require__(353);
     if (typeof crypto.randomBytes !== 'function')
       throw new Error('Not supported');
 
@@ -27378,13 +27408,13 @@ if (typeof self === 'object') {
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var aes = __webpack_require__(47)
+/* WEBPACK VAR INJECTION */(function(Buffer) {var aes = __webpack_require__(48)
 var Transform = __webpack_require__(29)
 var inherits = __webpack_require__(2)
-var GHASH = __webpack_require__(176)
+var GHASH = __webpack_require__(179)
 var xor = __webpack_require__(36)
 inherits(StreamCipher, Transform)
 module.exports = StreamCipher
@@ -27482,7 +27512,7 @@ function xorTest (a, b) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var xor = __webpack_require__(36)
@@ -27505,7 +27535,7 @@ exports.decrypt = function (self, block) {
 
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var xor = __webpack_require__(36)
@@ -27543,7 +27573,7 @@ function encryptStart (self, data, decrypt) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {function encryptByte (self, byteParam, decrypt) {
@@ -27584,7 +27614,7 @@ function shiftIn (buffer, value) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {function encryptByte (self, byteParam, decrypt) {
@@ -27606,7 +27636,7 @@ exports.encrypt = function (self, chunk, decrypt) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports) {
 
 exports.encrypt = function (self, block) {
@@ -27618,7 +27648,7 @@ exports.decrypt = function (self, block) {
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var xor = __webpack_require__(36)
@@ -27641,10 +27671,10 @@ exports.encrypt = function (self, chunk) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var aes = __webpack_require__(47)
+/* WEBPACK VAR INJECTION */(function(Buffer) {var aes = __webpack_require__(48)
 var Transform = __webpack_require__(29)
 var inherits = __webpack_require__(2)
 
@@ -27673,7 +27703,7 @@ StreamCipher.prototype._final = function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27753,7 +27783,7 @@ exports['RSA-MD5'] = exports.md5WithRSAEncryption = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27772,7 +27802,7 @@ exports['1.3.132.0.35'] = 'p521'
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27786,7 +27816,7 @@ exports['1.3.132.0.35'] = 'p521'
  * See http://pajhome.org.uk/crypt/md5 for more info.
  */
 
-var helpers = __webpack_require__(188);
+var helpers = __webpack_require__(191);
 
 /*
  * Calculate the MD5 of an array of little-endian words, and a bit length
@@ -27934,7 +27964,7 @@ module.exports = function md5(buf) {
 };
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var randomBytes = __webpack_require__(39);
@@ -27943,7 +27973,7 @@ findPrime.simpleSieve = simpleSieve;
 findPrime.fermatTest = fermatTest;
 var BN = __webpack_require__(6);
 var TWENTYFOUR = new BN(24);
-var MillerRabin = __webpack_require__(107);
+var MillerRabin = __webpack_require__(108);
 var millerRabin = new MillerRabin();
 var ONE = new BN(1);
 var TWO = new BN(2);
@@ -28045,13 +28075,13 @@ function findPrime(bits, gen) {
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var crypto = __webpack_require__(7);
 var BigInteger = __webpack_require__(24).BigInteger;
-var ECPointFp = __webpack_require__(50).ECPointFp;
-exports.ECCurves = __webpack_require__(197);
+var ECPointFp = __webpack_require__(51).ECPointFp;
+exports.ECCurves = __webpack_require__(200);
 
 // zero prepad
 function unstupid(hex,len)
@@ -28109,7 +28139,7 @@ exports.ECKey = function(curve, key, isPublic)
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -28281,28 +28311,28 @@ function dumpException(ex)
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var schemas = {
-  cache: __webpack_require__(237),
-  cacheEntry: __webpack_require__(238),
-  content: __webpack_require__(239),
-  cookie: __webpack_require__(240),
-  creator: __webpack_require__(241),
-  entry: __webpack_require__(242),
-  har: __webpack_require__(243),
-  log: __webpack_require__(244),
-  page: __webpack_require__(245),
-  pageTimings: __webpack_require__(246),
-  postData: __webpack_require__(247),
-  record: __webpack_require__(248),
-  request: __webpack_require__(249),
-  response: __webpack_require__(250),
-  timings: __webpack_require__(251)
+  cache: __webpack_require__(240),
+  cacheEntry: __webpack_require__(241),
+  content: __webpack_require__(242),
+  cookie: __webpack_require__(243),
+  creator: __webpack_require__(244),
+  entry: __webpack_require__(245),
+  har: __webpack_require__(246),
+  log: __webpack_require__(247),
+  page: __webpack_require__(248),
+  pageTimings: __webpack_require__(249),
+  postData: __webpack_require__(250),
+  record: __webpack_require__(251),
+  request: __webpack_require__(252),
+  response: __webpack_require__(253),
+  timings: __webpack_require__(254)
 }
 
 // is-my-json-valid does not provide meaningful error messages for external schemas
@@ -28337,7 +28367,7 @@ module.exports = schemas
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -28348,7 +28378,7 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var stream = __webpack_require__(13)
@@ -28381,11 +28411,11 @@ module.exports.isDuplex   = isDuplex
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var bn = __webpack_require__(6);
-var brorand = __webpack_require__(89);
+var brorand = __webpack_require__(90);
 
 function MillerRabin(rand) {
   this.rand = rand || new brorand.Rand();
@@ -28500,7 +28530,7 @@ MillerRabin.prototype.getDivisor = function getDivisor(n, k) {
 
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28565,7 +28595,7 @@ utils.encode = function encode(arr, enc) {
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28604,7 +28634,7 @@ module.exports = adler32;
 
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28652,7 +28682,7 @@ module.exports = crc32;
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28672,11 +28702,11 @@ module.exports = {
 
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(process, Buffer) {var createHmac = __webpack_require__(67)
-var checkParameters = __webpack_require__(275)
+/* WEBPACK VAR INJECTION */(function(process, Buffer) {var createHmac = __webpack_require__(70)
+var checkParameters = __webpack_require__(278)
 
 exports.pbkdf2 = function (password, salt, iterations, keylen, digest, callback) {
   if (typeof digest === 'function') {
@@ -28747,7 +28777,7 @@ exports.pbkdf2Sync = function (password, salt, iterations, keylen, digest) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var createHash = __webpack_require__(30);
@@ -28769,7 +28799,7 @@ function i2ops(c) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var bn = __webpack_require__(6);
@@ -28785,7 +28815,7 @@ module.exports = withPublic;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports) {
 
 module.exports = function xor(a, b) {
@@ -28798,7 +28828,7 @@ module.exports = function xor(a, b) {
 };
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(console, Buffer) {/*!
@@ -40075,7 +40105,7 @@ module.exports = __webpack_require__(62);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40087,7 +40117,7 @@ module.exports = __webpack_require__(62);
 
 module.exports = PassThrough;
 
-var Transform = __webpack_require__(75);
+var Transform = __webpack_require__(78);
 
 /*<replacement>*/
 var util = __webpack_require__(37);
@@ -40107,7 +40137,7 @@ PassThrough.prototype._transform = function (chunk, encoding, cb) {
 };
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40116,11 +40146,11 @@ PassThrough.prototype._transform = function (chunk, encoding, cb) {
 module.exports = Readable;
 
 /*<replacement>*/
-var processNextTick = __webpack_require__(73);
+var processNextTick = __webpack_require__(76);
 /*</replacement>*/
 
 /*<replacement>*/
-var isArray = __webpack_require__(105);
+var isArray = __webpack_require__(106);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -40150,7 +40180,7 @@ var Stream;
 
 var Buffer = __webpack_require__(0).Buffer;
 /*<replacement>*/
-var bufferShim = __webpack_require__(65);
+var bufferShim = __webpack_require__(68);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -40159,7 +40189,7 @@ util.inherits = __webpack_require__(2);
 /*</replacement>*/
 
 /*<replacement>*/
-var debugUtil = __webpack_require__(352);
+var debugUtil = __webpack_require__(354);
 var debug = void 0;
 if (debugUtil && debugUtil.debuglog) {
   debug = debugUtil.debuglog('stream');
@@ -40168,7 +40198,7 @@ if (debugUtil && debugUtil.debuglog) {
 }
 /*</replacement>*/
 
-var BufferList = __webpack_require__(284);
+var BufferList = __webpack_require__(287);
 var StringDecoder;
 
 util.inherits(Readable, Stream);
@@ -40250,7 +40280,7 @@ function ReadableState(options, stream) {
   this.decoder = null;
   this.encoding = null;
   if (options.encoding) {
-    if (!StringDecoder) StringDecoder = __webpack_require__(58).StringDecoder;
+    if (!StringDecoder) StringDecoder = __webpack_require__(59).StringDecoder;
     this.decoder = new StringDecoder(options.encoding);
     this.encoding = options.encoding;
   }
@@ -40360,7 +40390,7 @@ function needMoreData(state) {
 
 // backwards compatibility.
 Readable.prototype.setEncoding = function (enc) {
-  if (!StringDecoder) StringDecoder = __webpack_require__(58).StringDecoder;
+  if (!StringDecoder) StringDecoder = __webpack_require__(59).StringDecoder;
   this._readableState.decoder = new StringDecoder(enc);
   this._readableState.encoding = enc;
   return this;
@@ -41055,20 +41085,20 @@ function indexOf(xs, x) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(75)
+module.exports = __webpack_require__(78)
 
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var tough = __webpack_require__(312)
+var tough = __webpack_require__(315)
 
 var Cookie = tough.Cookie
   , CookieJar = tough.CookieJar
@@ -41108,7 +41138,7 @@ exports.jar = function(store) {
 
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41133,15 +41163,15 @@ module.exports = {
 
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var stringify = __webpack_require__(297);
-var parse = __webpack_require__(296);
-var formats = __webpack_require__(121);
+var stringify = __webpack_require__(300);
+var parse = __webpack_require__(299);
+var formats = __webpack_require__(122);
 
 module.exports = {
     formats: formats,
@@ -41151,7 +41181,7 @@ module.exports = {
 
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41340,7 +41370,7 @@ exports.isBuffer = function (obj) {
 
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {/**
@@ -41481,7 +41511,7 @@ module.exports = Sha256
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var inherits = __webpack_require__(2)
@@ -41747,7 +41777,7 @@ module.exports = Sha512
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2017 Joyent, Inc.
@@ -41795,9 +41825,9 @@ function DiffieHellman(key) {
 	} else if (key.type === 'ecdsa') {
 		if (!CRYPTO_HAVE_ECDH) {
 			if (ecdh === undefined)
-				ecdh = __webpack_require__(102);
+				ecdh = __webpack_require__(103);
 			if (ec === undefined)
-				ec = __webpack_require__(50);
+				ec = __webpack_require__(51);
 			if (jsbn === undefined)
 				jsbn = __webpack_require__(24).BigInteger;
 
@@ -42124,9 +42154,9 @@ function generateECDSA(curve) {
 
 	} else {
 		if (ecdh === undefined)
-			ecdh = __webpack_require__(102);
+			ecdh = __webpack_require__(103);
 		if (ec === undefined)
-			ec = __webpack_require__(50);
+			ec = __webpack_require__(51);
 		if (jsbn === undefined)
 			jsbn = __webpack_require__(24).BigInteger;
 
@@ -42165,7 +42195,7 @@ function generateECDSA(curve) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2015 Joyent, Inc.
@@ -42268,7 +42298,7 @@ Signer.prototype.sign = function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2015 Joyent, Inc.
@@ -42284,7 +42314,7 @@ var Key = __webpack_require__(11);
 var PrivateKey = __webpack_require__(12);
 
 var pem = __webpack_require__(22);
-var ssh = __webpack_require__(129);
+var ssh = __webpack_require__(130);
 var rfc4253 = __webpack_require__(27);
 
 function read(buf, options) {
@@ -42348,7 +42378,7 @@ function write(key, options) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2015 Joyent, Inc.
@@ -42364,7 +42394,7 @@ var utils = __webpack_require__(9);
 var Key = __webpack_require__(11);
 var PrivateKey = __webpack_require__(12);
 
-var sshpriv = __webpack_require__(56);
+var sshpriv = __webpack_require__(57);
 
 /*JSSTYLED*/
 var SSHKEY_RE = /^([a-z0-9-]+)[ \t]+([a-zA-Z0-9+\/]+[=]*)([\n \t]+([^\n]+))?$/;
@@ -42469,7 +42499,7 @@ function write(key, options) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2017 Joyent, Inc.
@@ -43202,7 +43232,7 @@ function writeBitField(setBits, bitIndex) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {exports.fetch = isFunction(global.fetch) && isFunction(global.ReadableStream)
@@ -43278,7 +43308,7 @@ xhr = null // Help gc
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)))
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43346,7 +43376,7 @@ exports.pathMatch = pathMatch;
 
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43381,7 +43411,7 @@ exports.pathMatch = pathMatch;
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-var pubsuffix = __webpack_require__(134);
+var pubsuffix = __webpack_require__(135);
 
 // Gives the permutation of all possible domainMatch()es of a given domain. The
 // array is in shortest-to-longest order.  Handy for indexing.
@@ -43409,7 +43439,7 @@ exports.permuteDomain = permuteDomain;
 
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43420,7 +43450,7 @@ exports.permuteDomain = permuteDomain;
 
 
 
-var punycode = __webpack_require__(74);
+var punycode = __webpack_require__(77);
 
 module.exports.getPublicSuffix = function getPublicSuffix(domain) {
   /*!
@@ -43514,7 +43544,7 @@ var index = module.exports.index = Object.freeze(
 
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43592,7 +43622,7 @@ Store.prototype.getAllCookies = function(cb) {
 
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -43620,7 +43650,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports) {
 
 module.exports = extend
@@ -43645,11 +43675,11 @@ function extend() {
 
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(console) {var m = __webpack_require__(1)
-const flatpickr = __webpack_require__(70)
+const flatpickr = __webpack_require__(73)
 
 var config = {
     timePicker: {
@@ -43803,7 +43833,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
@@ -43816,7 +43846,7 @@ module.exports = {
 
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(console) {const m = __webpack_require__(1)
@@ -44008,7 +44038,66 @@ module.exports = Hotel
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 141 */
+/* 142 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const m = __webpack_require__(1);
+
+var SalesStaff = {
+  all: [
+    { 
+      name: 'Michael Rowland',
+      title: 'Executive Director of Group Sales',
+      phone: '702-693-5234',
+      email: 'mrowland@hrhvegas.com',
+      rooms: 'N/A',
+      hotel: 'hard-rock-hotel',
+      image: 'michaelr.jpg'
+    },
+    { 
+      name: 'Michael Catalano',
+      title: 'Director of National Sales',
+      phone: '702-693-5536',
+      email: 'mcatalano@hrhvegas.com',
+      rooms: '51+ rooms',
+      hotel: 'hard-rock-hotel',
+      image: 'michaelc.jpg'
+    },
+    { 
+      name: 'Mike Roth',
+      title: 'National Sales Manager',
+      phone: '702-693-5224',
+      email: 'mroth@hrhvegas.com',
+      rooms: '51+ rooms',
+      hotel: 'hard-rock-hotel',
+      image: 'miker.jpg'
+    },
+    {
+      name: 'Carrie Flores',
+      title: 'Hotel Sales Manager',
+      phone: '702-693-5217',
+      email: 'cflores@hrhvegas.com',
+      rooms: '6-50 rooms',
+      hotel: 'hard-rock-hotel',
+      image: 'carrief.jpg'
+    },
+    {
+      name: 'Amber Held',
+      title: 'Hotel Sales Manager',
+      phone: '702-693-4008',
+      email: 'aheld@hrhvegas.com',
+      rooms: '6-50 rooms',
+      hotel: 'hard-rock-hotel',
+      image: 'amberh.jpg'
+    }
+  ]
+}
+ 
+module.exports = SalesStaff
+
+
+/***/ }),
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
@@ -44035,37 +44124,7 @@ module.exports = SlideshowBoulder
 
 
 /***/ }),
-/* 142 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const m = __webpack_require__(1)
-
-let Tabs = {
-  active: 1,
-  current: {id: 1, title: 'Details', content: 'Fugiat comprehenderit fabulas quorum nescius non e mandaremus relinqueret. Cillum singulis illustriora ut nulla consequat ab velit dolor. Vidisse elit quae laborum quorum, se sunt ubi eram. Incididunt cillum appellat ad o quis summis legam proident.  Ubi legam distinguantur, ex dolore illustriora. Ingeniis voluptatibus si quamquam se ne voluptate si mentitum. Te dolore nostrud transferrem aut si ne firmissimum.'},
-  swap: (tab) => {
-    Tabs.active = tab.id
-    Tabs.current = tab
-  },
-  isActive: (id) => {
-    if(id === Tabs.active) {
-      return true
-    } else {
-      return false
-    }
-  },
-  list: [
-    {id: 1, title: 'Info', content: 'Fugiat comprehenderit fabulas quorum nescius non e mandaremus relinqueret. Cillum singulis illustriora ut nulla consequat ab velit dolor. Vidisse elit quae laborum quorum, se sunt ubi eram. Incididunt cillum appellat ad o quis summis legam proident.  Ubi legam distinguantur, ex dolore illustriora. Ingeniis voluptatibus si quamquam se ne voluptate si mentitum. Te dolore nostrud transferrem aut si ne firmissimum.'},
-    {id: 2, title: 'Promotions', content: 'Fugiat comprehenderit fabulas quorum nescius non e mandaremus relinqueret. Cillum singulis illustriora ut nulla consequat ab velit dolor. Vidisse elit quae laborum quorum, se sunt ubi eram. Incididunt cillum appellat ad o quis summis legam proident.  Ubi legam distinguantur, ex dolore illustriora. Ingeniis voluptatibus si quamquam se ne voluptate si mentitum. Te dolore nostrud transferrem aut si ne firmissimum.'},
-    {id: 3, title: 'Sales staff', content: 'Fugiat comprehenderit fabulas quorum nescius non e mandaremus relinqueret. Cillum singulis illustriora ut nulla consequat ab velit dolor. Vidisse elit quae laborum quorum, se sunt ubi eram. Incididunt cillum appellat ad o quis summis legam proident.  Ubi legam distinguantur, ex dolore illustriora. Ingeniis voluptatibus si quamquam se ne voluptate si mentitum. Te dolore nostrud transferrem aut si ne firmissimum.'},
-  ]
-}
-
-module.exports = Tabs
-
-
-/***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(console) {var m = __webpack_require__(1)
@@ -44100,11 +44159,11 @@ module.exports = UserLocation
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
-var list = __webpack_require__(337);
+var list = __webpack_require__(340);
 
 var CVBList = {
   view: function() {
@@ -44163,12 +44222,133 @@ module.exports = CVBList;
 
 
 /***/ }),
-/* 145 */
+/* 146 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const m = __webpack_require__(1);
+
+module.exports = {
+  view: () => {
+   return m('div', {class: 'fl w-100'}, [
+    m('.fl.w-100.h-100', {style: 'min-height: 300px; background-size: cover !important; background-position: center center; background: url("./img/home-intro-holder-bg.jpg")'}, [
+      m('.flex.items-center.flex-row.justify-center.h-100.w-100',{style: 'height: 300px'}, [
+        m('.f1.fw6.avenir', "Caesar's Entertainment")
+      ])
+    ]),
+    m('.w-100.center.flex.flex-row.flex-wrap', {style: 'max-width: 1200px;'}, [
+      //property
+      m('.flex.flex-row.w-50.mb2.bg-white.ba.b--black-10', [
+        m('.flex', {style: 'background: url("./img/caesars-ballys.jpg"); background-size: cover; min-height: 300px; height: 100%; width: 100%'}, [
+        ]),
+        m('.flex-auto'),
+        m('.flex.flex-column.justify-center.w-80.pl2', [
+          m('h1.mb0', 'Ballys'),
+          m('p.mt0.lh-copy', 'Description placeholder area.')
+        ])
+      ]),
+      //property
+      m('.flex.flex-row.w-50.mb2.bg-white.ba.b--black-10', [
+        m('.flex', { style: 'background: url("./img/caesars-caesars_palace.jpg"); background-size: cover; min-height: 300px; height: 100%; width: 100%' }, [
+        ]),
+        m('.flex-auto'),
+        m('.flex.flex-column.justify-center.w-80.pl2', [
+          m('h1.mb0', 'Caesars Palace'),
+          m('p.mt0.lh-copy', 'Description placeholder area.')
+        ])
+      ]),
+      //property
+      m('.flex.flex-row.w-50.mb2.bg-white.ba.b--black-10', [
+        m('.flex', { style: 'background: url("./img/caesars-cromwell.jpg"); background-size: cover; min-height: 300px; height: 100%; width: 100%' }, [
+        ]),
+        m('.flex-auto'),
+        m('.flex.flex-column.justify-center.w-80.pl2', [
+          m('h1.mb0', 'Cromwell'),
+          m('p.mt0.lh-copy', 'Description placeholder area.')
+        ])
+      ]),
+      //property
+      m('.flex.flex-row.w-50.mb2.bg-white.ba.b--black-10', [
+        m('.flex', { style: 'background: url("./img/caesars-flamingo.jpg"); background-size: cover; min-height: 300px; height: 100%; width: 100%' }, [
+        ]),
+        m('.flex-auto'),
+        m('.flex.flex-column.justify-center.w-80.pl2', [
+          m('h1.mb0', 'Flamingo'),
+          m('p.mt0.lh-copy', 'Description placeholder area.')
+        ])
+      ]),
+      //property
+      m('.flex.flex-row.w-50.mb2.bg-white.ba.b--black-10', [
+        m('.flex', { style: 'background: url("./img/caesars-harrahs.jpg"); background-size: cover; min-height: 300px; height: 100%; width: 100%' }, [
+        ]),
+        m('.flex-auto'),
+        m('.flex.flex-column.justify-center.w-80.pl2', [
+          m('h1.mb0', 'Harrahs'),
+          m('p.mt0.lh-copy', 'Description placeholder area.')
+        ])
+      ]),
+      //property
+      m('.flex.flex-row.w-50.mb2.bg-white.ba.b--black-10', [
+        m('.flex', { style: 'background: url("./img/caesars-nobu.jpg"); background-size: cover; min-height: 300px; height: 100%; width: 100%' }, [
+        ]),
+        m('.flex-auto'),
+        m('.flex.flex-column.justify-center.w-80.pl2', [
+          m('h1.mb0', 'Nobu'),
+          m('p.mt0.lh-copy', 'Description placeholder area.')
+        ])
+      ]),
+      //property
+      m('.flex.flex-row.w-50.mb2.bg-white.ba.b--black-10', [
+        m('.flex', { style: 'background: url("./img/caesars-paris.jpg"); background-size: cover; min-height: 300px; height: 100%; width: 100%' }, [
+        ]),
+        m('.flex-auto'),
+        m('.flex.flex-column.justify-center.w-80.pl2', [
+          m('h1.mb0', 'Paris'),
+          m('p.mt0.lh-copy', 'Description placeholder area.')
+        ])
+      ]), 
+      //property
+      m('.flex.flex-row.w-50.mb2.bg-white.ba.b--black-10', [
+        m('.flex', { style: 'background: url("./img/caesars-planet_hollywood.jpg"); background-size: cover; min-height: 300px; height: 100%; width: 100%' }, [
+        ]),
+        m('.flex-auto'),
+        m('.flex.flex-column.justify-center.w-80.pl2', [
+          m('h1.mb0', 'Planet Hollywood'),
+          m('p.mt0.lh-copy', 'Description placeholder area.')
+        ])
+      ]),
+      //property
+      m('.flex.flex-row.w-50.mb2.bg-white.ba.b--black-10', [
+        m('.flex', { style: 'background: url("./img/caesars-rio.jpg"); background-size: cover; min-height: 300px; height: 100%; width: 100%' }, [
+        ]),
+        m('.flex-auto'),
+        m('.flex.flex-column.justify-center.w-80.pl2', [
+          m('h1.mb0', 'Rio'),
+          m('p.mt0.lh-copy', 'Description placeholder area.')
+        ])
+      ]),
+      //property
+      m('.flex.flex-row.w-50.mb2.bg-white.ba.b--black-10', [
+        m('.flex', { style: 'background: url("./img/caesars-the_linq.jpg"); background-size: cover; min-height: 300px; height: 100%; width: 100%' }, [
+        ]),
+        m('.flex-auto'),
+        m('.flex.flex-column.justify-center.w-80.pl2', [
+          m('h1.mb0', 'The Linq'),
+          m('p.mt0.lh-copy', 'Description placeholder area.')
+        ])
+      ]),
+    ])
+   ]);
+  }
+}
+
+
+/***/ }),
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
-let Hotel = __webpack_require__(140)
-let TitleBar = __webpack_require__(139)
+let Hotel = __webpack_require__(141)
+let TitleBar = __webpack_require__(140)
 
 module.exports = {
   view: (vnode) => {
@@ -44405,16 +44585,16 @@ module.exports = {
 
 
 /***/ }),
-/* 146 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
-    let Tabs = __webpack_require__(142)
-    let Calendar = __webpack_require__(81)
-    let Slideshow = __webpack_require__(83)
-    let Feed = __webpack_require__(60)
-    let Initializer = __webpack_require__(82)
-    let SalesStaff = __webpack_require__(345)
+    let Tabs = __webpack_require__(84)
+    let Calendar = __webpack_require__(61)
+    let Slideshow = __webpack_require__(63)
+    let Feed = __webpack_require__(46)
+    let Initializer = __webpack_require__(62)
+    let SalesStaff = __webpack_require__(142)
 
 
     module.exports = {
@@ -44442,7 +44622,7 @@ const m = __webpack_require__(1)
           //content area
           m('div', {class: 'fl w-100 pa4'}, [
             m('div', {class: 'fl w-50 pr3'}, [
-              m('div', {class: 'fl w-100 h5', style: 'overflow: hidden'}, [
+              m('div', {class: 'fl w-100 h5', style: 'min-height: 300px; overflow: hidden'}, [
                 m('div', {class: 'db pa2 fl w-60 h5 white', style: 'background: linear-gradient(rgba(0, 160, 238, 0.8), rgba(0, 160, 238, 0.9)),  url("../img/bg-polylines.png"); background-size: cover; height: 300px'}, [
                   m('h4', {class: 'f3 fw5 lh-copy mb0 pl2'}, "Twitter @HardRockHotelLV"),
                   m('ul', {class: 'mt4 list lh-copy yellow f5 fw5'}, [
@@ -44484,26 +44664,6 @@ const m = __webpack_require__(1)
               ])
             ]),
 
-            m('.fl.w-100.mt4.br2.black.pa3', [
-              m('.mw6.tc.center', [
-                m('.f2.mb2.bb.b--black-50', 'Sales Staff'),
-                //staff member
-                SalesStaff.all.map(function(s){
-                  return m('.fl.w-100.mb3.bb.b--black-20.pa5', [
-                    m('.fl.w-40', [
-                      m('img.shadow-2', {style: 'border-radius: 50%', src: 'img/' + s.image}) 
-                    ]),
-                    m('.fl.w-60.tl', [
-                      m('.f4.fw6', s.name),
-                      m('.f5.fw4', s.title),
-                      m('.f6.fw6.mt2', s.email),
-                      m('.f6.fw6.mt2', s.phone),
-                      m('.f6.fw6.mt2', s.rooms),
-                   ])
-                  ])
-                })
-              ])
-            ]),
           ])
         ])
       }
@@ -44511,7 +44671,93 @@ const m = __webpack_require__(1)
 
 
 /***/ }),
-/* 147 */
+/* 149 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const m = __webpack_require__(1)
+    let Tabs = __webpack_require__(84)
+    let Calendar = __webpack_require__(61)
+    let Slideshow = __webpack_require__(63)
+    let Feed = __webpack_require__(46)
+    let Initializer = __webpack_require__(62)
+    let SalesStaff = __webpack_require__(142)
+
+
+    module.exports = {
+      oncreate: Initializer.start.bind(Initializer,'lvcva'),
+      oninit: Feed.getTimeline,
+      view: () => {
+        return m('div', {class: 'avenir'},  [
+          m('div', { class: 'fl w-100 bg-black', style: 'background: url("../img/caesarshotel.jpg"); background-size: cover; background-position: center center; height: 450px'}, [
+            m('div', {class: 'fr w-40 bg-black-50 pa2 white h-100 flex items-center'}, [
+              m('div', {class: 'db fl ph4'}, [
+                m('h1', {class: 'fw4 ttu tracked'}, 'Caesars Palace'),
+                m('p', {class: 'mb0 f4 tracked'}, 'XXXX Las Vegas Blvd.'),
+                m('p', {class: 'mt1 f4 tracked'}, 'Las Vegas, NV 89109'),
+                m('a', {class: "ba pa2 b--white tracked mt2 fl br1 bg-black-20 link dim pointer"}, 'SEND RFP'),
+                m('span', {class: 'w-100 flex ttu tracked white-70 pt4 justify-between'}, [
+                  m('p', 'CVB Member'),
+                  m('p', 'Hotel'),
+                  m('p', 'Casino'),
+                  m('p', 'Resort'),
+                ])
+              ])
+            ])
+          ]),
+
+          //content area
+          m('div', {class: 'fl w-100 pa4'}, [
+            m('div', {class: 'fl w-50 pr3'}, [
+              m('div', {class: 'fl w-100 h5', style: 'min-height: 300px; overflow: hidden'}, [
+                m('div', {class: 'db pa2 fl w-60 h5 white', style: 'background: linear-gradient(rgba(0, 160, 238, 0.8), rgba(0, 160, 238, 0.9)),  url("../img/bg-polylines.png"); background-size: cover; height: 300px'}, [
+                  m('h4', {class: 'f3 fw5 lh-copy mb0 pl2'}, "Twitter @Caesars"),
+                  m('ul', {class: 'mt4 list lh-copy yellow f5 fw5'}, [
+                    m('li', "If you can't find a reason to celebrate at @Nobu, you're doing it wrong. #Cheers 🍸"),
+                  ])
+                ]),
+                m('div', {class: 'db fl w-40 h5 pl4', style: 'height: 300px; background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/bg-polyboxes.png"); background-size: cover'}, [
+                  m('p', {class: 'b f5 mt5 pt2'}, '1-855-693-5500'),
+                  m('p', {class: 'b f5'}, 'caesarsentertainment.com'),
+                  m('p', {class: 'b f5'}, 'sales@caesars.com'),
+                ]),
+              ]),
+              m('div', {class: 'fl w-100 h5'}, [
+                m('div', {class: 'db fl w-40 h5 flex flex-column justify-center ph5', style: 'height: 300px; background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/bg-polyboxes.png"); background-size: cover'}, [
+                    m('p', 'RESORT FEE'),
+                    m('h1', {class: 'mb0'}, '$35.15'),
+                    m('p', {class: 'mt0'}, 'per day')
+                ]),
+                m('div', {class: 'db pa2 fl w-60 h5 white', style: 'background: linear-gradient(rgba(47, 40, 92, 0.5), rgba(47, 40, 92, 0.7)),  url("../img/bg-polylines.png"); background-size: cover; height: 300px'}, [
+                  m('h4', {class: 'f3 fw5 lh-copy mb0 pl2'}, "What's included"),
+                  m('ul', {class: 'mt1 list lh-copy yellow f5 fw5'}, [
+                    m('li', 'In-room internet access'),
+                    m('li', 'Daily newspaper'),
+                    m('li', 'Access to fitness room'),
+                    m('li', 'Roundtrip shuttle to Fashion Show Mall'),
+                    m('li', 'Unlimited local and toll free calls'),
+                    m('li', 'Unlimited domestic long distance calls'),
+                    m('li', 'Notary service at concierge'),
+                    m('li', 'Boarding pass printing')
+                  ])
+                ])
+              ])
+            ]),
+            m('div', {class: 'fl w-50', style: 'background-image: url("../img/hotel/HRH-pool.png"); background-size: cover; height: 556px'}, [
+              m('div', {class: 'fr w-60 bg-black-80 h-100 pv2 ph4 white'}, [
+                m('h1', "Headline goes here"),
+                m('p', {class: 'measure-narrow lh-copy'}, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+                m('p', {class: 'measure-narrow lh-copy'}, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.'),
+              ])
+            ]),
+
+          ])
+        ])
+      }
+  }
+
+
+/***/ }),
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
@@ -44538,15 +44784,15 @@ module.exports = {
 
 
 /***/ }),
-/* 148 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
-let Tabs = __webpack_require__(142)
-let Calendar = __webpack_require__(81)
-let Slideshow = __webpack_require__(83)
-let Feed = __webpack_require__(60)
-let Initializer = __webpack_require__(82)
+let Tabs = __webpack_require__(84)
+let Calendar = __webpack_require__(61)
+let Slideshow = __webpack_require__(63)
+let Feed = __webpack_require__(46)
+let Initializer = __webpack_require__(62)
 
 module.exports = {
   oncreate: Initializer.start.bind(Initializer,'lvcva'),
@@ -44678,11 +44924,11 @@ module.exports = {
 
 
 /***/ }),
-/* 149 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
-let Nav = __webpack_require__(331)
+let Nav = __webpack_require__(334)
 
 module.exports = {
   view: (vnode) => {
@@ -44702,23 +44948,22 @@ module.exports = {
 
 
 /***/ }),
-/* 150 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var m = __webpack_require__(1)
 
 //components
-let PollWidget = __webpack_require__(335)
-let MostPopularCitiesWidget = __webpack_require__(330)
-let BrandPartnersWidget = __webpack_require__(325)
-let AboutWidget = __webpack_require__(324)
-let NewsWidget = __webpack_require__(334)
-let NewOpeningsWidget = __webpack_require__(333)
-let NeedsDatesWidget = __webpack_require__(332)
-let InviteAPlanner = __webpack_require__(329)
-let Hero = __webpack_require__(328)
-let Reviews = __webpack_require__(336)
-let EventCalendar = __webpack_require__(327)
+let PollWidget = __webpack_require__(338)
+let MostPopularCitiesWidget = __webpack_require__(333)
+let BrandPartnersWidget = __webpack_require__(328)
+let AboutWidget = __webpack_require__(327)
+let NewsWidget = __webpack_require__(337)
+let NewOpeningsWidget = __webpack_require__(336)
+let NeedsDatesWidget = __webpack_require__(335)
+let InviteAPlanner = __webpack_require__(332)
+let Hero = __webpack_require__(331)
+let Reviews = __webpack_require__(339)
 
 module.exports = {
   view: () => {
@@ -44731,10 +44976,9 @@ module.exports = {
         m(InviteAPlanner)
       ]),
       m('.fl.w-100', [
-        m('.center.pa3', {style: 'max-width: 1200px'}, [
+        m('.center.pa3', { style: 'max-width: 1200px' }, [
           m('.fl.w-100.w-third-ns.pa4', [
             m(AboutWidget),
-            m(EventCalendar)
           ]),
           m('.fl.w-100.w-third-ns.pa4', [
             m(NewsWidget),
@@ -44742,16 +44986,17 @@ module.exports = {
           ]),
           m('.fl.w-100.w-third-ns.pa4', [
             m(NewOpeningsWidget),
-            m(NeedsDatesWidget)
           ]),
-
+          m('.fl.w-100.mb4', [
+            m(NeedsDatesWidget)
+          ])
         ])
       ]),
-      m('.fl.w-100.shadow-2.mb4',[
+      m('.fl.w-100.shadow-2.mb4', [
         m(BrandPartnersWidget)
       ]),
       m('.fl.w-100', [
-        m('.center', {style: 'max-width: 1200px'}, [
+        m('.center', { style: 'max-width: 1200px' }, [
           m('.fl.w-50-ns.w-100.pa4', [
             m(MostPopularCitiesWidget)
           ]),
@@ -44767,7 +45012,7 @@ module.exports = {
 
 
 /***/ }),
-/* 151 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
@@ -44843,13 +45088,13 @@ module.exports = {
 
 
 /***/ }),
-/* 152 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
-let Hotel = __webpack_require__(140)
-let TitleBar = __webpack_require__(139)
-let RFP = __webpack_require__(342)
+let Hotel = __webpack_require__(141)
+let TitleBar = __webpack_require__(140)
+let RFP = __webpack_require__(345)
 let _ = __webpack_require__(45)
 
 module.exports = {
@@ -45016,23 +45261,23 @@ module.exports = {
 
 
 /***/ }),
-/* 153 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
-const Quill = __webpack_require__(116);
-const Awesomplete = __webpack_require__(169);
-const flatpickr = __webpack_require__(70);
+const Quill = __webpack_require__(117);
+const Awesomplete = __webpack_require__(172);
+const flatpickr = __webpack_require__(73);
 var quill;
 var Bold = Quill.import('formats/bold');
 Bold.tagName = 'B';   // Quill uses <strong> by default
 Quill.register(Bold, true);
-const DayPlanner  = __webpack_require__(138);
-const Concessions = __webpack_require__(326);
-let menuState = __webpack_require__(349);
-let insertSnippet = __webpack_require__(348);
-let RFPState = __webpack_require__(343);
-let preflightState = __webpack_require__(350);
+const DayPlanner  = __webpack_require__(139);
+const Concessions = __webpack_require__(329);
+let menuState = __webpack_require__(351);
+let insertSnippet = __webpack_require__(350);
+let RFPState = __webpack_require__(346);
+let preflightState = __webpack_require__(352);
 
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
@@ -45626,7 +45871,7 @@ module.exports = {
 
 
 /***/ }),
-/* 154 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
@@ -45639,11 +45884,11 @@ module.exports = {
 
 
 /***/ }),
-/* 155 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
-let DayPlanner = __webpack_require__(138)
+let DayPlanner = __webpack_require__(139)
 
 module.exports = {
   view: () => {
@@ -45656,13 +45901,13 @@ module.exports = {
 
 
 /***/ }),
-/* 156 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(console) {var m = __webpack_require__(1)
-const flatpickr = __webpack_require__(70)
-var UserLocation = __webpack_require__(143)
-var Weather = __webpack_require__(347)
+const flatpickr = __webpack_require__(73)
+var UserLocation = __webpack_require__(144)
+var Weather = __webpack_require__(349)
 var config = {
     timePicker: {
       enableTime: true,
@@ -45924,147 +46169,334 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 157 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const m = __webpack_require__(1)
-let TabsBoulder = __webpack_require__(346)
-let Calendar = __webpack_require__(81)
-let SlideshowBoulder = __webpack_require__(141)
-let Feed = __webpack_require__(60)
-let Initializer = __webpack_require__(82)
-
+/* WEBPACK VAR INJECTION */(function(console) {const m = __webpack_require__(1)
+let TabsBoulder = __webpack_require__(348)
+let Calendar = __webpack_require__(61)
+let SlideshowBoulder = __webpack_require__(143)
+let Feed = __webpack_require__(46)
+let Initializer = __webpack_require__(62)
+var state = {
+  showFacts: false,
+  showAwards: false,
+  showUpdates: false,
+  showPromos: false,
+  showStaff: true,
+  setActive: (tab) => {
+    console.log(tab)
+    if (tab === 'facts') {
+      state.showFacts = true
+      state.showAwards = false
+      state.showUpdates = false
+      state.showPromos = false
+      state.showStaff = false
+    }
+    if (tab === 'awards') {
+      state.showFacts = false
+      state.showAwards = true
+      state.showUpdates = false
+      state.showPromos = false
+      state.showStaff = false
+    }
+    if (tab === 'updates') {
+      state.showFacts = false
+      state.showAwards = false
+      state.showUpdates = true
+      state.showPromos = false
+      state.showStaff = false
+    }
+    if (tab === 'promos') {
+      state.showFacts = false
+      state.showAwards = false
+      state.showUpdates = false
+      state.showPromos = true
+      state.showStaff = false
+    }
+    if (tab === 'staff') {
+      state.showFacts = false
+      state.showAwards = false
+      state.showUpdates = false
+      state.showPromos = false
+      state.showStaff = true
+    }
+  }
+}
 module.exports = {
+
   oncreate: Initializer.start.bind(Initializer, 'boulder'),
   oninit: Feed.getTimeline,
   view: () => {
-    return m('div', {class: 'avenir'},  [
+    return m('div', { class: 'avenir' }, [
       // calendar modal
-      m('div', {class: Calendar.displayModal ? 'bg-b-purple-1 fixed top-0 right-0 left-0 bottom-0 pa4 shown' : 'bg-b-purple-1 absolute top-0 right-0 left-0 bottom-0 pa4 hidden', style: 'z-index: 9999; overflow-x: scroll;'}, [
-        m('a', {class: 'absolute right-2 f3 white', onclick: Calendar.toggleModal}, 'Close'),
-        m('h1', {class: 'white'}, 'Calendar'),
+      m('div', { class: Calendar.displayModal ? 'bg-b-purple-1 fixed top-0 right-0 left-0 bottom-0 pa4 shown' : 'bg-b-purple-1 absolute top-0 right-0 left-0 bottom-0 pa4 hidden', style: 'z-index: 9999; overflow-x: scroll;' }, [
+        m('a', { class: 'absolute right-2 f3 white', onclick: Calendar.toggleModal }, 'Close'),
+        m('h1', { class: 'white' }, 'Calendar'),
         //calendar table
-        m('table', {class: 'fl w-100 bg-white collapse ba br2 b--black-10 pv2 ph3'}, [
+        m('table', { class: 'fl w-100 bg-white collapse ba br2 b--black-10 pv2 ph3' }, [
           //event headings
-          m('tr', {class: 'striped--light-gray'}, [
-            m('th', {class: 'pv2 ph3 tl f6 fw6'}, 'CONVENTION'),
-            m('th', {class: 'pv2 ph3 tl f6 fw6'}, 'VENUE'),
-            m('th', {class: 'pv2 ph3 tl f6 fw6'}, 'START DATE'),
-            m('th', {class: 'pv2 ph3 tl f6 fw6'}, 'END DATE'),
-            m('th', {class: 'pv2 ph3 tl f6 fw6'}, 'ATTENDEES'),
+          m('tr', { class: 'striped--light-gray' }, [
+            m('th', { class: 'pv2 ph3 tl f6 fw6' }, 'CONVENTION'),
+            m('th', { class: 'pv2 ph3 tl f6 fw6' }, 'VENUE'),
+            m('th', { class: 'pv2 ph3 tl f6 fw6' }, 'START DATE'),
+            m('th', { class: 'pv2 ph3 tl f6 fw6' }, 'END DATE'),
+            m('th', { class: 'pv2 ph3 tl f6 fw6' }, 'ATTENDEES'),
           ]),
           //events
           Calendar.events.map((event) => {
-            return m('tr', {class: 'striped--light-gray'}, [
-              m('td', {class: 'pv2 ph3 b measure-narrow'}, event.convention),
-              m('td', {class: 'pv2 ph3'}, event.venue),
-              m('td', {class: 'pv2 ph3'}, event.startDate),
-              m('td', {class: 'pv2 ph3'}, event.endDate),
-              m('td', {class: 'pv2 ph3'}, event.attendees),
+            return m('tr', { class: 'striped--light-gray' }, [
+              m('td', { class: 'pv2 ph3 b measure-narrow' }, event.convention),
+              m('td', { class: 'pv2 ph3' }, event.venue),
+              m('td', { class: 'pv2 ph3' }, event.startDate),
+              m('td', { class: 'pv2 ph3' }, event.endDate),
+              m('td', { class: 'pv2 ph3' }, event.attendees),
             ])
           })
         ])
       ]),
       // header
-      m('div', {class: 'fl w-100 bg-b-purple-1 near-white avenir fw4 ttu', style: 'overflow: hidden'}, [
-        m('div', {class: 'fl w-70'}, [
+      m('div', { class: 'fl w-100 bg-b-purple-1 near-white avenir fw4 ttu', style: 'overflow: hidden' }, [
+        m('div', { class: 'fl w-70' }, [
           m('div', { class: 'fl w-50 flex flex-column items-center justify-center', style: 'height: 350px' }, [
-            m('img.pa4-ns', { src: 'img/cvb/logo-cvb-boulder.png', style: 'max-width: 200px'})
+            m('img.pa4-ns', { src: 'img/cvb/logo-cvb-boulder.png', style: 'max-width: 200px' })
           ]),
-          m('div', {class: 'fl w-50 ttu flex flex-column justify-center', style: 'height: 350px;'}, [
-            m('.f3.fw5.mb2.measure-narrow', 'Boulder Convention & Visitors Bureau'),
-            m('p', {class: 'lh-copy mt0 mb0'}, '2440 Pearl Street'),
-            m('p', {class: 'lh-copy mt0 mb0'}, 'Boulder, CO 80302'),
-            m('p', {class: 'lh-copy mt0 mb0'}, '(303) 442-2911'),
-            m('a', {class: 'lh-copy mt3 link dim mb0 link bg-white-30 br2 w-40 tc pa1 pointer b white', href: '/rfp', oncreate: m.route.link}, 'send rfp')
+          m('div', { class: 'fl w-50 ttu flex flex-column justify-center', style: 'height: 350px;' }, [
+            m('.f1.fw5.mb2.measure', 'Boulder Convention & Visitors Bureau'),
+            m('p', { class: 'f3 lh-copy mt0 mb0' }, '2440 Pearl Street'),
+            m('p', { class: 'f3 lh-copy mt0 mb0' }, 'Boulder, CO 80302'),
+            m('p', { class: 'f3 lh-copy mt0 mb0' }, '(303) 442-2911'),
+            m('a', { class: 'f3 lh-copy mt3 link dim mb0 link bg-white-30 br2 w-40 tc pa1 pointer b white', href: '/rfp', oncreate: m.route.link }, 'send rfp')
           ])
         ]),
-        m('div', {class: 'fl flex flex-column justify-center w-30 pb4', style: 'height: 100%; min-height: 350px; background: url("img/cvb/bg-sidebar-gradient.png"); background-size: cover;'}, [
-          m('ul', {class: 'list'}, [
-            m('li', {class: 'lh-copy'}, 'CVB'),
-            m('li', {class: 'lh-copy'}, 'Non-member based'),
-            m('li', {class: 'lh-copy'}, 'Boulder, CO')
+        m('div', { class: 'fl flex flex-column justify-center w-30 pb4', style: 'height: 100%; min-height: 350px; background: url("img/cvb/bg-sidebar-gradient.png"); background-size: cover;' }, [
+          m('ul', { class: 'list' }, [
+            m('li', { class: 'f1 lh-copy' }, 'CVB'),
+            m('li', { class: 'f1 lh-copy' }, 'Non-member based'),
+            m('li', { class: 'f1 lh-copy' }, 'Boulder, CO')
           ])
+        ])
+      ]),
+
+
+      m('.center.w-100', { style: 'max-width: 600px' }, [
+        m('div.hk-tabs.w-100', [
+          m('a.hk-tabs__tab--active', {
+            'draggable': 'false',
+            'className': 'hk-tabs__tab',
+            'onclick': state.setActive.bind(this, 'staff')
+          }, 'Sales staff'),
+          m('a.hk-tabs__tab', {
+            'draggable': 'false',
+            'className': 'hk-tabs__tab',
+            'onclick': state.setActive.bind(this, 'facts')
+          }, 'Quick Facts'),
+          m('a.hk-tabs__tab', {
+            'draggable': 'false',
+            'className': 'hk-tabs__tab',
+            'onclick': state.setActive.bind(this, 'awards')
+          }, 'Awards'),
+          m('a.hk-tabs__tab', {
+            'draggable': 'false',
+            'className': 'hk-tabs__tab',
+            'onclick': state.setActive.bind(this, 'updates')
+          }, 'Updates from Boulder'),
+          m('a.hk-tabs__tab', {
+            'draggable': 'false',
+            'className': 'hk-tabs__tab',
+            'onclick': state.setActive.bind(this, 'updates')
+          }, 'Promotions'),
+         
+        ]),
+        m('.fl.w-100', {style: 'min-height: 400px; margin-bottom: 25px; max-height: 400px; overflow-y: scroll'}, [
+          //quickfacts
+          m('.fl.w-100.pa4', { class: state.showFacts ? 'db' : 'dn' }, [
+            m('.f3.b.dark-gray', 'Quick Facts'),
+            m('.fl.w-100.ph1', [
+              //quickfacts
+              m('.fl.w-100.pa4', { class: state.showFacts ? 'db' : 'dn' }, [
+                m('.f4.near-black.lh-copy', 'Hotel Inventory: 2,000 rooms'),
+                m('.f4.near-black.lh-copy', 'Total meeting space: 3600sqft'),
+                m('.f4.near-black.lh-copy', 'Airport: Denvery International Airport (DEN)'),
+                m('.f4.near-black.lh-copy', 'Public Transportation: Green Ride Boulder [$34] or RTD Bus [$9]'),
+              ]),
+
+              m('.fl.w-100.pa4', { class: state.showAwards ? 'db' : 'dn' }, [
+                m('.f3.b.dark-gray', 'Awards'),
+                m('.fl.w-100.mt2', [
+                  m('.flex.w-100.items-center.mb2', [
+                    m('.flex.w-100.ph4.flex-column', [
+                      m('.f4.near-black.lh-copy.b', 'No. 10 Highest Well Being Communities'),
+                      m('.f4.near-black.lh-copy', 'Gallup-Healthways Well Being Index, March 2017'),
+                    ]),
+                  ]),
+                ]),
+                m('.fl.w-100.mt2', { class: state.showUpdates ? 'db' : 'dn' }, [
+                  m('.flex.w-100.items-center.mb2', [
+                    m('.flex.w-100.ph4.flex-column', [
+                      m('.f4.near-black.lh-copy.b', '18 Best Cities in America for Solo Travelers'),
+                      m('.f4.near-black.lh-copy', 'TravelAndLeisure.com, December2016'),
+                    ]),
+                  ]),
+                ]),
+                m('.fl.w-100.mt2', { class: state.showPromos ? 'db' : 'dn' }, [
+                  m('.flex.w-100.items-center.mb2', [
+                    m('.flex.w-100.ph4.flex-column', [
+                      m('.f4.near-black.lh-copy.b', '18 Best Cities in America for Solo Travelers'),
+                      m('.f4.near-black.lh-copy', 'TravelAndLeisure.com, December2016'),
+                    ]),
+                  ]),
+                ]),
+              ]),
+
+              m('.fl.w-100.pa4.dn', { class: state.showStaff ? 'db' : 'dn' }, [
+                m('.f3.b.dark-gray', 'Sales staff'),
+                m('.fl.w-100.mt2', [
+                  m('.flex.w-100.items-center.mb2', [
+                    m('img.ba.b--light-gray.bw4', { style: 'border-radius: 50%', src: 'https://randomuser.me/api/portraits/women/71.jpg' }),
+                    m('.flex.w-100.ph4.flex-column', [
+                      m('.f4.near-black.lh-copy.b', 'Andrew Heidt'),
+                      m('.f4.near-black.lh-copy', 'Director of Group Sales and Marketing'),
+                      m('.f4.near-black.lh-copy', '303-938-2071'),
+                    ]),
+                  ]),
+                  m('.flex.w-100.items-center.mb2', [
+                    m('img.ba.b--light-gray.bw4', { style: 'border-radius: 50%', src: 'https://randomuser.me/api/portraits/women/71.jpg' }),
+                    m('.flex.w-100.ph4.flex-column', [
+                      m('.f4.near-black.lh-copy.b', 'Andrew Heidt'),
+                      m('.f4.near-black.lh-copy', 'Director of Group Sales and Marketing'),
+                      m('.f4.near-black.lh-copy', '303-938-2071'),
+                    ]),
+                  ]),
+                  m('.flex.w-100.items-center.mb2', [
+                    m('img.ba.b--light-gray.bw4', { style: 'border-radius: 50%', src: 'https://randomuser.me/api/portraits/women/71.jpg' }),
+                    m('.flex.w-100.ph4.flex-column', [
+                      m('.f4.near-black.lh-copy.b', 'Andrew Heidt'),
+                      m('.f4.near-black.lh-copy', 'Director of Group Sales and Marketing'),
+                      m('.f4.near-black.lh-copy', '303-938-2071'),
+                    ]),
+                  ]),
+                  m('.flex.w-100.items-center.mb2', [
+                    m('img.ba.b--light-gray.bw4', { style: 'border-radius: 50%', src: 'https://randomuser.me/api/portraits/women/71.jpg' }),
+                    m('.flex.w-100.ph4.flex-column', [
+                      m('.f4.near-black.lh-copy.b', 'Andrew Heidt'),
+                      m('.f4.near-black.lh-copy', 'Director of Group Sales and Marketing'),
+                      m('.f4.near-black.lh-copy', '303-938-2071'),
+                    ]),
+                  ]),
+                ])
+              ]),
+              m('.fl.w-100.bg-light-gray.pa4', { class: state.showUpdates ? 'db' : 'dn' }, [
+                m('.center.w-100', { style: 'max-width: 600px' }, [
+                  m('.f2.fw5.purple.mb2', 'Updates from Boulder'),
+                  m('.f5.fw3.mb2', 'Number 10 Highest Well Being Communities'),
+                  m('.f5.fw4.lh-copy', 'The mission of the Boulder Convention & Visitors Bureau (CVB) is to advocate and provide leadership to develop and promote the natural environment, art/culture, historic and visitor potential for the express purpose of aiding the Boulder economy.  Whether you’re a visitor, meeting planner or Boulder tourism business, we’re here to serve you. You’ll find that our website is filled with information, but please don’t hesitate to reach out should you need personal assistance.'),
+                ]),
+
+              ]),
+            ])
+          ]),
+
+          m('.fl.w-100.pa4', { class: state.showAwards ? 'db' : 'dn' }, [
+            m('.f3.b.dark-gray', 'Awards'),
+            m('.fl.w-100.mt2', [
+              m('.flex.w-100.items-center.mb2', [
+                m('.flex.w-100.ph4.flex-column', [
+                  m('.f4.near-black.lh-copy.b', 'No. 10 Highest Well Being Communities'),
+                  m('.f4.near-black.lh-copy', 'Gallup-Healthways Well Being Index, March 2017'),
+                ]),
+              ]),
+            ]),
+            m('.fl.w-100.mt2', { class: state.showUpdates ? 'db' : 'dn' }, [
+              m('.flex.w-100.items-center.mb2', [
+                m('.flex.w-100.ph4.flex-column', [
+                  m('.f4.near-black.lh-copy.b', '18 Best Cities in America for Solo Travelers'),
+                  m('.f4.near-black.lh-copy', 'TravelAndLeisure.com, December2016'),
+                ]),
+              ]),
+            ]),
+            m('.fl.w-100.mt2', { class: state.showPromos ? 'db' : 'dn' }, [
+              m('.flex.w-100.items-center.mb2', [
+                m('.flex.w-100.ph4.flex-column', [
+                  m('.f4.near-black.lh-copy.b', '18 Best Cities in America for Solo Travelers'),
+                  m('.f4.near-black.lh-copy', 'TravelAndLeisure.com, December2016'),
+                ]),
+              ]),
+            ]),
+          ]),
+
+          m('.fl.w-100.pa4.dn', { class: state.showStaff ? 'db' : 'dn' }, [
+            m('.f3.b.dark-gray', 'Sales staff'),
+            m('.fl.w-100.mt2', [
+              m('.flex.w-100.items-center.mb2', [
+                m('img.ba.b--light-gray.bw4', { style: 'border-radius: 50%', src: 'https://randomuser.me/api/portraits/women/71.jpg' }),
+                m('.flex.w-100.ph4.flex-column', [
+                  m('.f4.near-black.lh-copy.b', 'Andrew Heidt'),
+                  m('.f4.near-black.lh-copy', 'Director of Group Sales and Marketing'),
+                  m('.f4.near-black.lh-copy', '303-938-2071'),
+                ]),
+              ]),
+              m('.flex.w-100.items-center.mb2', [
+                m('img.ba.b--light-gray.bw4', { style: 'border-radius: 50%', src: 'https://randomuser.me/api/portraits/women/71.jpg' }),
+                m('.flex.w-100.ph4.flex-column', [
+                  m('.f4.near-black.lh-copy.b', 'Andrew Heidt'),
+                  m('.f4.near-black.lh-copy', 'Director of Group Sales and Marketing'),
+                  m('.f4.near-black.lh-copy', '303-938-2071'),
+                ]),
+              ]),
+              m('.flex.w-100.items-center.mb2', [
+                m('img.ba.b--light-gray.bw4', { style: 'border-radius: 50%', src: 'https://randomuser.me/api/portraits/women/71.jpg' }),
+                m('.flex.w-100.ph4.flex-column', [
+                  m('.f4.near-black.lh-copy.b', 'Andrew Heidt'),
+                  m('.f4.near-black.lh-copy', 'Director of Group Sales and Marketing'),
+                  m('.f4.near-black.lh-copy', '303-938-2071'),
+                ]),
+              ]),
+              m('.flex.w-100.items-center.mb2', [
+                m('img.ba.b--light-gray.bw4', { style: 'border-radius: 50%', src: 'https://randomuser.me/api/portraits/women/71.jpg' }),
+                m('.flex.w-100.ph4.flex-column', [
+                  m('.f4.near-black.lh-copy.b', 'Andrew Heidt'),
+                  m('.f4.near-black.lh-copy', 'Director of Group Sales and Marketing'),
+                  m('.f4.near-black.lh-copy', '303-938-2071'),
+                ]),
+              ]),
+            ])
+          ]),
+          m('.fl.w-100.bg-light-gray.pa4', { class: state.showUpdates ? 'db' : 'dn' }, [
+            m('.center.w-100', { style: 'max-width: 600px' }, [
+              m('.f2.fw5.purple.mb2', 'Updates from Boulder'),
+              m('.f5.fw3.mb2', 'Number 10 Highest Well Being Communities'),
+              m('.f5.fw4.lh-copy', 'The mission of the Boulder Convention & Visitors Bureau (CVB) is to advocate and provide leadership to develop and promote the natural environment, art/culture, historic and visitor potential for the express purpose of aiding the Boulder economy.  Whether you’re a visitor, meeting planner or Boulder tourism business, we’re here to serve you. You’ll find that our website is filled with information, but please don’t hesitate to reach out should you need personal assistance.'),
+            ]),
+
+          ]),
         ])
       ]),
       //tweets!
-      m('div', {class: 'fl w-30 relative bg-purple near-white h-100 pa3', style: 'height: 530px'}, [
-        m('div', {class: 'b ttu tracked fl w-100'}, [
+      m('div', { class: 'fl w-30 relative bg-purple near-white h-100 pa3', style: 'height: 530px' }, [
+        m('div', { class: 'b ttu tracked fl w-100' }, [
           //m('img', {class: 'br4 fl mr2', src: Feed.profileImage}),
-          m('h1', {class: 'fl f4'}, '@visitBoulder')
+          m('h1', { class: 'fl f4' }, '@visitBoulder')
         ]),
-        m('div', {class: 'fl w-100 pa2'}, [
+        m('div', { class: 'fl w-100 pa2' }, [
           m('a.twitter-timeline[data-theme=dark][data-height=400][data-link-color=#981CEB][href=https://twitter.com/VisitBoulder]'),
-          m('script[async]', {src:'//platform.twitter.com/widgets.js', charset: "utf-8"})
-           //m('h1', {class: 'f4 fw4 measure-narrow'}, Feed.active.text)
+          m('script[async]', { src: '//platform.twitter.com/widgets.js', charset: 'utf-8' })
+          //m('h1', {class: 'f4 fw4 measure-narrow'}, Feed.active.text)
         ])
       ]),
       // slideshow
-      m('div', {class: 'fr w-70 relative', style: 'background: url('+ SlideshowBoulder.active.src+'); overflow: hidden !important; height: 530px; max-height: 530px; background-size: cover; background-position: center center'}, [
-        m('div', {class: 'measure-narrow absolute right-0 w-50 near-white flex flex-column justify-center', style: 'top:  0; bottom: 0'}, [
+      m('div', { class: 'fr w-70 relative', style: 'background: url(' + SlideshowBoulder.active.src + '); overflow: hidden !important; height: 530px; max-height: 530px; background-size: cover; background-position: center center' }, [
+        m('div', { class: 'measure-narrow absolute right-0 w-50 near-white flex flex-column justify-center', style: 'top:  0; bottom: 0' }, [
         ])
       ]),
-      // fact panels
-      m('div', {class: 'fl w-100 pa3 mt4 mb4'}, [
-        m('div', {class: 'fl ml3 shadow-3 pa3 white relative shadow-custom br4', style: ' width: 47%; height: 600px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
-          m('h1', {class: 'f4'}, 'Quick Facts'),
-          m('p', {onclick: Calendar.toggleModal, class: 'absolute top-0 right-2 ba bw1 pa2 br2 link dim pointer'}, 'Convention Calendar'),
-          m('span', {class: 'fl w-100'}, [
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Hotel Inventory:'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, '2,000 rooms'),
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Total meeting Space SF:'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, '36,000 SF'),
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Airport:'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, 'Denver International Airport (DEN)'),
-            m('p', {class: 'fl h1 mb1 w-50 tr ph2 b ttu tracked'}, 'Public Transportation:'),
-            m('p', {class: 'fr h1 mb1 w-50 ph2'}, 'Green Ride Boulder ($34) or RTD Bus ($9)'),
-            m('p', {class: 'tc f3 underline w-100 fl fw4'}, 'Awards'),
-            //2016
-            m('p', {class: 'fl f6 h1 mb4 w-50 tr ph2 b ttu tracked'}, '#10 "Highest Well Being Communities"'),
-            m('p', {class: 'fr h1 mb4 w-50 ph2'}, 'Gallup-Healthways Well-Being Index, March 2017'),
-            //2017
-            m('p', {class: 'fl f6 h2 mb4 w-50 tr ph2 b ttu tracked'}, '18 Best Cities in America for Solo Travelers'),
-            m('p', {class: 'fr h2 mb4 w-50 ph2 flex items-center'}, 'TravelandLeisure.com, December 2016'),
-            m('p', {class: 'fl f6 h1 mb4 w-50 tr ph2 b ttu tracked'}, 'The Best US Cities to Spend a Weekend'),
-            m('p', {class: 'fr h1 mb4 w-50 ph2'}, 'Thrillist, March 2016'),
-            m('p', {class: 'fl f6 h1 mb4 w-50 tr ph2 b ttu tracked'}, 'Top 15 Cities for Seasonal Brews'),
-            m('p', {class: 'fr h1 mb4 w-50 ph2'}, 'Travelocity.com, November 2016'),
-
-
-          ])
-        ]),
-        m('div', {class: 'fr mr3 shadow-6 pa3 white relative shadow-custom br4', style: 'width: 47%; height: 600px; background: url("img/cvb/bg-quick_facts.png"); background-size: cover;'}, [
-          m('h1', {class: 'f4'}, 'Updates from Boulder'),
-          m('div', {class: 'fl w-100', style: 'height: 500px; overflow-x: scroll'}, [
-            m('h1', {class: 'white-70 lh-title'}, "Number 10 'Highest Well Being Communities'"),
-            m('p', {class: 'lh-copy f6 measure pt3 center ph4'}, "The mission of the Boulder Convention & Visitors Bureau (CVB) is to advocate and provide leadership to develop and promote the natural environment, art/culture, historic and visitor potential for the express purpose of aiding the Boulder economy."),
-            m('p', {class: 'lh-copy f6 measure pt1 center ph4'}, "Whether you’re a visitor, meeting planner or Boulder tourism business, we’re here to serve you. You’ll find that our website is filled with information, but please don’t hesitate to reach out should you need personal assistance.")
-          ])
-        ]),
-      ]),
-      // TabsBoulder
-      m('div', {class: 'fl w-100 bg-light-gray'}, [
-        m('div#tabs_container', {class: 'fl w-100'}, [
-          TabsBoulder.list.map(function(t) {
-            return m('div', {onclick: TabsBoulder.swap.bind(TabsBoulder, t), class: TabsBoulder.isActive(t.id) ? 'sans-serif f5 flex justify-center items-center ttu tracked link pointer h3 fl dib bg-active white w-20 tc' : 'sans-serif f5 flex justify-center items-center ttu tracked link pointer h3 fl dib bg-b-purple-1 white w-20 tc', style: 'border-right: 1px solid rgba(255, 255, 255, 0.3)'}, [
-              m('div', {class: 'h3 w-100', style: 'padding-top: 25px'}, t.title)
-            ])
-          })
-        ]),
-        m('div#tabs_content', {class: 'fl w-100 h6', style: 'background: rgb(98, 103, 160)'}, [
-          m('div', {class: 'pa3 near-white'}, [
-            m('h1', {class: 'measure center lh-copy tc'}, TabsBoulder.current.title),
-            m('p', {class: 'measure center lh-copy pre tc'}, TabsBoulder.current.content)
-          ])
-        ]),
-      ])
     ])
   }
 }
 
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 158 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var asn1 = __webpack_require__(34);
@@ -46087,7 +46519,7 @@ function Entity(name, body) {
 Entity.prototype._createNamed = function createNamed(base) {
   var named;
   try {
-    named = __webpack_require__(323).runInThisContext(
+    named = __webpack_require__(326).runInThisContext(
       '(function ' + this.name + '(entity) {\n' +
       '  this._initNamed(entity);\n' +
       '})'
@@ -46131,7 +46563,7 @@ Entity.prototype.encode = function encode(data, enc, /* internal */ reporter) {
 
 
 /***/ }),
-/* 159 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Reporter = __webpack_require__(35).Reporter;
@@ -46771,7 +47203,7 @@ Node.prototype._isPrintstr = function isPrintstr(str) {
 
 
 /***/ }),
-/* 160 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(2);
@@ -46898,10 +47330,10 @@ ReporterError.prototype.rethrow = function rethrow(msg) {
 
 
 /***/ }),
-/* 161 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var constants = __webpack_require__(85);
+var constants = __webpack_require__(86);
 
 exports.tagClass = {
   0: 'universal',
@@ -46946,23 +47378,23 @@ exports.tagByName = constants._reverse(exports.tag);
 
 
 /***/ }),
-/* 162 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var decoders = exports;
 
-decoders.der = __webpack_require__(86);
-decoders.pem = __webpack_require__(163);
+decoders.der = __webpack_require__(87);
+decoders.pem = __webpack_require__(166);
 
 
 /***/ }),
-/* 163 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(2);
 var Buffer = __webpack_require__(0).Buffer;
 
-var DERDecoder = __webpack_require__(86);
+var DERDecoder = __webpack_require__(87);
 
 function PEMDecoder(entity) {
   DERDecoder.call(this, entity);
@@ -47011,22 +47443,22 @@ PEMDecoder.prototype.decode = function decode(data, options) {
 
 
 /***/ }),
-/* 164 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var encoders = exports;
 
-encoders.der = __webpack_require__(87);
-encoders.pem = __webpack_require__(165);
+encoders.der = __webpack_require__(88);
+encoders.pem = __webpack_require__(168);
 
 
 /***/ }),
-/* 165 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var inherits = __webpack_require__(2);
 
-var DEREncoder = __webpack_require__(87);
+var DEREncoder = __webpack_require__(88);
 
 function PEMEncoder(entity) {
   DEREncoder.call(this, entity);
@@ -47048,16 +47480,16 @@ PEMEncoder.prototype.encode = function encode(data, options) {
 
 
 /***/ }),
-/* 166 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Copyright 2011 Mark Cavage <mcavage@gmail.com> All rights reserved.
 
-var errors = __webpack_require__(61);
-var types = __webpack_require__(62);
+var errors = __webpack_require__(64);
+var types = __webpack_require__(65);
 
-var Reader = __webpack_require__(167);
-var Writer = __webpack_require__(168);
+var Reader = __webpack_require__(170);
+var Writer = __webpack_require__(171);
 
 
 ///--- Exports
@@ -47081,15 +47513,15 @@ for (var e in errors) {
 
 
 /***/ }),
-/* 167 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2011 Mark Cavage <mcavage@gmail.com> All rights reserved.
 
 var assert = __webpack_require__(16);
 
-var ASN1 = __webpack_require__(62);
-var errors = __webpack_require__(61);
+var ASN1 = __webpack_require__(65);
+var errors = __webpack_require__(64);
 
 
 ///--- Globals
@@ -47349,14 +47781,14 @@ module.exports = Reader;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 168 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2011 Mark Cavage <mcavage@gmail.com> All rights reserved.
 
 var assert = __webpack_require__(16);
-var ASN1 = __webpack_require__(62);
-var errors = __webpack_require__(61);
+var ASN1 = __webpack_require__(65);
+var errors = __webpack_require__(64);
 
 
 ///--- Globals
@@ -47672,7 +48104,7 @@ module.exports = Writer;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 169 */
+/* 172 */
 /***/ (function(module, exports) {
 
 /**
@@ -48175,7 +48607,7 @@ return _;
 
 
 /***/ }),
-/* 170 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -48393,14 +48825,14 @@ module.exports.canonicalizeResource = canonicalizeResource
 
 
 /***/ }),
-/* 171 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer, process) {var aws4 = exports,
     url = __webpack_require__(19),
     querystring = __webpack_require__(38),
     crypto = __webpack_require__(7),
-    lru = __webpack_require__(172),
+    lru = __webpack_require__(175),
     credentialsCache = lru(1000)
 
 // http://docs.amazonwebservices.com/general/latest/gr/signature-version-4.html
@@ -48732,7 +49164,7 @@ aws4.sign = function(request, credentials) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer, __webpack_require__(4)))
 
 /***/ }),
-/* 172 */
+/* 175 */
 /***/ (function(module, exports) {
 
 module.exports = function(size) {
@@ -48834,7 +49266,7 @@ function DoublyLinkedNode(key, val) {
 
 
 /***/ }),
-/* 173 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48955,16 +49387,16 @@ function fromByteArray (uint8) {
 
 
 /***/ }),
-/* 174 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var aes = __webpack_require__(47)
+/* WEBPACK VAR INJECTION */(function(Buffer) {var aes = __webpack_require__(48)
 var Transform = __webpack_require__(29)
 var inherits = __webpack_require__(2)
-var modes = __webpack_require__(48)
-var StreamCipher = __webpack_require__(97)
-var AuthCipher = __webpack_require__(90)
-var ebtk = __webpack_require__(52)
+var modes = __webpack_require__(49)
+var StreamCipher = __webpack_require__(98)
+var AuthCipher = __webpack_require__(91)
+var ebtk = __webpack_require__(53)
 
 inherits(Decipher, Transform)
 function Decipher (mode, key, iv) {
@@ -49050,14 +49482,14 @@ function unpad (last) {
 }
 
 var modelist = {
-  ECB: __webpack_require__(95),
-  CBC: __webpack_require__(91),
-  CFB: __webpack_require__(92),
-  CFB8: __webpack_require__(94),
-  CFB1: __webpack_require__(93),
-  OFB: __webpack_require__(96),
-  CTR: __webpack_require__(49),
-  GCM: __webpack_require__(49)
+  ECB: __webpack_require__(96),
+  CBC: __webpack_require__(92),
+  CFB: __webpack_require__(93),
+  CFB8: __webpack_require__(95),
+  CFB1: __webpack_require__(94),
+  OFB: __webpack_require__(97),
+  CTR: __webpack_require__(50),
+  GCM: __webpack_require__(50)
 }
 
 function createDecipheriv (suite, password, iv) {
@@ -49099,16 +49531,16 @@ exports.createDecipheriv = createDecipheriv
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 175 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var aes = __webpack_require__(47)
+/* WEBPACK VAR INJECTION */(function(Buffer) {var aes = __webpack_require__(48)
 var Transform = __webpack_require__(29)
 var inherits = __webpack_require__(2)
-var modes = __webpack_require__(48)
-var ebtk = __webpack_require__(52)
-var StreamCipher = __webpack_require__(97)
-var AuthCipher = __webpack_require__(90)
+var modes = __webpack_require__(49)
+var ebtk = __webpack_require__(53)
+var StreamCipher = __webpack_require__(98)
+var AuthCipher = __webpack_require__(91)
 inherits(Cipher, Transform)
 function Cipher (mode, key, iv) {
   if (!(this instanceof Cipher)) {
@@ -49179,14 +49611,14 @@ Splitter.prototype.flush = function () {
   return out
 }
 var modelist = {
-  ECB: __webpack_require__(95),
-  CBC: __webpack_require__(91),
-  CFB: __webpack_require__(92),
-  CFB8: __webpack_require__(94),
-  CFB1: __webpack_require__(93),
-  OFB: __webpack_require__(96),
-  CTR: __webpack_require__(49),
-  GCM: __webpack_require__(49)
+  ECB: __webpack_require__(96),
+  CBC: __webpack_require__(92),
+  CFB: __webpack_require__(93),
+  CFB8: __webpack_require__(95),
+  CFB1: __webpack_require__(94),
+  OFB: __webpack_require__(97),
+  CTR: __webpack_require__(50),
+  GCM: __webpack_require__(50)
 }
 
 function createCipheriv (suite, password, iv) {
@@ -49228,7 +49660,7 @@ exports.createCipher = createCipher
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 176 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var zeros = new Buffer(16)
@@ -49333,14 +49765,14 @@ function xor (a, b) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 177 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ebtk = __webpack_require__(52)
-var aes = __webpack_require__(63)
-var DES = __webpack_require__(178)
-var desModes = __webpack_require__(179)
-var aesModes = __webpack_require__(48)
+var ebtk = __webpack_require__(53)
+var aes = __webpack_require__(66)
+var DES = __webpack_require__(181)
+var desModes = __webpack_require__(182)
+var aesModes = __webpack_require__(49)
 function createCipher (suite, password) {
   var keyLen, ivLen
   suite = suite.toLowerCase()
@@ -49412,11 +49844,11 @@ exports.listCiphers = exports.getCiphers = getCiphers
 
 
 /***/ }),
-/* 178 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var CipherBase = __webpack_require__(29)
-var des = __webpack_require__(68)
+var des = __webpack_require__(71)
 var inherits = __webpack_require__(2)
 
 var modes = {
@@ -49462,7 +49894,7 @@ DES.prototype._final = function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 179 */
+/* 182 */
 /***/ (function(module, exports) {
 
 exports['des-ecb'] = {
@@ -49492,15 +49924,15 @@ exports['des-ede'] = {
 
 
 /***/ }),
-/* 180 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var _algos = __webpack_require__(98)
+/* WEBPACK VAR INJECTION */(function(Buffer) {var _algos = __webpack_require__(99)
 var createHash = __webpack_require__(30)
 var inherits = __webpack_require__(2)
-var sign = __webpack_require__(181)
+var sign = __webpack_require__(184)
 var stream = __webpack_require__(13)
-var verify = __webpack_require__(182)
+var verify = __webpack_require__(185)
 
 var algos = {}
 Object.keys(_algos).forEach(function (key) {
@@ -49602,15 +50034,15 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 181 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// much of this based on https://github.com/indutny/self-signed/blob/gh-pages/lib/rsa.js
-var createHmac = __webpack_require__(67)
-var crt = __webpack_require__(64)
-var curves = __webpack_require__(99)
+var createHmac = __webpack_require__(70)
+var crt = __webpack_require__(67)
+var curves = __webpack_require__(100)
 var elliptic = __webpack_require__(15)
-var parseKeys = __webpack_require__(55)
+var parseKeys = __webpack_require__(56)
 
 var BN = __webpack_require__(6)
 var EC = elliptic.ec
@@ -49794,13 +50226,13 @@ module.exports.makeKey = makeKey
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 182 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// much of this based on https://github.com/indutny/self-signed/blob/gh-pages/lib/rsa.js
-var curves = __webpack_require__(99)
+var curves = __webpack_require__(100)
 var elliptic = __webpack_require__(15)
-var parseKeys = __webpack_require__(55)
+var parseKeys = __webpack_require__(56)
 
 var BN = __webpack_require__(6)
 var EC = elliptic.ec
@@ -49904,14 +50336,14 @@ module.exports = verify
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 183 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(process, Buffer) {var msg = __webpack_require__(111);
-var zstream = __webpack_require__(270);
-var zlib_deflate = __webpack_require__(265);
-var zlib_inflate = __webpack_require__(267);
-var constants = __webpack_require__(264);
+/* WEBPACK VAR INJECTION */(function(process, Buffer) {var msg = __webpack_require__(112);
+var zstream = __webpack_require__(273);
+var zlib_deflate = __webpack_require__(268);
+var zlib_inflate = __webpack_require__(270);
+var constants = __webpack_require__(267);
 
 for (var key in constants) {
   exports[key] = constants[key];
@@ -50147,7 +50579,7 @@ exports.Zlib = Zlib;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 184 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer, process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -50171,9 +50603,9 @@ exports.Zlib = Zlib;
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var Transform = __webpack_require__(119);
+var Transform = __webpack_require__(120);
 
-var binding = __webpack_require__(183);
+var binding = __webpack_require__(186);
 var util = __webpack_require__(3);
 var assert = __webpack_require__(16).ok;
 
@@ -50764,7 +51196,7 @@ util.inherits(Unzip, Zlib);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer, __webpack_require__(4)))
 
 /***/ }),
-/* 185 */
+/* 188 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -50834,12 +51266,12 @@ module.exports = {
 
 
 /***/ }),
-/* 186 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var util = __webpack_require__(3);
 var Stream = __webpack_require__(13).Stream;
-var DelayedStream = __webpack_require__(189);
+var DelayedStream = __webpack_require__(192);
 
 module.exports = CombinedStream;
 function CombinedStream() {
@@ -51029,7 +51461,7 @@ CombinedStream.prototype._emitError = function(err) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 187 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var elliptic = __webpack_require__(15);
@@ -51158,7 +51590,7 @@ function formatReturnValue(bn, enc, len) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 188 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51199,7 +51631,7 @@ exports.hash = hash;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 189 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Stream = __webpack_require__(13).Stream;
@@ -51312,7 +51744,7 @@ DelayedStream.prototype._checkIfMaxDataSizeExceeded = function() {
 
 
 /***/ }),
-/* 190 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51384,7 +51816,7 @@ proto._update = function _update(inp, inOff, out, outOff) {
 
 
 /***/ }),
-/* 191 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51532,7 +51964,7 @@ Cipher.prototype._finalDecrypt = function _finalDecrypt() {
 
 
 /***/ }),
-/* 192 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51541,7 +51973,7 @@ Cipher.prototype._finalDecrypt = function _finalDecrypt() {
 var assert = __webpack_require__(25);
 var inherits = __webpack_require__(2);
 
-var des = __webpack_require__(68);
+var des = __webpack_require__(71);
 var utils = des.utils;
 var Cipher = des.Cipher;
 
@@ -51682,7 +52114,7 @@ DES.prototype._decrypt = function _decrypt(state, lStart, rStart, out, off) {
 
 
 /***/ }),
-/* 193 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51691,7 +52123,7 @@ DES.prototype._decrypt = function _decrypt(state, lStart, rStart, out, off) {
 var assert = __webpack_require__(25);
 var inherits = __webpack_require__(2);
 
-var des = __webpack_require__(68);
+var des = __webpack_require__(71);
 var Cipher = des.Cipher;
 var DES = des.DES;
 
@@ -51744,7 +52176,7 @@ EDE.prototype._unpad = DES.prototype._unpad;
 
 
 /***/ }),
-/* 194 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52007,13 +52439,13 @@ exports.padSplit = function padSplit(num, size, group) {
 
 
 /***/ }),
-/* 195 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var generatePrime = __webpack_require__(101)
-var primes = __webpack_require__(235)
+/* WEBPACK VAR INJECTION */(function(Buffer) {var generatePrime = __webpack_require__(102)
+var primes = __webpack_require__(238)
 
-var DH = __webpack_require__(196)
+var DH = __webpack_require__(199)
 
 function getDiffieHellman (mod) {
   var prime = new Buffer(primes[mod].prime, 'hex')
@@ -52056,18 +52488,18 @@ exports.createDiffieHellman = exports.DiffieHellman = createDiffieHellman
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 196 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var BN = __webpack_require__(6);
-var MillerRabin = __webpack_require__(107);
+var MillerRabin = __webpack_require__(108);
 var millerRabin = new MillerRabin();
 var TWENTYFOUR = new BN(24);
 var ELEVEN = new BN(11);
 var TEN = new BN(10);
 var THREE = new BN(3);
 var SEVEN = new BN(7);
-var primes = __webpack_require__(101);
+var primes = __webpack_require__(102);
 var randomBytes = __webpack_require__(39);
 module.exports = DH;
 
@@ -52227,14 +52659,14 @@ function formatReturnValue(bn, enc) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 197 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Named EC curves
 
 // Requires ec.js, jsbn.js, and jsbn2.js
 var BigInteger = __webpack_require__(24).BigInteger
-var ECCurveFp = __webpack_require__(50).ECCurveFp
+var ECCurveFp = __webpack_require__(51).ECCurveFp
 
 
 // ----------------
@@ -52403,7 +52835,7 @@ module.exports = {
 
 
 /***/ }),
-/* 198 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52785,13 +53217,13 @@ BasePoint.prototype.dblp = function dblp(k) {
 
 
 /***/ }),
-/* 199 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var curve = __webpack_require__(51);
+var curve = __webpack_require__(52);
 var elliptic = __webpack_require__(15);
 var BN = __webpack_require__(6);
 var inherits = __webpack_require__(2);
@@ -53225,13 +53657,13 @@ Point.prototype.mixedAdd = Point.prototype.add;
 
 
 /***/ }),
-/* 200 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var curve = __webpack_require__(51);
+var curve = __webpack_require__(52);
 var BN = __webpack_require__(6);
 var inherits = __webpack_require__(2);
 var Base = curve.base;
@@ -53412,13 +53844,13 @@ Point.prototype.getX = function getX() {
 
 
 /***/ }),
-/* 201 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var curve = __webpack_require__(51);
+var curve = __webpack_require__(52);
 var elliptic = __webpack_require__(15);
 var BN = __webpack_require__(6);
 var inherits = __webpack_require__(2);
@@ -54357,7 +54789,7 @@ JPoint.prototype.isInfinity = function isInfinity() {
 
 
 /***/ }),
-/* 202 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54530,7 +54962,7 @@ defineCurve('ed25519', {
 
 var pre;
 try {
-  pre = __webpack_require__(209);
+  pre = __webpack_require__(212);
 } catch (e) {
   pre = undefined;
 }
@@ -54569,20 +55001,20 @@ defineCurve('secp256k1', {
 
 
 /***/ }),
-/* 203 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var BN = __webpack_require__(6);
-var HmacDRBG = __webpack_require__(224);
+var HmacDRBG = __webpack_require__(227);
 var elliptic = __webpack_require__(15);
 var utils = elliptic.utils;
 var assert = utils.assert;
 
-var KeyPair = __webpack_require__(204);
-var Signature = __webpack_require__(205);
+var KeyPair = __webpack_require__(207);
+var Signature = __webpack_require__(208);
 
 function EC(options) {
   if (!(this instanceof EC))
@@ -54816,7 +55248,7 @@ EC.prototype.getKeyRecoveryParam = function(e, signature, Q, enc) {
 
 
 /***/ }),
-/* 204 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54942,7 +55374,7 @@ KeyPair.prototype.inspect = function inspect() {
 
 
 /***/ }),
-/* 205 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -55084,7 +55516,7 @@ Signature.prototype.toDER = function toDER(enc) {
 
 
 /***/ }),
-/* 206 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -55095,8 +55527,8 @@ var elliptic = __webpack_require__(15);
 var utils = elliptic.utils;
 var assert = utils.assert;
 var parseBytes = utils.parseBytes;
-var KeyPair = __webpack_require__(207);
-var Signature = __webpack_require__(208);
+var KeyPair = __webpack_require__(210);
+var Signature = __webpack_require__(211);
 
 function EDDSA(curve) {
   assert(curve === 'ed25519', 'only tested with ed25519 so far');
@@ -55209,7 +55641,7 @@ EDDSA.prototype.isPoint = function isPoint(val) {
 
 
 /***/ }),
-/* 207 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -55312,7 +55744,7 @@ module.exports = KeyPair;
 
 
 /***/ }),
-/* 208 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -55385,7 +55817,7 @@ module.exports = Signature;
 
 
 /***/ }),
-/* 209 */
+/* 212 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -56171,7 +56603,7 @@ module.exports = {
 
 
 /***/ }),
-/* 210 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56180,7 +56612,7 @@ module.exports = {
 var utils = exports;
 var BN = __webpack_require__(6);
 var minAssert = __webpack_require__(25);
-var minUtils = __webpack_require__(108);
+var minUtils = __webpack_require__(109);
 
 utils.assert = minAssert;
 utils.toArray = minUtils.toArray;
@@ -56298,7 +56730,7 @@ utils.intFromLE = intFromLE;
 
 
 /***/ }),
-/* 211 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = ForeverAgent
@@ -56308,7 +56740,7 @@ var util = __webpack_require__(3)
   , Agent = __webpack_require__(44).Agent
   , net = __webpack_require__(32)
   , tls = __webpack_require__(32)
-  , AgentSSL = __webpack_require__(71).Agent
+  , AgentSSL = __webpack_require__(74).Agent
   
 function getConnectionName(host, port) {  
   var name = ''
@@ -56442,7 +56874,7 @@ function createConnectionSSL (port, host, options) {
 
 
 /***/ }),
-/* 212 */
+/* 215 */
 /***/ (function(module, exports) {
 
 /* eslint-env browser */
@@ -56450,7 +56882,7 @@ module.exports = typeof self == 'object' ? self.FormData : window.FormData;
 
 
 /***/ }),
-/* 213 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var util = __webpack_require__(3)
@@ -56517,10 +56949,10 @@ module.exports = function() {
 
 
 /***/ }),
-/* 214 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isProperty = __webpack_require__(233)
+var isProperty = __webpack_require__(236)
 
 var gen = function(obj, prop) {
   return isProperty(prop) ? obj+'.'+prop : obj+'['+JSON.stringify(prop)+']'
@@ -56535,7 +56967,7 @@ module.exports = gen
 
 
 /***/ }),
-/* 215 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56552,15 +56984,15 @@ module.exports = ValidationError
 
 
 /***/ }),
-/* 216 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Promise = __webpack_require__(276)
-var runner = __webpack_require__(217)
-var schemas = __webpack_require__(104)
+var Promise = __webpack_require__(279)
+var runner = __webpack_require__(220)
+var schemas = __webpack_require__(105)
 
 var promisify = function (schema) {
   return function (data) {
@@ -56581,15 +57013,15 @@ Object.keys(schemas).map(function (name) {
 
 
 /***/ }),
-/* 217 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var schemas = __webpack_require__(104)
-var ValidationError = __webpack_require__(215)
-var validator = __webpack_require__(232)
+var schemas = __webpack_require__(105)
+var ValidationError = __webpack_require__(218)
+var validator = __webpack_require__(235)
 
 module.exports = function (schema, data, cb) {
   // default value
@@ -56617,7 +57049,7 @@ module.exports = function (schema, data, cb) {
 
 
 /***/ }),
-/* 218 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var hash = __webpack_require__(23);
@@ -56714,7 +57146,7 @@ BlockHash.prototype._pad = function pad() {
 
 
 /***/ }),
-/* 219 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var hmac = exports;
@@ -56768,7 +57200,7 @@ Hmac.prototype.digest = function digest(enc) {
 
 
 /***/ }),
-/* 220 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var hash = __webpack_require__(23);
@@ -56918,7 +57350,7 @@ var sh = [
 
 
 /***/ }),
-/* 221 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var hash = __webpack_require__(23);
@@ -57488,7 +57920,7 @@ function g1_512_lo(xh, xl) {
 
 
 /***/ }),
-/* 222 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var utils = exports;
@@ -57751,7 +58183,7 @@ exports.shr64_lo = shr64_lo;
 
 
 /***/ }),
-/* 223 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(console) {/*
@@ -58395,14 +58827,14 @@ if (typeof module !== 'undefined' && module.exports) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 224 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var hash = __webpack_require__(23);
-var utils = __webpack_require__(108);
+var utils = __webpack_require__(109);
 var assert = __webpack_require__(25);
 
 function HmacDRBG(options) {
@@ -58515,15 +58947,15 @@ HmacDRBG.prototype.generate = function generate(len, enc, add, addEnc) {
 
 
 /***/ }),
-/* 225 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Copyright 2015 Joyent, Inc.
 
-var parser = __webpack_require__(226);
-var signer = __webpack_require__(227);
-var verify = __webpack_require__(228);
-var utils = __webpack_require__(53);
+var parser = __webpack_require__(229);
+var signer = __webpack_require__(230);
+var verify = __webpack_require__(231);
+var utils = __webpack_require__(54);
 
 
 
@@ -58550,14 +58982,14 @@ module.exports = {
 
 
 /***/ }),
-/* 226 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Copyright 2012 Joyent, Inc.  All rights reserved.
 
-var assert = __webpack_require__(46);
+var assert = __webpack_require__(47);
 var util = __webpack_require__(3);
-var utils = __webpack_require__(53);
+var utils = __webpack_require__(54);
 
 
 
@@ -58874,18 +59306,18 @@ module.exports = {
 
 
 /***/ }),
-/* 227 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2012 Joyent, Inc.  All rights reserved.
 
-var assert = __webpack_require__(46);
+var assert = __webpack_require__(47);
 var crypto = __webpack_require__(7);
 var http = __webpack_require__(44);
 var util = __webpack_require__(3);
-var sshpk = __webpack_require__(80);
-var jsprim = __webpack_require__(259);
-var utils = __webpack_require__(53);
+var sshpk = __webpack_require__(83);
+var jsprim = __webpack_require__(262);
+var utils = __webpack_require__(54);
 
 var sprintf = __webpack_require__(3).format;
 
@@ -59280,15 +59712,15 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 228 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2015 Joyent, Inc.
 
-var assert = __webpack_require__(46);
+var assert = __webpack_require__(47);
 var crypto = __webpack_require__(7);
-var sshpk = __webpack_require__(80);
-var utils = __webpack_require__(53);
+var sshpk = __webpack_require__(83);
+var utils = __webpack_require__(54);
 
 var HASH_ALGOS = utils.HASH_ALGOS;
 var PK_ALGOS = utils.PK_ALGOS;
@@ -59375,7 +59807,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 229 */
+/* 232 */
 /***/ (function(module, exports) {
 
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -59465,7 +59897,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 
 /***/ }),
-/* 230 */
+/* 233 */
 /***/ (function(module, exports) {
 
 
@@ -59480,7 +59912,7 @@ module.exports = function(arr, obj){
 };
 
 /***/ }),
-/* 231 */
+/* 234 */
 /***/ (function(module, exports) {
 
 exports['date-time'] = /^\d{4}-(?:0[0-9]{1}|1[0-2]{1})-[0-9]{2}[tT ]\d{2}:\d{2}:\d{2}(\.\d+)?([zZ]|[+-]\d{2}:\d{2})$/
@@ -59500,14 +59932,14 @@ exports['utc-millisec'] = /^[0-9]{1,15}\.?[0-9]{0,15}$/
 
 
 /***/ }),
-/* 232 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var genobj = __webpack_require__(214)
-var genfun = __webpack_require__(213)
-var jsonpointer = __webpack_require__(258)
-var xtend = __webpack_require__(137)
-var formats = __webpack_require__(231)
+var genobj = __webpack_require__(217)
+var genfun = __webpack_require__(216)
+var jsonpointer = __webpack_require__(261)
+var xtend = __webpack_require__(138)
+var formats = __webpack_require__(234)
 
 var get = function(obj, additionalSchemas, ptr) {
 
@@ -60096,7 +60528,7 @@ module.exports.filter = function(schema, opts) {
 
 
 /***/ }),
-/* 233 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60107,7 +60539,7 @@ function isProperty(str) {
 module.exports = isProperty
 
 /***/ }),
-/* 234 */
+/* 237 */
 /***/ (function(module, exports) {
 
 module.exports      = isTypedArray
@@ -60154,7 +60586,7 @@ function isLooseTypedArray(arr) {
 
 
 /***/ }),
-/* 235 */
+/* 238 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60193,7 +60625,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 236 */
+/* 239 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60320,7 +60752,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 237 */
+/* 240 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60338,7 +60770,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 238 */
+/* 241 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60377,7 +60809,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 239 */
+/* 242 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60409,7 +60841,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 240 */
+/* 243 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60451,7 +60883,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 241 */
+/* 244 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60474,7 +60906,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 242 */
+/* 245 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60534,7 +60966,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 243 */
+/* 246 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60550,7 +60982,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 244 */
+/* 247 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60589,7 +61021,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 245 */
+/* 248 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60624,7 +61056,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 246 */
+/* 249 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60645,7 +61077,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 247 */
+/* 250 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60691,7 +61123,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 248 */
+/* 251 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60714,7 +61146,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 249 */
+/* 252 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60774,7 +61206,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 250 */
+/* 253 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60831,7 +61263,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 251 */
+/* 254 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -60876,7 +61308,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 252 */
+/* 255 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -69521,7 +69953,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 253 */
+/* 256 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -69540,7 +69972,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 254 */
+/* 257 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -69680,7 +70112,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 255 */
+/* 258 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -69786,7 +70218,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 256 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -70066,7 +70498,7 @@ return exports;
 
 
 /***/ }),
-/* 257 */
+/* 260 */
 /***/ (function(module, exports) {
 
 exports = module.exports = stringify
@@ -70099,7 +70531,7 @@ function serializer(replacer, cycleReplacer) {
 
 
 /***/ }),
-/* 258 */
+/* 261 */
 /***/ (function(module, exports) {
 
 var hasExcape = /~/
@@ -70198,19 +70630,19 @@ exports.compile = compile
 
 
 /***/ }),
-/* 259 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
  * lib/jsprim.js: utilities for primitive JavaScript types
  */
 
-var mod_assert = __webpack_require__(260);
+var mod_assert = __webpack_require__(263);
 var mod_util = __webpack_require__(3);
 
-var mod_extsprintf = __webpack_require__(103);
-var mod_verror = __webpack_require__(322);
-var mod_jsonschema = __webpack_require__(256);
+var mod_extsprintf = __webpack_require__(104);
+var mod_verror = __webpack_require__(325);
+var mod_jsonschema = __webpack_require__(259);
 
 /*
  * Public interface
@@ -70939,7 +71371,7 @@ function mergeObjects(provided, overrides, defaults)
 
 
 /***/ }),
-/* 260 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer, process) {// Copyright (c) 2012, Mark Cavage. All rights reserved.
@@ -71157,7 +71589,7 @@ module.exports = _setExports(process.env.NODE_NDEBUG);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer, __webpack_require__(4)))
 
 /***/ }),
-/* 261 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -71170,11 +71602,11 @@ module.exports = _setExports(process.env.NODE_NDEBUG);
  * Module exports.
  */
 
-module.exports = __webpack_require__(252)
+module.exports = __webpack_require__(255)
 
 
 /***/ }),
-/* 262 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -71192,8 +71624,8 @@ module.exports = __webpack_require__(252)
  * @private
  */
 
-var db = __webpack_require__(261)
-var extname = __webpack_require__(274).extname
+var db = __webpack_require__(264)
+var extname = __webpack_require__(277).extname
 
 /**
  * Module variables.
@@ -71369,7 +71801,7 @@ function populateMaps (extensions, types) {
 
 
 /***/ }),
-/* 263 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var crypto = __webpack_require__(7)
@@ -71511,7 +71943,7 @@ exports.generateBase = generateBase
 
 
 /***/ }),
-/* 264 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -71568,17 +72000,17 @@ module.exports = {
 
 
 /***/ }),
-/* 265 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils   = __webpack_require__(54);
-var trees   = __webpack_require__(269);
-var adler32 = __webpack_require__(109);
-var crc32   = __webpack_require__(110);
-var msg     = __webpack_require__(111);
+var utils   = __webpack_require__(55);
+var trees   = __webpack_require__(272);
+var adler32 = __webpack_require__(110);
+var crc32   = __webpack_require__(111);
+var msg     = __webpack_require__(112);
 
 /* Public constants ==========================================================*/
 /* ===========================================================================*/
@@ -73430,7 +73862,7 @@ exports.deflateTune = deflateTune;
 
 
 /***/ }),
-/* 266 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73763,18 +74195,18 @@ module.exports = function inflate_fast(strm, start) {
 
 
 /***/ }),
-/* 267 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 
-var utils         = __webpack_require__(54);
-var adler32       = __webpack_require__(109);
-var crc32         = __webpack_require__(110);
-var inflate_fast  = __webpack_require__(266);
-var inflate_table = __webpack_require__(268);
+var utils         = __webpack_require__(55);
+var adler32       = __webpack_require__(110);
+var crc32         = __webpack_require__(111);
+var inflate_fast  = __webpack_require__(269);
+var inflate_table = __webpack_require__(271);
 
 var CODES = 0;
 var LENS = 1;
@@ -75308,14 +75740,14 @@ exports.inflateUndermine = inflateUndermine;
 
 
 /***/ }),
-/* 268 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 
-var utils = __webpack_require__(54);
+var utils = __webpack_require__(55);
 
 var MAXBITS = 15;
 var ENOUGH_LENS = 852;
@@ -75642,14 +76074,14 @@ module.exports = function inflate_table(type, lens, lens_index, codes, table, ta
 
 
 /***/ }),
-/* 269 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 
-var utils = __webpack_require__(54);
+var utils = __webpack_require__(55);
 
 /* Public constants ==========================================================*/
 /* ===========================================================================*/
@@ -76851,7 +77283,7 @@ exports._tr_align = _tr_align;
 
 
 /***/ }),
-/* 270 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76887,7 +77319,7 @@ module.exports = ZStream;
 
 
 /***/ }),
-/* 271 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76897,7 +77329,7 @@ module.exports = ZStream;
 
 var asn1 = __webpack_require__(34)
 
-exports.certificate = __webpack_require__(272)
+exports.certificate = __webpack_require__(275)
 
 var RSAPrivateKey = asn1.define('RSAPrivateKey', function () {
   this.seq().obj(
@@ -77016,7 +77448,7 @@ exports.signature = asn1.define('signature', function () {
 
 
 /***/ }),
-/* 272 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77111,15 +77543,15 @@ module.exports = X509Certificate
 
 
 /***/ }),
-/* 273 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// adapted from https://github.com/apatil/pemstrip
 var findProc = /Proc-Type: 4,ENCRYPTED\n\r?DEK-Info: AES-((?:128)|(?:192)|(?:256))-CBC,([0-9A-H]+)\n\r?\n\r?([0-9A-z\n\r\+\/\=]+)\n\r?/m
 var startRegex = /^-----BEGIN ((?:.* KEY)|CERTIFICATE)-----\n/m
 var fullRegex = /^-----BEGIN ((?:.* KEY)|CERTIFICATE)-----\n\r?([0-9A-z\n\r\+\/\=]+)\n\r?-----END \1-----$/m
-var evp = __webpack_require__(52)
-var ciphers = __webpack_require__(63)
+var evp = __webpack_require__(53)
+var ciphers = __webpack_require__(66)
 module.exports = function (okey, password) {
   var key = okey.toString()
   var match = key.match(findProc)
@@ -77148,7 +77580,7 @@ module.exports = function (okey, password) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 274 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -77379,7 +77811,7 @@ var substr = 'ab'.substr(-1) === 'b'
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 275 */
+/* 278 */
 /***/ (function(module, exports) {
 
 var MAX_ALLOC = Math.pow(2, 30) - 1 // default in iojs
@@ -77403,17 +77835,17 @@ module.exports = function (iterations, keylen) {
 
 
 /***/ }),
-/* 276 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-module.exports = typeof Promise === 'function' ? Promise : __webpack_require__(277);
+module.exports = typeof Promise === 'function' ? Promise : __webpack_require__(280);
 
 
 /***/ }),
-/* 277 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77710,14 +78142,14 @@ Promise.reject = function (reason) {
 
 module.exports = Promise;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14), __webpack_require__(59).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14), __webpack_require__(60).setImmediate))
 
 /***/ }),
-/* 278 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports.publicEncrypt = __webpack_require__(280);
-exports.privateDecrypt = __webpack_require__(279);
+exports.publicEncrypt = __webpack_require__(283);
+exports.privateDecrypt = __webpack_require__(282);
 
 exports.privateEncrypt = function privateEncrypt(key, buf) {
   return exports.publicEncrypt(key, buf, true);
@@ -77728,16 +78160,16 @@ exports.publicDecrypt = function publicDecrypt(key, buf) {
 };
 
 /***/ }),
-/* 279 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var parseKeys = __webpack_require__(55);
-var mgf = __webpack_require__(113);
-var xor = __webpack_require__(115);
+/* WEBPACK VAR INJECTION */(function(Buffer) {var parseKeys = __webpack_require__(56);
+var mgf = __webpack_require__(114);
+var xor = __webpack_require__(116);
 var bn = __webpack_require__(6);
-var crt = __webpack_require__(64);
+var crt = __webpack_require__(67);
 var createHash = __webpack_require__(30);
-var withPublic = __webpack_require__(114);
+var withPublic = __webpack_require__(115);
 module.exports = function privateDecrypt(private_key, enc, reverse) {
   var padding;
   if (private_key.padding) {
@@ -77842,17 +78274,17 @@ function compare(a, b){
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 280 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var parseKeys = __webpack_require__(55);
+/* WEBPACK VAR INJECTION */(function(Buffer) {var parseKeys = __webpack_require__(56);
 var randomBytes = __webpack_require__(39);
 var createHash = __webpack_require__(30);
-var mgf = __webpack_require__(113);
-var xor = __webpack_require__(115);
+var mgf = __webpack_require__(114);
+var xor = __webpack_require__(116);
 var bn = __webpack_require__(6);
-var withPublic = __webpack_require__(114);
-var crt = __webpack_require__(64);
+var withPublic = __webpack_require__(115);
+var crt = __webpack_require__(67);
 
 var constants = {
   RSA_PKCS1_OAEP_PADDING: 4,
@@ -77943,7 +78375,7 @@ function nonZero(len, crypto) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 281 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78034,7 +78466,7 @@ var isArray = Array.isArray || function (xs) {
 
 
 /***/ }),
-/* 282 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78126,14 +78558,14 @@ var objectKeys = Object.keys || function (obj) {
 
 
 /***/ }),
-/* 283 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(26)
 
 
 /***/ }),
-/* 284 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78141,7 +78573,7 @@ module.exports = __webpack_require__(26)
 
 var Buffer = __webpack_require__(0).Buffer;
 /*<replacement>*/
-var bufferShim = __webpack_require__(65);
+var bufferShim = __webpack_require__(68);
 /*</replacement>*/
 
 module.exports = BufferList;
@@ -78203,21 +78635,21 @@ BufferList.prototype.concat = function (n) {
 };
 
 /***/ }),
-/* 285 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(117)
+module.exports = __webpack_require__(118)
 
 
 /***/ }),
-/* 286 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(76)
+module.exports = __webpack_require__(79)
 
 
 /***/ }),
-/* 287 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78237,9 +78669,9 @@ module.exports = __webpack_require__(76)
 
 
 
-var extend                = __webpack_require__(69)
-  , cookies               = __webpack_require__(120)
-  , helpers               = __webpack_require__(78)
+var extend                = __webpack_require__(72)
+  , cookies               = __webpack_require__(121)
+  , helpers               = __webpack_require__(81)
 
 var paramsHaveRequestBody = helpers.paramsHaveRequestBody
 
@@ -78364,7 +78796,7 @@ request.forever = function (agentOptions, optionsArg) {
 // Exports
 
 module.exports = request
-request.Request = __webpack_require__(298)
+request.Request = __webpack_require__(301)
 request.initParams = initParams
 
 // Backwards compatibility for request.debug
@@ -78380,15 +78812,15 @@ Object.defineProperty(request, 'debug', {
 
 
 /***/ }),
-/* 288 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var caseless = __webpack_require__(66)
-  , uuid = __webpack_require__(72)
-  , helpers = __webpack_require__(78)
+var caseless = __webpack_require__(69)
+  , uuid = __webpack_require__(75)
+  , helpers = __webpack_require__(81)
 
 var md5 = helpers.md5
   , toBase64 = helpers.toBase64
@@ -78555,7 +78987,7 @@ exports.Auth = Auth
 
 
 /***/ }),
-/* 289 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78642,7 +79074,7 @@ module.exports = getProxyFromURI
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 290 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78650,8 +79082,8 @@ module.exports = getProxyFromURI
 
 var fs = __webpack_require__(32)
 var qs = __webpack_require__(38)
-var validate = __webpack_require__(216)
-var extend = __webpack_require__(69)
+var validate = __webpack_require__(219)
+var extend = __webpack_require__(72)
 
 function Har (request) {
   this.request = request
@@ -78864,15 +79296,15 @@ exports.Har = Har
 
 
 /***/ }),
-/* 291 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
-var uuid = __webpack_require__(72)
-  , CombinedStream = __webpack_require__(186)
-  , isstream = __webpack_require__(106)
+var uuid = __webpack_require__(75)
+  , CombinedStream = __webpack_require__(189)
+  , isstream = __webpack_require__(107)
 
 
 function Multipart (request) {
@@ -78984,17 +79416,17 @@ exports.Multipart = Multipart
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 292 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
 var url = __webpack_require__(19)
-  , qs = __webpack_require__(122)
-  , caseless = __webpack_require__(66)
-  , uuid = __webpack_require__(72)
-  , oauth = __webpack_require__(263)
+  , qs = __webpack_require__(123)
+  , caseless = __webpack_require__(69)
+  , uuid = __webpack_require__(75)
+  , oauth = __webpack_require__(266)
   , crypto = __webpack_require__(7)
 
 
@@ -79139,13 +79571,13 @@ exports.OAuth = OAuth
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 293 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var qs = __webpack_require__(122)
+var qs = __webpack_require__(123)
   , querystring = __webpack_require__(38)
 
 
@@ -79197,7 +79629,7 @@ exports.Querystring = Querystring
 
 
 /***/ }),
-/* 294 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79361,14 +79793,14 @@ exports.Redirect = Redirect
 
 
 /***/ }),
-/* 295 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var url = __webpack_require__(19)
-  , tunnel = __webpack_require__(314)
+  , tunnel = __webpack_require__(317)
 
 var defaultProxyHeaderWhiteList = [
   'accept',
@@ -79544,13 +79976,13 @@ exports.Tunnel = Tunnel
 
 
 /***/ }),
-/* 296 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(123);
+var utils = __webpack_require__(124);
 
 var has = Object.prototype.hasOwnProperty;
 
@@ -79718,14 +80150,14 @@ module.exports = function (str, opts) {
 
 
 /***/ }),
-/* 297 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(123);
-var formats = __webpack_require__(121);
+var utils = __webpack_require__(124);
+var formats = __webpack_require__(122);
 
 var arrayPrefixGenerators = {
     brackets: function brackets(prefix) { // eslint-disable-line func-name-matching
@@ -79925,40 +80357,40 @@ module.exports = function (object, opts) {
 
 
 /***/ }),
-/* 298 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process, console, Buffer) {
 
 var http = __webpack_require__(44)
-  , https = __webpack_require__(71)
+  , https = __webpack_require__(74)
   , url = __webpack_require__(19)
   , util = __webpack_require__(3)
   , stream = __webpack_require__(13)
-  , zlib = __webpack_require__(184)
-  , hawk = __webpack_require__(223)
-  , aws2 = __webpack_require__(170)
-  , aws4 = __webpack_require__(171)
-  , httpSignature = __webpack_require__(225)
-  , mime = __webpack_require__(262)
-  , stringstream = __webpack_require__(310)
-  , caseless = __webpack_require__(66)
-  , ForeverAgent = __webpack_require__(211)
-  , FormData = __webpack_require__(212)
-  , extend = __webpack_require__(69)
-  , isstream = __webpack_require__(106)
-  , isTypedArray = __webpack_require__(234).strict
-  , helpers = __webpack_require__(78)
-  , cookies = __webpack_require__(120)
-  , getProxyFromURI = __webpack_require__(289)
-  , Querystring = __webpack_require__(293).Querystring
-  , Har = __webpack_require__(290).Har
-  , Auth = __webpack_require__(288).Auth
-  , OAuth = __webpack_require__(292).OAuth
-  , Multipart = __webpack_require__(291).Multipart
-  , Redirect = __webpack_require__(294).Redirect
-  , Tunnel = __webpack_require__(295).Tunnel
+  , zlib = __webpack_require__(187)
+  , hawk = __webpack_require__(226)
+  , aws2 = __webpack_require__(173)
+  , aws4 = __webpack_require__(174)
+  , httpSignature = __webpack_require__(228)
+  , mime = __webpack_require__(265)
+  , stringstream = __webpack_require__(313)
+  , caseless = __webpack_require__(69)
+  , ForeverAgent = __webpack_require__(214)
+  , FormData = __webpack_require__(215)
+  , extend = __webpack_require__(72)
+  , isstream = __webpack_require__(107)
+  , isTypedArray = __webpack_require__(237).strict
+  , helpers = __webpack_require__(81)
+  , cookies = __webpack_require__(121)
+  , getProxyFromURI = __webpack_require__(292)
+  , Querystring = __webpack_require__(296).Querystring
+  , Har = __webpack_require__(293).Har
+  , Auth = __webpack_require__(291).Auth
+  , OAuth = __webpack_require__(295).OAuth
+  , Multipart = __webpack_require__(294).Multipart
+  , Redirect = __webpack_require__(297).Redirect
+  , Tunnel = __webpack_require__(298).Tunnel
 
 var safeStringify = helpers.safeStringify
   , isReadStream = helpers.isReadStream
@@ -81404,7 +81836,7 @@ module.exports = Request
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(8), __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 299 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {/*
@@ -81621,7 +82053,7 @@ module.exports = ripemd160
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 300 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -81814,7 +82246,7 @@ module.exports = ripemd160
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14), __webpack_require__(4)))
 
 /***/ }),
-/* 301 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var exports = module.exports = function SHA (algorithm) {
@@ -81826,16 +82258,16 @@ var exports = module.exports = function SHA (algorithm) {
   return new Algorithm()
 }
 
-exports.sha = __webpack_require__(302)
-exports.sha1 = __webpack_require__(303)
-exports.sha224 = __webpack_require__(304)
-exports.sha256 = __webpack_require__(124)
-exports.sha384 = __webpack_require__(305)
-exports.sha512 = __webpack_require__(125)
+exports.sha = __webpack_require__(305)
+exports.sha1 = __webpack_require__(306)
+exports.sha224 = __webpack_require__(307)
+exports.sha256 = __webpack_require__(125)
+exports.sha384 = __webpack_require__(308)
+exports.sha512 = __webpack_require__(126)
 
 
 /***/ }),
-/* 302 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {/*
@@ -81935,7 +82367,7 @@ module.exports = Sha
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 303 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {/*
@@ -82040,7 +82472,7 @@ module.exports = Sha1
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 304 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {/**
@@ -82052,7 +82484,7 @@ module.exports = Sha1
  */
 
 var inherits = __webpack_require__(2)
-var Sha256 = __webpack_require__(124)
+var Sha256 = __webpack_require__(125)
 var Hash = __webpack_require__(33)
 
 var W = new Array(64)
@@ -82099,11 +82531,11 @@ module.exports = Sha224
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 305 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var inherits = __webpack_require__(2)
-var SHA512 = __webpack_require__(125)
+var SHA512 = __webpack_require__(126)
 var Hash = __webpack_require__(33)
 
 var W = new Array(160)
@@ -82162,7 +82594,7 @@ module.exports = Sha384
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 306 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2017 Joyent, Inc.
@@ -82180,7 +82612,7 @@ module.exports = {
 };
 
 var assert = __webpack_require__(5);
-var SSHBuffer = __webpack_require__(57);
+var SSHBuffer = __webpack_require__(58);
 var crypto = __webpack_require__(7);
 var algs = __webpack_require__(10);
 var Key = __webpack_require__(11);
@@ -82491,12 +82923,12 @@ function getCertType(key) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 307 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright 2016 Joyent, Inc.
 
-var x509 = __webpack_require__(130);
+var x509 = __webpack_require__(131);
 
 module.exports = {
 	read: read,
@@ -82575,14 +83007,14 @@ function write(cert, options) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 308 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer, global, process) {var capability = __webpack_require__(131)
+/* WEBPACK VAR INJECTION */(function(Buffer, global, process) {var capability = __webpack_require__(132)
 var inherits = __webpack_require__(2)
-var response = __webpack_require__(309)
-var stream = __webpack_require__(77)
-var toArrayBuffer = __webpack_require__(311)
+var response = __webpack_require__(312)
+var stream = __webpack_require__(80)
+var toArrayBuffer = __webpack_require__(314)
 
 var IncomingMessage = response.IncomingMessage
 var rStates = response.readyStates
@@ -82876,12 +83308,12 @@ var unsafeHeaders = [
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer, __webpack_require__(14), __webpack_require__(4)))
 
 /***/ }),
-/* 309 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(process, Buffer, global) {var capability = __webpack_require__(131)
+/* WEBPACK VAR INJECTION */(function(process, Buffer, global) {var capability = __webpack_require__(132)
 var inherits = __webpack_require__(2)
-var stream = __webpack_require__(77)
+var stream = __webpack_require__(80)
 
 var rStates = exports.readyStates = {
 	UNSENT: 0,
@@ -83065,12 +83497,12 @@ IncomingMessage.prototype._onXHRProgress = function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(0).Buffer, __webpack_require__(14)))
 
 /***/ }),
-/* 310 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var util = __webpack_require__(3)
 var Stream = __webpack_require__(13)
-var StringDecoder = __webpack_require__(58).StringDecoder
+var StringDecoder = __webpack_require__(59).StringDecoder
 
 module.exports = StringStream
 module.exports.AlignedStringDecoder = AlignedStringDecoder
@@ -83174,7 +83606,7 @@ function alignedWrite(buffer) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 311 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(0).Buffer
@@ -83207,7 +83639,7 @@ module.exports = function (buf) {
 
 
 /***/ }),
-/* 312 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83244,15 +83676,15 @@ module.exports = function (buf) {
 
 var net = __webpack_require__(32);
 var urlParse = __webpack_require__(19).parse;
-var pubsuffix = __webpack_require__(134);
-var Store = __webpack_require__(135).Store;
-var MemoryCookieStore = __webpack_require__(313).MemoryCookieStore;
-var pathMatch = __webpack_require__(132).pathMatch;
-var VERSION = __webpack_require__(254).version;
+var pubsuffix = __webpack_require__(135);
+var Store = __webpack_require__(136).Store;
+var MemoryCookieStore = __webpack_require__(316).MemoryCookieStore;
+var pathMatch = __webpack_require__(133).pathMatch;
+var VERSION = __webpack_require__(257).version;
 
 var punycode;
 try {
-  punycode = __webpack_require__(74);
+  punycode = __webpack_require__(77);
 } catch(e) {
   console.warn("cookie: can't load punycode; won't use punycode for domain normalization");
 }
@@ -84543,7 +84975,7 @@ module.exports = {
   pathMatch: pathMatch,
   getPublicSuffix: pubsuffix.getPublicSuffix,
   cookieCompare: cookieCompare,
-  permuteDomain: __webpack_require__(133).permuteDomain,
+  permuteDomain: __webpack_require__(134).permuteDomain,
   permutePath: permutePath,
   canonicalDomain: canonicalDomain
 };
@@ -84551,7 +84983,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 313 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84586,9 +85018,9 @@ module.exports = {
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-var Store = __webpack_require__(135).Store;
-var permuteDomain = __webpack_require__(133).permuteDomain;
-var pathMatch = __webpack_require__(132).pathMatch;
+var Store = __webpack_require__(136).Store;
+var permuteDomain = __webpack_require__(134).permuteDomain;
+var pathMatch = __webpack_require__(133).pathMatch;
 var util = __webpack_require__(3);
 
 function MemoryCookieStore() {
@@ -84728,7 +85160,7 @@ MemoryCookieStore.prototype.getAllCookies = function(cb) {
 
 
 /***/ }),
-/* 314 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84737,7 +85169,7 @@ MemoryCookieStore.prototype.getAllCookies = function(cb) {
 var net = __webpack_require__(32)
   , tls = __webpack_require__(32)
   , http = __webpack_require__(44)
-  , https = __webpack_require__(71)
+  , https = __webpack_require__(74)
   , events = __webpack_require__(31)
   , assert = __webpack_require__(16)
   , util = __webpack_require__(3)
@@ -84979,7 +85411,7 @@ exports.debug = debug // for test
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer, __webpack_require__(4), __webpack_require__(8)))
 
 /***/ }),
-/* 315 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85057,7 +85489,7 @@ Parser.prototype.receive = function receive(buffer) {
 
 
 /***/ }),
-/* 316 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85068,12 +85500,12 @@ Parser.prototype.receive = function receive(buffer) {
  */
 
 var url = __webpack_require__(19);
-var Streamparser = __webpack_require__(315);
-var request = __webpack_require__(287);
-var extend = __webpack_require__(317);
+var Streamparser = __webpack_require__(318);
+var request = __webpack_require__(290);
+var extend = __webpack_require__(320);
 
 // Package version
-var VERSION = __webpack_require__(255).version;
+var VERSION = __webpack_require__(258).version;
 
 function Twitter(options) {
   if (!(this instanceof Twitter)) { return new Twitter(options) }
@@ -85374,7 +85806,7 @@ module.exports = Twitter;
 
 
 /***/ }),
-/* 317 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85526,7 +85958,7 @@ var deepExtend = module.exports = function (/*obj_1, [obj_2], [obj_N]*/) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 318 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85549,7 +85981,7 @@ module.exports = {
 
 
 /***/ }),
-/* 319 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(console, global) {
@@ -85623,7 +86055,7 @@ function config (name) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(14)))
 
 /***/ }),
-/* 320 */
+/* 323 */
 /***/ (function(module, exports) {
 
 if (typeof Object.create === 'function') {
@@ -85652,7 +86084,7 @@ if (typeof Object.create === 'function') {
 
 
 /***/ }),
-/* 321 */
+/* 324 */
 /***/ (function(module, exports) {
 
 module.exports = function isBuffer(arg) {
@@ -85663,7 +86095,7 @@ module.exports = function isBuffer(arg) {
 }
 
 /***/ }),
-/* 322 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -85673,7 +86105,7 @@ module.exports = function isBuffer(arg) {
 var mod_assert = __webpack_require__(16);
 var mod_util = __webpack_require__(3);
 
-var mod_extsprintf = __webpack_require__(103);
+var mod_extsprintf = __webpack_require__(104);
 
 /*
  * Public interface
@@ -85826,10 +86258,10 @@ WError.prototype.cause = function we_cause(c)
 
 
 /***/ }),
-/* 323 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var indexOf = __webpack_require__(230);
+var indexOf = __webpack_require__(233);
 
 var Object_keys = function (obj) {
     if (Object.keys) return Object.keys(obj)
@@ -85970,7 +86402,7 @@ exports.createContext = Script.createContext = function (context) {
 
 
 /***/ }),
-/* 324 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
@@ -85999,7 +86431,7 @@ module.exports = AboutWidget
 
 
 /***/ }),
-/* 325 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
@@ -86033,7 +86465,7 @@ module.exports = BrandPartnersWidget;
 
 
 /***/ }),
-/* 326 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
@@ -86218,39 +86650,21 @@ module.exports = {
 
 
 /***/ }),
-/* 327 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
 var TitleBar = __webpack_require__(20)
-var IndustryEvents = __webpack_require__(339)
+var IndustryEvents = __webpack_require__(342)
 
 var EventCalendar = {
   view: ()=> { 
-    return m('.fl.w-100.mt4.bg-white.shadow-2', [
+    return m('.fl.w-100.bg-white.shadow-2', [
       m(TitleBar, {content: 'Event Calendar'}),
       m('div.hk-tabs.w-100', [
-        m('a.hk-tabs__tab--active', {
-          'attributes': {
-            'href': '#',
-            'draggable': 'false',
-            'className': 'hk-tabs__tab'
-          }
-        }, 'Hosted Buyer'),
-        m('a.hk-tabs__tab', {
-          'attributes': {
-            'href': '#',
-            'draggable': 'false',
-            'className': 'hk-tabs__tab'
-          }
-        }, 'All markets'),
-        m('a.hk-tabs__tab', {
-          'attributes': {
-            'href': '#',
-            'draggable': 'false',
-            'className': 'hk-tabs__tab'
-          }
-        }, 'Incentive'),
+        m('a.hk-tabs__tab--active.f6', 'Hosted Buyer'),
+        m('a.hk-tabs__tab.f6', 'All markets'),
+        m('a.hk-tabs__tab.f6', 'Incentive'),
         m('div.spacer.flex-auto.bb.b--light-silver')
       ]),
       m('.fl.w-100', {style: 'height: 720px; overflow: scroll'}, IndustryEvents.list.map(function(e) {
@@ -86278,11 +86692,12 @@ module.exports = EventCalendar
 
 
 /***/ }),
-/* 328 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
 var WidgetTitleBar = __webpack_require__(20);
+let EventCalendar = __webpack_require__(330)
 
 let Hero = {
   oninit: () => {
@@ -86293,18 +86708,9 @@ let Hero = {
   current: 'hero',
   view: () => {
     return m('.fl.w-100.relative', {style: 'height: 400px;overflow: hidden;'}, [
-      m('.left-triangle.pl4.white.pa2.pv4', [
-        m('.f6.fw4.mt3', 'Redefining hospitality:'),
-        m('.f5.fw4.mt3', 'Planner networking'),
-        m('.f5.fw4.mt3', 'Destination/venue research'),
-        m('.f5.fw4.mt3', 'Site selection'),
-        m('.f5.fw4.mt3', 'Contract negotiation'),
-        m('.f5.fw4.mt3', 'Hotel marketing'),
-        m('.f5.fw4.mt3', 'Planner feedback'),
-        m('.f5.fw4.mt3', 'Supplier recommendations'),
-      ]),
-      m('.fl.w-100.h-100', {style: 'background-size: cover; background-position: center bottom; padding-left: 200px; background-image: url("../../img/'+ Hero.current +'.png")'}, [
-       m('.fl.w-100', [
+      m('.fl.w-100.h-100', {style: 'background-size: cover; background-position: center bottom; background-image: url("../../img/'+ Hero.current +'.png")'}, [
+       m('.fl.w-20', [
+         m(EventCalendar)
        ]),
       ])
     ]);
@@ -86315,7 +86721,7 @@ module.exports = Hero;
 
 
 /***/ }),
-/* 329 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
@@ -86345,7 +86751,7 @@ module.exports = InviteAPlanner
 
 
 /***/ }),
-/* 330 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
@@ -86377,69 +86783,70 @@ module.exports = MostPopularCitiesWidget;
 
 
 /***/ }),
-/* 331 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var m = __webpack_require__(1)
 
 var Nav = {
-    items: [
-      {name: "Home", location: "/main"},
-      {name: "Compare", location: "/compare"},
-      {name: "LV CVA", location: "/cvb/lasvegas/lvcva"},
-      {name: "Boulder CVB", location: "/cvb/colorado/boulder"},
-      {name: "Hard Rock", location: "/hotel"},
-      {name: "RFP", location: "/rfp2"},
-      {name: "Profile", location: "/profile"},
-      {name: "Inbox", location: "/inbox"},
-      {name: "CVBs", location: "/cvb/"},
-    ]
+  items: [
+    { name: 'Home', location: '/main' },
+    { name: 'Compare', location: '/compare' },
+    { name: 'LV CVA', location: '/cvb/lasvegas/lvcva' },
+    { name: 'Boulder CVB', location: '/cvb/colorado/boulder' },
+    { name: 'Hard Rock', location: '/hotel' },
+    { name: 'RFP', location: '/rfp2' },
+    { name: 'Profile', location: '/profile' },
+    { name: 'Caesars', location: '/caesars' },
+    { name: 'CVBs', location: '/cvb/' },
+  ]
 }
 
 module.exports = {
   view: () => {
-    return  m("nav", {class:"fl w-100", style: "background: url('../img/bg-nav_bar.png'); background-size: cover;"}, [
-          m("div", {class: "flex items-center", style: "height: 70px"}, [
-            m("div#branding", {class: "w-30-ns w-100 ph3 pointer"}, [
-              m("img", {alt: "Meeting Glue logo: Black serif uppercase text with green pineapple leaves over the 'U'", src: "img/logo/logo-meeting-glue.png", height: '64px'})
+    return m('nav', { class: 'fl w-100', style: 'background: url(\'../img/bg-nav_bar.png\'); background-size: cover;' }, [
+      m('div', { class: 'flex items-center', style: 'height: 70px' }, [
+        m('div#branding', { class: 'w-auto-ns w-100 ph3 pointer' }, [
+          m('img', { alt: 'Meeting Glue logo: Black serif uppercase text with green pineapple leaves over the \'U\'', src: 'img/logo/logo-meeting-glue.png', height: '64px' })
+        ]),
+        m('.flex.flex-auto'),
+        m('div#nav-items', { class: 'w-50 flex items-center' }, [
+          m('ul', { class: 'avenir list black' }, Nav.items.map(function (navItem) {
+            return m('li', { class: 'dib fl mr4 f3 ttu tracked link dim pointer' }, [
+              // m("a", {class: "link white dim pointer", oncreate: m.route.link, href: navItem.location}, navItem.name)
+              m('a', { class: 'link white dim pointer', href: navItem.location, oncreate: m.route.link }, navItem.name)
+            ])
+          }))
+        ]),
+        m('div#social-and-search', { class: 'fr white w-30 pb2' }, [
+          m('ul', { class: 'list' }, [
+            m('li', { class: 'dib fl mr4 f3 link dim pointer' }, [
+              m('i', { class: 'fa fa-twitter' }),
             ]),
-            m("div#nav-items", {class: "w-50 flex items-center"}, [
-              m("ul", {class: "avenir list black"}, Nav.items.map(function(navItem) {
-                return m("li", {class: "dib fl mr4 f6 ttu tracked link dim pointer"}, [
-                  // m("a", {class: "link white dim pointer", oncreate: m.route.link, href: navItem.location}, navItem.name)
-                  m("a", {class: "link white dim pointer", href: navItem.location, oncreate: m.route.link}, navItem.name)
-                ])
-              }))
+            m('li', { class: 'dib fl mr4 f3 link dim pointer' }, [
+              m('i', { class: 'fa fa-facebook' }),
             ]),
-            m("div#social-and-search", {class: "fr white w-30 pb2"}, [
-              m("ul", {class: "list"}, [
-                m("li", {class: "dib fl mr4 f3 link dim pointer"}, [
-                  m("i", {class: "fa fa-twitter"}),
-                ]),
-                m("li", {class: "dib fl mr4 f3 link dim pointer"}, [
-                  m("i", {class: "fa fa-facebook"}),
-                ]),
-                m("li", {class: "dib fl mr4 f3 link dim pointer"}, [
-                  m("i", {class: "fa fa-linkedin"}),
-                ]),
-                m("li", {class: "dib fl mr4 f3 link dim pointer"}, [
-                  m("i", {class: "fa fa-search"}),
-                ])
-              ])
+            m('li', { class: 'dib fl mr4 f3 link dim pointer' }, [
+              m('i', { class: 'fa fa-linkedin' }),
+            ]),
+            m('li', { class: 'dib fl mr4 f3 link dim pointer' }, [
+              m('i', { class: 'fa fa-search' }),
             ])
           ])
         ])
+      ])
+    ])
   }
 }
 
 
 /***/ }),
-/* 332 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
 let WidgetTitleBar = __webpack_require__(20)
-let Dates = __webpack_require__(338)
+let Dates = __webpack_require__(341)
 
 let NeedsDatesWidget = {
   view: () => {
@@ -86462,12 +86869,12 @@ module.exports = NeedsDatesWidget
 
 
 /***/ }),
-/* 333 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
 let WidgetTitleBar = __webpack_require__(20)
-let Openings = __webpack_require__(341)
+let Openings = __webpack_require__(344)
 
 let NewOpeningsWidget = {
   view: () => {
@@ -86490,12 +86897,12 @@ module.exports = NewOpeningsWidget
 
 
 /***/ }),
-/* 334 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
 let WidgetTitleBar = __webpack_require__(20);
-let News = __webpack_require__(340);
+let News = __webpack_require__(343);
 
 let NewsWidget = {
   view: () => {
@@ -86514,7 +86921,7 @@ module.exports = NewsWidget;
 
 
 /***/ }),
-/* 335 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
@@ -86560,12 +86967,12 @@ module.exports = PollWidget;
 
 
 /***/ }),
-/* 336 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
 var TitleBar = __webpack_require__(20);
-var ReviewsContent = __webpack_require__(344);
+var ReviewsContent = __webpack_require__(347);
 
 var Reviews = {
   view: ()=> {
@@ -86588,7 +86995,7 @@ module.exports = Reviews;
 
 
 /***/ }),
-/* 337 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
@@ -86601,7 +87008,7 @@ module.exports = CVBList
 
 
 /***/ }),
-/* 338 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
@@ -86626,7 +87033,7 @@ module.exports = Dates;
 
 
 /***/ }),
-/* 339 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
@@ -86672,7 +87079,7 @@ module.exports = IndustryEvents;
 
 
 /***/ }),
-/* 340 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
@@ -86692,7 +87099,7 @@ module.exports = News;
 
 
 /***/ }),
-/* 341 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
@@ -86712,7 +87119,7 @@ module.exports = Openings;
 
 
 /***/ }),
-/* 342 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(console) {const m = __webpack_require__(1)
@@ -86769,7 +87176,7 @@ module.exports = RFP
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 343 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(console) {const m = __webpack_require__(1)
@@ -86816,7 +87223,7 @@ module.exports = RFPState
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 344 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1);
@@ -86833,84 +87240,15 @@ module.exports = ReviewsContent;
 
 
 /***/ }),
-/* 345 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const m = __webpack_require__(1);
-
-var SalesStaff = {
-  all: [
-    { 
-      name: 'Michael Rowland',
-      title: 'Executive Director of Group Sales',
-      phone: '702-693-5234',
-      email: 'mrowland@hrhvegas.com',
-      rooms: 'N/A',
-      hotel: 'hard-rock-hotel',
-      image: 'michaelr.jpg'
-    },
-    { 
-      name: 'Michael Catalano',
-      title: 'Director of National Sales',
-      phone: '702-693-5536',
-      email: 'mcatalano@hrhvegas.com',
-      rooms: '51+ rooms',
-      hotel: 'hard-rock-hotel',
-      image: 'michaelc.jpg'
-    },
-    { 
-      name: 'Mike Roth',
-      title: 'National Sales Manager',
-      phone: '702-693-5224',
-      email: 'mroth@hrhvegas.com',
-      rooms: '51+ rooms',
-      hotel: 'hard-rock-hotel',
-      image: 'miker.jpg'
-    },
-    {
-      name: 'Carrie Flores',
-      title: 'Hotel Sales Manager',
-      phone: '702-693-5217',
-      email: 'cflores@hrhvegas.com',
-      rooms: '6-50 rooms',
-      hotel: 'hard-rock-hotel',
-      image: 'carrief.jpg'
-    },
-    {
-      name: 'Amber Held',
-      title: 'Hotel Sales Manager',
-      phone: '702-693-4008',
-      email: 'aheld@hrhvegas.com',
-      rooms: '6-50 rooms',
-      hotel: 'hard-rock-hotel',
-      image: 'amberh.jpg'
-    }
-  ]
-}
- 
-module.exports = SalesStaff
-
-
-/***/ }),
-/* 346 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
 
 let TabsBoulder = {
   active: 1,
-  current:
-    {
-      id: 1,
-      title: 'Promotions',
-      content:
-      'Event Grant program' + '\n' + ' [link]' + '\n\n' +
-      'Hot Deals and Cash Incentives' + '\n' + ' [link]' + '\n\n' +
-      'Hot Events' + '\n' + ' [link]' + '\n\n'
-    },
   swap: (tab) => {
-    TabsBoulder.active = tab.id
-    TabsBoulder.current = tab
+    TabsBoulder.active = tab 
   },
   isActive: (id) => {
     if(id === TabsBoulder.active) {
@@ -86919,7 +87257,6 @@ let TabsBoulder = {
       return false
     }
   },
-
   list: [
     {id: 1, title: 'Promotions', content:
       'Event Grant program' + '\n' + ' [link]' + '\n\n' +
@@ -86939,11 +87276,11 @@ module.exports = TabsBoulder
 
 
 /***/ }),
-/* 347 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(console) {var m = __webpack_require__(1)
-var UserLocation = __webpack_require__(143)
+var UserLocation = __webpack_require__(144)
 
 var Weather = {
   load: () => {
@@ -86970,11 +87307,11 @@ module.exports = Weather
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 348 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
-const Quill = __webpack_require__(116)
+const Quill = __webpack_require__(117)
 
 let insertSnippet = {
   cursorPosition: 0,
@@ -86990,7 +87327,7 @@ module.exports = insertSnippet
 
 
 /***/ }),
-/* 349 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
@@ -87014,7 +87351,7 @@ module.exports = menuState
 
 
 /***/ }),
-/* 350 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
@@ -87073,18 +87410,6 @@ module.exports = preflightState
 
 
 /***/ }),
-/* 351 */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-/* 352 */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
 /* 353 */
 /***/ (function(module, exports) {
 
@@ -87092,25 +87417,39 @@ module.exports = preflightState
 
 /***/ }),
 /* 354 */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+/* 355 */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const m = __webpack_require__(1)
 
 // Views
-let Layout           = __webpack_require__(149)
-let Main             = __webpack_require__(150)
-let Compare          = __webpack_require__(145)
-let ReqFP            = __webpack_require__(152)
-let RFP2             = __webpack_require__(153)
-let LVCVA            = __webpack_require__(148)
-let cvbBoulder       = __webpack_require__(157)
-let SupplierResponse = __webpack_require__(154)
-let Hotel            = __webpack_require__(146)
-let Test             = __webpack_require__(155)
-let Test2            = __webpack_require__(156)
-let Inbox            = __webpack_require__(147)
-let Profile          = __webpack_require__(151)
-let CVBList = __webpack_require__(144)
+let Layout           = __webpack_require__(152)
+let Main             = __webpack_require__(153)
+let Compare          = __webpack_require__(147)
+let ReqFP            = __webpack_require__(155)
+let RFP2             = __webpack_require__(156)
+let LVCVA            = __webpack_require__(151)
+let cvbBoulder       = __webpack_require__(160)
+let SupplierResponse = __webpack_require__(157)
+let Hotel            = __webpack_require__(148)
+let Test             = __webpack_require__(158)
+let Test2            = __webpack_require__(159)
+let Inbox            = __webpack_require__(150)
+let Caesars = __webpack_require__(146)
+let HotelCaesars = __webpack_require__(149)
+let Profile          = __webpack_require__(154)
+let CVBList = __webpack_require__(145)
 
 // Routes
 m.route(document.body, '/main', {
@@ -87123,6 +87462,8 @@ m.route(document.body, '/main', {
   '/supplierResponse':     { render: ()=> { return m(Layout, m(SupplierResponse)) } },
   '/hotel':                { render: ()=> { return m(Layout, m(Hotel)) } },
   '/test':                 { render: () => { return m(Layout, m(Test)) } },
+  '/caesars':                 { render: () => { return m(Layout, m(Caesars)) } },
+  '/hotelcaesars':                 { render: () => { return m(Layout, m(HotelCaesars)) } },
   '/inbox':                { render: () => { return m(Layout, m(Inbox)) } },
   '/test2':                { render: () => { return m(Layout, m(Test2)) } },
   '/profile':              { render: () => { return m(Layout, m(Profile)) } },

@@ -12,11 +12,11 @@ const m = require('mithril')
       oninit: Feed.getTimeline,
       view: () => {
         return m('div', {class: 'avenir'},  [
-          m('div', {class: 'fl w-100 bg-black', style: 'background: url("../img/hotel/HRH-Exterior-Dusk.png"); background-size: cover; height: 450px'}, [
+          m('div', { class: 'fl w-100 bg-black', style: 'background: url("../img/caesarshotel.jpg"); background-size: cover; background-position: center center; height: 450px'}, [
             m('div', {class: 'fr w-40 bg-black-50 pa2 white h-100 flex items-center'}, [
               m('div', {class: 'db fl ph4'}, [
-                m('h1', {class: 'fw4 ttu tracked'}, 'Hard Rock Hotel'),
-                m('p', {class: 'mb0 f4 tracked'}, '4455 Paradise Road'),
+                m('h1', {class: 'fw4 ttu tracked'}, 'Caesars Palace'),
+                m('p', {class: 'mb0 f4 tracked'}, 'XXXX Las Vegas Blvd.'),
                 m('p', {class: 'mt1 f4 tracked'}, 'Las Vegas, NV 89109'),
                 m('a', {class: "ba pa2 b--white tracked mt2 fl br1 bg-black-20 link dim pointer"}, 'SEND RFP'),
                 m('span', {class: 'w-100 flex ttu tracked white-70 pt4 justify-between'}, [
@@ -34,15 +34,15 @@ const m = require('mithril')
             m('div', {class: 'fl w-50 pr3'}, [
               m('div', {class: 'fl w-100 h5', style: 'min-height: 300px; overflow: hidden'}, [
                 m('div', {class: 'db pa2 fl w-60 h5 white', style: 'background: linear-gradient(rgba(0, 160, 238, 0.8), rgba(0, 160, 238, 0.9)),  url("../img/bg-polylines.png"); background-size: cover; height: 300px'}, [
-                  m('h4', {class: 'f3 fw5 lh-copy mb0 pl2'}, "Twitter @HardRockHotelLV"),
+                  m('h4', {class: 'f3 fw5 lh-copy mb0 pl2'}, "Twitter @Caesars"),
                   m('ul', {class: 'mt4 list lh-copy yellow f5 fw5'}, [
-                    m('li', "If you can't find a reason to celebrate at @MBSteak, you're doing it wrong. #Cheers 🍸"),
+                    m('li', "If you can't find a reason to celebrate at @Nobu, you're doing it wrong. #Cheers 🍸"),
                   ])
                 ]),
                 m('div', {class: 'db fl w-40 h5 pl4', style: 'height: 300px; background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/bg-polyboxes.png"); background-size: cover'}, [
                   m('p', {class: 'b f5 mt5 pt2'}, '1-855-693-5500'),
-                  m('p', {class: 'b f5'}, 'hardrockhotel.com'),
-                  m('p', {class: 'b f5'}, 'sales@hrhvegas.com'),
+                  m('p', {class: 'b f5'}, 'caesarsentertainment.com'),
+                  m('p', {class: 'b f5'}, 'sales@caesars.com'),
                 ]),
               ]),
               m('div', {class: 'fl w-100 h5'}, [

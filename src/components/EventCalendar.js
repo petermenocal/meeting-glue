@@ -4,30 +4,12 @@ var IndustryEvents = require('../models/IndustryEvents')
 
 var EventCalendar = {
   view: ()=> { 
-    return m('.fl.w-100.mt4.bg-white.shadow-2', [
+    return m('.fl.w-100.bg-white.shadow-2', [
       m(TitleBar, {content: 'Event Calendar'}),
       m('div.hk-tabs.w-100', [
-        m('a.hk-tabs__tab--active', {
-          'attributes': {
-            'href': '#',
-            'draggable': 'false',
-            'className': 'hk-tabs__tab'
-          }
-        }, 'Hosted Buyer'),
-        m('a.hk-tabs__tab', {
-          'attributes': {
-            'href': '#',
-            'draggable': 'false',
-            'className': 'hk-tabs__tab'
-          }
-        }, 'All markets'),
-        m('a.hk-tabs__tab', {
-          'attributes': {
-            'href': '#',
-            'draggable': 'false',
-            'className': 'hk-tabs__tab'
-          }
-        }, 'Incentive'),
+        m('a.hk-tabs__tab--active.f6', 'Hosted Buyer'),
+        m('a.hk-tabs__tab.f6', 'All markets'),
+        m('a.hk-tabs__tab.f6', 'Incentive'),
         m('div.spacer.flex-auto.bb.b--light-silver')
       ]),
       m('.fl.w-100', {style: 'height: 720px; overflow: scroll'}, IndustryEvents.list.map(function(e) {

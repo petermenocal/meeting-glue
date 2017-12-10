@@ -13,6 +13,8 @@ let Hotel            = require('./views/Hotel')
 let Test             = require('./views/Test')
 let Test2            = require('./views/Test2')
 let Inbox            = require('./views/Inbox')
+let Caesars = require('./views/Caesars')
+let HotelCaesars = require('./views/HotelCaesars')
 let Profile          = require('./views/Profile')
 let CVBList = require('./views/CVBList')
 
@@ -27,6 +29,8 @@ m.route(document.body, '/main', {
   '/supplierResponse':     { render: ()=> { return m(Layout, m(SupplierResponse)) } },
   '/hotel':                { render: ()=> { return m(Layout, m(Hotel)) } },
   '/test':                 { render: () => { return m(Layout, m(Test)) } },
+  '/caesars':                 { render: () => { return m(Layout, m(Caesars)) } },
+  '/hotelcaesars':                 { render: () => { return m(Layout, m(HotelCaesars)) } },
   '/inbox':                { render: () => { return m(Layout, m(Inbox)) } },
   '/test2':                { render: () => { return m(Layout, m(Test2)) } },
   '/profile':              { render: () => { return m(Layout, m(Profile)) } },
